@@ -5,7 +5,6 @@ plugins/disqus
 plugins/download
 plugins/finalwords
 plugins/version
-settings/settings.yaml
 settings/users
 system/vendor
 tests

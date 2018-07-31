@@ -1,0 +1,39 @@
+setup: false
+plugins:
+    analytics:
+        tool: none
+        piwik_url: ''
+        piwik_id: ''
+        google_id: ''
+        active: false
+    cookieconsent:
+        active: 'on'
+        theme: edgeless
+        position: bottom
+        message: 'This website uses cookies to ensure you get the best experience on our website.'
+        link: 'Learn More'
+        dismiss: 'Got It'
+        popup_background: '#70c1b3'
+        popup_text: '#ffffff'
+        button_background: '#66b0a3'
+        button_text: '#ffffff'
+    highlight:
+        active: false
+    math:
+        tool: none
+        active: false
+welcome: false
+title: Typemill
+author: Astrid
+copyright: ©
+year: '2018'
+language: de
+startpage: true
+latestVersion: 1.2.2
+theme: tyemill
+themes:
+    typemill:
+        chapter: Chapter
+        start: Start
+        modifiedText: 'Last updated'
+        modifiedFormat: d.m.Y
