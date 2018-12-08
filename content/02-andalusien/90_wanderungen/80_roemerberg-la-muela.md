@@ -1,0 +1,5 @@
+# Der Geheimtipp: Römer-Berg bei La Muela
+
+Diese kleine Wanderung möchte ich Ihnen als etwas Besonderes vorstellen. Ich habe diesen Ort in keinem Reiseführer gefunden. Vielleicht gibt es viele dieser Orte in Andalusien. Wenn Sie meinem GPX-Track folgen, werden Sie nicht immer auf einem Weg oder Pfad gehen. Wahrscheinlich habe ich die alte Römer-Siedlung deshalb auch nur gefunden, weil meine Vermieterin mich darauf aufmerksam gemacht hat. Wenn ich an einem neuen Ort bin, steige ich immer gerne auf Erhöhungen. So bin ich vorher ein paar Mal in Richtung Römer-Berg gegangen. Weil mein Weg endetet, bin ich aber immer umgekehrt.
+
+An einem Tag erzählte mir meine Vermieterin, dass sich auf dem Berg vor meiner Haustür Reste einer Römer-Siedlung befinden. Das wollte ich mir ansehen und so bin ich Richtung Römer-Berg gewandert und bin auch da weiter gegangen, wo kein offizieller Weg mehr war. Und vorgefunden habe ich interessante Mauerreste und einen schönen Blick über die Küste von Trafalgar.
