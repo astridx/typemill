@@ -9,7 +9,9 @@ class WriteExport extends Write {
     public function updateExport(
             $folderName, $exportFileName, $requestFileName, $data, $baseHTML) 
     {
-        $export = '<!DOCTYPE html><head></head><body>' . "\n";
+        $export = '<!DOCTYPE html><head>'
+                . '<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>'
+                . '</head><body>' . "\n";
         $export .= $this->generateOneHTML($data);
         $export .= '</html>';
 
