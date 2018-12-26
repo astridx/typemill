@@ -776,7 +776,19 @@ nächste Beispiel.
 
 Zur Darstellung des Textfeldes für die Eingabe der Adresse ist es notwendig zwei 
 weitere Skripte einzubinden. 
-Neben dem Skript  `esri-leaflet.js`  sollten Sie auch noch die Dateien  `esri-leaflet-geocoder.css`  und  `esri-leaflet-geocoder.js`  in Ihr HTML-Dokument einbinden. Die notwendigen Dateien hierfür finden Sie unter der Adresse <a href="https://github.com/Esri/esri-leaflet-geocoder/">https://github.com/Esri/esri-leaflet-geocoder/</a>. Als Nächstes wird dann mit  `var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);`  das Eingabefeld für die zu suchende Adresse erstellt und zur Karte hinzugefügt. Dieses Eingabefeld nennt Leaflet auch Control. Wir brauchen eine Ebene, die die Suchergebnisse richtig verarbeitet. Diese erstellen wir mit der Zeile  `var results = L.layerGroup().addTo(mymap);`. Zum Schluss können wir dann das Ereignis  `on("results")`  des Objektes  `searchControl`  mit einer Funktion belegen.
+Neben dem Skript `esri-leaflet.js` sollten Sie auch noch die Dateien 
+`esri-leaflet-geocoder.css` und `esri-leaflet-geocoder.js` 
+in Ihr HTML-Dokument einbinden. 
+Die notwendigen Dateien hierfür finden Sie unter der 
+Adresse https://github.com/Esri/esri-leaflet-geocoder. 
+Als nächstes wird dann mit 
+`var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);` 
+das Eingabefeld für die zu suchende Adresse erstellt und zur Karte hinzugefügt. 
+Dieses Eingabefeld nennt Leaflet auch Control. 
+Wir brauchen eine Ebene, die die Suchergebnisse richtig verarbeitet. 
+Diese erstellen wir mit der Zeile `var results = L.layerGroup().addTo(mymap);`. 
+Zum Schluss können wir dann das Ereignis `on("results")` 
+des Objektes `searchControl` mit einer Funktion belegen.
 
 ```
 searchControl.on('results', function(data) {
