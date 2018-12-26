@@ -8,36 +8,44 @@
 <script src="esri-leaflet.js"></script>
 </head>
 <body>
-<select id="sicherheitseinrichtungenID">
-    <option value="">Reset</option>
-    <option value="Untertyp='pt_Notrufsaeule'">Notrufsaeule</option>
-    <option value="Untertyp='pt_Feuerwache'">Feuerwache</option>
-    <option value="Untertyp='pt_Rettungspunkt'">Rettungspunkt</option>
-    <option value="Untertyp='pt_Polizeistation'">Polizeistation</option>
-    <option value="Untertyp='pt_Sirene'">Sirene</option>
-    <option value="Untertyp='pt_Rettungswache'">Rettungswache</option>
+<select id="bodengeologieID">
+<option value="">Reset</option>
+<option value="PARAMADOTXT='Saure regionalmetamorphe Gesteine'">Saure regionalmetamorphe Gesteine</option>
+<option value="PARAMADOTXT='fluvioglaziale Sedimente'">fluvioglaziale Sedimente</option>
+<option value="PARAMADOTXT='Kalkstein'">Kalkstein</option>
+<option value="PARAMADOTXT='Geschiebelehm/Geschiebemergel'">Geschiebelehm/Geschiebemergel</option>
+<option value="PARAMADOTXT='Mergel'">Mergel</option>
+<option value="PARAMADOTXT='Toniger Lehm'">Toniger Lehm</option>
+<option value="PARAMADOTXT='Tiefengesteine bzw. Plutonite'">Tiefengesteine bzw. Plutonite</option>
+<option value="PARAMADOTXT='keine Informationen'">keine Informationen</option>
+<option value="PARAMADOTXT='Basische bis ultrabasische vulkanischen Gesteine (Vulkanite)'">Basische bis ultrabasische vulkanischen Gesteine (Vulkanite)</option>
+<option value="PARAMADOTXT='Löss'">Löss</option>
+<option value="PARAMADOTXT='Residualton'">Residualton</option>
+<option value="PARAMADOTXT='Fluviale Tone, Schluffe und Lehme'">Fluviale Tone, Schluffe und Lehme</option>
+<option value="PARAMADOTXT='Sandstein'">Sandstein</option>
+<option value="PARAMADOTXT='Sande der Flussterrassen'">Sande der Flussterrassen</option>
+<option value="PARAMADOTXT='Tonstein'">Tonstein</option>
+<option value="PARAMADOTXT='Steiniger Lehm'">Steiniger Lehm</option>
+<option value="PARAMADOTXT='Residuallehm'">Residuallehm</option>
+<option value="PARAMADOTXT='Schiefer'">Schiefer</option>
 </select>
 <div style="height: 700px" id="mapid"></div>
 <script>
-var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.27264, 7.26469], 12);
+var mymap = L.map('mapid', {}).setView([50.27264, 7.26469], 12);
 L.esri.basemapLayer('Gray').addTo(mymap);
-var url = 'http://services.arcgis.com/OLiydejKCZTGhvWg/arcgis/rest/services/OSM_DE_Sicherheitseinrichtungen/FeatureServer/0	';
-var sicherheitseinrichtungen = document.getElementById('sicherheitseinrichtungenID');
-var sicherheitseinrichtungenLayer  = L.esri.featureLayer({
+var url = 'http://services.arcgis.com/OLiydejKCZTGhvWg/ArcGIS/rest/services/BodenGeologie/FeatureServer/0';
+var bodengeologie = document.getElementById('bodengeologieID');
+var bodengeologieLayer  = L.esri.featureLayer({
 url: url
 }).addTo(mymap);
 var popupTemplate = "<h3>Details:</h3>\n\
-Land: {Land}<br>\n\
-Kreis: {Kreis}<br>\n\
-Gemeinde: {Gemeinde}<br>\n\
-Stadt: {Stadt} <br>\n\
-Typ: {Typ}, {Untertyp}";
-sicherheitseinrichtungenLayer.bindPopup(function (layer){
+PARAMADOTXT: {PARAMADOTXT}<br>";
+bodengeologieLayer.bindPopup(function (layer){
 console.log(layer.feature.properties);
 return L.Util.template(popupTemplate, layer.feature.properties)
 });
-sicherheitseinrichtungen.addEventListener('change', function(){
-sicherheitseinrichtungenLayer.setWhere(sicherheitseinrichtungen.value);
+bodengeologie.addEventListener('change', function(){
+bodengeologieLayer.setWhere(bodengeologie.value);
 });
 </script>
 </body>

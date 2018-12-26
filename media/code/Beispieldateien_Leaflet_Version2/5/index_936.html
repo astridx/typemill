@@ -18,9 +18,11 @@ var r = L.marker();
 L.esri.Geocoding.reverseGeocode()
 .latlng(e.latlng)
 .run(function(error, result, response){
-console.log(result.address);
 mymap.removeLayer(r);
-r = L.marker(result.latlng).addTo(mymap).bindPopup(result.address.Match_addr).openPopup();
+r = L.marker(result.latlng)
+.addTo(mymap)
+.bindPopup(result.address.Match_addr)
+.openPopup();
 });
 });
 </script>

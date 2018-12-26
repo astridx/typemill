@@ -12,7 +12,7 @@
 <body>
 <div style="height: 300px;" id="mapid"></div>
 <script>
-var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
+var mymap = L.map('mapid', {}).setView([50.97264, 7.00469], 12);
 L.esri.basemapLayer('Gray').addTo(mymap);
 var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
 var results = L.layerGroup().addTo(mymap);

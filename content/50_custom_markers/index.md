@@ -246,7 +246,7 @@ Mit der Option `className` können Sie für beide Bilder - also dem Schattenbild
 dem eigentlichen Marker Bild - 
 den Namen einer CSS-Klasse definieren. 
 
-
+[](#){#RetinaDisplay}
 > Besonderheiten beim [Retina Display](https://de.wikipedia.org/w/index.php?title=Retina-Display&oldid=183031043)  
 Hochauflösende Displays haben eine höhere Pixeldichte als gewöhnliche Monitore.
 Auf der gleichen Fläche werden etwa viermal so viele Pixel

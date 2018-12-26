@@ -99,7 +99,7 @@ class WriteExport extends Write {
         }
 
         // Correct Imagefolder
-        $texttochange = str_replace('src="/media', 'src="../media', $texttochange);
+        $texttochange = str_replace('src="media', 'src="../media', $texttochange);
 
         return $texttochange;
     }

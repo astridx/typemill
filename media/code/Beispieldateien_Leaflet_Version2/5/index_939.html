@@ -10,10 +10,11 @@
 <body>
 <div style="height: 700px;" id="mapid"></div>
 <script>
-var mymap = L.map('mapid', {doubleClickZoom:false}).setView([50.97264, 7.00469], 12);
+var mymap = L.map('mapid', {}).setView([50.97264, 7.00469], 12);
 //L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 L.esri.basemapLayer('Gray').addTo(mymap);
-var url = "https://geoportal.stadt-koeln.de/arcgis/rest/services/Behindertenparkplaetze/MapServer";
+var url = 
+"https://geoportal.stadt-koeln.de/arcgis/rest/services/Behindertenparkplaetze/MapServer";
 var dMap = L.esri.dynamicMapLayer({
 url: url,
 opacity : 0.25,

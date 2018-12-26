@@ -1,11 +1,9 @@
 # Ein Konzept muss her
 
 https://www.cms-garden.org/de/das-richtige-konzept
-Gut geplant ist halb gewonnen! Dieses volkstümliche Sprichwort ist auf so gut wie jeden Bereich des Lebens anwendbar. 
-Sei es der der Wochenendeinkauf oder 
-
-
-Von der guten Planung hängt alles ab: vom Einhalten des Budgets bis zur Wahl des passenden Content-Management-Systems.
+Gut geplant ist halb gewonnen! Dieses volkstümliche Sprichwort ist auf so gut wie 
+jeden Bereich des Lebens anwendbar. 
+Sei es der der Wochenendeinkauf oder die Wahl des passenden Content-Management-Systems.
 
 Vergleichen Sie Ihr Webprojekt ruhig mit einem Hausbau: Sie werden Ihren Architekten nicht ohne weitere Angaben fragen „Was kostet denn so ein Haus?“ Sie werden auch nicht die großzügige Luxusvilla planen lassen, wenn Sie sich eigentlich nur ein bescheidenes Reihenhaus leisten können. Und fragen Sie jetzt bitte nicht, wer denn auf solche Ideen komme – jeder Dienstleister in dieser Branche wird Ihnen bestätigen: solche Erwartungen haben wirklich viele Kunden. Fairerweise muss man zugeben: weil sie es nicht besser wissen.
 
