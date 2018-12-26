@@ -7,16 +7,11 @@ Zunächst zeige ich Ihnen, wie Sie in vier einfachen Schritten eine
 Mit Leaflet müssen Sie dafür nicht wissen, was geografische Koordinaten sind 
 und wie die Bilddateien für die Karten erstellt werden. Da dies aber als Hintergrundwissen bei einer eventuellen Fehlersuche hilfreich sein kann, 
 habe ich einen Theorie-Teil in dieses Kapitel eingefügt. 
-Hier erkläre ich Ihnen Wichtiges zum Thema geografische Koordinaten und die übliche 
+Hier erkläre ich Ihnen alles Wichtige zum Thema 
+geografische Koordinaten und die übliche 
 Vorgehensweise beim Erstellen und Zuordnen der Imagedateien für diese Karten – 
 die *Kachel-Technik*. Zum Abschluss lernen Sie dann noch eine Alternative zur 
 Kachel-Technik kennen, den *Web-Map-Service*.
-
-  
-  
-
-
-
 
 ## Wir beginnen mit einer einfachen Karte
 
@@ -50,7 +45,7 @@ speichern diese Datei ab.
 Ein Aufruf dieser Datei in Ihrem Browser öffnet zunächst nur ein 
 leeres Browser-Fenster. Nur der Titel der Seite ist in der Titelleiste des 
 Browsers abzulesen. In den nächsten vier Kapiteln erfahren Sie, wie Sie die 
-digitale Landkarte in das Fenster bekommen. Vier Kapitel hört sich aufwendiger 
+digitale Landkarte in das Fenster bekommen. Vier Kapitel hört sich aufwendig 
 an. Das ist es aber nicht. Fangen Sie an und Sie werden sehen, dass Sie schon 
 in wenigen Minuten die Karte präsentieren können.
 
@@ -73,21 +68,21 @@ Sie können Leaflet mithilfe eines CDN nutzen. So müssen Sie die Dateien
 nicht selbst herunterladen. Es ist lediglich eine Verlinkung nötig. 
 Mit der richtigen Verlinkung wird Leaflet automatisch über das CDN heruntergeladen, 
 wenn ein Website Besucher Ihre Website aufruft. Im nachfolgenden Programmcodebeispiel 
-sehen Sie den Text für die Verlinkung zum Aufruf der Leaflet-Version 1.2.0 in 
-fett formatiert.
+sehen Sie den Text für die Verlinkung zur Leaflet-Version 1.2.0. Den 
+relevanten Teil habe ich mit Sternen markiert.
 
 ```
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="utf-8"/>
-<title>Eine OSM Karte mit Leaflet</title>
+ <!DOCTYPE HTML>
+ <html>
+ <head>
+ <meta charset="utf-8"/>
+ <title>Eine OSM Karte mit Leaflet</title>
 * <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
 * <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
-</head>
-<body>
-</body>
-</html>
+ </head>
+ <body>
+ </body>
+ </html>
 <!--index_998.html-->
 ```
 
@@ -99,7 +94,8 @@ Auch wenn die Dateien der Leaflet Bibliothek nun automatisch über das CDN herun
 Ein Aufruf Ihrer Datei in Ihrem Browser öffnet immer noch ein leeres Browser-Fenster. 
 Erst im letzten Schritt, im Kapitel *[Fügen Sie eine Schicht mit Kacheln – einen Tile-Layer – zum Karten-Objekt hinzu](#FuegenSieEineSchichtMitKachelnHinzu),* wird die Karte sichtbar.
 
-> Fast alle modernen Browser unterstützen Subresource Integrity[^1] (SRI) und auch 
+> Fast alle modernen Browser unterstützen [Subresource Integrity (SRI)](https://en.wikipedia.org/w/index.php?title=Subresource_Integrity&oldid=839480720) 
+und auch 
 Leaflet verwendet diese
 Sicherheitsfunktion. SRI steht für die Überprüfung der Integrität
 von Dateien die im Internet verwendet werden. Mithilfe dieser
@@ -108,8 +104,9 @@ Server ausgeführt werden. Die Dateien könnten beispielsweise bei der Übertrag
 Ihnen auch ausgeliefert werden sollte – oder eine
 Fehlermeldung. Dabei wird auf eine Prüfsumme – also einen
 Hash-Wert – zurückgegriffen. Diese Prüfsumme macht die Datei eindeutig erkennbar. Um potenzielle Sicherheitsprobleme zu vermeiden, empfehle ich
-Ihnen SRI zu nutzen, wenn Sie Leaflet über ein CDN einbinden. Wie
-Sie dies genau handhaben, finden Sie unter der Adresse http://leafletjs.com/download.html .
+Ihnen SRI zu nutzen, wenn Sie Leaflet über ein CDN einbinden. Informationen dazu, wie 
+Sie dies genau handhaben, finden Sie unter der 
+Adresse http://leafletjs.com/download.html .
 
 #### Eine lokale Leaflet-Kopie einbinden
 [](#){#EineKarteMitLeafletErstellenEinelokaleLeafletKopieeinbinden}
@@ -125,12 +122,15 @@ abgelegt haben und haben Einfluss auf die Konfiguration Ihres Servers.
 Sie müssen selbst die Dateien kopieren und sicherstellen, dass Sie die passende 
 Version von Leaflet nutzen. Aktualisierungen müssen Sie selbst vornehmen.
 
-Im nachfolgenden Codebeispiel sehen Sie – fett hervorgehoben – das Einbinden von 
+Im nachfolgenden Codebeispiel sehen Sie – die relevanten Stellen mit einem Stern 
+markiert – das Einbinden von 
 Leaflet unter der Annahme, dass Sie die heruntergeladenen Dateien - relativ 
 zu Ihrem HTML-Dokument ein Verzeichnis höher - im Unterverzeichnis `/leaflet` auf 
 Ihrem Webserver abgelegt haben.
 
->  Wenn Sie mit relativen Pfadangaben[^2] arbeiten, 
+>  Wenn Sie mit 
+[relativen Pfadangaben](https://de.wikipedia.org/w/index.php?title=Pfadname&oldid=182767239) 
+arbeiten, 
 setzen Sie die Links innerhalb eines
 Projektes mit Hilfe von Punkten. Der große Vorteil von relativen
 Pfadangaben ist, dass Sie ein Projekt jederzeit in ein anderes
@@ -143,20 +143,27 @@ zeigen auf eine Datei, die sich ein Verzeichnis höher
 befindet.  
 Zweimal zwei Punkte gefolgt von einem Schrägstrich
 hintereinander (`../../datei.html`) 
-zeigen auf eine Datei, die sich zwei Verzeichnisse höher befindet.
+zeigen auf eine Datei, die sich zwei Verzeichnisse höher befindet.  
+Wenn Ihnen meine Erklärung 
+nicht hilfreich erscheint sehen sich doch einfach alles im nächsten Beispiel an. 
+Manchmal sagt ein Beispiel mehr als viele Worte. 
+Nach meiner Erfahrung wird bei der praktischen Anwendung 
+Vieles oft sehr schnell klarer.
 
-`<!DOCTYPE HTML>`  
-`<html>`  
-`<head>`  
-`<meta charset="utf-8"/>`  
-`<title>Eine OpenStreetMap Karte mit Leaflet</title>`  
-**`<link rel="stylesheet" href="../leaflet/leaflet.css" />`**  
-**`<script src="../leaflet/leaflet.js"></script>`**  
-`</head>`  
-`<body>`  
-`</body>`  
-`</html>`  
-`<!--index_998a.html-->`  
+```
+ <!DOCTYPE HTML>
+ <html>
+ <head>
+ <meta charset="utf-8"/>
+ <title>Eine OSM Karte mit Leaflet</title>
+*<link rel="stylesheet" href="../leaflet/leaflet.css" />
+*<script src="../leaflet/leaflet.js"></script>
+ </head>
+ <body>
+ </body>
+ </html>  
+<!--index_998a.html-->
+```
 
 
 Auch wenn Leaflet nun lokal geladen wird, zeigt ein Aufruf dieser Datei in Ihrem Browser 
@@ -170,14 +177,15 @@ Tags – also ein *binary*
 Tag – verwendet habe.  
 **`<link`** `rel="stylesheet" href="../leaflet/leaflet.css"`**`/>`**  
 **`<script`**`src="../leaflet/leaflet.js"`**`></script>`**  
-HTML unterscheidet zwischen Tags, die nie
+[HTML unterscheidet](https://de.wikipedia.org/w/index.php?title=Hilfe:Tags&oldid=181586744#Syntax) 
+zwischen Tags, die nie
 Inhalt enthalten können – nämlich den *void*-Tags –, und
 solchen, die prinzipiell Inhalt enthalten können. Im ersten Fall
 muss ein selbst-schließendes *unary* Tag verwendet werden.
-Hierzu gehört das <link>-Tag[^3] .
+Hierzu gehört das <link>-Tag.
 Im zweiten Fall darf kein selbst-schließendes *unary* Tag
 benutzt werden – auch dann nicht, wenn das Tag tatsächlich leer
-ist. Hierzu gehört das <script>-Tag[^4] .
+ist. Hierzu gehört das <script>-Tag.
 
 
 #### Leaflet performant einbinden – defer oder async
@@ -211,7 +219,13 @@ mögen, dann ist dies die Wartezeit beim Aufbau der Website.
 
 Um das im vorherigen Abschnitt beschriebene Problem zu umgehen wurde früher oft empfohlen, den JavaScript-Code möglichst nah am schließenden `<body>`-Tag in die Website zu integrieren. Zu dieser Empfehlung gibt es mit HTML5 zwei gute Alternativen – nämlich die Attribute `defer` und `async`.
 
-Sofern Sie das Attribut `defer`[^5] verwenden, wird das Skript ausgeführt, wenn das HTML-Dokument geladen und für die Ansicht umgewandelt - also geparst - ist. Zum anderen können Sie das Attribut `async`[^6] einsetzten. Mit `async` wird Ihr Skript asynchron mit dem HTML-Dokument ausgeführt. Wenn Sie keines dieser Attribute explizit angegeben, wird erst das vollständige Skript geladen und ausgeführt und erst dann wird das Laden und Parsen des HTML-Dokuments fortgesetzt.
+Sofern Sie das Attribut `defer` verwenden, wird das Skript ausgeführt, 
+wenn das HTML-Dokument geladen und für die Ansicht umgewandelt - also geparst - ist. 
+Zum anderen können Sie das Attribut `async` 
+einsetzten. Mit `async` wird Ihr Skript asynchron mit dem HTML-Dokument ausgeführt. 
+Wenn Sie keines dieser Attribute explizit angegeben, wird erst das vollständige 
+Skript geladen und ausgeführt und erst dann wird das Laden und Parsen des 
+HTML-Dokuments fortgesetzt.
 
 ##### Was sollten Sie beim Einsatz von defer oder async mit Leaflet beachten?
 
@@ -220,7 +234,7 @@ Leaflet-Skript laden. Sie werden später noch eigenen JavaSript-Code schreiben.
 Dieser eigene Code setzt das Laden des Leaflet-Skripts voraus. 
 Aus diesem Grund müssen Sie sicherstellen, dass die Leaflet Bibliothek vollständig 
 geladen ist, bevor Ihr eigener Code ausgeführt wird. Dies können Sie mithilfe 
-des *Eventhandlers*[^7]: `load`[^8].  
+des *Eventhandlers*: `load`.  
 
 Obwohl Ihr eigenes Skript voraussetzt, dass Leaflet vollständig geladen ist, 
 können Sie das Attribut `async` verwenden. Sehen Sie selbst: Das folgende einfache 
@@ -328,11 +342,11 @@ erstellen konnten? Die Antwort ist einfach: Die Leaflet-Klassen sind mit
 einem Großbuchstaben – beispielsweise **`L.Map`**–benannt und diese 
 müssen mit `new` erstellt werden. Es gibt aber Shortcuts mit Kleinbuchstaben
  – **`L.map`** – die aus Bequemlichkeitsgründen von den Leaflet-Programmierern
-für Sie erstellt wurden. Leaflet setzt hier das Entwurfsmuster Fabrikmethode[^9] 
+für Sie erstellt wurden. Leaflet setzt hier das Entwurfsmuster Fabrikmethode 
 (englisch factory method) ein. Das Muster beschreibt, wie ein Objekt
 durch Aufruf einer Methode anstatt durch direkten Aufruf eines Konstruktors erzeugt wird.  
 Wollen Sie sich dies selbst ansehen? Die Funktion `L.map()` der Klasse `L.Map` 
-finden Sie auf Github ganz am Ende in der Datei `map.js`[^10]. Ein weiteres Beispiel 
+finden Sie auf Github ganz am Ende in der Datei `map.js`. Ein weiteres Beispiel 
 finden Sie zu Beginn des Kapitels [Custom Markers](#Fabrikmethode2).
 
 Das Festlegen des Kartenmittelpunktes mithilfe der Koordinaten `[50.27264, 7.26469]` 
@@ -440,10 +454,13 @@ können Sie die genaue Position eines jedes Punktes auf der Erdoberfläche angeb
 
 Das Grad-Netz der Erde ist ein gedachtes Koordinatensystem auf der Erdoberfläche mit sich rechtwinklig schneidenden Längen- und Breitenkreisen. Zum Aufbau dieses Koordinatensystems wird unser Erdball zunächst in 180 Breitenkreise und 360 Längenkreise eingeteilt.
 
-- Die  Breitengrade[^1] oder Breitenkreise verlaufen parallel zum Äquator. 
-- Die  Längengrade[^2] oder Längenkreise verbinden Nord- und Südpol. 
+- Die  [Breitengrade](https://de.wikipedia.org/w/index.php?title=Geographische_Breite&oldid=183712238) 
+oder Breitenkreise verlaufen parallel zum Äquator. 
+- Die [Längengrade](https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&oldid=182518754) 
+oder Längenkreise verbinden Nord- und Südpol. 
 
-So entsteht ein grobmaschiges Gitter[^3], anhand dessen jeder die ungefähre 
+So entsteht ein [grobmaschiges Gitter](https://de.wikipedia.org/w/index.php?title=Geographische_Koordinaten&oldid=183407489), 
+anhand dessen jeder die ungefähre 
 Position auf der Erdoberfläche bestimmen kann.
 
 ![Das Gradnetz der Erde - By CIA, Niteowlneils (Public domain), via Wikimedia Commons](media/images/964er.png)
@@ -453,14 +470,16 @@ Um die Genauigkeit zu erhöhen, wird jeder Breiten- und Längengrad weiter unter
 
 #### Breitengrade
 
-Die Breitengrade[^1] verlaufen von Osten nach Westen. Vielleicht wissen Sie noch aus dem Erdkundeunterricht in der Schule, dass der Äquator im rechten Winkel zur Erdachse verläuft. Er liegt etwa in der Mitte zwischen Nord- und Südpol. Im geografischen Koordinatensystem gilt er als Ausgangspunkt für die Berechnung der Breitenkreise und ihm wird ein Winkel von 0° zugeordnet.
+Die [Breitengrade](https://de.wikipedia.org/w/index.php?title=Geographische_Breite&oldid=183712238) 
+verlaufen von Osten nach Westen. Vielleicht wissen Sie noch aus dem Erdkundeunterricht in der Schule, dass der Äquator im rechten Winkel zur Erdachse verläuft. Er liegt etwa in der Mitte zwischen Nord- und Südpol. Im geografischen Koordinatensystem gilt er als Ausgangspunkt für die Berechnung der Breitenkreise und ihm wird ein Winkel von 0° zugeordnet.
 
 ![Breitengrade (Latitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons](../media/images/964br.png)
 *Abbildung: Breitengrade (Latitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons*
 
 #### Längengrade
 
-Die Längengrade[^2] auf der Erde verlaufen von Norden nach Süden. Sie umspannen die Erde praktisch. Eine Längenkreishälfte wird als Meridian bezeichnet. Die Längenkreise haben keinen natürlichen Nullpunkt. Heute gilt der Meridan, der den Londoner Stadtteil Greenwich durchläuft, als Nullmeridian und somit als Ausgangspunkt für die Berechnung der Längengrade.
+Die [Längengrade](https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&oldid=182518754) 
+auf der Erde verlaufen von Norden nach Süden. Sie umspannen die Erde praktisch. Eine Längenkreishälfte wird als Meridian bezeichnet. Die Längenkreise haben keinen natürlichen Nullpunkt. Heute gilt der Meridan, der den Londoner Stadtteil Greenwich durchläuft, als Nullmeridian und somit als Ausgangspunkt für die Berechnung der Längengrade.
 
 ![Längengrade (Longitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons](../media/images/964la.png)
 *Abbildung: Längengrade (Longitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons*
@@ -468,14 +487,16 @@ Die Längengrade[^2] auf der Erde verlaufen von Norden nach Süden. Sie umspanne
 ### Schreibweisen von geografischen Koordinaten
 
 Bei der Angabe von geographischen Koordinaten wird heute normalerweise eine von zwei 
-Schreibweisen verwendet: Entweder das Sexagesimalsystem[^4], welches von Wikipedia 
+Schreibweisen verwendet: Entweder das [Sexagesimalsystem](https://de.wikipedia.org/wiki/Sexagesimalsystem), 
+welches von Wikipedia 
 verwendet wird, oder die Dezimalschreibweise, die von Computerprogrammen bevorzugt wird. 
 Im Laufe unserer Geschichte haben sich allerdings eine Menge mehr unterschiedlicher 
 Systeme entwickelt.
 
 > Falls Sie einmal in die Verlegenheit
 kommen sollten und eine Koordinate aus einem System in ein anderes
-umrechnen müssen, kann ich Ihnen die Website deine-berge.de[^5] empfehlen,
+umrechnen müssen, kann ich Ihnen die Website [https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10](https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10) 
+empfehlen,
 weil diese das Umrechnen zwischen vielen verschiedenen Systemen
 unterstützt.
 
@@ -483,7 +504,8 @@ todotodo
 
 #### Das Sexagesimalsystem
 
-Das Sexagesimalsystem[^4] ist die traditionelle Schreibweise. Dieses System heißt 
+Das [Sexagesimalsystem](https://de.wikipedia.org/wiki/Sexagesimalsystem) 
+ist die traditionelle Schreibweise. Dieses System heißt 
 Sexagesimal, weil ein Grad eines Breitengrades 60 Minuten entspricht. Somit basiert 
 das Sexagesimalsystem auf der Zahl 60. Und der lateinische Name der Zahl 60 ist 
 *sexagesimus*.  
@@ -1177,7 +1199,7 @@ var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 
   eingefügt.
 
-  Wichtig ist, dass Sie dem Aufruf `L.tileLayer.wms  `
+Wichtig ist, dass Sie dem Aufruf `L.tileLayer.wms  `
 
 <ul><li>die richtige Adresse zum WMS Service mitgeben und   
 <li>die Option `layers ` passend setzen.   
@@ -1292,18 +1314,3 @@ liegen, dass es zur Zeit keine Warnungen gibt.
 Dieser Layer enthält nur Daten, wenn aktuell Wetterwarnungen vorliegen.   
 Die grünen Polygone – im Layer `dwd:Warngebiete_Kreise`  – die 
 die Landkreise darstellen, werden dahingegen immer eingeblendet.
-
-
-
-[^1]: https://de.wikipedia.org/wiki/Geographische_Breite
-[^2]: https://de.wikipedia.org/wiki/Geographische_L%C3%A4nge
-[^3]: https://de.wikipedia.org/wiki/Geographische_Koordinaten
-[^4]: https://de.wikipedia.org/wiki/Sexagesimalsystem
-[^5]: https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10
-
-*[CSS]: Cascading Style Sheet
-*[CDN]: Delivery Network
-*[DOM]: Document Object ModelOM
-*[HTML]: Hypertext Markup Language
-*[W3C]: World Wide Web Consortium
-*[WHATWG]: Web Hypertext Application Technology Working Group

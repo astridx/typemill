@@ -1,16 +1,21 @@
 <!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head><body>
 <h1 id="willkommen">Willkommen</h1>
 <p>Das Arbeiten mit Geodaten und Landkarten hat durch das 
-<strong>g</strong>lobale <strong>P</strong>ositionsbestimmung<strong>s</strong>system <abbr title="Global Positioning System">GPS</abbr><sup id="fnref1:1"><a href="#fn%3A1" class="footnote-ref">1</a></sup> immer mehr an Relevanz gewonnen. 
-Viele Anwendungen bieten heute sogar online geografische Informationen in Echtzeit an. So finden Sie auch im Internet immer mehr digitale Karten und Anwendungen die mit Geodaten arbeiten.</p>
+<a href="https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&amp;oldid=183579881"><strong>g</strong>lobale <strong>P</strong>ositionsbestimmung<strong>s</strong>system GPS</a> 
+immer mehr an Relevanz gewonnen. 
+Viele Anwendungen bieten heute sogar online geografische Informationen in Echtzeit an. 
+So finden Sie auch im Internet immer mehr digitale Karten und Anwendungen 
+die mit Geodaten arbeiten.</p>
 <blockquote>
-<p>Geodaten sind Informationen, die eine Zuordnung zu einer räumlichen Lage besitzen. 
+<p><a href="https://de.wikipedia.org/w/index.php?title=Geodaten&amp;oldid=181076558">Geodaten</a> 
+sind Informationen, die eine Zuordnung zu einer räumlichen Lage besitzen. 
 90 % aller Daten können einem Ort zugeordnet werden und sind somit Geodaten.</p>
 </blockquote>
 <p>Sie lesen dieses Buch sicherlich, weil Sie mit dem Gedanken spielen eine digitale Karte 
 anzubieten - höchstwahrscheinlich auf einer Website. Die Grundlagen zu dem, 
-was ich in diesem Buch geschrieben habe, finden Sie alle in der Dokumentation 
-zu Leaflet<sup id="fnref1:2"><a href="#fn%3A2" class="footnote-ref">2</a></sup> oder zu den jeweiligen Plugins öffentlich im Internet. 
+was ich in diesem Buch geschrieben habe, finden Sie alle in der 
+<a href="https://leafletjs.com/reference">Dokumentation zu Leaflet</a> - oder zu den 
+jeweiligen Plugins - öffentlich im Internet. 
 Diese Dokumentationen habe ich hier im Buch verlinkt. Warum habe ich trotzdem 
 dieses Buch geschrieben?  </p>
 <p>Ich habe das Buch geschrieben, 
@@ -18,7 +23,7 @@ weil ich manchmal gerne mit Beispielen lerne. Oft komme ich hierbei auf Ideen,
 die trockene Dokumentationen nicht hergeben. Vielleicht geht es Ihnen ja auch 
 so und dieses Buch bringt Ihnen einen Mehrwert zu den vorhandenen Dokumentationen. 
 Die Quellcode-Dateien zu den im Buch verwendeten Beispielen finden Sie auf der 
-Website <a href="https://astrid-guenther.de/">https://astrid-guenther.de/</a>.</p>
+Website <a href="https://astrid-guenther.de">https://astrid-guenther.de</a>.</p>
 <p>Außerdem finde ich es immer sehr hilfreich, wenn ich ein bisschen über den 
 Tellerrand hinaus blicke. Hier im Buch finden Sie ein paar solcher Blicke. 
 Wenn es Sie interessiert, können Sie mit mir etwas tiefer in die Welt der 
@@ -28,25 +33,19 @@ Außerdem sehe ich mir mit Ihnen GeoJSON, über die reine Anwendung hinaus,
 etwas genauer an. Ich zeigen Ihnen wie Sie der Karte mit individuellen Markern 
 eine persönliche Note geben können. Neben diesen grundlegenden Elementen kommen 
 die Visualisierung der Daten mit Heatmaps, Geocoding und Routing nicht zu kurz.</p>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="https://de.wikipedia.org/wiki/Global_Positioning_System">https://de.wikipedia.org/wiki/Global_Positioning_System</a>&#160;<a href="#fnref1%3A1" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p><a href="https://leafletjs.com/reference">https://leafletjs.com/reference</a>&#160;<a href="#fnref1%3A2" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-</ol>
-</div><h2 id="wichtiges-zum-buch">Wichtiges zum Buch</h2>
+<h2 id="wichtiges-zum-buch">Wichtiges zum Buch</h2>
 <p>Ich erkläre Ihnen hier Schritt für Schritt alles das, was ich rund um Leaflet 
 als wichtig ansehe – also alles das, was Sie als Entwickler brauchen, um kreativ 
 arbeiten zu können.</p>
 <p>Ich hoffe, dass Ihnen meine Art zu schreiben gefällt. Ich persönlich hätte mir 
-genau dieses Buch zum Start mit Leaflet gewünscht.</p><h2 id="was-ist-leaflet">Was ist Leaflet?</h2>
-<p>Leaflet<sup id="fnref1:2"><a href="#fn%3A2" class="footnote-ref">1</a></sup> ist eine Open Source JavaScript<sup id="fnref1:3"><a href="#fn%3A3" class="footnote-ref">2</a></sup>-Bibliothek, die Ihnen das 
+genau dieses Buch zum Start mit Leaflet gewünscht.</p>
+<h2 id="was-ist-leaflet">Was ist Leaflet?</h2>
+<p><a href="https://leafletjs.com/reference">Leaflet</a> ist eine 
+Open Source <a href="https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&amp;oldid=183718070">JavaScript</a>-Bibliothek, 
+die Ihnen das 
 Bereitstellen von Karten auf Ihrer Webseite einfach macht. 
-Open Source<sup id="fnref1:1"><a href="#fn%3A1" class="footnote-ref">3</a></sup> bedeutet, dass der Programmcode einsehbar ist. 
+<a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/OpenSource/OpenSource.html">Open Source</a> 
+bedeutet unter anderem, dass der Programmcode einsehbar ist. 
 Jeder mit den notwendigen Kenntnissen kann prüfen, wie die Anwendung genau 
 funktioniert. Und was noch wichtiger ist: Jeder kann Leaflet verwenden, 
 an seine Bedürfnisse anpassen und verbessern.</p>
@@ -71,62 +70,39 @@ Darunter sind Namen wie </p>
 unterschiedlichen Ebenen auf Ihrer Karte anzeigen. 
 Sie können Zoomen, Entfernungen berechnen und das Zentrum der Karte zu 
 bestimmten Koordinaten schieben.</p>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn:2">
-<p><a href="https://leafletjs.com/reference">https://leafletjs.com/reference</a>&#160;<a href="#fnref1%3A2" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p><a href="https://de.wikipedia.org/wiki/JavaScript">https://de.wikipedia.org/wiki/JavaScript</a>&#160;<a href="#fnref1%3A3" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-<li id="fn:1">
-<p><a href="https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/OpenSource/OpenSource.html">https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/OpenSource/OpenSource.html</a>&#160;<a href="#fnref1%3A1" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-</ol>
-</div><h2 id="was-sollten-sie-mitbringen">Was sollten Sie mitbringen?</h2>
-<p>Ich gehe davon aus, dass Sie über grundlegende <abbr title="Hypertext Markup Language (engl. für Hypertext-Auszeichnungssprache)">HTML</abbr><sup id="fnref1:1"><a href="#fn%3A1" class="footnote-ref">1</a></sup> und <abbr title="Cascading Style Sheets (engl. für gestufte Gestaltungsbögen)">CSS</abbr><sup id="fnref1:2"><a href="#fn%3A2" class="footnote-ref">2</a></sup> Kenntnisse verfügen. 
-Sie sollten auf alle Fälle wissen, wie Sie <abbr title="Cascading Style Sheets (engl. für gestufte Gestaltungsbögen)">CSS</abbr> und ein 
-JavaScript<sup id="fnref1:3"><a href="#fn%3A3" class="footnote-ref">3</a></sup> Skript in ein <abbr title="Hypertext Markup Language (engl. für Hypertext-Auszeichnungssprache)">HTML</abbr>-Dokument einbinden und wie Sie mit einfachen <abbr title="Hypertext Markup Language (engl. für Hypertext-Auszeichnungssprache)">HTML</abbr>-Elementen 
+<h2 id="was-sollten-sie-mitbringen">Was sollten Sie mitbringen?</h2>
+<p>Ich gehe davon aus, dass Sie über grundlegende <a href="https://de.wikipedia.org/w/index.php?title=HTML5&amp;oldid=182888530">HTML</a> 
+und <a href="https://de.wikipedia.org/w/index.php?title=Cascading_Style_Sheets&amp;oldid=181828388">CSS</a> 
+Kenntnisse verfügen. 
+Sie sollten auf alle Fälle wissen, wie Sie CSS und ein 
+<a href="https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&amp;oldid=183718070">JavaScript</a>-Skript 
+in ein HTML-Dokument einbinden und wie Sie mit einfachen HTML-Elementen 
 arbeiten. </p>
 <blockquote>
-<p><a href="http://www.w3.org/Style/CSS/"><abbr title="Cascading Style Sheets (engl. für gestufte Gestaltungsbögen)">CSS</abbr></a>
+<p><a href="http://www.w3.org/Style/CSS/">CSS</a>
 ist eine Stylesheet-Sprache für digitale Dokumente. Stylesheet-Sprachen werden
 verwendet, um Dokumente und Benutzeroberflächen zu gestalten. Dabei ist ein
 Stylesheet mit einer <a href="https://de.wikipedia.org/wiki/Formatvorlage">Formatvorlage</a> zu
 vergleichen. Grundidee hierbei ist die Trennung von Dateninhalten und Design.
-Zusammen mit <abbr title="Hypertext Markup Language (engl. für Hypertext-Auszeichnungssprache)">HTML</abbr> und dem <a href="https://wiki.selfhtml.org/wiki/JavaScript/DOM">DOM</a> ist <abbr title="Cascading Style Sheets (engl. für gestufte Gestaltungsbögen)">CSS</abbr>
-eines der wichtigsten Elemente im Internet. <abbr title="Cascading Style Sheets (engl. für gestufte Gestaltungsbögen)">CSS</abbr> ist ein so genannter lebendiger 
+Zusammen mit HTML und dem <a href="https://wiki.selfhtml.org/wiki/JavaScript/DOM">DOM</a> ist CSS
+eines der wichtigsten Elemente im Internet. CSS ist ein so genannter lebendiger 
 Standard und wird vom <a href="https://www.w3.org/">W3C</a> und dem <a href="https://whatwg.org/">WHATWG</a> permanent 
 weiterentwickelt.  </p>
 </blockquote>
 <p>. </p>
 <blockquote>
-<p><a href="https://www.w3.org/TR/html/"><abbr title="Hypertext Markup Language (engl. für Hypertext-Auszeichnungssprache)">HTML</abbr></a><sup id="fnref2:1"><a href="#fn%3A1" class="footnote-ref">1</a></sup>
+<p><a href="https://de.wikipedia.org/w/index.php?title=HTML5&amp;oldid=182888530">HTML</a> 
 ist eine textbasierte Auszeichnungssprache zur Strukturierung digitaler 
-Dokumente wie Texte mit Hyperlinks, Bildern und anderen Inhalten. <abbr title="Hypertext Markup Language (engl. für Hypertext-Auszeichnungssprache)">HTML</abbr>-Dokumente 
+Dokumente wie Texte mit Hyperlinks, Bildern und anderen Inhalten. HTML-Dokumente 
 sind die Grundlage des World Wide Web und werden von Webbrowsern dargestellt.</p>
 </blockquote>
-<p>Für das Verständnis der Beispiele sind darüber hinaus grundlegende JavaScript<sup id="fnref1:4"><a href="#fn%3A4" class="footnote-ref">4</a></sup> 
-Kenntnisse hilfreich. Für die Entwicklung dynamischer Webseiten ist JavaScript unerlässlich. 
-Mit JavaScript<sup id="fnref2:4"><a href="#fn%3A4" class="footnote-ref">4</a></sup> lassen sich kleine Hilfsroutinen und auch komplexen Bibliotheken schreiben. </p>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="https://de.wikipedia.org/wiki/HTML5">https://de.wikipedia.org/wiki/HTML5</a>&#160;<a href="#fnref1%3A1" rev="footnote" class="footnote-backref">&#8617;</a> <a href="#fnref2%3A1" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p><a href="https://de.wikipedia.org/wiki/Cascading_Style_Sheets">https://de.wikipedia.org/wiki/Cascading_Style_Sheets</a>&#160;<a href="#fnref1%3A2" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p><a href="https://de.wikipedia.org/wiki/JavaScript">https://de.wikipedia.org/wiki/JavaScript</a>&#160;<a href="#fnref1%3A3" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-<li id="fn:4">
-<p><a href="https://de.wikipedia.org/wiki/JavaScript">https://de.wikipedia.org/wiki/JavaScript</a>&#160;<a href="#fnref1%3A4" rev="footnote" class="footnote-backref">&#8617;</a> <a href="#fnref2%3A4" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-</ol>
-</div><h2 id="die-autorin">Die Autorin</h2>
+<p>Für das Verständnis der Beispiele sind darüber hinaus grundlegende <a href="https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&amp;oldid=183718070">JavaScript</a> 
+Kenntnisse hilfreich. Für die Entwicklung dynamischer Webseiten ist JavaScript unerlässlich. </p>
+<blockquote>
+<p>Mit <a href="https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&amp;oldid=183718070">JavaScript</a> 
+lassen sich kleine Hilfsroutinen und auch komplexen Bibliotheken schreiben. </p>
+</blockquote>
+<h2 id="die-autorin">Die Autorin</h2>
 <p>Ich habe über 30 Jahre im öffentlichen Dienst gearbeitet. Die meiste Zeit 
 als Systemadministratorin in einer Bank.  </p>
 <p>In dieser Zeit habe ich nebenberuflich das Abitur nachgeholt und im 
@@ -134,17 +110,18 @@ Anschluss ein Studium mit dem Abschluss Master of Computer Science bei der
 Fernuni Hagen abgeschlossen.  </p>
 <p>Heute arbeite ich freiberuflich unter anderem mit Leaflet, lebe mit 
 meinem Mann, meiner Tochter, meinem Hund und meiner Katze in einem kleinen Dorf 
-in der Eifel und bin passionierte Joggerin.  </p>
+in der Eifel.  </p>
 <p>Fragen zum Buch, konstruktive Kritik, Anregungen und Hinweise auf Tippfehler können 
 gerne per E-Mail an die E-Mail-Adresse 
 <a href="mailto:info@astrid-guenther.de">info@astrid-guenther.de</a> gesandt werden.</p><h1 id="eine-karte-mit-leaflet-erstellen">Eine Karte mit Leaflet erstellen</h1>
 <p><a href="#" id="EineKarteMitLeafletErstellen"></a></p>
 <p>Zunächst zeige ich Ihnen, wie Sie in vier einfachen Schritten eine 
-<em>digitale Karte</em> mit Leaflet in ein <abbr title="Hypertext Markup Language">HTML</abbr> Dokument einbinden.  </p>
+<em>digitale Karte</em> mit Leaflet in ein HTML Dokument einbinden.  </p>
 <p>Mit Leaflet müssen Sie dafür nicht wissen, was geografische Koordinaten sind 
 und wie die Bilddateien für die Karten erstellt werden. Da dies aber als Hintergrundwissen bei einer eventuellen Fehlersuche hilfreich sein kann, 
 habe ich einen Theorie-Teil in dieses Kapitel eingefügt. 
-Hier erkläre ich Ihnen Wichtiges zum Thema geografische Koordinaten und die übliche 
+Hier erkläre ich Ihnen alles Wichtige zum Thema 
+geografische Koordinaten und die übliche 
 Vorgehensweise beim Erstellen und Zuordnen der Imagedateien für diese Karten – 
 die <em>Kachel-Technik</em>. Zum Abschluss lernen Sie dann noch eine Alternative zur 
 Kachel-Technik kennen, den <em>Web-Map-Service</em>.</p>
@@ -152,14 +129,14 @@ Kachel-Technik kennen, den <em>Web-Map-Service</em>.</p>
 <p>Um eine Karte mit Leaflet auf einer Internetseite anzuzeigen, 
 reichen wenige Schritte aus:</p>
 <ol>
-<li>Integrieren Sie die notwendigen JavaScript und Cascading Style Sheet Dateien (<abbr title="Cascading Style Sheet">CSS</abbr>). </li>
-<li>Erstellen Sie ein <abbr title="Hypertext Markup Language">HTML</abbr>-Element – üblicherweise ein <code>&lt;div&gt;</code>-Element – in dem Ihre Karte angezeigt werden soll. </li>
+<li>Integrieren Sie die notwendigen JavaScript und Cascading Style Sheet Dateien (CSS). </li>
+<li>Erstellen Sie ein HTML-Element – üblicherweise ein <code>&lt;div&gt;</code>-Element – in dem Ihre Karte angezeigt werden soll. </li>
 <li>Erstellen Sie das JavaScript Karten-Objekt. </li>
 <li>Fügen Sie eine Schicht mit Kacheln – einen Tile-Layer – zum Karten-Objekt hinzu. </li>
 </ol>
-<p>Noch vor Schritt 1 erstellen wir eine einfache <abbr title="Hypertext Markup Language">HTML</abbr>-Datei. 
+<p>Noch vor Schritt 1 erstellen wir eine einfache HTML-Datei. 
 Diese Datei ist die Grundlage für die Beispiele hier im Buch. 
-Den Programmcode für die einfache <abbr title="Hypertext Markup Language">HTML</abbr>-Datei sehen Sie im nachfolgenden 
+Den Programmcode für die einfache HTML-Datei sehen Sie im nachfolgenden 
 Programmcodebeispiel. Fügen Sie diesen Programmcode in eine Datei ein und 
 speichern diese Datei ab.</p>
 <pre><code>&lt;!DOCTYPE HTML&gt;
@@ -175,51 +152,52 @@ speichern diese Datei ab.</p>
 <p>Ein Aufruf dieser Datei in Ihrem Browser öffnet zunächst nur ein 
 leeres Browser-Fenster. Nur der Titel der Seite ist in der Titelleiste des 
 Browsers abzulesen. In den nächsten vier Kapiteln erfahren Sie, wie Sie die 
-digitale Landkarte in das Fenster bekommen. Vier Kapitel hört sich aufwendiger 
+digitale Landkarte in das Fenster bekommen. Vier Kapitel hört sich aufwendig 
 an. Das ist es aber nicht. Fangen Sie an und Sie werden sehen, dass Sie schon 
 in wenigen Minuten die Karte präsentieren können.</p>
 <p><a href="#" id="IntegrierenSiedienotwendigenJavaScriptundCascadingStyleSheet"></a></p>
 <h3 id="integrieren-sie-die-notwendigen-javascript-und-cascading-sty">Integrieren Sie die notwendigen JavaScript und Cascading Style Sheet Dateien</h3>
-<p>Sie haben zwei Möglichkeiten die notwendigen Dateien in Ihr <abbr title="Hypertext Markup Language">HTML</abbr>-Dokument zu integrieren.</p>
+<p>Sie haben zwei Möglichkeiten die notwendigen Dateien in Ihr HTML-Dokument zu integrieren.</p>
 <ol>
-<li>Binden Sie die Dateien über ein <abbr title="Delivery Network">CDN</abbr> in Ihr <abbr title="Hypertext Markup Language">HTML</abbr>-Dokument ein. </li>
-<li>Kopieren Sie die Dateien und binden Sie die lokale Kopie in Ihr <abbr title="Hypertext Markup Language">HTML</abbr>-Dokument ein. </li>
+<li>Binden Sie die Dateien über ein CDN in Ihr HTML-Dokument ein. </li>
+<li>Kopieren Sie die Dateien und binden Sie die lokale Kopie in Ihr HTML-Dokument ein. </li>
 </ol>
 <blockquote>
 <p>Ein <a href="https://de.wikipedia.org/wiki/Content_Delivery_Network">Content Delivery Network</a> 
-oder Content <em>Distribution</em> Network (<abbr title="Delivery Network">CDN</abbr>) ist ein
+oder Content <em>Distribution</em> Network (CDN) ist ein
 Netz von Servern, das über das Internet verbundenen ist. Die
 Server in diesem Netzwerk bieten Inhalte zum Download an.</p>
 </blockquote>
 <h4 id="leaflet-uber-ein-content-delivery-network-einbinden">Leaflet über ein Content Delivery Network einbinden</h4>
-<p>Sie können Leaflet mithilfe eines <abbr title="Delivery Network">CDN</abbr> nutzen. So müssen Sie die Dateien 
+<p>Sie können Leaflet mithilfe eines CDN nutzen. So müssen Sie die Dateien 
 nicht selbst herunterladen. Es ist lediglich eine Verlinkung nötig. 
-Mit der richtigen Verlinkung wird Leaflet automatisch über das <abbr title="Delivery Network">CDN</abbr> heruntergeladen, 
+Mit der richtigen Verlinkung wird Leaflet automatisch über das CDN heruntergeladen, 
 wenn ein Website Besucher Ihre Website aufruft. Im nachfolgenden Programmcodebeispiel 
-sehen Sie den Text für die Verlinkung zum Aufruf der Leaflet-Version 1.2.0 in 
-fett formatiert.</p>
-<pre><code>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset="utf-8"/&gt;
-&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+sehen Sie den Text für die Verlinkung zur Leaflet-Version 1.2.0. Den 
+relevanten Teil habe ich mit Sternen markiert.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;meta charset="utf-8"/&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
 * &lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" /&gt;
 * &lt;script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
 &lt;!--index_998.html--&gt;</code></pre>
 <blockquote>
-<p>Welche Leaflet-Versionen Ihnen über das <abbr title="Delivery Network">CDN</abbr> zur Verfügung stehen, können
+<p>Welche Leaflet-Versionen Ihnen über das CDN zur Verfügung stehen, können
 Sie jederzeit unter der Adresse <a href="http://leafletjs.com/download.html">http://leafletjs.com/download.html</a>
 nachlesen.</p>
 </blockquote>
-<p>Auch wenn die Dateien der Leaflet Bibliothek nun automatisch über das <abbr title="Delivery Network">CDN</abbr> heruntergeladen werden: 
+<p>Auch wenn die Dateien der Leaflet Bibliothek nun automatisch über das CDN heruntergeladen werden: 
 Ein Aufruf Ihrer Datei in Ihrem Browser öffnet immer noch ein leeres Browser-Fenster. 
 Erst im letzten Schritt, im Kapitel <em><a href="#FuegenSieEineSchichtMitKachelnHinzu">Fügen Sie eine Schicht mit Kacheln – einen Tile-Layer – zum Karten-Objekt hinzu</a>,</em> wird die Karte sichtbar.</p>
 <blockquote>
-<p>Fast alle modernen Browser unterstützen Subresource Integrity<sup id="fnref1:1"><a href="#fn%3A1" class="footnote-ref">1</a></sup> (SRI) und auch 
+<p>Fast alle modernen Browser unterstützen <a href="https://en.wikipedia.org/w/index.php?title=Subresource_Integrity&amp;oldid=839480720">Subresource Integrity (SRI)</a> 
+und auch 
 Leaflet verwendet diese
 Sicherheitsfunktion. SRI steht für die Überprüfung der Integrität
 von Dateien die im Internet verwendet werden. Mithilfe dieser
@@ -228,8 +206,9 @@ Server ausgeführt werden. Die Dateien könnten beispielsweise bei der Übertrag
 Ihnen auch ausgeliefert werden sollte – oder eine
 Fehlermeldung. Dabei wird auf eine Prüfsumme – also einen
 Hash-Wert – zurückgegriffen. Diese Prüfsumme macht die Datei eindeutig erkennbar. Um potenzielle Sicherheitsprobleme zu vermeiden, empfehle ich
-Ihnen SRI zu nutzen, wenn Sie Leaflet über ein <abbr title="Delivery Network">CDN</abbr> einbinden. Wie
-Sie dies genau handhaben, finden Sie unter der Adresse <a href="http://leafletjs.com/download.html">http://leafletjs.com/download.html</a> .</p>
+Ihnen SRI zu nutzen, wenn Sie Leaflet über ein CDN einbinden. Informationen dazu, wie 
+Sie dies genau handhaben, finden Sie unter der 
+Adresse <a href="http://leafletjs.com/download.html">http://leafletjs.com/download.html</a> .</p>
 </blockquote>
 <h4 id="eine-lokale-leaflet-kopie-einbinden">Eine lokale Leaflet-Kopie einbinden</h4>
 <p><a href="#" id="EineKarteMitLeafletErstellenEinelokaleLeafletKopieeinbinden"></a></p>
@@ -237,18 +216,21 @@ Sie dies genau handhaben, finden Sie unter der Adresse <a href="http://leafletjs
 Leaflet-Dateien selbst herunterzuladen. Die aktuellen Versionen finden Sie unter 
 der Adresse <a href="http://leafletjs.com/download.html">http://leafletjs.com/download.html</a> . Diese müssen Sie anschließend auf 
 dem eigenen Server verfügbar machen und in Ihre Website einbinden.<br />
-Diese Variante hat den <em>Vorteil</em>, dass Sie nicht von einem <abbr title="Delivery Network">CDN</abbr> Server abhängig sind. 
+Diese Variante hat den <em>Vorteil</em>, dass Sie nicht von einem CDN Server abhängig sind. 
 Somit haben Sie mehr Sicherheit. Sie wissen genau, welche Datei Sie auf Ihrem Server 
 abgelegt haben und haben Einfluss auf die Konfiguration Ihres Servers.<br />
 <em>Nachteilig</em> ist dabei allerdings, dass Sie sich selbst um alles kümmern müssen. 
 Sie müssen selbst die Dateien kopieren und sicherstellen, dass Sie die passende 
 Version von Leaflet nutzen. Aktualisierungen müssen Sie selbst vornehmen.</p>
-<p>Im nachfolgenden Codebeispiel sehen Sie – fett hervorgehoben – das Einbinden von 
+<p>Im nachfolgenden Codebeispiel sehen Sie – die relevanten Stellen mit einem Stern 
+markiert – das Einbinden von 
 Leaflet unter der Annahme, dass Sie die heruntergeladenen Dateien - relativ 
-zu Ihrem <abbr title="Hypertext Markup Language">HTML</abbr>-Dokument ein Verzeichnis höher - im Unterverzeichnis <code>/leaflet</code> auf 
+zu Ihrem HTML-Dokument ein Verzeichnis höher - im Unterverzeichnis <code>/leaflet</code> auf 
 Ihrem Webserver abgelegt haben.</p>
 <blockquote>
-<p>Wenn Sie mit relativen Pfadangaben<sup id="fnref1:2"><a href="#fn%3A2" class="footnote-ref">2</a></sup> arbeiten, 
+<p>Wenn Sie mit 
+<a href="https://de.wikipedia.org/w/index.php?title=Pfadname&amp;oldid=182767239">relativen Pfadangaben</a> 
+arbeiten, 
 setzen Sie die Links innerhalb eines
 Projektes mit Hilfe von Punkten. Der große Vorteil von relativen
 Pfadangaben ist, dass Sie ein Projekt jederzeit in ein anderes
@@ -261,39 +243,45 @@ zeigen auf eine Datei, die sich ein Verzeichnis höher
 befindet.<br />
 Zweimal zwei Punkte gefolgt von einem Schrägstrich
 hintereinander (<code>../../datei.html</code>) 
-zeigen auf eine Datei, die sich zwei Verzeichnisse höher befindet.</p>
+zeigen auf eine Datei, die sich zwei Verzeichnisse höher befindet.<br />
+Wenn Ihnen meine Erklärung 
+nicht hilfreich erscheint sehen sich doch einfach alles im nächsten Beispiel an. 
+Manchmal sagt ein Beispiel mehr als viele Worte. 
+Nach meiner Erfahrung wird bei der praktischen Anwendung 
+Vieles oft sehr schnell klarer.</p>
 </blockquote>
-<p><code>&lt;!DOCTYPE HTML&gt;</code><br />
-<code>&lt;html&gt;</code><br />
-<code>&lt;head&gt;</code><br />
-<code>&lt;meta charset="utf-8"/&gt;</code><br />
-<code>&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;</code><br />
-<strong><code>&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;</code></strong><br />
-<strong><code>&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;</code></strong><br />
-<code>&lt;/head&gt;</code><br />
-<code>&lt;body&gt;</code><br />
-<code>&lt;/body&gt;</code><br />
-<code>&lt;/html&gt;</code><br />
-<code>&lt;!--index_998a.html--&gt;</code>  </p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;meta charset="utf-8"/&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+*&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+*&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;  
+&lt;!--index_998a.html--&gt;</code></pre>
 <p>Auch wenn Leaflet nun lokal geladen wird, zeigt ein Aufruf dieser Datei in Ihrem Browser 
 immer noch ein leeres Browser-Fenster. Erst im letzten Schritt - 
 im Kapitel <em><a href="#FuegenSieEineSchichtMitKachelnHinzu">Fügen Sie eine Schicht mit Kacheln – einen Tile-Layer – zum Karten-Objekt hinzu</a></em>  wird die Karte sichtbar.</p>
 <blockquote>
-<p>Vielleicht fragen Sie sich, warum ich den Link zur <abbr title="Cascading Style Sheet">CSS</abbr>-Datei mithilfe 
+<p>Vielleicht fragen Sie sich, warum ich den Link zur CSS-Datei mithilfe 
 eines selbst-schließenden Tags – also einem <em>unary</em> Tag – geschrieben habe, 
 aber für das Tag, in dem das Skript eingebunden wird, zwei separate 
 Tags – also ein <em>binary</em>
 Tag – verwendet habe.<br />
 <strong><code>&lt;link</code></strong> <code>rel="stylesheet" href="../leaflet/leaflet.css"</code><strong><code>/&gt;</code></strong><br />
 <strong><code>&lt;script</code></strong><code>src="../leaflet/leaflet.js"</code><strong><code>&gt;&lt;/script&gt;</code></strong><br />
-<abbr title="Hypertext Markup Language">HTML</abbr> unterscheidet zwischen Tags, die nie
+<a href="https://de.wikipedia.org/w/index.php?title=Hilfe:Tags&amp;oldid=181586744#Syntax">HTML unterscheidet</a> 
+zwischen Tags, die nie
 Inhalt enthalten können – nämlich den <em>void</em>-Tags –, und
 solchen, die prinzipiell Inhalt enthalten können. Im ersten Fall
 muss ein selbst-schließendes <em>unary</em> Tag verwendet werden.
-Hierzu gehört das &lt;link&gt;-Tag<sup id="fnref1:3"><a href="#fn%3A3" class="footnote-ref">3</a></sup> .
+Hierzu gehört das &lt;link&gt;-Tag.
 Im zweiten Fall darf kein selbst-schließendes <em>unary</em> Tag
 benutzt werden – auch dann nicht, wenn das Tag tatsächlich leer
-ist. Hierzu gehört das &lt;script&gt;-Tag<sup id="fnref1:4"><a href="#fn%3A4" class="footnote-ref">4</a></sup> .</p>
+ist. Hierzu gehört das &lt;script&gt;-Tag.</p>
 </blockquote>
 <h4 id="leaflet-performant-einbinden-defer-oder-async">Leaflet performant einbinden – defer oder async</h4>
 <p>In diesem Kapitel erkläre ich Ihnen, wie Sie Leaflet in Ihre Website einbinden 
@@ -305,13 +293,13 @@ wenn Sie die ersten Karten selbst erstellt haben.</p>
 <p>Sehen wir uns zunächst einmal an, was genau passiert, wenn ein Browser eine 
 Website mit einem <code>&lt;script&gt;</code>-Tag lädt.</p>
 <ol>
-<li>Als erstes lädt der Browser den Text der <abbr title="Hypertext Markup Language">HTML</abbr>-Seite. </li>
-<li>Als nächstes beginnt er, den <abbr title="Hypertext Markup Language">HTML</abbr>-Code zu analysieren, also zu parsen. </li>
+<li>Als erstes lädt der Browser den Text der HTML-Seite. </li>
+<li>Als nächstes beginnt er, den HTML-Code zu analysieren, also zu parsen. </li>
 <li>Nun trifft der Parser auf das <code>&lt;script&gt;</code>-Tag, welches auf eine externe Skript-Datei verweist. </li>
 <li>Der Browser fordert die Skript-Datei an. Einstweilen blockiert und stoppt der Parser seine Arbeit. </li>
 <li>Je nach Größe der Datei ist das Skript nach einiger Zeit vollständig heruntergeladen und wird anschließend ausgeführt. </li>
 <li>Nun endlich kann der Parser seine Arbeit fortsetzten und den Rest des 
-<abbr title="Hypertext Markup Language">HTML</abbr>-Dokuments analysieren und am Ende im Browser anzeigen. </li>
+HTML-Dokuments analysieren und am Ende im Browser anzeigen. </li>
 </ol>
 <p>Wenn Sie sich diese Abfolge ansehen, können Sie sich vorstellen, dass Punkt vier 
 das performante Laden der Website negativ beeinflusst. Der Ladevorgang der Website 
@@ -320,14 +308,20 @@ nichts mehr. Und wenn es eine Sache gibt, die Website-Besucher und Suchmaschinen
 mögen, dann ist dies die Wartezeit beim Aufbau der Website.</p>
 <h5 id="wie-konnen-sie-die-ladezeit-positiv-beeinflussen">Wie können Sie die Ladezeit positiv beeinflussen?</h5>
 <p>Um das im vorherigen Abschnitt beschriebene Problem zu umgehen wurde früher oft empfohlen, den JavaScript-Code möglichst nah am schließenden <code>&lt;body&gt;</code>-Tag in die Website zu integrieren. Zu dieser Empfehlung gibt es mit HTML5 zwei gute Alternativen – nämlich die Attribute <code>defer</code> und <code>async</code>.</p>
-<p>Sofern Sie das Attribut <code>defer</code><sup id="fnref1:5"><a href="#fn%3A5" class="footnote-ref">5</a></sup> verwenden, wird das Skript ausgeführt, wenn das <abbr title="Hypertext Markup Language">HTML</abbr>-Dokument geladen und für die Ansicht umgewandelt - also geparst - ist. Zum anderen können Sie das Attribut <code>async</code>[^6] einsetzten. Mit <code>async</code> wird Ihr Skript asynchron mit dem <abbr title="Hypertext Markup Language">HTML</abbr>-Dokument ausgeführt. Wenn Sie keines dieser Attribute explizit angegeben, wird erst das vollständige Skript geladen und ausgeführt und erst dann wird das Laden und Parsen des <abbr title="Hypertext Markup Language">HTML</abbr>-Dokuments fortgesetzt.</p>
+<p>Sofern Sie das Attribut <code>defer</code> verwenden, wird das Skript ausgeführt, 
+wenn das HTML-Dokument geladen und für die Ansicht umgewandelt - also geparst - ist. 
+Zum anderen können Sie das Attribut <code>async</code> 
+einsetzten. Mit <code>async</code> wird Ihr Skript asynchron mit dem HTML-Dokument ausgeführt. 
+Wenn Sie keines dieser Attribute explizit angegeben, wird erst das vollständige 
+Skript geladen und ausgeführt und erst dann wird das Laden und Parsen des 
+HTML-Dokuments fortgesetzt.</p>
 <h5 id="was-sollten-sie-beim-einsatz-von-defer-oder-async-mit-leafle">Was sollten Sie beim Einsatz von defer oder async mit Leaflet beachten?</h5>
 <p>Wenn Sie Ihre Karte auf Ihrer Website anzeigen, werden Sie nicht nur das 
 Leaflet-Skript laden. Sie werden später noch eigenen JavaSript-Code schreiben. 
 Dieser eigene Code setzt das Laden des Leaflet-Skripts voraus. 
 Aus diesem Grund müssen Sie sicherstellen, dass die Leaflet Bibliothek vollständig 
 geladen ist, bevor Ihr eigener Code ausgeführt wird. Dies können Sie mithilfe 
-des <em>Eventhandlers</em>[^7]: <code>load</code>[^8].  </p>
+des <em>Eventhandlers</em>: <code>load</code>.  </p>
 <p>Obwohl Ihr eigenes Skript voraussetzt, dass Leaflet vollständig geladen ist, 
 können Sie das Attribut <code>async</code> verwenden. Sehen Sie selbst: Das folgende einfache 
 Beispiel zeigt es Ihnen.</p>
@@ -345,7 +339,7 @@ Beispiel zeigt es Ihnen.</p>
 <code>&lt;!--mymap_99.html--&gt;</code>  </p>
 <p>In ihrem eigenen Skript <code>mymap_99.js</code> müssen Sie mithilfe 
 von <code>window.addEventListener('load', function() ... )</code> das Laden des 
-vollständigen <abbr title="Hypertext Markup Language">HTML</abbr>-Dokuments abwarte.</p>
+vollständigen HTML-Dokuments abwarte.</p>
 <p><strong><code>window.addEventListener('load', function()</code></strong>
 <code>{</code><br />
 <code>var map = L.map('map',</code><br />
@@ -361,15 +355,15 @@ vollständigen <abbr title="Hypertext Markup Language">HTML</abbr>-Dokuments abw
 erstellt, weil ich den Schwerpunkt auf die Verwendung von Leaflet 
 selbst setzen wollte.</p>
 <h3 id="erstellen-sie-ein-element-dem-ihre-karte-angezeigt-werden-so">Erstellen Sie ein Element in dem Ihre Karte angezeigt werden soll</h3>
-<p>Das Einfügen eines <abbr title="Hypertext Markup Language">HTML</abbr>-Elements in unser Grundgerüst dürfte für Sie kein Problem 
+<p>Das Einfügen eines HTML-Elements in unser Grundgerüst dürfte für Sie kein Problem 
 darstellen. Der Vollständigkeit halber habe ich diesen Schritt hier trotzdem eingefügt.</p>
 <p>Setzen Sie ein <code>&lt;div&gt;</code>-Element mit einer bestimmten <code>ID</code> an die Stelle in Ihrem 
-<abbr title="Hypertext Markup Language">HTML</abbr>-Dokument, an der Sie Ihre Karte anzeigen möchten. 
+HTML-Dokument, an der Sie Ihre Karte anzeigen möchten. 
 Stellen Sie dabei sicher, dass das <code>&lt;div&gt;</code>-Element, also der Kartencontainer, 
 eine definierte Höhe hat.</p>
 <blockquote>
-<p>Der einfachste Weg einem <abbr title="Hypertext Markup Language">HTML</abbr>-Element eine feste Höhe zuzuordnen, ist das <code>style</code>-Attribut
-– also direkt im <abbr title="Hypertext Markup Language">HTML</abbr>-Element selbst. Weil hier im Buch <em>Leaflet</em> das
+<p>Der einfachste Weg einem HTML-Element eine feste Höhe zuzuordnen, ist das <code>style</code>-Attribut
+– also direkt im HTML-Element selbst. Weil hier im Buch <em>Leaflet</em> das
 Hauptthema ist, verwende ich für das Einbinden von Stylesheets in
 den Beispielen diese einfache Methode. Durch das direkte Festlegen von
 Formaten gehen allerdings im praktischen Einsatz viele Vorteile
@@ -389,7 +383,7 @@ Sie unter anderem unter der Adresse <a href="https://wiki.selfhtml.org/wiki/CSS/
 <code>&lt;/body&gt;</code><br />
 <code>&lt;/html&gt;</code><br />
 <code>&lt;!--index_997.html--&gt;</code>  </p>
-<p>So, nun ist das <abbr title="Hypertext Markup Language">HTML</abbr>-Dokument bereit ein Leaflet Kartenobjekt zu initialisieren 
+<p>So, nun ist das HTML-Dokument bereit ein Leaflet Kartenobjekt zu initialisieren 
 und interessante Dinge mit ihm anzustellen.</p>
 <h3 id="erstellen-sie-das-karten-objekt">Erstellen Sie das Karten-Objekt</h3>
 <p>Nun wird es spannend. Wir erstellen das erste Skript. Dabei beginnen wir mit dem 
@@ -420,11 +414,11 @@ erstellen konnten? Die Antwort ist einfach: Die Leaflet-Klassen sind mit
 einem Großbuchstaben – beispielsweise <strong><code>L.Map</code></strong>–benannt und diese 
 müssen mit <code>new</code> erstellt werden. Es gibt aber Shortcuts mit Kleinbuchstaben
 – <strong><code>L.map</code></strong> – die aus Bequemlichkeitsgründen von den Leaflet-Programmierern
-für Sie erstellt wurden. Leaflet setzt hier das Entwurfsmuster Fabrikmethode[^9] 
+für Sie erstellt wurden. Leaflet setzt hier das Entwurfsmuster Fabrikmethode 
 (englisch factory method) ein. Das Muster beschreibt, wie ein Objekt
 durch Aufruf einer Methode anstatt durch direkten Aufruf eines Konstruktors erzeugt wird.<br />
 Wollen Sie sich dies selbst ansehen? Die Funktion <code>L.map()</code> der Klasse <code>L.Map</code> 
-finden Sie auf Github ganz am Ende in der Datei <code>map.js</code>[^10]. Ein weiteres Beispiel 
+finden Sie auf Github ganz am Ende in der Datei <code>map.js</code>. Ein weiteres Beispiel 
 finden Sie zu Beginn des Kapitels <a href="#Fabrikmethode2">Custom Markers</a>.</p>
 </blockquote>
 <p>Das Festlegen des Kartenmittelpunktes mithilfe der Koordinaten <code>[50.27264, 7.26469]</code> 
@@ -498,38 +492,46 @@ können Sie die genaue Position eines jedes Punktes auf der Erdoberfläche angeb
 <p><a href="#" id="DasKoordinatensystemderErde"></a></p>
 <p>Das Grad-Netz der Erde ist ein gedachtes Koordinatensystem auf der Erdoberfläche mit sich rechtwinklig schneidenden Längen- und Breitenkreisen. Zum Aufbau dieses Koordinatensystems wird unser Erdball zunächst in 180 Breitenkreise und 360 Längenkreise eingeteilt.</p>
 <ul>
-<li>Die  Breitengrade<sup id="fnref2:1"><a href="#fn%3A1" class="footnote-ref">1</a></sup> oder Breitenkreise verlaufen parallel zum Äquator. </li>
-<li>Die  Längengrade<sup id="fnref2:2"><a href="#fn%3A2" class="footnote-ref">2</a></sup> oder Längenkreise verbinden Nord- und Südpol. </li>
+<li>Die  <a href="https://de.wikipedia.org/w/index.php?title=Geographische_Breite&amp;oldid=183712238">Breitengrade</a> 
+oder Breitenkreise verlaufen parallel zum Äquator. </li>
+<li>Die <a href="https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&amp;oldid=182518754">Längengrade</a> 
+oder Längenkreise verbinden Nord- und Südpol. </li>
 </ul>
-<p>So entsteht ein grobmaschiges Gitter<sup id="fnref2:3"><a href="#fn%3A3" class="footnote-ref">3</a></sup>, anhand dessen jeder die ungefähre 
+<p>So entsteht ein <a href="https://de.wikipedia.org/w/index.php?title=Geographische_Koordinaten&amp;oldid=183407489">grobmaschiges Gitter</a>, 
+anhand dessen jeder die ungefähre 
 Position auf der Erdoberfläche bestimmen kann.</p>
 <p><img src="../media/images/964er.png" alt="Das Gradnetz der Erde - By CIA, Niteowlneils (Public domain), via Wikimedia Commons" />
 <em>Abbildung: Das Gradnetz der Erde - By CIA, Niteowlneils (Public domain), via Wikimedia Commons</em></p>
 <p>Um die Genauigkeit zu erhöhen, wird jeder Breiten- und Längengrad weiter unterteilt.</p>
 <h4 id="breitengrade">Breitengrade</h4>
-<p>Die Breitengrade<sup id="fnref3:1"><a href="#fn%3A1" class="footnote-ref">1</a></sup> verlaufen von Osten nach Westen. Vielleicht wissen Sie noch aus dem Erdkundeunterricht in der Schule, dass der Äquator im rechten Winkel zur Erdachse verläuft. Er liegt etwa in der Mitte zwischen Nord- und Südpol. Im geografischen Koordinatensystem gilt er als Ausgangspunkt für die Berechnung der Breitenkreise und ihm wird ein Winkel von 0° zugeordnet.</p>
+<p>Die <a href="https://de.wikipedia.org/w/index.php?title=Geographische_Breite&amp;oldid=183712238">Breitengrade</a> 
+verlaufen von Osten nach Westen. Vielleicht wissen Sie noch aus dem Erdkundeunterricht in der Schule, dass der Äquator im rechten Winkel zur Erdachse verläuft. Er liegt etwa in der Mitte zwischen Nord- und Südpol. Im geografischen Koordinatensystem gilt er als Ausgangspunkt für die Berechnung der Breitenkreise und ihm wird ein Winkel von 0° zugeordnet.</p>
 <p><img src="../media/images/964br.png" alt="Breitengrade (Latitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons" />
 <em>Abbildung: Breitengrade (Latitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons</em></p>
 <h4 id="langengrade">Längengrade</h4>
-<p>Die Längengrade<sup id="fnref3:2"><a href="#fn%3A2" class="footnote-ref">2</a></sup> auf der Erde verlaufen von Norden nach Süden. Sie umspannen die Erde praktisch. Eine Längenkreishälfte wird als Meridian bezeichnet. Die Längenkreise haben keinen natürlichen Nullpunkt. Heute gilt der Meridan, der den Londoner Stadtteil Greenwich durchläuft, als Nullmeridian und somit als Ausgangspunkt für die Berechnung der Längengrade.</p>
+<p>Die <a href="https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&amp;oldid=182518754">Längengrade</a> 
+auf der Erde verlaufen von Norden nach Süden. Sie umspannen die Erde praktisch. Eine Längenkreishälfte wird als Meridian bezeichnet. Die Längenkreise haben keinen natürlichen Nullpunkt. Heute gilt der Meridan, der den Londoner Stadtteil Greenwich durchläuft, als Nullmeridian und somit als Ausgangspunkt für die Berechnung der Längengrade.</p>
 <p><img src="../media/images/964la.png" alt="Längengrade (Longitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons" />
 <em>Abbildung: Längengrade (Longitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons</em></p>
 <h3 id="schreibweisen-von-geografischen-koordinaten">Schreibweisen von geografischen Koordinaten</h3>
 <p>Bei der Angabe von geographischen Koordinaten wird heute normalerweise eine von zwei 
-Schreibweisen verwendet: Entweder das Sexagesimalsystem<sup id="fnref2:4"><a href="#fn%3A4" class="footnote-ref">4</a></sup>, welches von Wikipedia 
+Schreibweisen verwendet: Entweder das <a href="https://de.wikipedia.org/wiki/Sexagesimalsystem">Sexagesimalsystem</a>, 
+welches von Wikipedia 
 verwendet wird, oder die Dezimalschreibweise, die von Computerprogrammen bevorzugt wird. 
 Im Laufe unserer Geschichte haben sich allerdings eine Menge mehr unterschiedlicher 
 Systeme entwickelt.</p>
 <blockquote>
 <p>Falls Sie einmal in die Verlegenheit
 kommen sollten und eine Koordinate aus einem System in ein anderes
-umrechnen müssen, kann ich Ihnen die Website deine-berge.de<sup id="fnref2:5"><a href="#fn%3A5" class="footnote-ref">5</a></sup> empfehlen,
+umrechnen müssen, kann ich Ihnen die Website <a href="https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10">https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10</a> 
+empfehlen,
 weil diese das Umrechnen zwischen vielen verschiedenen Systemen
 unterstützt.</p>
 </blockquote>
 <p>todotodo</p>
 <h4 id="das-sexagesimalsystem">Das Sexagesimalsystem</h4>
-<p>Das Sexagesimalsystem<sup id="fnref3:4"><a href="#fn%3A4" class="footnote-ref">4</a></sup> ist die traditionelle Schreibweise. Dieses System heißt 
+<p>Das <a href="https://de.wikipedia.org/wiki/Sexagesimalsystem">Sexagesimalsystem</a> 
+ist die traditionelle Schreibweise. Dieses System heißt 
 Sexagesimal, weil ein Grad eines Breitengrades 60 Minuten entspricht. Somit basiert 
 das Sexagesimalsystem auf der Zahl 60. Und der lateinische Name der Zahl 60 ist 
 <em>sexagesimus</em>.  </p>
@@ -818,7 +820,7 @@ mit Kacheln übersetzt und angezeigt.</p>
 <p>&lt;/table&gt;</p>
 <p>Die vollständige Tabelle können Sie unter der Adresse &lt;a href="<a href="http://wiki.openstreetmap.org/wiki/Zoom_levels&quot;&gt;http://wiki.openstreetmap.org/wiki/Zoom_levels">http://wiki.openstreetmap.org/wiki/Zoom_levels"&gt;http://wiki.openstreetmap.org/wiki/Zoom_levels</a>&lt;/a&gt; mit weiteren Angaben im Internet abrufen.</p>
 <p>Vielleicht probieren Sie nun das Zoomen im vorangegangene Beispiel aus und wundern sich, dass Sie die Karte nur bis zur Zoom-Stufe 18 vergrößern können. Das liegt daran, dass bei dieser OpenStreeMap Karte standardmäßig die Option <code>maxZoom</code> mit 18 gesetzt ist. Sie können diese Option jedoch überschreiben. Wie das geht sehen Sie im nachfolgenden Programmcodebeispiel fett formatiert. Weitere Informationen finden Sie im Kapitel zur Karte von  &lt;a href="#maxnativzoom"&gt;Stamen&lt;/a&gt;<em>.</em></p>
-<p>&lt;pre&gt;`&lt;!DOCTYPE <abbr title="Hypertext Markup Language">HTML</abbr>&gt;
+<p>&lt;pre&gt;`&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
@@ -968,7 +970,7 @@ so:
 &lt;/tbody&gt;</code></pre>
 <p>&lt;/table&gt;</p>
 <p>Wenn Sie Thunderforest verwenden möchten, müssen Sie unser bisheriges Beispiel nun in einer Zeile abändern. Sie müssen als Tile Layer nur die im Beispiel zu sehende URL angeben. Der nachfolgende Programmcode zeigt Ihnen ein vollständiges Beispiel.</p>
-<p>&lt;pre&gt;`&lt;!DOCTYPE <abbr title="Hypertext Markup Language">HTML</abbr>&gt;
+<p>&lt;pre&gt;`&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
@@ -1017,7 +1019,7 @@ var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);</p>
 &lt;/tbody&gt;</code></pre>
 <p>&lt;/table&gt;</p>
 <p>Beim Einbinden einer Karte von Stamen müssen Sie zusätzlich eine JavaScript Datei einbinden. Wie Sie den <code>StamenTileLayer</code> genau nutzen, können Sie im nachfolgenden Programmcodebeispiel ablesen.</p>
-<p>&lt;pre&gt;`&lt;!DOCTYPE <abbr title="Hypertext Markup Language">HTML</abbr>&gt;
+<p>&lt;pre&gt;`&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
@@ -1098,7 +1100,7 @@ Detaillierte technische Informationen zum Web Mapping Service (WMS) allgemein fi
 im Internet. Ausführliche Informationen zu den möglichen Funktionen eines Geoservers finden Sie unter &lt;a href="<a href="http://docs.geoserver.org&quot;&gt;http://docs.geoserver.org">http://docs.geoserver.org"&gt;http://docs.geoserver.org</a>&lt;/a&gt;.</p>
 </blockquote>
 <p>Ich möchte Sie hier an dieser Stelle nicht mit trockenen Dokumentationen von Web Services langweilen. Viel lieber zeige ich Ihnen ein praktisches Beispiel. Im nachfolgenden Programmcodeausschnitt sehen Sie die wesentlichen Zeilen fett hervorgehoben.</p>
-<p>&lt;pre&gt;`&lt;!DOCTYPE <abbr title="Hypertext Markup Language">HTML</abbr>&gt;
+<p>&lt;pre&gt;`&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
@@ -1137,7 +1139,7 @@ Die Leaflet Klasse
 Sie sich &lt;a href="<a href="https://github.com/Leaflet/Leaflet/blob/79e8bf724c4da1d7a95f758026c974ae96dfbc5c/src/layer/tile/TileLayer.WMS.js#L31&quot;&gt;hier">https://github.com/Leaflet/Leaflet/blob/79e8bf724c4da1d7a95f758026c974ae96dfbc5c/src/layer/tile/TileLayer.WMS.js#L31"&gt;hier</a>&lt;/a&gt;
 auf Github ansehen.</p>
 </blockquote>
-<p>Möchten Sie wissen, was vom WMS-Service geliefert wird? Dann öffnen Sie doch die <abbr title="Hypertext Markup Language">HTML</abbr>-Datei des vorherigen Beispiels in Ihrem Browser. Mit dem Layer <code>dwd:bluemarble</code> können Sie ein Satellitenbild zu Ihrer Karte hinzufügen. Wie das genau aussieht, sehen Sie im nachfolgenden Bild.</p>
+<p>Möchten Sie wissen, was vom WMS-Service geliefert wird? Dann öffnen Sie doch die HTML-Datei des vorherigen Beispiels in Ihrem Browser. Mit dem Layer <code>dwd:bluemarble</code> können Sie ein Satellitenbild zu Ihrer Karte hinzufügen. Wie das genau aussieht, sehen Sie im nachfolgenden Bild.</p>
 <p>&lt;img alt="" src="../Images/data-url-image19.png" id="Bild26"/&gt;</p>
 <h3 id="ltilelayerwms-uber-ltilelayerwms">L.tileLayer.wms über L.tileLayer.wms</h3>
 <p>Das Schöne an WMS-Layern ist, das Sie diese übereinander legen können. Das nachfolgende Beispiel enthält Programmcode, der im Ergebnis gleichzeitig drei WMS-Layer übereinander anzeigt.</p>
@@ -1178,7 +1180,7 @@ auf Github ansehen.</p>
 <p>&lt;img alt="" src="../Images/data-url-image21.png" id="Bild28"/&gt;</p>
 <h3 id="ltilelayerwms-und-ltilelayer-zusammen-auf-einer-karte">L.tileLayer.wms und L.tileLayer zusammen auf einer Karte</h3>
 <p>Das nachfolgende Beispiel zeigt Ihnen, wie Sie einen  <code>L.tileLayer</code> mit einem <code>L.tileLayer.wms</code> kombinieren können.</p>
-<p>&lt;pre&gt;`&lt;!DOCTYPE <abbr title="Hypertext Markup Language">HTML</abbr>&gt;
+<p>&lt;pre&gt;`&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
@@ -1217,27 +1219,7 @@ liegen, dass es zur Zeit keine Warnungen gibt.<br />
 Dieser Layer enthält nur Daten, wenn aktuell Wetterwarnungen vorliegen.<br />
 Die grünen Polygone – im Layer <code>dwd:Warngebiete_Kreise</code>  – die 
 die Landkreise darstellen, werden dahingegen immer eingeblendet.</p>
-</blockquote>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="https://de.wikipedia.org/wiki/Geographische_Breite">https://de.wikipedia.org/wiki/Geographische_Breite</a>&#160;<a href="#fnref1%3A1" rev="footnote" class="footnote-backref">&#8617;</a> <a href="#fnref2%3A1" rev="footnote" class="footnote-backref">&#8617;</a> <a href="#fnref3%3A1" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p><a href="https://de.wikipedia.org/wiki/Geographische_L%C3%A4nge">https://de.wikipedia.org/wiki/Geographische_L%C3%A4nge</a>&#160;<a href="#fnref1%3A2" rev="footnote" class="footnote-backref">&#8617;</a> <a href="#fnref2%3A2" rev="footnote" class="footnote-backref">&#8617;</a> <a href="#fnref3%3A2" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p><a href="https://de.wikipedia.org/wiki/Geographische_Koordinaten">https://de.wikipedia.org/wiki/Geographische_Koordinaten</a>&#160;<a href="#fnref1%3A3" rev="footnote" class="footnote-backref">&#8617;</a> <a href="#fnref2%3A3" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-<li id="fn:4">
-<p><a href="https://de.wikipedia.org/wiki/Sexagesimalsystem">https://de.wikipedia.org/wiki/Sexagesimalsystem</a>&#160;<a href="#fnref1%3A4" rev="footnote" class="footnote-backref">&#8617;</a> <a href="#fnref2%3A4" rev="footnote" class="footnote-backref">&#8617;</a> <a href="#fnref3%3A4" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-<li id="fn:5">
-<p><a href="https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10">https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10</a>&#160;<a href="#fnref1%3A5" rev="footnote" class="footnote-backref">&#8617;</a> <a href="#fnref2%3A5" rev="footnote" class="footnote-backref">&#8617;</a></p>
-</li>
-</ol>
-</div><h1 id="die-karte-mit-daten-bestucken">Die Karte mit Daten bestücken</h1>
+</blockquote><h1 id="die-karte-mit-daten-bestucken">Die Karte mit Daten bestücken</h1>
 <p><a href="#" id="DieKarteMitDatenBestuecken"></a></p>
 <p>Sie können nun eine digitale Karte mit Leaflet in ein HTML Dokument einbinden, 
 Sie wissen was geografische Koordinaten sind und wie die Imagedateien für digitale Karten erstellt werden. Darauf aufbauend können wir nun im nächsten Kapitel Ihre digitale Karte mit Geodaten füllen.</p>
@@ -6271,141 +6253,345 @@ die ESRI anbietet, angesehen.
 Danach haben wir mit einem Shapefile gearbeitet und ESRI Webservices genutzt. 
 Sie wissen nun was ein <code>L.esri.DynamicMapLayer,</code> 
 was Geocoding und was ein <code>L.esri.FeatureLayer</code> ist.</p><h1 id="routing">Routing</h1>
-<p>Last, but not least möchte ich Ihnen ein &lt;a class="sigil_index_marker" title="Routing" id="sigil_index_id_1"&gt;Routing&lt;/a&gt;  Plugin vorstellen, nämlich die &lt;a href="<a href="https://github.com/perliedman/leaflet-routing-machine&quot;&gt;Leaflet">https://github.com/perliedman/leaflet-routing-machine"&gt;Leaflet</a> Routing Machine (<a href="https://github.com/perliedman/leaflet-routing-machine">https://github.com/perliedman/leaflet-routing-machine</a>)&lt;/a&gt; von &lt;a href="<a href="http://www.liedman.net/leaflet-routing-machine/&quot;&gt;Per">http://www.liedman.net/leaflet-routing-machine/"&gt;Per</a> Liedmann&lt;/a&gt;.</p>
-<p>Falls Sie lieber die Version des
+<p><a href="#" id="Routing"></a></p>
+<p>Last, but not least möchte ich Ihnen ein 
+Routing Plugin vorstellen, nämlich die 
+<a href="https://github.com/perliedman/leaflet-routing-machine">Leaflet Routing Machine</a> 
+von Per Liedmann.</p>
+<blockquote>
+<p>Auch das ESRI bietet ein Routing Plugin. Jede Leaflet Erweiterung hat 
+ihre Vorteile und ihre Nachteile. Falls Sie die Routing Version des
 Environmental Systems Research Institute ESRI einsetzen möchten,
 finden Sie alle Informationen hierfür unter der Adresse
-&lt;a href="<a href="https://github.com/jgravois/lrm-esri&quot;&gt;https://github.com/jgravois/lrm-esri">https://github.com/jgravois/lrm-esri"&gt;https://github.com/jgravois/lrm-esri</a> (<a href="https://github.com/jgravois/lrm-esri">https://github.com/jgravois/lrm-esri</a>)&lt;/a&gt;.</p>
-<p>&lt;h2 id="sigil_toc_id_92"&gt;In diesem Kapitel werden wir …&lt;/h2&gt;</p>
-<p>Als Erstes sehen wir uns kurz an, was sich hinter dem Begriff Routing versteckt. Danach werden wir das Plugin Leaflet Routing Machine in unsere Leaflet Karte integrieren. Dieses Plugin stellt zwei Textfelder zur Eingabe von Adressen zur Verfügung und berechnet auf Anforderung eine Route zwischen diesen beiden Adressen. Im weiteren Verlauf nutzen wir Optionen, um die Routenberechnung flexibler und benutzerfreundlicher zu machen.</p>
-<p>&lt;h2 id="sigil_toc_id_93"&gt;Allgemeines zum Thema Routing…&lt;/h2&gt;</p>
-<p>Fangen wir von vorne an. Es ist nämlich meiner Meinung nach auch spannend, einmal etwas über den Tellerrand zu blicken. Reicht es Ihnen, wenn sie zwei Adressen eingeben könnten und einen Weg zwischen diesen beiden Adressen als Ergebnis ausgegeben bekommen? Oder, möchten Sie etwas genauer wissen, was sich hinter dem Begriff Routing verbirgt? Wenn ersteres auf Sie zutrifft, dann lesen Sie am besten im nächsten Kapitel weiter. Ansonsten ist meine kurze Zusammenfassung hier im Kapitel vielleicht interessant für Sie.</p>
-<p>Das Berechnen einer Route kann von einer Software oder einem Dienst effizient durchgeführt werden. Dazu müssen die Daten der Karte, auf der die Berechnung ausgeführt werden soll, bestimmte Informationen enthalten. Die Daten von OpenStreetMap beinhalten Informationen, um Routen für verschiedene Profile berechnen zu können. Eine Route kann zum Beispiel für die Nutzung eines Autos oder eines Fahrrads unterschiedlich berechnet werden. Auch Optionen wie  <code>zu Fuß</code>  oder  <code>mit dem Pferd</code>  sind mit OpenStreetMap Daten möglich.</p>
-<p>Damit die Software zur Routenberechnung fehlerfrei funktioniert, müssen diese Daten qualitativ gut sein. Das bedeutet, dass Linien – also zum Beispiel Straßen – die verbunden sein sollen, auch wirklich verbunden sind. Umgekehrt dürfen Straßen, die sich auf verschieden Ebenen mithilfe von Brücken kreuzen, nicht verbunden sein. Das bedeutet auch, dass Poller oder Absperrpfosten, an denen kein Auto vorbeikommt, auch als solche eingezeichnet sind. Ganz wichtig ist es, dass Abbiegeverbote an Kreuzungen auf der Karte klar gekennzeichnet sind. Wie OpenStreetMap das macht, können Sie unter anderem auf der Website &lt;a href="<a href="http://wiki.openstreetmap.org/wiki/OSM_tags_for_routing&quot;&gt;http://wiki.openstreetmap.org/wiki/OSM_tags_for_routing">http://wiki.openstreetmap.org/wiki/OSM_tags_for_routing"&gt;http://wiki.openstreetmap.org/wiki/OSM_tags_for_routing</a>&lt;/a&gt; nachlesen.</p>
-<p>Um bei der Routen-Berechnung die schnellste Route bestimmen zu können, sind Geschwindigkeitsangaben notwendig. OpenStreetMap speichert für jede Straße den Standardhöchstwert für deutsche Straßen. Dieser Standardwerte kann jedoch für bestimmte Straßen anders sein. In diesem Fall ist es notwendig, dass beim Erstellung des Straßen-Objektes die zulässige Höchstgeschwindigkeit hinzufügt wird. Dies geschieht mit einer speziellen Eigenschaft oder mit einem speziellen Tag. Nebenbei haben auch andere Faktoren, wie Kurven, Steigungen oder Straßenbelag einen Einfluss auf die Geschwindigkeit – und dieser ist je nach Profil noch einmal unterschiedlich. Eine Steigung verringert die Geschwindigkeit eines Fahrrades stärker, als die eines Autos. Dafür wird der Fußgänger in Kurven nicht so viel an Geschwindigkeit verlieren wie ein Fahrrad.</p>
-<p>Aber auch dann, wenn die Kartendaten sehr gut und fehlerfrei sind, ist es nicht trivial die ideale Software zur Routen-Berechnung zu erstellen. Hinzu kommen nämlich noch die Besonderheiten des Personenkreises, für den die Route erstellt werden soll. Welche Wege sollen für Radfahrer berücksichtigt werden? Es gibt Radfahrer, die nicht gerne durch die Stadt fahren sondern lieber im Wald unterwegs ist. Andere ziehen eine asphaltierte Straße mitten durch die Stadt einem matschigen Feldweg vor. Wie wählen wir die beste Strecke für einen Radfahrer, der überwiegend in der Nacht trainiert? Oft kommt es sicher auch vor, dass eine Radtour geplant wird, bei der so viele Sehenswürdigkeiten wie möglich unmittelbar am Weg liegen sollten. Sie sehen: Die Berechnung einer optimalen Route ist etwas sehr Individuelles!</p>
-<p>Sehen wir uns also an, inwieweit das Plugin Leaflet Routing Machine diese Anforderungen erfüllt.</p>
-<p>&lt;h2 id="inleafletroutingmachine"&gt;Leaflet Routing Maching&lt;/h2&gt;</p>
-<p>Nachfolgende finden Sie das erste Beispiel für diesen Themenbereich.</p>
-<p>&lt;pre&gt;`&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-<strong>&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;</strong>
-<strong>&lt;link rel="stylesheet" href="leaflet-routing-machine.css"/&gt;</strong>
-&lt;/head&gt; &lt;body&gt; &lt;div style="height: 700px;" id="mapid"&gt;
-&lt;/div&gt;
-&lt;script&gt; var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);
-<strong>
-var control = L.Routing.control({</strong> <strong>waypoints: [</strong>
-<strong>L.latLng(50.273543, 7.262993),</strong> <strong>L.latLng(50.281168, 7.276211)</strong>
-<strong>],</strong> <strong>router: L.Routing.mapbox('pk.ihrkey')</strong>
-<strong>}).addTo(mymap);</strong></p>
-<p>&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_932.html--&gt;
-`&lt;/pre&gt;</p>
-<p>Was haben wir genau gemacht? Zunächst einmal haben wir die für die Verwendung der &lt;a href="<a href="http://www.liedman.net/leaflet-routing-machine/&quot;&gt;Leaflet">http://www.liedman.net/leaflet-routing-machine/"&gt;Leaflet</a> Routing Machine&lt;/a&gt;  erforderlichen Dateien eingebunden. Verantwortlich hierfür sind die Zeilen</p>
-<p><code>&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;</code></p>
-<p><code>&lt;link rel="stylesheet" href="leaflet-routing-machine.css"/&gt;.</code></p>
-<p>Die aktuellen Dateien zum Plugin finden Sie unter der Adresse &lt;a href="<a href="https://github.com/perliedman/leaflet-routing-machine/releases&quot;&gt;https://github.com/perliedman/leaflet-routing-machine/releases">https://github.com/perliedman/leaflet-routing-machine/releases"&gt;https://github.com/perliedman/leaflet-routing-machine/releases</a>&lt;/a&gt;. Als Nächstes haben wir mit dem Textblock</p>
-<p><code>var control = L.Routing.control({</code><br />
-<code>waypoints: [</code><br />
-<code>L.latLng(50.273543, 7.262993),</code><br />
-<code>L.latLng(50.281168, 7.276211)</code><br />
-<code>],</code>
-<code>router: L.Routing.mapbox('pk.ihrkey')</code><br />
-<code>}).addTo(mymap);</code>  </p>
-<p>ein <code>L.Routing.control</code> erstellt und dieses zur Karte hinzugefügt. Die Koordinaten, zwischen denen eine Route berechnet werden soll, haben wir mit der Option  <code>waypoints</code>  an das Control übergeben. Außerdem haben wir einen Router, also eine Software, die die Route berechnen soll, mit dem Eintrag  <code>router: L.Routing.mapbox('pk.ihrkey')</code>  festgelegt. Für die Nutzung des Mapbox Routers benötigen Sie ein Zugriffstoken. Dieses können Sie unter der Adresse &lt;a href="<a href="https://www.mapbox.com/api-documentation/#access-tokens&quot;&gt;https://www.mapbox.com/api-documentation/#access-tokens">https://www.mapbox.com/api-documentation/#access-tokens"&gt;https://www.mapbox.com/api-documentation/#access-tokens</a>&lt;/a&gt; anfordern. In dieser Dokumentation finden Sie auch weitere Informationen zum Router und zu den Lizenzbedingungen.</p>
-<blockquote>
-<p>Wenn Sie die Option  <code>router</code>  nicht belegen, wird standardmäßig die Open Source Routing Machine –
-&lt;a href="<a href="http://project-osrm.org/&quot;&gt;http://project-osrm.org/">http://project-osrm.org/"&gt;http://project-osrm.org/</a>&lt;/a&gt; –
-genutzt. Für diesen freien Router benötigen Sie kein Zugriffstoken.
-Leider ist dieser aber nicht so zuverlässig wie Mapbox.</p>
+<a href="https://github.com/jgravois/lrm-esri">https://github.com/jgravois/lrm-esri</a>.</p>
 </blockquote>
-<p>Die nächste Abbildung zeigt Ihnen unseren bisherigen Stand. Die Route wird berechnet und im rechten oberen Teil angezeigt. Leider werden Sie aber über eine Straße, auf der viele Autos fahren, geführt. Dabei möchten Sie gerne wandern. Außerdem sind die Texte in englischer Sprache. Das geht sicher besser!</p>
-<p>&lt;img alt="" src="../Images/data-url-image95.png" id="Bild66"/&gt;</p>
-<p>&lt;h2 id="leafletroutingmachineoptions"&gt;Options&lt;/h2&gt;</p>
-<p>Das nächste Beispiel zeigt Ihnen, wie Sie die Sprache und das Routing Profil verändern können.</p>
-<p>&lt;pre&gt;`&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;
-&lt;link rel="stylesheet" href="leaflet-routing-machine.css" /&gt;
-&lt;/head&gt; &lt;body&gt; &lt;div style="height: 700px;" id="mapid"&gt;
-&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid')
-.setView([50.27264, 7.26469], 13);</p>
-<p>L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png">http://{s}.tile.osm.org/{z}/{x}/{y}.png</a>')
-.addTo(mymap);</p>
-<p>var control = L.Routing.control({
-waypoints: [ L.latLng(50.273543, 7.262993),
-L.latLng(50.281168, 7.276211) ],
-router: L.Routing.mapbox('pk.ihrkey'),
-{ <strong>profile: 'mapbox/walking',</strong> <strong>language: 'de'</strong> }), }
-).addTo(mymap);</p>
-<p>&lt;/script&gt;
-&lt;/body&gt; &lt;/html&gt;
-&lt;!--index_931.html--&gt;
-`&lt;/pre&gt;</p>
-<p>Der Mapbox Router bietet Ihnen unter anderem die Optionen  <code>profil</code>  und  <code>language</code>. Die Namen sagen es schon aus. Als &lt;a href="<a href="https://www.mapbox.com/api-documentation/#retrieve-directions&quot;&gt;Profil">https://www.mapbox.com/api-documentation/#retrieve-directions"&gt;Profil</a>&lt;/a&gt; können Sie einstellen, ob Sie wandern oder lieber mit dem Auto fahren möchten. Die Option &lt;a href="<a href="https://www.mapbox.com/api-documentation/#instructions-languages&quot;&gt;language">https://www.mapbox.com/api-documentation/#instructions-languages"&gt;language</a>&lt;/a&gt; bietet Ihnen eine Menge unterschiedlicher Sprachen. Möchten Sie noch etwas anderes ändern? Die Dokumentation zum Router von Mapbox finden Sie unter der Adresse &lt;a href="<a href="https://www.mapbox.com/api-documentation/#introduction&quot;&gt;https://www.mapbox.com/api-documentation/#introduction">https://www.mapbox.com/api-documentation/#introduction"&gt;https://www.mapbox.com/api-documentation/#introduction</a>&lt;/a&gt;.</p>
+<h2 id="diesem-kapitel-werden-wir">In diesem Kapitel werden wir …</h2>
+<p>Als erstes sehen wir uns kurz an, was sich hinter dem Begriff Routing versteckt. 
+Danach werden wir das Plugin Leaflet Routing Machine in unsere Leaflet Karte integrieren. 
+Dieses Plugin stellt zwei Textfelder zur Eingabe von Adressen zur Verfügung und berechnet 
+auf Anforderung eine Route zwischen diesen beiden Adressen. 
+Im weiteren Verlauf nutzen wir Optionen, um die Routenberechnung flexibler und 
+benutzerfreundlicher zu machen.</p>
+<h2 id="allgemeines-zum-thema-routing">Allgemeines zum Thema Routing…</h2>
+<p>Fangen wir von vorne an. Es ist nämlich meiner Meinung nach auch spannend, 
+einmal etwas über den Tellerrand zu blicken. Reicht es Ihnen, wenn sie zwei 
+Adressen eingeben könnten und einen Weg zwischen diesen beiden Adressen als Ergebnis 
+ausgegeben bekommen? Oder, möchten Sie auch etwas genauer wissen, 
+was sich hinter dem Begriff Routing verbirgt? Wenn ersteres auf Sie zutrifft, 
+dann lesen Sie am besten im nächsten Kapitel weiter. 
+Ansonsten ist meine kurze Zusammenfassung hier im Kapitel vielleicht interessant für Sie.</p>
+<p>Auch wenn die vielen Informationen auf einer Karte komplex erscheinen: 
+Das Berechnen einer Route kann von einer Software oder einem Dienst effizient 
+durchgeführt werden. Dazu müssen die Daten der Karte, auf der die 
+Berechnung ausgeführt werden soll, bestimmte Informationen enthalten. 
+Die Daten von OpenStreetMap beinhalten Informationen, 
+um Routen für verschiedene Profile berechnen zu können. 
+Eine Route kann zum Beispiel für die Nutzung eines Autos oder eines Fahrrads 
+unterschiedlich berechnet werden. Auch Optionen wie<br />
+<em>'zu Fuß'</em>  oder  <em>'mit dem Pferd'</em>  sind mit OpenStreetMap Daten möglich.</p>
+<p>Damit die Software zur Routenberechnung fehlerfrei funktioniert, 
+müssen diese Daten qualitativ gut sein. Das bedeutet, 
+dass Linien – also zum Beispiel Straßen – die verbunden sein sollen, 
+auch wirklich verbunden sind. Umgekehrt dürfen Straßen, die sich auf 
+verschieden Ebenen kreuzen - zum Beispiel bei Brücken oder Tunneln, nicht verbunden sein. 
+Das bedeutet auch, dass Poller oder Absperrpfosten, an denen kein Auto vorbeikommt, 
+auch als solche eingezeichnet sind. Ganz wichtig ist es, dass Abbiegeverbote 
+an Kreuzungen auf der Karte klar gekennzeichnet sind. 
+Wie OpenStreetMap das macht, können Sie unter anderem auf der Website 
+<a href="https://wiki.openstreetmap.org/w/index.php?title=OSM_tags_for_routing&amp;oldid=1214478">https://wiki.openstreetmap.org/w/index.php?title=OSM_tags_for_routing</a> 
+nachlesen.</p>
+<p>Um bei der Routen-Berechnung die schnellste Route bestimmen zu können, 
+sind Geschwindigkeitsangaben notwendig. OpenStreetMap speichert für jede 
+Straße den Standardhöchstwert für deutsche Straßen. 
+Dieser Standardwerte kann jedoch für bestimmte Straßen anders sein. 
+In diesem Fall ist es notwendig, dass beim Erstellung des Straßen-Objektes 
+die zulässige Höchstgeschwindigkeit hinzufügt wird. 
+Dies geschieht mit einer speziellen Eigenschaft oder mit einem speziellen Tag. 
+Nebenbei haben auch andere Faktoren, wie Kurven, Steigungen oder Straßenbelag 
+einen Einfluss auf die Geschwindigkeit – und dieser ist je nach Profil noch 
+einmal unterschiedlich. Eine Steigung verringert die Geschwindigkeit 
+eines Fahrrades stärker, als die eines Autos. 
+Dafür wird der Fußgänger in Kurven nicht so viel an Geschwindigkeit verlieren 
+wie ein Fahrrad.</p>
+<p>Aber auch dann, wenn die Kartendaten sehr gut und fehlerfrei sind, 
+ist es nicht trivial die ideale Software zur Routen-Berechnung zu erstellen. 
+Hinzu kommen nämlich noch die Besonderheiten des Personenkreises, 
+für den die Route erstellt werden soll. Welche Wege sollen für Radfahrer 
+berücksichtigt werden? Es gibt Radfahrer, die nicht gerne durch die Stadt 
+fahren sondern lieber im Wald unterwegs ist. Andere ziehen eine asphaltierte 
+Straße mitten durch die Stadt einem matschigen Feldweg vor. 
+Wie wählen wir die beste Strecke für einen Radfahrer, der überwiegend bei Dunkelheit 
+trainiert? Oft kommt es sicher auch vor, dass eine Radtour geplant wird, 
+bei der so viele Sehenswürdigkeiten wie möglich unmittelbar am Weg liegen sollten. </p>
+<p><strong>Sie erkennen</strong>: Die Berechnung einer optimalen Route ist etwas sehr Individuelles!</p>
+<p>Sehen wir uns also an inwieweit die Dienste, die das Plugin Leaflet Routing Machine nutzt, 
+diese Anforderungen erfüllt.</p>
+<h2 id="leaflet-routing-maching">Leaflet Routing Maching</h2>
+<p>Nachfolgende finden Sie das erste Beispiel für diesen Themenbereich.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+*&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;
+*&lt;link rel="stylesheet" href="leaflet-routing-machine.css" /&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*var control = L.Routing.control({
+*waypoints: [
+*L.latLng(50.273543, 7.262993),
+*L.latLng(50.281168, 7.276211)
+*],
+*}).addTo(mymap);
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_932a.html--&gt;</code></pre>
+<p>Was haben wir genau gemacht? Zunächst einmal haben wir die für die Verwendung der 
+<a href="http://www.liedman.net/leaflet-routing-machine">Leaflet Routing Machine</a> 
+erforderlichen Dateien eingebunden. Verantwortlich hierfür sind die Zeilen</p>
+<pre><code>&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="leaflet-routing-machine.css"/&gt;</code></pre>
+<p>Die aktuellen Dateien zum Plugin finden Sie unter der 
+Adresse <a href="https://github.com/perliedman/leaflet-routing-machine/releases">https://github.com/perliedman/leaflet-routing-machine/releases</a>. 
+Als nächstes haben wir mit dem Textblock</p>
+<pre><code>var control = L.Routing.control({
+waypoints: [
+L.latLng(50.273543, 7.262993),
+L.latLng(50.281168, 7.276211)
+],
+}).addTo(mymap);</code></pre>
+<p>ein <code>L.Routing.control</code> erstellt und dieses zur Karte hinzugefügt. 
+Die Koordinaten, zwischen denen eine Route berechnet werden soll, 
+haben wir mit der Option <code>waypoints</code> an das Control übergeben. </p>
+<p>Sie können einen Router, also eine Software, 
+die die Route berechnen soll, mit dem Eintrag 
+<code>router: L.Routing.mapbox('pk.ihrkey')</code> 
+festgelegt. Für die Nutzung des Mapbox Routers benötigen Sie ein 
+Zugriffstoken. Dieses können Sie unter der Adresse 
+<a href="https://www.mapbox.com/api-documentation/#access-tokens">https://www.mapbox.com/api-documentation/#access-tokens</a> 
+anfordern. 
+In dieser Dokumentation finden Sie auch weitere Informationen 
+zum Router und zu den Lizenzbedingungen. Im nächsten Programmcodeblock habe ich 
+das vorhergehende Beispiel so abgeändert, dass der Router von Mapbox angewendet wird.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;
+ &lt;link rel="stylesheet" href="leaflet-routing-machine.css" /&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+ var control = L.Routing.control({
+ waypoints: [
+ L.latLng(50.273543, 7.262993),
+ L.latLng(50.281168, 7.276211)
+ ],
+*router: L.Routing.mapbox('pk.IhrKey')
+ }).addTo(mymap);
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_932b.html--&gt;</code></pre>
+<blockquote>
+<p>Wenn Sie die Option <code>router</code> nicht belegen, 
+wird standardmäßig die Open Source Routing Machine –
+<a href="http://project-osrm.org">http://project-osrm.org</a> –
+genutzt. Für diesen freien Router benötigen Sie kein Zugriffstoken.
+Leider ist dieser aber nicht so zuverlässig wie Mapbox. 
+Bedenken Sie, es handelt sich um eine Demoversion, die Sie frei nutzen können 
+und einem geschenkten Gaul schaut man schließlich nicht ins Maul! </p>
+</blockquote>
+<p>Die nächste Abbildung zeigt Ihnen unseren bisherigen Stand. 
+Die Route wird berechnet und im rechten oberen Teil angezeigt. 
+Anders als gewünscht werden Sie aber über eine Straße, auf der viele Autos fahren, geführt. 
+Dabei möchten Sie gerne wandern. Außerdem sind die Texte in englischer Sprache. 
+Das geht sicher besser!</p>
+<p><img src="../media/images/927.png" alt="Eine Karte auf der eine Route angezeigt wird." /></p>
+<p><em>Abbildung: Eine Karte auf der eine Route angezeigt wird.</em></p>
+<h2 id="options">Options</h2>
+<p><a href="#" id="leafletroutingmachineoptions"></a></p>
+<p>Der nächste Programmcode zeigt Ihnen am Beispiel von  Mapbox, 
+wie Sie die Sprache und das Routing Profil verändern können.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+*&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;
+*&lt;link rel="stylesheet" href="leaflet-routing-machine.css" /&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*var control = L.Routing.control({
+*waypoints: [
+*L.latLng(50.273543, 7.262993),
+*L.latLng(50.281168, 7.276211)
+*],
+*router: L.Routing.mapbox('pk.IhrKey',
+*{
+*profile: 'mapbox/walking',
+*language: 'de'
+*}),
+*}).addTo(mymap);
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_931b.html--&gt;</code></pre>
+<p>Der Mapbox Router bietet Ihnen unter anderem die Optionen 
+<code>profil</code> und <code>language</code>. 
+Die Namen sagen es schon aus. Als 
+<a href="https://www.mapbox.com/api-documentation/#retrieve-directions">Profil</a> 
+können Sie einstellen, ob Sie wandern, radeln oder lieber 
+mit dem Auto fahren möchten. 
+Die Option <a href="https://www.mapbox.com/api-documentation/#instructions-languages">language</a> 
+bietet Ihnen eine Menge unterschiedlicher Sprachen. 
+Möchten Sie noch etwas anderes ändern? 
+Die Dokumentation zum Router von Mapbox finden Sie unter der Adresse 
+<a href="https://www.mapbox.com/api-documentation/#introduction">https://www.mapbox.com/api-documentation/#introduction</a>.</p>
 <blockquote>
 <p>Wenn Sie lieber eine andere Software zur
 Berechnung der Route nutzen möchten, können Sie dies tun. Die
 Leaflet Routing Machine bietet Ihnen viele Möglichkeiten. Weitere
 Informationen, Demos und Tutorials zur Leaflet Routing Machine finden
-Sie auf der Website: &lt;a href="<a href="http://www.liedman.net/leaflet-routing-machine/&quot;&gt;http://www.liedman.net/leaflet-routing-machine/">http://www.liedman.net/leaflet-routing-machine/"&gt;http://www.liedman.net/leaflet-routing-machine/</a>&lt;/a&gt;.</p>
+Sie auf der Website: 
+<a href="http://www.liedman.net/leaflet-routing-machine">http://www.liedman.net/leaflet-routing-machine</a>.</p>
 </blockquote>
-<p>Im nächsten Bild sehen Sie, dass das Routing nun eher zu einem Wanderer passt und die Texte sind auch in deutscher Sprache. Das ist schon einmal gut. Aber es geht ja meist noch besser. Wahrscheinlich möchten Sie, dass die Adressen, zwischen denen geroutet wird, variabel auf der Karte verändert werden können. Genau das wollte ich als Nächstes und deshalb habe ich dies im nächsten Beispiel umgesetzt.</p>
-<p>&lt;img alt="" src="../Images/data-url-image96.png" id="Bild71"/&gt;</p>
-<p>&lt;h2 id="inleafletroutingmachninegeocoding"&gt;Geocoding und Routing&lt;/h2&gt;</p>
-<p>Bisher wurde die Route ausschließlich anhand von Koordinaten berechnet. Menschen nutzen aber lieber Texte in Form von Adressen. Das Geocoding Adressen in Koordinaten verwandelt – beziehungsweise Koordinaten in Adressen verwandelt – haben Sie im Kapitel <em>&lt;a href="../Text/esri.html#ingeocoding"&gt;Geocoding&lt;/a&gt;</em> im Kapitel <em>&lt;a href="../Text/esri.html#inESRI"&gt;ESRI&lt;/a&gt;</em> schon lesen können. Hier im Beispiel kombinieren wir nun Routing und Geocoding. Sehen Sie selbst:</p>
-<p>&lt;pre&gt;`&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;</p>
-<p><strong>&lt;script src="Control.Geocoder.js"&gt;&lt;/script&gt;</strong>
-**&lt;link rel="stylesheet" href="Control.Geocoder.css" /&gt;</p>
-<p>**&lt;link rel="stylesheet" href="leaflet-routing-machine.css" /&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div style="height: 700px;" id="mapid"&gt;
-&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid')
-.setView([50.27264, 7.26469], 13);</p>
-<p>L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png">http://{s}.tile.osm.org/{z}/{x}/{y}.png</a>')
-.addTo(mymap);</p>
-<p>var control = L.Routing.control({
-waypoints: [ L.latLng(50.273543, 7.262993),
-L.latLng(50.281168, 7.276211) ],
-router: L.Routing.mapbox('pk.ihrkey'),
-{ language: 'de' }),
-<strong>geocoder: L.Control.Geocoder.nominatim({})</strong>
-}).addTo(mymap);</p>
-<p>&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_930.html--&gt;
-`&lt;/pre&gt;</p>
-<p>In diesem Beispiel haben wir das vorhergehende Beispiel mit dem Plugin &lt;a href="<a href="https://github.com/perliedman/leaflet-control-geocoder&quot;&gt;Geocoder">https://github.com/perliedman/leaflet-control-geocoder"&gt;Geocoder</a> Control&lt;/a&gt; erweitert. Konkret haben wir mithilfe der Zeilen</p>
-<p><code>&lt;script src="Control.Geocoder.js"&gt;&lt;/script&gt;</code></p>
-<p><code>&lt;link rel="stylesheet" href="Control.Geocoder.css"/&gt;</code></p>
-<p>die Skript-Datei und die CSS-Datei des &lt;a href="<a href="https://github.com/perliedman/leaflet-control-geocoder&quot;&gt;Geocoder">https://github.com/perliedman/leaflet-control-geocoder"&gt;Geocoder</a> Control&lt;/a&gt; von Per Liedmann eingebunden. Die aktuellste Version dieses Plugins können Sie unter der Adresse &lt;a href="<a href="https://github.com/perliedman/leaflet-control-geocoder/releases&quot;&gt;https://github.com/perliedman/leaflet-control-geocoder/releases">https://github.com/perliedman/leaflet-control-geocoder/releases"&gt;https://github.com/perliedman/leaflet-control-geocoder/releases</a>&lt;/a&gt; herunter laden. Danach haben wir die Option  <code>geocoder</code>  des Plugins Leaflet Routing Machine mit dem Wert  <code>L.Control.Geocoder.nominatim({})</code>  belegt. Und das war es schon!</p>
-<p>Als Ergebnis sehen Sie nun zwei Textfelder im oberen rechten Bereich auf Ihrer Karte. In diese können Sie Adressen eingeben und so Ihre Route benutzerfreundlich abändern.</p>
-<p>&lt;img alt="" src="../Images/data-url-image97.png" id="Bild73"/&gt;</p>
-<p>&lt;h2 id="sigil_toc_id_94"&gt;In diesem Kapitel haben wir …&lt;/h2&gt;</p>
-<p>Gegenstand dieses Kapitels war Routing. Wir haben uns kurz angesehen, was Kartendaten bieten müssen, um die Berechnung einer Route zu ermöglichen. Dass die Kartendaten aber nicht alles sind und eine Route etwas sehr Individuelles sein kann, wurde dabei auch klar. Danach haben wir das Plugin Leaflet Routing Machine in unsere Leaflet Karte integriert und mithilfe von Optionen und Geocoding flexibler und benutzerfreundlicher gemacht.</p><h1 id="auf-wiedersehen">Auf Wiedersehen</h1>
+<p>Auch der Router des Projektes <a href="http://project-osrm.org">http://project-osrm.org</a> bietet 
+Ihnen Optionen. Soweit ich weiß, kann auf dem Demoserver aber nur das Profil 
+<code>driving</code> genutzt werden. Aber die Sprache können Sie benutzerdefiniert anpassen. 
+Wie dies geht zeigt Ihnen das nächste Beispiel.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+*&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;
+ &lt;link rel="stylesheet" href="leaflet-routing-machine.css" /&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*var control = L.Routing.control({
+*waypoints: [
+*L.latLng(50.273543, 7.262993),
+*L.latLng(50.281168, 7.276211)
+*],
+*router: new L.Routing.OSRMv1(
+*{
+*language: 'de',
+*}
+*)
+*}).addTo(mymap);
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_931.html--&gt;</code></pre>
+<blockquote>
+<p>Sie können die URL, von der die Route abgefragt wird, auch direkt eingeben. Im Falle von 
+<a href="http://project-osrm.org">http://project-osrm.org</a> könnte dies wie folgt aussehen:
+<a href="https://router.project-osrm.org/route/v1/driving/7.262993,50.273543;7.276211,50.281168">https://router.project-osrm.org/route/v1/driving/7.262993,50.273543;7.276211,50.281168</a>. 
+<img src="../media/images/926a.png" alt="Direkter Aufruf OSRM-Server." />
+<em>Abbildung: Direkter erfolgreichewr Aufruf OSRM-Server.</em><br />
+Falls Ihnen die Meldung <em>'Too Many Requests'</em> angezeigt wird, müssen Sie nichts falsch gemacht haben. 
+In dem Fall ist der Server gerade überlastet. Versuchen Sie es einfach später noch einmal.
+<img src="../media/images/926b.png" alt="Direkter Aufruf OSRM-Server." />
+<em>Abbildung: Direkter fehlerhafter Aufruf OSRM-Server.</em></p>
+</blockquote>
+<p>Im nächsten Bild sehen Sie, dass das Routing im Mapbox Beispiel 
+nun eher zu einem Wanderer 
+passt und die Texte sind auch in deutscher Sprache. 
+Das ist schon einmal gut. 
+Aber es geht ja meist noch besser. </p>
+<p><img src="../media/images/926.png" alt="Eine Karte auf der eine Route für Wanderer in deutscher Sprache angezeigt wird." /></p>
+<p><em>Abbildung: Eine Karte auf der eine Route für Wanderer in deutscher Sprache angezeigt wird.</em></p>
+<p>Wahrscheinlich möchten Sie, dass die Adressen, zwischen denen geroutet wird, 
+variabel auf der Karte verändert werden können. 
+Genau das wollte ich als nächstes umsetzen 
+und deshalb habe ich dies im nächsten Beispiel auch gemacht.</p>
+<h2 id="geocoding-und-routing">Geocoding und Routing</h2>
+<p><a href="#" id="inleafletroutingmachninegeocoding"></a></p>
+<p>Bisher wurde die Route ausschließlich anhand von Koordinaten berechnet. 
+Menschen nutzen aber lieber Texte in Form von Adressen. 
+Das Sie mithilfe von Geocoding Adressen in Koordinaten verwandelt können – 
+beziehungsweise Koordinaten in Adressen verwandeln  können – 
+haben Sie im Kapitel <a href="#ingeocoding">Geocoding ESRI</a> schon lesen können. 
+Hier im Beispiel kombinieren wir nun Routing und Geocoding. Sehen Sie selbst:</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+*&lt;script src="leaflet-routing-machine.js"&gt;&lt;/script&gt;
+*&lt;script src="Control.Geocoder.js"&gt;&lt;/script&gt;
+*&lt;link rel="stylesheet" href="Control.Geocoder.css" /&gt;
+*&lt;link rel="stylesheet" href="leaflet-routing-machine.css" /&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 13);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*var control = L.Routing.control({
+*waypoints: [
+*L.latLng(50.273543, 7.262993),
+*L.latLng(50.281168, 7.276211)
+*],
+*router: L.Routing.mapbox('pk.IhrKey',
+*{
+*language: 'de'
+*}),
+*geocoder: L.Control.Geocoder.nominatim({})
+*}).addTo(mymap);
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_930.html--&gt;</code></pre>
+<p>In diesem Beispiel haben wir das vorhergehende Beispiel mit dem 
+Plugin <a href="https://github.com/perliedman/leaflet-control-geocoder">Geocoder Control</a> 
+erweitert. Konkret haben wir mithilfe der Zeilen</p>
+<pre><code>&lt;script src="Control.Geocoder.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="Control.Geocoder.css"/&gt;</code></pre>
+<p>die Skript-Datei und die CSS-Datei des 
+<a href="https://github.com/perliedman/leaflet-control-geocoder">Geocoder Control</a> 
+von Per Liedmann eingebunden. 
+Die aktuellste Version dieses Plugins können Sie unter der 
+Adresse <a href="https://github.com/perliedman/leaflet-control-geocoder/releases">https://github.com/perliedman/leaflet-control-geocoder/releases</a> 
+herunterladen. 
+Danach haben wir die Option <code>geocoder</code> des Plugins Leaflet Routing Machine mit dem 
+Wert <code>L.Control.Geocoder.nominatim({})</code> belegt. 
+Und das war es schon!  </p>
+<p>Als Ergebnis sehen Sie nun zwei Textfelder im oberen rechten Bereich auf Ihrer Karte. 
+In diese können Sie Adressen eingeben und so Ihre Route benutzerfreundlich abändern.</p>
+<p><img src="../media/images/925.png" alt="Eine Karte auf der eine Route angezeigt wird." /></p>
+<p><em>Abbildung: Eine Karte auf der eine Route angezeigt wird. Sie können die Route ändern, indem Sie eine Adresse in einem der Textfelder rechts oben eingeben.</em></p>
+<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
+<p>Gegenstand dieses Kapitels war Routing. 
+Wir haben uns kurz angesehen, was Kartendaten bieten müssen, 
+um die Berechnung einer Route zu ermöglichen. 
+Dass die Kartendaten aber nicht alles sind und eine Route etwas sehr 
+Individuelles sein kann, wurde dabei auch klar. 
+Danach haben wir das Plugin Leaflet Routing Machine in unsere 
+Leaflet Karte integriert und mithilfe von Optionen und Geocoding 
+flexibler und benutzerfreundlicher gemacht.</p><h1 id="auf-wiedersehen">Auf Wiedersehen</h1>
 <p>Ich hoffe, dass Ihnen der Rundgang durch LeafletJs gefallen hat und Sie jede 
 Menge für sich mitnehmen konnten.</p></html>
