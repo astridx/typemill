@@ -8,9 +8,13 @@
 <body>
 <div style="height: 700px;" id="mapid"></div>
 <script>
-var mymap = L.map('mapid', {closePopupOnClick: false}).setView([50.27264, 7.26469], 7);
+var mymap = L.map('mapid', {}).setView([50.27264, 7.26469], 7);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-mymap.on('click', function(){alert('Sie haben auf die Karte geklickt.')});
+mymap.on('click', function()
+{
+alert('Sie haben auf die Karte geklickt.')
+}
+);
 </script>
 </body>
 </html>

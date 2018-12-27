@@ -20,7 +20,8 @@ function save()
 {
 var p1 = parseFloat(document.getElementById("lat").value);
 var p2 = parseFloat(document.getElementById("long").value);
-L.marker([p1,p2]).bindPopup(document.getElementById("name").value).addTo(mymap);
+L.marker([p1,p2]).bindPopup(document.getElementById("name").value)
+.addTo(mymap);
 }
 </script>
 </body>

@@ -22,10 +22,12 @@ title:"Marker2",
 alt:"Ich bin ein anderer Marker"
 }
 );
-var polyline = L.polyline([
-	[50.27264, 7.26469],
-	[51.27264, 7.26469],
-	[51.27264, 6.26469]],
+var polyline = L.polyline(
+[
+[50.27264, 7.26469],
+[51.27264, 7.26469],
+[51.27264, 6.26469]
+],
 );
 var myfeatureGroup=L.featureGroup([marker1, polyline]).addTo(mymap);
 myfeatureGroup.bindPopup('Wir haben alle das gleiche Popup!');

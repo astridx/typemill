@@ -1487,52 +1487,77 @@ dick sein soll.</p>
 <p><em>Abbildung: Ein Polyline-Objekt auf einer Leaflet Karte.</em></p>
 <h4 id="polygone">Polygone</h4>
 <p><a href="#" id="DieKarteMitDatenBestueckenPolygone"></a></p>
-<p>Ein Polygon&lt;a class="sigil_index_marker" title="Polygon (Leaflet)" id="sigil_index_id_11"&gt;e&lt;/a&gt;ist eine geschlossene Linie – also eine Linie die einen <em>Innenbereich</em> von einem <em>Außenbereich</em> abtrennt. Mit der Klasse &lt;a href="<a href="http://leafletjs.com/reference-1.1.0.html#polygon&quot;&gt;`Polygone">http://leafletjs.com/reference-1.1.0.html#polygon"&gt;`Polygone</a><code>&lt;/a&gt; können Sie, wie der Name schon sagt,</code>Polygone<code>Objekte auf Ihre Karte zeichnen. Die Klasse</code>Polygone<code>erweiterte die Klasse</code>Polyline<code>und somit auch die Klasse</code>Path<code>. Alle Methoden und Optionen dieser Klassen können Sie also auch mit einem</code>Polygone` Objekt nutzen.</p>
+<p>Ein Polygone ist eine geschlossene Linie – also eine Linie die 
+einen <em>Innenbereich</em> von einem <em>Außenbereich</em> abtrennt. 
+Mit der <a href="http://leafletjs.com/reference-1.1.0.html#polygon">Klasse <code>Polygone</code></a> 
+können Sie, wie der Name schon sagt, <code>Polygone</code>-Objekte auf Ihre Karte zeichnen. 
+Die Klasse <code>Polygone</code> erweitert die Klasse <code>Polyline</code> und somit auch die Klasse 
+<code>Path</code>. Alle Methoden und Optionen dieser Klassen können Sie somit
+mit einem <code>Polygone</code> Objekt nutzen.</p>
 <blockquote>
 <p>Die Punkte, die Sie
 beim Erstellen eines Polygons übergeben, sollten als letzten Punkt
-keinen Punkt enthalten, der dem ersten Punkt entspricht. Es ist besser,
-solche Punkte herauszufiltern.<br />
-Warum sollen der erste und der letzte Punkt nicht identisch sein? Leaflet schließt Ihr Polygon
-automatisch. Wenn der erste Punkt mit dem letzten Punkt
+keinen Punkt enthalten, der dem ersten Punkt entspricht. 
+Der erste und der letzte Punkt sollten nicht identisch sein! 
+Es ist besser, solche Punkte herauszufiltern.<br />
+Warum sollten der erste und der letzte Punkt nicht identisch sein? 
+Leaflet schließt Ihr Polygon automatisch. 
+Wenn der erste Punkt mit dem letzten Punkt
 übereinstimmt, kann dies zu Problemen führen.  </p>
 </blockquote>
-<p>Wie Sie ein Polygon in Leaflet erstellen, zeigt Ihnen der nachfolgende Programmcode und das konkrete Polygon sehen im darauf folgenden Bild. Alle Methoden und Optionen, die Sie auf ein<code>Polygon</code>Objekt anwenden könne, finden Sie in der&lt;a href="<a href="http://leafletjs.com/reference#marker&quot;&gt;Leaflet">http://leafletjs.com/reference#marker"&gt;Leaflet</a> Dokumentation&lt;/a&gt;.</p>
-<p><code>&lt;!DOCTYPE HTML&gt;</code><br />
-<code>&lt;html&gt;</code><br />
-<code>&lt;head&gt;</code><br />
-<code>&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;</code><br />
-<code>&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;</code><br />
-<code>&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;</code><br />
-<code>&lt;/head&gt;</code><br />
-<code>&lt;body&gt;</code><br />
-<code>&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;</code><br />
-<code>&lt;script&gt;</code><br />
-<code>var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);</code><br />
-<code>L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);</code><br />
-<strong><code>var polygon = L.polygon(</code></strong><br />
-<strong><code>[</code></strong><br />
-<strong><code>[50.27264, 7.26469],</code></strong><br />
-<strong><code>[51.27264, 7.26469],</code></strong><br />
-<strong><code>[51.27264, 6.26469]</code></strong><br />
-<strong><code>],</code></strong><br />
-<strong><code>{color: 'red', weight:2, fillColor:'green', fillOpacity:0.5}</code></strong><br />
-<strong><code>).addTo(mymap);</code></strong><br />
-<code>&lt;/script&gt;</code><br />
-<code>&lt;/body&gt;</code><br />
-<code>&lt;/html&gt;</code><br />
-<code>&lt;!--index_985.html--&gt;</code>  </p>
-<p><img src="../media/images/928b.png" alt="x" /></p>
-<p><em>Abbildung: x.</em></p>
+<p>Wie Sie ein Polygon in Leaflet erstellen, zeigt Ihnen der nachfolgende 
+Programmcode und das konkrete Polygon sehen Sie 
+im darauf folgenden Bild. 
+Alle Methoden und Optionen, die Sie auf ein <code>Polygon</code>-Objekt anwenden könne, 
+finden Sie in der 
+<a href="https://leafletjs.com/reference-1.3.4.html#polygon">Leaflet Dokumentation</a>.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*var polygon = L.polygon([
+*[50.27264, 7.26469],
+*[51.27264, 7.26469],
+*[51.27264, 6.26469]],
+*{
+*color: 'red', 
+*weight:2, 
+*fillColor:'green', 
+*fillOpacity:0.5
+*}
+ ).addTo(mymap);
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_985.html--&gt;</code></pre>
+<p><img src="../media/images/990.png" alt="Ein Polygone-Objekt auf einer Leaflet Karte." /></p>
+<p><em>Abbildung: Ein <code>Polygone</code>-Objekt auf einer Leaflet Karte.</em></p>
 <h3 id="rechtecke-und-kreise">Rechtecke und Kreise</h3>
-<p>Um einen&lt;a class="sigil_index_marker" title="Kreis (Leaflet)" id="sigil_index_id_12"&gt;Kreis&lt;/a&gt;oder ein&lt;a class="sigil_index_marker" title="Rechteck (Leaflet)" id="sigil_index_id_13"&gt;Rechteck&lt;/a&gt;zu erstellen benötigt man eigentlich keine eigene Klasse. Man könnten diese Formen mit der Klasse<code>Polygon</code>erzeugen. Beim Kreis wäre dies allerdings sehr mühselig und auch für ein Rechteck gibt es einfacherer Verfahrensweisen. Leaflet bietet deshalb für diese beiden Formen spezielle Klassen an.</p>
-<p>Das Zeichnen von Rechtecken und Kreisen ist kein Hexenwerk. Der Vollständigkeit halber finden Sie in den nächsten beiden Kapiteln jeweils ein Beispiel für beide Formen.</p>
+<p>Um einen Kreis oder ein Rechteck zu erstellen benötigt man eigentlich 
+keine eigene Klasse. Man könnten diese Formen mit der Klasse <code>Polygon</code> 
+erzeugen. Beim Kreis wäre dies allerdings sehr mühselig und auch für ein Rechteck 
+gibt es einfacherere Verfahrensweisen. 
+Leaflet bietet deshalb für diese beiden Formen spezielle Klassen an.</p>
+<p>Das Zeichnen von Rechtecken und Kreisen ist kein Hexenwerk. 
+Der Vollständigkeit halber finden Sie in den nächsten beiden Kapiteln 
+jeweils ein Beispiel für beide Formen.</p>
 <h4 id="rechtecke">Rechtecke</h4>
-<p>Der nachfolgende Programmcode zeigt Ihnen an einem Beispiel, wie Sie ein&lt;a class="sigil_index_marker" title="Rectangle  (Leaflet)" id="sigil_index_id_14"&gt;Rechteck&lt;/a&gt;– also ein Objekt vom Typ &lt;a href="<a href="http://leafletjs.com/reference-1.1.0.html#rectangle&quot;&gt;`Rectangle">http://leafletjs.com/reference-1.1.0.html#rectangle"&gt;`Rectangle</a>`&lt;/a&gt; – in eine Leaflet Karte einfügen.</p>
-<pre><code>`&lt;!DOCTYPE HTML&gt;
+<p>Der nachfolgende Programmcode zeigt Ihnen an einem Beispiel, 
+wie Sie ein Rechteck – also ein Objekt vom 
+<a href="https://leafletjs.com/reference-1.3.4.html#rectangle">Typ <code>Rectangle</code></a> – 
+in eine Leaflet Karte einfügen.</p>
+<pre><code>&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
+&lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
 &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
 &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
@@ -1541,829 +1566,911 @@ automatisch. Wenn der erste Punkt mit dem letzten Punkt
 &lt;script&gt;
 var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
-**var myRectangle = L.rectangle(
-[
+var myRectangle = L.rectangle([
 [50.27264, 7.26469],
-[51.27264, 6.26469]],
-{color: "yellow", weight: 8, fillColor:"purple"}
-).addTo(mymap);**
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-`&lt;!--index_984.html--&gt;`
-
-Als Parameter geben Sie für das Rechteck immer die diagonal versetzten beiden Ecken an. Dabei ist es egal, in welcher Reihenfolge Sie diese angeben.
-Das Rechteck
-
-`var myRectangle = L.rectangle([`  
-**`[50.27264, 7.26469],`**  
-**`[51.27264, 6.26469]`**  
-`])`  
-
-sieht auf der Karte genauso aus, wie das Rechteck
-
-`var myRectangle = L.rectangle([`  
-**`[51.27264, 6.26469],`**  
-**`[50.27264, 7.26469]`**  
-`])`
-
-Und wie das Rechteck des Beispiels aussieht, zeigt Ihnen die nachfolgende Abbildung.
-
-![x](media/images/928b.png)
-
-*Abbildung: x.*
-
-In diesem Zusammenhang ist vielleicht ganz interessant wie Leaflet das&lt;a class="sigil_index_marker" title="Koordinatensystem" id="sigil_index_id_15"&gt;Koordinatensystem&lt;/a&gt;der Erde verarbeitet. Dieses Koordinatensystem ist ja kein gewöhnliches Koordinatensystem, sondern ein&lt;a class="sigil_index_marker" title="sphärisches Koordinatensystem" id="sigil_index_id_16"&gt;sphärisches&lt;/a&gt;. Unter einer Sphäre versteht man in der Mathematik ganz vereinfacht ausgedrückt die Oberfläche einer Kugel. Und auf einer Kugel führen, im Gegensatz zu einer Ebene, immer zwei Linien auf direktem Wege zu einem anderen Punkt. Die nachfolgenden Abbildungen zeigen Ihnen, dass Leaflet dieses Problem vereinfacht. Es behandelt das sphärische Koordinatensystem als normales Koordinatensystem. Dies hatten wir uns im Exkurs&lt;a href="../Text/EineErsteKarte.html#ui4EqCDOvbKdNQ6JO9P6WeC"&gt;*Das Koordinagensystem der Erde*&lt;/a&gt;schon einmal angesehen.
-Um von der Koordinate`[50, -180]`zur Koordinate`[51, 180]`zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. Und analog wird auch ein Rechteck mit diesen Eckpunkten um die ganze Erde gezeichnet. Und das, obwohl die Ecken hier ganz nah beieinander liegen.
-
-![x](media/images/928b.png)
-
-*Abbildung: x.*
-
-  &lt;table&gt;
-    &lt;colgroup&gt;
-      &lt;col/&gt;
-      &lt;col/&gt;
-    &lt;/colgroup&gt;
-
-    &lt;tbody&gt;
-      &lt;tr valign="top"&gt;
-        &lt;td&gt;
-          &lt;img alt="" src="../Images/data-url-image28.png" id="Bild88"/&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-      &lt;tr valign="top"&gt;
-       &lt;td&gt;
-          &lt;img alt="" src="../Images/data-url-image29.png" id="Bild89"/&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-
-      &lt;tr valign="top"&gt;
-        &lt;td&gt;
-          &lt;img alt="" src="../Images/data-url-image30.png" id="Bild90"/&gt;
-        &lt;/td&gt;
-       &lt;/tr&gt;
-
-      &lt;tr valign="top"&gt;
-      &lt;td&gt;
-          &lt;img alt="" src="../Images/data-url-image31.png" id="Bild91"/&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-
-#### Kreise
-
-Anhand des nachfolgenden Programmcode können Sie erkennen, wie ein Kreis – also ein Objekt vom Ty&lt;a class="sigil_index_marker" title="Circle (Leaflet)" id="sigil_index_id_17"&gt;p&lt;/a&gt;&lt;a href="http://leafletjs.com/reference-1.1.0.html#circle"&gt;`Circle`&lt;/a&gt; – in eine Leaflet Karte eingefügt wird.
-</code></pre>
-<p>&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);
-<strong>L.circle(
-[50.27264, 7.26469],100000,
-{color: "red", weight: 8, fillColor:"green"}
-).addTo(mymap);</strong>
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_983.html--&gt;</p>
-<pre><code>
-Ein Kreis wird anhand seines Mittelpunktes und seines Radius definiert. Der Radius muss dabei in Metern angegeben werden. In den Beispielen habe ich den Rand mit 8 Pixel festgelegt. Diese Breite passt für die Zoom-Stufe 7. Probieren Sie doch einmal aus, wie der Rand aussieht, wenn Sie die Karte vergrößern. Sie werden feststellen, dass man irgendwann nur noch den Rand sieht und es wichtig sein könnte, dessen Größe immer relativ zur Zoom-Stufe zu setzen.
-
-![x](media/images/928b.png)
-
-*Abbildung: x.*
-
-## Mehrere Poly- Objekte auf einer Ebene
-
-In den vorhergehenden Beispielen haben wir jedes Element auf einem separaten Layer – also einer separaten Ebenen – abgebildet. Spätestens, wenn Sie selbst unterschiedliche Geodaten auf einer Karte darstellen möchten werden Sie sich wünschen, Objekte mit gleichen Eigenschaften auf einem Layer&lt;a class="sigil_index_marker" title="gruppieren (Objekte in Leaflet)" id="sigil_index_id_18"&gt;gruppieren&lt;/a&gt;zu können. Denn nur so können sie alle Elemente zusammen ansprechen.
-Stellen Sie sich vor, Sie möchten auf Ihrer Website Touren für Aktivurlauber beschreiben. Diese Touren sind unterteilt in Wanderer, Bergsteiger, Gipfelstürmer und Freikletterer. Auf der Karte kann ein Kunde Angebote für eine bestimmte Region heraus filtern. Hierzu muss er nur die Karte passend positionieren. Wenn Sie pro Touren-Typen einen &lt;a href="https://de.wikipedia.org/wiki/Layertechnik"&gt;Layer&lt;/a&gt; anlegen und die Touren entsprechend ihres Typs auf diesen Layern ablegen, können Sie es dem Kunden zusätzlich ermöglichen, nur die für ihn relevanten Touren einzublenden. Warum erkläre ich Ihnen dies an dieser Stelle? Alle Polyline Objekte und alle Polygone Objekte die zusammen definiert wurden, liegen automatisch zusammen auf einem eigenen separaten Layer.
-
-Das Setzen von Klammern beim Arbeiten mit Polygon Objekten und Polyline Objekten, die mehrere Objekte gleichzeitig auf einem Layer erstellen, kann sehr herausfordernd sein.
-
-&lt;ul&gt;
-&lt;li&gt;Sie müssen zum einen alle Objekte – Polygon Objekte oder Polyline Objekte – zusammen mit einer äußeren Klammer versehen.`  
- **[**  
-[[50.17264, -7.26469], [49.27264, -6.26469]],  
-[[50.37264, -7.26469], [51.27264, -8.26469]]  
-**]**` 
-&lt;li&gt;Außerdem müssen Sie alles Punkte jedes einzelnen Objekts – Polyline oder Polygon – mit einer Klammer umgeben.  
-`[  
-**[**[50.17264, -7.26469], [49.27264, -6.26469]**]**,  
-**[**[50.37264, -7.26469], [51.27264, -8.26469]**]**  
-]` 
-&lt;li&gt;Und zuletzt werden auch die Koordinaten selbst noch eingeklammert.  
-`[  
-[**[**50.17264, -7.26469**]**, **[**49.27264, -6.26469**]**],  
-[**[**50.37264, -7.26469], **[**51.27264, -8.26469**]**]  
-]` 
-&lt;/ul&gt;
-
-### Mehrere Polyline Objekte auf einer Ebene
-
-In diesem Kapitel gibt es nun ein praktisches Beispiel. Der nachfolgende Programmcodeausschnitt zeigt Ihnen, wie Sie mit dem instanziieren eines Objekts mehrerer Polyline Objekte auf eine Ebene zeichnen können. Und das die Polyline Objekte alle auf einer Ebene liegen, beweise ich Ihnen gleichzeitig.
-</code></pre>
-<p>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);
-<strong>var multipolyline = L.polyline(</strong>
-<strong>[</strong>
-<strong>[
-[50.17264, -7.26469],</strong>
-<strong>[49.27264, -7.26469],</strong>
-<strong>[49.27264, -6.26469]
-],</strong>
-<strong>[
-[50.37264, -7.26469],</strong>
-<strong>[51.27264, -7.26469],</strong>
-<strong>[51.27264, -8.26469]
-]</strong>
-<strong>],</strong>
-<strong>{color: 'black'}).addTo(mymap);</strong>
-<strong>mymap.fitBounds(multipolyline.getBounds());</strong>
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_981.html--&gt;</p>
-<pre><code>
-Was zeigt Ihnen dieses Beispiel? 
-Zunächst einmal können Sie erkennen, dass das Erstellen mehrerer 
-Polyline Objekte zusammen möglich ist. 
-Und das es auch einfacher ist erkennen Sie daran, dass Sie Optionen nur 
-einmal zuweisen müssen. Beide Linien werden gleichzeitig schwarz gefärbt.
-
-Am meisten Vorteile bringt aber die Tatsache, dass beide Linien eine 
-Ebene darstellen. Dies bedeutet, dass die Methode `fitBounds()` die beiden Linien 
-als ein Objekt sieht und die Abgrenzungen dieses einen Objektes berechnet. 
-Die Methode &lt;a href="http://leafletjs.com/reference-1.1.0.html#map-fitbounds"&gt;`fitBounds()`&lt;/a&gt; verschiebt eine Karte an die Stelle, an der die übergebenen Koordinaten sich befinden, und setzt die Zoom-Stufe so, dass die Karte für die übergebenen Abgenzungen ideal angezeigt wird. Würden die beiden Linien nicht auf einer Ebenen liegen, wäre es komplizierter beide Linien gleichzeitig vollständig mit optimaler Zoom-Stufe anzuzeigen.
-
-&gt; Noch einmal zur Erinnerung:
-Ein Objekt vom Typ`Polygon`und auch ein`Polyline`Objekt ist eine Ebene – die beiden Klassen erweitern die Leaflet
-Klasse &lt;a href="http://leafletjs.com/reference-1.1.0.html#layer"&gt;Layer&lt;/a&gt;.  
-
-![x](media/images/928b.png)
-
-*Abbildung: x.*
-
-### Mehrere Polygon Objekte auf einer Ebene
-
-In diesem Kapitel zeige ich Ihnen ein Beispiel, bei dem mehrere Polygone zusammen erstellt werden.
-</code></pre>
-<p>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);
-<strong>var multipolygone = L.polygon(
-[
-[
-[50.17264, 7.26469],
-[49.27264, 7.26469],
-[49.27264, 6.26469]],
-[
-[50.37264, 7.26469],
-[51.27264, 7.26469],
-[51.27264, 8.26469]
-]
+[51.27264, 6.26469]
 ],
-{color: 'black'}).addTo(mymap).bindPopup("Wir sind auf einer Ebene");</strong>
+{
+color: "yellow", 
+weight: 8, 
+fillColor:"purple"
+}
+).addTo(mymap);
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-&lt;!--index_982.html--&gt;</p>
-<pre><code>
-In diesem Beispiel sehen Sie, wie Sie mit der&lt;a class="sigil_index_marker" title="Methode  bindPopup()" id="sigil_index_id_19"&gt;Methode&lt;/a&gt;`bindPopup()`ein Pop-up Fenster zu einem Element hinzufügen können. Später im Buch werden Pop-up Fenster noch einmal Thema sein. An dieser Stelle habe ich die Methode gewählt, weil ich der Meinung bin, das diese hier gut passt.
-Es gibt viele unzusammenhängende Flächen auf der Erde, für die die gleichen Informationen zutreffend sind. Zum Beispiel haben viele Länder Kolonien. Wenn nun alle zu einem Land gehörenden Gebiete als Polygon auf einem Layer zusammengefasst sind, dann ist es ein Leichtes, allen Gebieten eines Landes das gleiche Pop-up Fenster zuzuweisen. Und wenn Sie nun die ganze Welt auf Ihrer Karte abdecken möchten, dann können Sie sich den Vorteil dieser &lt;a href="https://de.wikipedia.org/wiki/Layertechnik" class="sigil_index_marker" title="Layer-Technik" id="sigil_index_id_20"&gt;Layer-Technik&lt;/a&gt; sicherlich gut vorstellen.
-
-Auf der nächsten Abbildung sehen sie keine Ländergrenzen. Der Einfachheit halber habe ich mich auf zwei Dreiecke beschränkt.
-
-![x](media/images/928b.png)
-
-*Abbildung: x.*
-
-#### Mehrere sich überschneidende Polygon Objekte auf einer Ebene
-
-Die Besonderheit bei einem Polygon ist, dass es einen Außen- und einen Innenbereich gibt. Das lesen Sie hier im Buch des Öfteren. Wenn Sie mehrere Polygone auf einem Layer zusammen erstellen, dann beeinflussen diese sich gegenseitig, wenn Flächen übereinander liegen. In der nachfolgenden Tabelle habe ich verschiedene Konstellationen mit Bild und Text aufgenommen. Anhand von Beispielen ist das Zusammenspiel der verschiedenen Bereiche meiner Meinung nach am leichtesten nachzuvollziehen.
-
-![x](media/images/928b.png)
-
-*Abbildung: x.*
-
-&lt;table&gt;
-&lt;colgroup&gt;
-&lt;col/&gt;
-&lt;col/&gt;
-&lt;/colgroup&gt;
-
-&lt;tbody&gt;
-&lt;tr valign="top"&gt;
-&lt;td&gt;
-Beginnen wir mit einem einfachen Polygone:  
-`L.polygon([  
+&lt;!--index_984.html--&gt;</code></pre>
+<p>Als Parameter geben Sie für das Rechteck immer die diagonal versetzten 
+beiden Ecken an. Dabei ist es egal, in welcher Reihenfolge Sie diese angeben.
+Das Rechteck</p>
+<p><code>var myRectangle = L.rectangle([</code><br />
+<strong><code>[50.27264, 7.26469],</code></strong><br />
+<strong><code>[51.27264, 6.26469]</code></strong><br />
+<code>])</code>  </p>
+<p>sieht auf der Karte genauso aus, wie das Rechteck</p>
+<p><code>var myRectangle = L.rectangle([</code><br />
+<strong><code>[51.27264, 6.26469],</code></strong><br />
+<strong><code>[50.27264, 7.26469]</code></strong><br />
+<code>])</code></p>
+<p>Und wie das Rechteck des Beispiels aussieht, zeigt Ihnen die nachfolgende Abbildung.</p>
+<p><img src="../media/images/989rechteck.png" alt="Ein `Rectangle`-Objekt auf einer Leaflet Karte." /></p>
+<p><em>Abbildung: Ein <code>Rectangle</code>-Objekt auf einer Leaflet Karte.</em></p>
+<p>In diesem Zusammenhang ist vielleicht ganz interessant wie Leaflet das 
+Koordinatensystem der Erde verarbeitet. Dieses Koordinatensystem ist ja kein 
+gewöhnliches Koordinatensystem, sondern ein sphärisches. 
+Unter einer 
+<a href="https://de.wikipedia.org/w/index.php?title=Sph%C3%A4re_(Mathematik)&amp;oldid=178382030">Sphäre</a> 
+versteht man in der Mathematik ganz vereinfacht ausgedrückt 
+die Oberfläche einer Kugel. Und auf einer Kugel führen, im Gegensatz zu einer Ebene, 
+immer zwei Linien auf direktem Wege von einem Punkt zu einem anderen Punkt. 
+Man kann entweder auf der einen Seite der Kugel, oder auf der anderen Seite 
+der Kugel die beiden Punkte verbinden.</p>
+<p>Die nachfolgenden Abbildungen zeigen Ihnen, dass Leaflet dieses Problem vereinfacht. 
+Es behandelt das sphärische Koordinatensystem als normales Koordinatensystem. 
+Es schneidet den Pazifik einfach in der Mitte durch.
+Dies hatten wir uns im Exkurs 
+<a href="#DasKoordinatensystemderErde">Das Koordinagensystem der Erde</a> schon einmal angesehen.
+Um von der Koordinate <code>[50, -180]</code> zur Koordinate <code>[51, 180]</code> zu gelangen, 
+muss man mit Leaflet einmal um die ganze Erde laufen. 
+Dabei liegen die beiden Punkte ganz dicht beieinander. 
+Analog wird auch ein Rechteck mit diesen Eckpunkten, also mit den Eckpunkten 
+<code>[50, -180]</code> und <code>[51, 180]</code>, um die ganze Erde gezeichnet. 
+Und das, obwohl die Ecken hier ganz nah beieinander liegen.</p>
+<p><img src="../media/images/929a.png" alt="Um von der Koordinate `[50, -180]` zur Koordinate `[51, 180]` zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. In der Mitte des Pazifik ist die Welt getrennt. Hier gibt es keine Verbindung." /></p>
+<p><em>Abbildung: Um von der Koordinate <code>[50, -180]</code> zur Koordinate <code>[51, 180]</code> zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. In der Mitte des Pazifik ist die Welt getrennt. Hier gibt es keine Verbindung.</em></p>
+<hr />
+<p><img src="../media/images/929b.png" alt="Von der Koordinate `[50, -1]` zur Koordinate `[51, 1]` nimmt auch Leaflet die kürzeste Verbindung." /></p>
+<p><em>Abbildung: Von der Koordinate <code>[50, -1]</code> zur Koordinate <code>[51, 1]</code> nimmt auch Leaflet die kürzeste Verbindung.</em></p>
+<hr />
+<p><img src="../media/images/929c.png" alt="Um von der Koordinate `[90, 7]` zur Koordinate `[-90, 6]` zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. In der Mitte des Pazifik ist die Welt getrennt. Hier gibt es keine Verbindung." /></p>
+<p><em>Abbildung: Um von der Koordinate <code>[90, 7]</code> zur Koordinate <code>[-90, 6]</code> zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. In der Mitte des Pazifik ist die Welt getrennt. Hier gibt es keine Verbindung.</em></p>
+<hr />
+<p><img src="../media/images/929d.png" alt="Von der Koordinate `[1, 7]` zur Koordinate `[-1, 6]` nimmt auch Leaflet die kürzeste Verbindung." /></p>
+<p><em>Abbildung: Von der Koordinate <code>[1, 7]</code> zur Koordinate <code>[-1, 6]</code> nimmt auch Leaflet die kürzeste Verbindung.</em></p>
+<h4 id="kreise">Kreise</h4>
+<p>Anhand des nachfolgenden Programmcode können Sie erkennen, 
+wie ein Kreis – also ein Objekt vom 
+<a href="https://leafletjs.com/reference-1.3.4.html#circle">Typ <code>Circle</code></a> – 
+in eine Leaflet Karte eingefügt wird.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*L.circle(
+*[50.27264, 7.26469],
+*100000,
+*{
+*color: "red", 
+*weight: 8, 
+*fillColor:"green"
+*}
+*).addTo(mymap);
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_983.html--&gt;</code></pre>
+<p>Ein Kreis wird anhand seines Mittelpunktes und seines Radius definiert. 
+Der Radius muss dabei in Metern angegeben werden. 
+In den Beispielen habe ich den Rand mit 8 Pixel festgelegt. 
+Diese Breite passt für die Zoom-Stufe 7. Probieren Sie doch einmal aus, 
+wie der Rand aussieht, wenn Sie die Karte vergrößern. Sie werden feststellen, 
+dass man irgendwann nur noch den Rand sieht und es wichtig sein könnte, 
+dessen Größe immer relativ zur Zoom-Stufe zu setzen.</p>
+<p><img src="../media/images/988_kreis.png" alt="Ein `Circle`-Objekt auf einer Leaflet Karte." /></p>
+<p><em>Abbildung: Ein <code>Circle</code>-Objekt auf einer Leaflet Karte.</em></p>
+<h2 id="mehrere-poly-objekte-auf-einer-ebene">Mehrere Poly-Objekte auf einer Ebene</h2>
+<p>In den vorhergehenden Beispielen haben wir jedes Element auf einem separaten Layer – 
+also einer separaten Ebenen – abgebildet. 
+Spätestens, wenn Sie selbst unterschiedliche Geodaten auf einer Karte darstellen 
+möchten werden Sie sich wünschen, Objekte mit gleichen Eigenschaften auf einem 
+Layer gruppieren zu können. Denn nur so können sie alle Elemente zusammen ansprechen.  </p>
+<p>Stellen Sie sich vor, Sie möchten auf Ihrer Website Touren für 
+Aktivurlauber beschreiben. Diese Touren sind unterteilt in 
+Wanderer, Bergsteiger, Gipfelstürmer und Freikletterer. 
+Auf der Karte kann ein Kunde Angebote für eine bestimmte Region heraus filtern. 
+Hierzu muss er nur die Karte passend positionieren. 
+Wenn Sie pro Touren-Typen einen Layer anlegen und die Touren entsprechend ihres 
+Typs auf diesen Layern ablegen, können Sie es dem Kunden zusätzlich ermöglichen, 
+nur die für ihn relevanten Touren einzublenden. 
+Warum erkläre ich Ihnen dies an dieser Stelle? Alle Polyline-Objekte und 
+alle Polygone-Objekte die zusammen definiert wurden, liegen automatisch zusammen 
+auf einem eigenen separaten Layer.</p>
+<p>Das Setzen von Klammern beim Arbeiten mit Polygon-Objekten und Polyline-Objekten, 
+die mehrere Objekte gleichzeitig auf einem Layer erstellen, 
+kann sehr herausfordernd sein.</p>
+<ul>
+<li>
+<p>Sie müssen zum einen alle Objekte – Polyline oder Polygon – 
+zusammen mit einer äußeren Klammer versehen.<br />
+<strong><code>[</code></strong><br />
+<code>[[50.17264, -7.26469], [49.27264, -6.26469]],</code><br />
+<code>[[50.37264, -7.26469], [51.27264, -8.26469]]</code><br />
+<strong><code>]</code></strong></p>
+</li>
+<li>
+<p>Außerdem müssen Sie alle Punkte jedes einzelnen Objekts – Polyline oder Polygon – 
+mit einer Klammer umgeben.<br />
+<code>[</code><br />
+<strong><code>[</code></strong><code>[50.17264, -7.26469], [49.27264, -6.26469]</code><strong><code>]</code></strong>,<br />
+<strong><code>[</code></strong><code>[50.37264, -7.26469], [51.27264, -8.26469]</code><strong><code>]</code></strong><br />
+<code>]</code>  </p>
+</li>
+<li>
+<p>Und zuletzt werden auch die Koordinaten selbst noch eingeklammert.<br />
+<code>[</code><br />
+<code>[</code><strong><code>[</code></strong><code>50.17264, -7.26469</code><strong><code>]</code></strong>, <strong><code>[</code></strong><code>49.27264, -6.26469</code><strong><code>]</code></strong><code>],</code><br />
+<code>[</code><strong><code>[</code></strong><code>50.37264, -7.26469</code><strong><code>]</code></strong>, <strong><code>[</code></strong><code>51.27264, -8.26469</code><strong><code>]</code></strong><code>]</code><br />
+<code>]</code>  </p>
+</li>
+</ul>
+<h3 id="mehrere-polyline-objekte-auf-einer-ebene">Mehrere Polyline Objekte auf einer Ebene</h3>
+<p>In diesem Kapitel gibt es nun ein praktisches Beispiel. 
+Der nachfolgende Programmcodeausschnitt zeigt Ihnen, wie Sie mit dem 
+instanziieren eines Objekts mehrerer Polyline-Objekte auf eine Ebene zeichnen können. 
+Und das die Polyline-Objekte alle auf einer Ebene liegen, 
+beweise ich Ihnen gleichzeitig.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 300px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 15);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*var multipolyline = L.polyline(
+*[
+*[
+*[50.17264, -7.26469],
+*[49.27264, -7.26469],
+*[49.27264, -6.26469]
+*],
+*[
+*[50.37264, -7.26469],
+*[51.27264, -7.26469],
+*[51.27264, -8.26469]
+*]
+*],
+*{color: 'black'}).addTo(mymap);
+*mymap.fitBounds(multipolyline.getBounds());
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_981.html--&gt;</code></pre>
+<p>Was zeigt Ihnen dieses Beispiel? 
+Zunächst einmal können Sie erkennen, dass das Erstellen mehrerer 
+Polyline-Objekte zusammen möglich ist. 
+Und das es auch einfacher ist erkennen Sie daran, dass Sie Optionen nur 
+einmal zuweisen müssen. Beide Linien werden gleichzeitig schwarz gefärbt.  </p>
+<p>Am meisten Vorteile bringt aber die Tatsache, dass beide Linien eine 
+Ebene darstellen. Dies bedeutet, dass die Methode <code>fitBounds()</code> die beiden Linien 
+als ein Objekt sieht und die Abgrenzungen dieses einen Objektes berechnet. 
+Die <a href="http://leafletjs.com/reference-1.1.0.html#map-fitbounds">Methode <code>fitBounds()</code></a> 
+verschiebt eine Karte an die Stelle, an der die übergebenen Koordinaten sich befinden, 
+und setzt die Zoom-Stufe so, dass die Karte für die übergebenen Abgenzungen ideal 
+angezeigt wird. Würden die beiden Linien nicht auf einer Ebenen liegen, 
+wäre es komplizierter beide Linien gleichzeitig vollständig mit optimaler Zoom-Stufe 
+anzuzeigen.</p>
+<blockquote>
+<p>Noch einmal zur Erinnerung:
+Ein Objekt vom Typ <code>Polygon</code> und auch ein <code>Polyline</code>-Objekt ist eine Ebene – 
+die beiden Klassen erweitern die Leaflet
+<a href="http://leafletjs.com/reference-1.1.0.html#layer">Klasse Layer</a>.  </p>
+</blockquote>
+<p><img src="../media/images/987.png" alt="Zwei Polyline-Objekte auf einer Ebene." /></p>
+<p><em>Abbildung: Zwei Polyline-Objekte auf einer Ebene.</em></p>
+<h3 id="mehrere-polygon-objekte-auf-einer-ebene">Mehrere Polygon-Objekte auf einer Ebene</h3>
+<p>In diesem Kapitel zeige ich Ihnen ein Beispiel, 
+bei dem mehrere Polygone zusammen erstellt werden.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*var multipolygone = L.polygon(
+*[
+*[
+*[50.17264, 7.26469],
+*[49.27264, 7.26469],
+*[49.27264, 6.26469]
+*],
+*[
+*[50.37264, 7.26469],
+*[51.27264, 7.26469],
+*[51.27264, 8.26469]
+*]
+*],
+*{color: 'black'})
+*.addTo(mymap)
+*.bindPopup("Wir sind auf einer Ebene");
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_982.html--&gt;</code></pre>
+<p>In diesem Beispiel sehen Sie, wie Sie mit der 
+<a href="https://leafletjs.com/reference-1.3.4.html#layer-bindpopup">Methode <code>bindPopup()</code></a> 
+ein Pop-up Fenster zu einem Element hinzufügen können. 
+Später im Buch werden Pop-up Fenster noch einmal Thema sein. 
+An dieser Stelle habe ich die Methode gewählt, weil ich der Meinung bin, 
+das diese hier gut passt.
+Es gibt viele unzusammenhängende Flächen auf der Erde, 
+für die die gleichen Informationen zutreffend sind. 
+Zum Beispiel haben viele Länder Kolonien. 
+Wenn nun alle zu einem Land gehörenden Gebiete als Polygon auf einem Layer 
+zusammengefasst sind, dann ist es ein Leichtes, 
+allen Gebieten eines Landes das gleiche Pop-up Fenster zuzuweisen. 
+Und wenn Sie nun die ganze Welt auf Ihrer Karte abdecken möchten, 
+dann können Sie sich den Vorteil dieser 
+<a href="https://de.wikipedia.org/w/index.php?title=Layertechnik&amp;oldid=73960532">Layer-Technik</a> 
+sicherlich gut vorstellen.</p>
+<p>In der nächsten Abbildung sehen sie keine Ländergrenzen. 
+Der Einfachheit halber habe ich mich auf zwei Dreiecke beschränkt.</p>
+<p><img src="../media/images/986.png" alt="Zwei Polygone-Objekte auf einer Ebene." /></p>
+<p><em>Abbildung: Zwei Polygone-Objekte auf einer Ebene mit dem selben Pop-up.</em></p>
+<h4 id="mehrere-sich-uberschneidende-polygon-objekte-auf-einer-ebene">Mehrere sich überschneidende Polygon Objekte auf einer Ebene</h4>
+<p>Die Besonderheit bei einem Polygon ist, dass es einen Außen- und einen 
+Innenbereich gibt. Das lesen Sie hier im Buch des Öfteren. 
+Wenn Sie mehrere Polygone auf einem Layer zusammen erstellen, 
+dann beeinflussen diese sich gegenseitig, wenn Flächen übereinander liegen. 
+In der nachfolgenden Tabelle habe ich verschiedene Konstellationen mit Bild 
+und Text aufgenommen. Anhand von Beispielen ist das Zusammenspiel 
+der verschiedenen Bereiche meiner Meinung nach am leichtesten nachzuvollziehen.</p>
+<p><img src="../media/images/928a.png" alt="x" /></p>
+<p><em>Abbildung:</em>  </p>
+<p>Beginnen wir mit einem einfachen Polygone:  </p>
+<pre><code>L.polygon([  
 [ [1, 1], [1, 10], [10, 10], [10, 1] ]  
-])`
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr valign="top"&gt;
-&lt;td&gt;
-&lt;img alt="" src="../Images/data-url-image35.png" id="Bild92"/&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr valign="top"&gt;
-&lt;td&gt;
-Wenn Sie innerhalb dieses Polygons ein weiteres Polygon zeichnen, dann wird der Innenbereich des ersten Polygon um die Fläche des zweiten Polygon verringert. Das zweite Polygon wird praktisch aus dem ersten Polygone ausgeschnitten.
-`L.polygon([  
-[ [1, 1], [1, 10], [10, 10], [10, 1] ],  
-**[ [2, 2], [2, 5], [5, 5], [5, 2] ] **  
-])`
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr valign="top"&gt;
-&lt;td&gt;
-&lt;img alt="" src="../Images/data-url-image36.png" id="Bild93"/&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr valign="top"&gt;
-&lt;td&gt;
-In dieses zweite Polygon können Sie nun wiederum ein Polygon zeichnen. Nun wird diese Fläche wieder voll als Innenbereich gezeichnet.  
-`L.polygon([  
-[ [1, 1], [1, 10], [10, 10], [10, 1] ],  
-[ [2, 2], [2, 5], [5, 5], [5, 2] ],  
-**[ [3, 3], [3, 4], [4, 4], [4, 3] ] **  
-])`
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr valign="top"&gt;
-&lt;td&gt;
-&lt;img alt="" src="../Images/data-url-image37.png" id="Bild94"/&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr valign="top"&gt;
-&lt;td&gt;
-Zeichnen Sie nun ein weiteres Polygon, dass Innenbereich und Außenbereich gleichzeitig abdeckt, dann wird der abgedeckte Innenbereich zum Außenbereich und umgekehrt.  
-`L.polygon([  
-[ [1, 1], [1, 10], [10, 10], [10, 1] ],  
-[ [2, 2], [2, 5], [5, 5], [5, 2] ],  
-[ [3, 3], [3, 4], [4, 4], [4, 3] ],  
-**[ [9, 9], [11, 9], [11, 11], [9, 11] ] **  
-])`
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr valign="top"&gt;
-&lt;td&gt;
-&lt;img alt="" src="../Images/data-url-image38.png" id="Bild95"/&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+])</code></pre>
+<hr />
+<p><img src="../media/images/928b.png" alt="x" /></p>
+<p><em>Abbildung:</em>  </p>
+<p>Wenn Sie innerhalb dieses Polygons ein weiteres Polygon zeichnen, 
+dann wird der Innenbereich des ersten Polygon um die Fläche des zweiten 
+Polygon verringert. Das zweite Polygon wird praktisch aus dem ersten 
+Polygone ausgeschnitten.  </p>
+<pre><code> L.polygon([  
+ [ [1, 1], [1, 10], [10, 10], [10, 1] ],  
+*[ [2, 2], [2, 5], [5, 5], [5, 2] ]  
+ ])</code></pre>
+<hr />
+<p><img src="../media/images/928c.png" alt="x" /></p>
+<p><em>Abbildung:</em>  </p>
+<p>In dieses zweite Polygon können Sie nun wiederum ein Polygon zeichnen. 
+Nun wird diese Fläche wieder voll als Innenbereich gezeichnet.  </p>
+<pre><code> L.polygon([  
+ [ [1, 1], [1, 10], [10, 10], [10, 1] ],  
+ [ [2, 2], [2, 5], [5, 5], [5, 2] ],  
+*[ [3, 3], [3, 4], [4, 4], [4, 3] ] 
+ ])</code></pre>
+<hr />
+<p><img src="../media/images/928d.png" alt="x" /></p>
+<p><em>Abbildung:</em>  </p>
+<p>Zeichnen Sie nun ein weiteres Polygon, dass Innenbereich und 
+Außenbereich gleichzeitig abdeckt, dann wird der abgedeckte 
+Innenbereich zum Außenbereich - und umgekehrt.  </p>
+<pre><code> L.polygon([  
+ [ [1, 1], [1, 10], [10, 10], [10, 1] ],  
+ [ [2, 2], [2, 5], [5, 5], [5, 2] ],  
+ [ [3, 3], [3, 4], [4, 4], [4, 3] ],  
+*[ [9, 9], [11, 9], [11, 11], [9, 11] ]  
+ ])</code></pre>
+<h2 id="daten-mit-layern-gruppieren">Daten mit Layern gruppieren</h2>
+<p>Im vorherigen Kapitel haben Sie gesehen, dass Sie mehrere Polygone Objekte 
+oder mehrere Polyline Objekte zusammen auf einem Layer positionieren können. 
+Es wird sicher einmal vorkommen, dass Sie Elemente unterschiedlicher 
+Typen auf einem Layer zusammen gruppieren möchten.</p>
+<h3 id="layer-gruppen">Layer-Gruppen</h3>
+<p><a href="#" id="DieKarteMitDatenBestueckenLayergruppen"></a></p>
+<p>Die Leaflet <a href="https://leafletjs.com/reference-1.3.4.html#layergroup">Klasse <code>LayerGroup</code></a> 
+wird verwendet, um mehrere Layer oder Ebenen zu gruppieren. 
+So können Sie diese Ebenen wie eine Ebene behandeln. 
+Wenn Sie ein Objekt vom Typ <code>LayerGroup</code> zur Karte hinzufügen, 
+werden alle zur Gruppe gehörenden Layer zum Karten Objekt hinzugefügt.</p>
+<p>Der nachfolgende Programmcodeausschnitt zeigt Ihnen, wie Sie ein Objekt vom 
+Typ <code>LayerGroup</code>erstellen und zu Ihrem Karten Objekt hinzufügen können.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*var marker1 = L.marker([50.27264, 7.26469],
+*{
+*title:"Marker1",
+*alt:"Ich bin ein Marker"
+*}
+*).bindPopup('Marker1');
 
-## Daten mit Layern gruppieren
+*var marker2 = L.marker([51.27264, 6.26469],
+*{
+*title:"Marker2",
+*alt:"Ich bin ein anderer Marker"
+*}
+*).bindPopup('Marker2');
 
-  Im vorherigen Kapitel haben Sie gesehen, dass Sie mehrere Polygone Objekte oder mehrere Polyline Objekte zusammen auf einem Layer positionieren können. Es wird sicher einmal vorkommen, dass Sie Elemente unterschiedlicher Typen auf einem Layer zusammen gruppieren möchten.
+*var polyline = L.polyline(
+*[
+*[50.27264, 7.26469],
+*[51.27264, 7.26469],
+*[51.27264, 6.26469]
+*],
+*{
+*color: 'red', 
+*weight:8
+*}
+*);
 
-### Layergruppen
+*var myLayerGroup = 
+*L.layerGroup([marker1, polyline])
+*.addTo(mymap);
 
-Die Leaflet Klasse &lt;a href="http://leafletjs.com/reference-1.1.0.html#layergroup"&gt;`LayerGroup`&lt;/a&gt; wird verwendet, um mehrere Layer oder Ebenen zu gruppieren. So können Sie diese Ebenen wie eine Ebene behandeln. Wenn Sie ein Objekt vom Typ `&lt;a class="sigil_index_marker" title="LayerGroup (Leaflet)" id="sigil_index_id_21"&gt;LayerGroup&lt;/a&gt;` zur Karte hinzufügen, werden alle zur Gruppe gehörenden Layer zum Karten Objekt hinzugefügt.
-
-Der nachfolgende Programmcodeausschnitt zeigt Ihnen, wie Sie ein Objekt vom Typ`LayerGroup`erstellen und zu Ihrem Karten Objekt hinzufügen können.
-</code></pre>
-<p>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);</p>
-<p>var <strong>marker1</strong> = L.marker([50.27264, 7.26469],
+*myLayerGroup.addLayer(marker2);
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;</code></pre>
+<p>Im vorherigen Beispiel habe ich ein <code>Marker</code>-Objekt und ein Objekt vom 
+Typ <code>Polyline</code> erstellt und beide zusammen auf dem Layer <code>myLayerGroup</code> gruppiert. </p>
+<p>Sie können auch später noch Objekt zum <code>LayerGroup</code>-Objekt hinzufügen. 
+Zum Beispiel so:</p>
+<pre><code>var marker2 = L.marker([51.27264, 6.26469],  
 {
-title:"Marker1",
-alt:"Ich bin ein Marker"
+title:"Marker2",
+alt:"Ich bin ein anderer Marker" 
 }
-).bindPopup('Marker1');</p>
-<p>var <strong>polyline</strong> = L.polyline([
-[50.27264, 7.26469],
-[51.27264, 7.26469],
-[51.27264, 6.26469]],
-{color: 'red', weight:8});</p>
-<p><strong>var myLayerGroup = L.layerGroup([marker1, polyline]).addTo(mymap);</strong></p>
-<p>&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_980.html--&gt;</p>
-<pre><code>
-Im vorherigen Beispiel habe ich ein `Marker`-Objekt und ein Objekt vom 
-Typ `Polyline` erstellt und beide zusammen auf dem Layer `myLayerGroup` gruppiert. 
+).bindPopup('Marker2');
+myLayerGroup.addLayer(marker2);</code></pre>
+<p>Entfernen können sie das <code>LayerGroup</code>-Objekt – und somit alle zu ihr 
+gehörenden Objekt auf einen Schlag – mit der 
+<a href="https://leafletjs.com/reference-1.3.4.html#layergroup-removelayer">Methode <code>removeLayer()</code></a>. 
+Im vohergehenden vollständigen Beispiel konkret mit der Zeile  </p>
+<p><code>myLayerGroup.removeLayer(polyline);</code>.</p>
+<h3 id="feature-gruppen">Feature-Gruppen</h3>
+<p>Die 
+<a href="https://leafletjs.com/reference-1.3.4.html#featuregroup">Klasse-<code>FeatureGroup</code></a> 
+erweitert die 
+<a href="https://leafletjs.com/reference-1.3.4.html#layergroup">Klasse <code>LayerGroup</code></a>. 
+Während die Klasse <code>LayerGroup</code> eher Methoden zum Gruppieren von Layern bereit 
+stellt, geht es in der <code>FeatureGroup</code> hauptsächlich um das gemeinsame 
+Verarbeiten von Ereignissen und das Hinzufügen von Stylen.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*var marker1 = L.marker([50.27264, 7.26469],
+*{
+*title:"Marker1",
+*alt:"Ich bin ein Marker"
+*}
+*);
 
-&gt; Sie können auch
-später noch Objekt zum`LayerGroup`Objekt hinzufügen. Zum Beispiel so:  
-`var marker2 = L.marker([51.27264, 6.26469],`  
-`{`  
-`title:"Marker2",`  
-`alt:"Ich bin ein anderer Marker"`  
-`}`  
-`).bindPopup('Marker2');`  
-`myLayerGroup.addLayer(marker2);`  
+*var marker2 = L.marker([51.27264, 6.26469],
+*{
+*title:"Marker2",
+*alt:"Ich bin ein anderer Marker"
+*}
+*);
 
-Entfernen können sie das`LayerGroup`Objekt – und somit alle zu ihr gehörenden Objekt auf einen Schlag – mit der&lt;a class="sigil_index_marker" title="Methode  removeLayer()" id="sigil_index_id_22"&gt;Methode&lt;/a&gt;`removeLayer()`. Im vohergehenden vollständigen Beispiel konkret mit der Zeile  
-`myLayerGroup.removeLayer(polyline);`.
+*var polyline = L.polyline(
+*[
+*[50.27264, 7.26469],
+*[51.27264, 7.26469],
+*[51.27264, 6.26469]
+*],
+*);
 
-### Featuregruppen
-
-Die&lt;a class="sigil_index_marker" title="FeatureGroup (Leaflet)" id="sigil_index_id_23"&gt;Klasse&lt;/a&gt;`FeatureGroup`erweitert die Klasse`LayerGroup`. Während die Klasse`LayerGroup`eher Methoden zum Gruppieren von Layern bereit stellt, geht es in der`FeatureGroup`hauptsächlich um das gemeinsame Verarbeiten von Ereignissen und das Hinzufügen von Stylen.
-</code></pre>
-<p>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);</p>
-<p>var <strong>marker1</strong> = L.marker([50.27264, 7.26469],
-{
-title:"Marker1",
-alt:"Ich bin ein Marker"
-}
-);</p>
-<p>var <strong>polyline</strong> = L.polyline([
-[50.27264, 7.26469],
-[51.27264, 7.26469],
-[51.27264, 6.26469]],
-);
-**
-var myfeatureGroup=L.featureGroup(
-[marker1, polyline]
-).addTo(mymap);</p>
-<p>myfeatureGroup.bindPopup('Wir haben alle das gleiche Popup!');**</p>
-<p>&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_979.html--&gt;</p>
-<pre><code>
-Analog zum Beispiel im Kapitel [Layergruppen]() sehen Sie im 
+*var myfeatureGroup=L.featureGroup([marker1, polyline]).addTo(mymap);
+*myfeatureGroup.bindPopup('Wir haben alle das gleiche Popup!');
+*myfeatureGroup.setStyle({color:'red', opacity:0.5, weight:8})
+*myfeatureGroup.addLayer(marker2);
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_979.html--&gt;</code></pre>
+<p>Analog zum Beispiel im Kapitel <a href="#DieKarteMitDatenBestueckenLayergruppen">Layergruppen</a> 
+sehen Sie im 
 vorhergehenden Programmcodeausschnitt, wie zwei Elemente erstellt 
-und einem Objekt vom Typ `FeatureGroup` zugeordnet werden. 
-Die FeatureGroup, wird dann zum Karten Objekt hinzugefügt und ein Aufruf 
-der Methode `bindPopup()` beim `FeatureGroup`-Objekt fügt das 
-Pop-up zu allen Objekten des FeatureGroup Objektes hinzu.
-
-Wenn Sie alle Elemente des `FeatureGroup`-Objekts rot färben möchten, 
-reicht die Zeile
-</code></pre>
-<p>myfeatureGroup.setStyle({color:'red'})</p>
-<pre><code>
-aus.
-
-Der Eintrag
-</code></pre>
-<p>myfeatureGroup.on('click', function()
+und einem Objekt vom Typ <code>FeatureGroup</code> zugeordnet werden. 
+Die <code>FeatureGroup</code>, wird dann zum Karten Objekt hinzugefügt und ein Aufruf 
+der Methode <code>bindPopup()</code> beim <code>FeatureGroup</code>-Objekt fügt das 
+Pop-up zu allen Objekten des <code>FeatureGroup</code>-Objektes hinzu.</p>
+<p>Wenn Sie alle Elemente des <code>FeatureGroup</code>-Objekts rot färben möchten, 
+reicht die Zeile</p>
+<pre><code>myfeatureGroup.setStyle({color:'red'})</code></pre>
+<p>aus.</p>
+<p>Der Eintrag</p>
+<pre><code>myfeatureGroup.on('click', function()
 {
 alert('Ein Gruppenmitglied wurde angeklickt!'); 
 }
-)</p>
-<pre><code>
-würde bewirken, dass sich immer, wenn ein Element des `FeatureGroup`-Objektes 
-angeklickt wird, ein Hinweisfenster öffnet.
-
-Wenn Sie ein `FeatureGroup`-Objekt mit Inhalt mit einem Mausklick entfernen möchten, 
-können Sie folgenden Text zu Ihrem Skript hinzufügen:
-</code></pre>
-<p>myfeatureGroup.on('click', function()
+)</code></pre>
+<p>würde bewirken, dass sich immer, wenn ein Element des <code>FeatureGroup</code>-Objektes 
+angeklickt wird, ein Hinweisfenster öffnet.</p>
+<p>Wenn Sie ein <code>FeatureGroup</code>-Objekt - inklusive Inhalt - 
+mit einem Mausklick entfernen möchten, 
+können Sie folgenden Text zu Ihrem Skript hinzufügen:</p>
+<pre><code>myfeatureGroup.on('click', function()
 {
 myfeatureGroup.removeLayer(polyline);
-}<br />
-)</p>
-<pre><code>
-## Popups
+}  
+)</code></pre>
+<h2 id="popups">Popups</h2>
+<p>In diesem Kapitel geht es um Leaflet-Objekte vom 
+Typ <a href="https://leafletjs.com/reference-1.3.4.html#popup"><code>Popup</code></a>. 
+Mithilfe dieses Objekts können Sie 
+[Pop-up Fenster] an bestimmten Stellen auf Ihrem Karten Objekt öffnen. 
+Wenn Sie die 
+<a href="http://leafletjs.com/reference-1.1.0.html#map-openpopup">Methode <code>openPopup()</code></a> 
+einsetzten, um das Pop-up Fenster zu öffnen, 
+stellt Leaflet sicher, dass nur ein Pop-up zur gleichen Zeit geöffnet ist. 
+Ich empfehle Ihnen diese Methode einzusetzen, weil ich der Meinung bin, 
+das das gleichzeitige Öffnen von mehreren Pop-up Fenstern nicht benutzerfreundlich ist. 
+Nichtsdestotrotz kann es aber sein, dass Sie gerne mehrere Pop-up Fenster 
+gleichzeitig anzeigen möchten. In diesem Fall müssen Sie das Pop-up Fenster 
+mit der <a href="http://leafletjs.com/reference-1.1.0.html#map-addlayer">Methode <code>addLayer()</code></a> 
+auf einem eigenen Layer einbinden.</p>
+<p>So nun aber genug der Theorie. Sehen Sie sich das alles anhand des 
+nachfolgenden Programmcodes – am besten auf praktische Weise – an.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+*var mymap = L.map('mapid', {closePopupOnClick: false})
+*.setView([50.27264, 7.26469], 7);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*var marker1 = L.marker([50.27264, 7.26469],
+*{
+*title:"Marker1",
+*alt:"Ich bin Marker 1"
+*}
+*).addTo(mymap);
 
-In diesem Kapitel geht es um Leaflet-Objekte vom Typ &lt;a href="http://leafletjs.com/reference-1.1.0.html#popup"&gt;`Popup`&lt;/a&gt;. Mithilfe dieses Objekts können Sie &lt;a class="sigil_index_marker" title="Pop-up Fenster " id="sigil_index_id_24"&gt;Pop-up Fenster&lt;/a&gt; an bestimmten Stellen auf Ihrem Karten Objekt öffnen. Wenn Sie die Methode &lt;a href="http://leafletjs.com/reference-1.1.0.html#map-openpopup" class="sigil_index_marker" title="Methode openPopup()"&gt;`openPopup()`&lt;/a&gt; einsetzten, um das Pop-up Fenster zu öffnen, stellt Leaflet sicher, dass gleichzeitig nur ein Pop-up geöffnet ist. Ich empfehle Ihnen diese Methode einzusetzen, weil ich der Meinung bin, das das gleichzeitige Öffnen von mehreren Pop-up Fenstern nicht benutzerfreundlich ist. Nichtsdestotrotz kann es aber sein, dass Sie gerne mehrere Pop-up Fenster gleichzeitig anzeigen möchten. In diesem Fall müssen Sie das Pop-up Fenster mit der Methode &lt;a href="http://leafletjs.com/reference-1.1.0.html#map-addlayer" class="sigil_index_marker" title="Methode addLayer()"&gt;`addLayer()`&lt;/a&gt; auf einem eigenen Layer einbinden.
+*var marker2 = L.marker([51.27264, 6.26469],
+*{
+*title:"Marker2",
+*alt:"Ich bin Marker 2"
+*}
+*).addTo(mymap);
 
-So nun aber genug der Theorie. Sehen Sie sich das alles anhand des 
-nachfolgenden Programmcodes – am besten auf praktische Weise – an.
-</code></pre>
-<p>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-&lt;script&gt;</p>
-<p>var mymap = L.map('mapid', {<strong>closePopupOnClick: false</strong>})
-.setView([50.27264, 7.26469], 7);</p>
-<p>L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png">http://{s}.tile.osm.org/{z}/{x}/{y}.png</a>')
-.addTo(mymap);</p>
-<p>var <strong>marker1</strong> = L.marker([50.27264, 7.26469],
-{
-title:"Marker1",
-alt:"Ich bin Marker 1"
-}
-).addTo(mymap);</p>
-<p>var <strong>marker2</strong> = L.marker([51.27264, 6.26469],
-{
-title:"Marker2",
-alt:"Ich bin Marker 2"
-}
-).addTo(mymap);</p>
-<p>**marker1.bindPopup("&lt;h1&gt;Gering&lt;/h1&gt;
-&lt;p&gt;Ein kleines &lt;a href='<a href="https://de.wikipedia.org/wiki/Dorf&#039;&gt;Dorf">https://de.wikipedia.org/wiki/Dorf'&gt;Dorf</a>&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;auf dem Maifeld&lt;/li&gt;&lt;li&gt;in der Eifel&lt;/li&gt;&lt;li&gt;an der Elz&lt;/li&gt;&lt;/ul&gt;"
-);</p>
-<p>marker2.bindPopup("&lt;h1&gt;Boisheim&lt;/h1&gt;
-&lt;p&gt;Ein kleines Dorf&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;irgendwo&lt;/li&gt;&lt;li&gt;nordwestlich&lt;/li&gt;&lt;li&gt;von Gering&lt;/li&gt;&lt;/ul&gt;"
-);**</p>
-<p>&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_978.html--&gt;</p>
-<pre><code>
-Was zeigt Ihnen dieses Beispiel genau? Sie sehen, wie Sie zwei Marker erstellen und diesen mit der Methode`bindPopup()`ein Pop-up Fenster hinzufügen könne. Wenn Sie den ersten Marker anklicken, dann öffnet sich das Pop-up Fenster dieses Markers. Wenn Sie danach den zweiten Marker anklicken, schließt sich das Pop-up Fenster des ersten Markers und das Pop-up Fenster des zweiten Markers wird aktiv.
-Vielleicht ist Ihnen aufgefallen, dass wir beim Karten Objekt die Option`closePopupOnClick`&lt;a class="sigil_index_marker" title="Option closePopupOnClick" id="sigil_index_id_25"&gt;auf&lt;/a&gt;`false`gesetzt haben. Diese Option ist standardmäßig mit`true`belegt, was bedeutet, dass auch beim Klick auf eine beliebige Position auf der Karte ein eventuell offenes Pop-up Fenster von Leaflet automatisch geschlossen wird.
+*marker1.bindPopu("&lt;h1&gt;Gering&lt;/h1&gt;&lt;p&gt;Ein kleines ...");
+*marker2.bindPopup("&lt;h1&gt;Boisheim&lt;/h1&gt;&lt;p&gt;Ein kleines ...");
 
-&gt; Möchten Sie, dass das Pop-up Fenster zum Marker mit dem Namen`marker1`schon beim Öffnen der Karte angezeigt wird? Dann schreiben Sie einfach den Text`marker1.openPopup();`in Ihr Skript.
-
-Wie die Karte zum vorhergehenden Programmcodeausschnitt im Browser aussieht, sehen Sie in der nachfolgenden Abbildung.
-
-![x](media/images/928b.png)
-
-*Abbildung: x.*
-
-&gt; Ich hatte Ihnen zu Beginn dieses Kapitels schon erklärt, dass Leaflet standardmäßig
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_978.html--&gt;</code></pre>
+<p>Was zeigt Ihnen dieses Beispiel genau? Sie sehen, wie Sie 
+zwei Marker erstellen und diesen beiden mit der Methode <code>bindPopup()</code> 
+ein Pop-up Fenster hinzufügen könne. Wenn Sie den ersten Marker anklicken, 
+dann öffnet sich das Pop-up Fenster dieses Markers. Wenn Sie danach den 
+zweiten Marker anklicken, schließt sich das Pop-up Fenster des ersten Markers 
+und das Pop-up Fenster des zweiten Markers wird aktiv.  </p>
+<p>Vielleicht ist Ihnen aufgefallen, dass wir beim Karten Objekt die Option 
+<code>closePopupOnClick</code> auf <code>false</code> gesetzt haben. 
+Diese Option ist standardmäßig mit <code>true</code> belegt, was bedeutet, 
+dass auch beim Klick auf eine beliebige Position auf der Karte ein eventuell 
+offenes Pop-up Fenster von Leaflet automatisch geschlossen wird.</p>
+<blockquote>
+<p>Möchten Sie, dass das Pop-up Fenster zum Marker mit dem Namen <code>marker1</code> 
+schon beim Öffnen der Karte angezeigt wird? Dann fügen Sie einfach den 
+Text <code>marker1.openPopup();</code> am Ende Ihres Skripts an.</p>
+</blockquote>
+<p>Wie die Karte zum vorhergehenden Programmcodeausschnitt 
+im Browser aussieht, sehen Sie in der nachfolgenden Abbildung.</p>
+<p><img src="../media/images/985.png" alt="Pop-ups auf einer Leaflet Karte." /></p>
+<p><em>Abbildung: Pop-ups auf einer Leaflet Karte.</em></p>
+<blockquote>
+<p>Ich hatte Ihnen zu Beginn dieses Kapitels schon erklärt, dass Leaflet standardmäßig
 nur ein Pop-up Fenster gleichzeitig offen anzeigt. Dies ist so, wenn Sie das
-Pop-up Fenster mithilfe der Methode`openOn()`&lt;a class="sigil_index_marker" title="Methode openOn()" id="sigil_index_id_26"&gt;zu&lt;/a&gt;Karte hinzufügen:  
-`var popup1 = L.popup({**keepInView**:true})  
-.setLatLng([49.27264, 6.26469])  
-.setContent('&lt;p&gt;Hallo Welt&lt;br /&gt;Ich bin ein Popup.&lt;/p&gt;')  
-.**openOn**(mymap);`  
+Pop-up Fenster mithilfe der 
+Methode <code>openOn()</code> 
+zur Karte hinzufügen:<br />
+<code>var popup1 = L.popup({</code><strong><code>keepInView</code></strong><code>:true})</code><br />
+<code>.setLatLng([49.27264, 6.26469])</code><br />
+<code>.setContent('&lt;p&gt;Hallo Welt&lt;br /&gt;Ich bin ein Popup.&lt;/p&gt;')</code><br />
+<code>.</code><strong><code>openOn</code></strong><code>(mymap);</code><br />
 Falls Sie mehrere Pop-up Fenster
 gleichzeitig anbieten möchte, dann können Sie dies mithilfe der
-Methode `addTo()`&lt;a class="sigil_index_marker" title="Methode addTo()" id="sigil_index_id_27"&gt;bew&lt;/a&gt;erkstelligen.
-`var popup1 = L.popup()  
-.setLatLng([49.27264, 6.26469])  
-.setContent('&lt;p&gt;Hallo Welt&lt;br /&gt;Ich bin ein Popup.&lt;/p&gt;')  
-.**addTo**(mymap);`
+Methode <code>addTo()</code> bewerkstelligen.<br />
+<code>var popup1 = L.popup()</code><br />
+<code>.setLatLng([49.27264, 6.26469])</code><br />
+<code>.setContent('&lt;p&gt;Hallo Welt&lt;br /&gt;Ich bin ein Popup.&lt;/p&gt;')</code><br />
+<code>.</code><strong><code>addTo</code></strong><code>(mymap);</code>  </p>
+</blockquote>
+<p>Die Eigenschaft <code>keepInView:true</code> bewirkt hier übrigens, 
+dass die Karte nur so weit verschoben werden kann, wie der Marker sichtbar ist.</p>
+<h2 id="mobil">Mobil</h2>
+<p>Ein großer Vorteil von JavaScript ist es, das Landkarten in jedem 
+aktuellen Standardbrowser ohne notwendige externe Applikationen oder 
+Plugins angezeigt werden können.</p>
+<blockquote>
+<p>Genaue Informationen zu den unterstützten
+Browsern finden Sie auf der Website von 
+<a href="https://leafletjs.com/index.html#features">Leaflet im Bereich Features</a>.</p>
+</blockquote>
+<p>Jede Website, die eine Leaflet Karte anzeigt, 
+kann vom Entwickler auf die gleiche Art und Weise programmiert werden. 
+Der Entwickler muss im Normalfall nichts Spezielles für ein Gerät beachtet. 
+Ein paar erwähnenswerte Punkte gibt es aber trotzdem und das, 
+was meiner Meinung nach erwähnenswert ist, finden Sie in diesem Kapitel.</p>
+<p>Das Spannendste bei der Arbeit mit mobilen Anwendungen ist sicherlich 
+die <a href="https://leafletjs.com/reference-1.3.4.html#map-locate">Funktion <code>locate()</code></a>. 
+Diese Funktion versucht, den Benutzer mit der 
+<a href="https://de.wikipedia.org/w/index.php?title=W3C_Geolocation_API&amp;oldid=173190043">W3C Geolocation API</a> 
+zu lokalisieren. Die 
+<a href="https://de.wikipedia.org/w/index.php?title=W3C_Geolocation_API&amp;oldid=173190043">W3C Geolocation API</a> 
+ist eine einheitliche Webbrowser-Programmierschnittstelle zum Ermitteln des geografischen Standorts des zugehörigen Endgeräts. Aber beginnen wir von vorne mit dem Bereich HTML und CSS.</p>
+<h3 id="html-und-css">HTML und CSS</h3>
+<p>Sie möchten Ihre Leaflet Karte auch 
+für mobile Geräte optimal konfigurieren? Dann sollten Sie als erstes sicherstellen, 
+dass die Karte passend angezeigt wird. Sie möchten sicher nicht, 
+dass jemand der die Karte über ein Gerät mit einem kleinen Display aufruft, 
+nur einen Teil der Karte sieht und er diese erst verschieben muss, 
+um auch die Randbereiche zu erkennen. Oder, dass die Karte so klein dargestellt wird, 
+dass der Inhalt auf einem kleinen Display nicht lesbar ist. Ideal ist es, 
+wenn die vollständige Karte im Display lesbar angezeigt wird. 
+In diesem Punkt stimmen Sie mir sicher zu. Das nächste Beispiel zeigt Ihnen, 
+wie Sie die vollständige Karte im Display lesbar angezeigen können.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+*&lt;meta 
+*name="viewport" 
+*content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" 
+*/&gt;
+*&lt;style&gt;
+*body {
+*padding: 0;
+*margin: 0;
+*}
+*html, body, #mapid {
+*height: 100vh;
+*width: 100vw;
+*}
+*&lt;/style&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid', {}).setView([50.27264, 7.26469], 18);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+ mymap.locate({setView: true, maxZoom: 18});
+*mymap.on('locationfound', onLocationFound);
+*mymap.on('locationerror', onLocationError);
 
+*function onLocationFound(e) {
+*var radius = e.accuracy / 2;
+*L.marker(e.latlng).addTo(mymap)
+*.bindPopup("Sie sind etwa " + radius + " Meter von diesem Punkt entfernt.")
+*.openPopup();
+*L.circle(e.latlng, radius).addTo(mymap);
+*}
 
-Die Eigenschaft `keepInView:true` bewirkt hier übrigens, dass die Karte nur so weit verschoben werden kann, wie der Marker sichtbar ist.
+*function onLocationError(e) {
+*alert(e.message);
+*}
 
-## Mobil
-
-  Ein großer Vorteil von JavaScript ist es, das Landkarten in jedem aktuellen Standardbrowser ohne notwendige externe Applikationen oder Plugins angezeigt werden können.
-
-&gt; Genaue Informationen zu den unterstützten
-Browsern finden Sie auf der Website von &lt;a href="http://leafletjs.com/"&gt;Leaflet&lt;/a&gt;
-im Bereich *Features*.
-
-
-  Jede Website, die eine Leaflet Karte anzeigt, kann vom Entwickler auf die gleiche Art und Weise programmiert werden. Der Entwickler muss im Normalfall nichts Spezielles für ein Gerät beachtet. Ein paar erwähnenswerte Punkte gibt es aber trotzdem und das, was meiner Meinung nach erwähnenswert ist, finden Sie in diesem Kapitel.
-
-  Das Spannendste bei der Arbeit mit mobilen Anwendungen ist sicherlich die Funktio&lt;a class="sigil_index_marker" title="Methode locate()" id="sigil_index_id_28"&gt;n&lt;/a&gt;&lt;a href="http://leafletjs.com/reference-1.1.0.html#map-locate"&gt;locate()&lt;/a&gt;. Diese Funktion versucht, den Benutzer mit der&lt;a class="sigil_index_marker" title="W3C Geolocation API " id="sigil_index_id_29"&gt;W3C Geolocation API&lt;/a&gt;zu lokalisieren. Die &lt;a href="https://www.w3.org/TR/geolocation-API/"&gt;W3C Geolocation API &lt;/a&gt;ist eine einheitliche Webbrowser-Programmierschnittstelle zum Ermitteln des geografischen Standorts des zugehörigen Endgeräts. Aber beginnen wir von vorne mit dem Bereich HTML und CSS.
-
-### HTML und CSS
-
-Sie möchten Ihre Leaflet Karte auch für&lt;a class="sigil_index_marker" title="mobile Geräte" id="sigil_index_id_30"&gt;mobile Geräte&lt;/a&gt;optimal konfigurieren? Dann sollten Sie als Erstes sicherstellen, dass die Karte passend angezeigt wird. Sie möchten sicher nicht, dass jemand der die Karte über ein Gerät mit einem kleinen Display aufruft, nur einen Teil der Karte sieht und er diese erst verschieben muss, um auch die Randbereiche zu erkennen. Oder, dass die Karte so klein dargestellt wird, dass der Inhalt auf einem kleinen Display nicht lesbar ist. Ideal ist es, wenn die vollständige Karte im Display lesbar angezeigt wird. In diesem Punkt stimmen Sie mir sicher zu. Das nächste Beispiel zeigt Ihnen, wie Sie die vollständige Karte im Display lesbar angezeigen können.
-
-</code></pre>
-<p>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-<strong>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0,
-maximum-scale=1.0, user-scalable=no" /&gt;
-&lt;style&gt;body {padding: 0;margin: 0;}html, body, #mapid {height: 100vh;width: 100vw;}
-&lt;/style&gt;</strong>
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id="mapid"&gt;&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid', {closePopupOnClick: false})
-.setView([50.27264, 7.26469], 18);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);</p>
-<p><strong>mymap.locate({setView: true, maxZoom: 18});</strong></p>
-<p>mymap.on('<strong>locationfound</strong>', onLocationFound);
-mymap.on('<strong>locationerror</strong>', onLocationError);</p>
-<p>function <strong>onLocationFound</strong>(e) {
-var radius = e.accuracy / 2;
-L.marker(e.latlng).addTo(mymap)
-.bindPopup("Sie sind etwa" + radius + " Meter von diesem Punkt entfernt.")
-.openPopup();
-L.circle(e.latlng, radius).addTo(mymap);
-}</p>
-<p>function <strong>onLocationError</strong>(e) {
-alert(e.message);
-}</p>
-<p>&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_977.html--&gt;</p>
-<pre><code>
-&gt; Wissen Sie, dass Sie zum Debuggen die Methode`console.log()`verwenden können? Der Eintrag  
-`&lt;script&gt;`   
-`...`  
-`console.log(e);`  
-`...`  
-`&lt;/script&gt;`  
-gibt an einer Stelle, an der das Objekt `e` instanziiert ist, den Inhalt dieses Objektes in der Konsole aus.  
-Die Konsole können Sie im Browser &lt;a href="https://www.mozilla.org/de/firefox/new/"&gt;Mozilla Firefox&lt;/a&gt; über das Menü  
-`Extras | Web Entwickler | Web Konsole öffnen`.  
-Im Browser &lt;a href="https://www.google.de/chrome/browser/desktop/index.html"&gt;Google Chrome&lt;/a&gt; finden Sie die Konsole über das Menü  
-`Tools | Javascipt-Konsole`.
-
-Dieses Beispiel enthält zusätzlich zu den vorhergehenden Beispielen ein `&lt;style&gt;`-Element. In diesem`&lt;style&gt;`-Element sind die Abstände, also`padding`und`margin`, auf`0`gesetzt. So passt die Karte sich genau an das Dispay an und es wird kein Platz mit Rändern verschwendet. Außerdem haben wir die Höhe mit`height: 100vh`auf 100 % gesetzt, damit diese voll ausgenutzt wird.
-
-Die Einheiten &lt;a href="https://www.w3.org/TR/css3-values/#viewport-relative-lengths"&gt;vw&lt;/a&gt;&lt;a href="https://www.w3.org/TR/css3-values/#viewport-relative-lengths"&gt; und &lt;/a&gt;&lt;a href="https://www.w3.org/TR/css3-values/#viewport-relative-lengths"&gt;vh&lt;/a&gt;
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_977.html--&gt;</code></pre>
+<blockquote>
+<p>Wissen Sie, dass Sie zum Debuggen die Methode <code>console.log()</code> verwenden können? 
+Der Eintrag<br />
+<code>&lt;script&gt;</code><br />
+<code>...</code><br />
+<code>console.log(e);</code><br />
+<code>...</code><br />
+<code>&lt;/script&gt;</code><br />
+gibt an einer Stelle, an der das Objekt <code>e</code> instanziiert ist, 
+den Inhalt dieses Objektes in der Konsole aus.<br />
+Die Konsole können Sie im Browser 
+<a href="https://www.mozilla.org/de/firefox/new/">Mozilla Firefox</a> 
+über das Menü<br />
+<code>Extras | Web Entwickler | Web Konsole</code> öffnen.<br />
+Im Browser <a href="https://www.google.de/chrome/browser/desktop/index.html">Google Chrome</a> 
+finden Sie die Konsole über das Menü 
+<code>Tools | Javascipt-Konsole</code>.</p>
+</blockquote>
+<p>Dieses Beispiel enthält zusätzlich zu den vorhergehenden Beispielen 
+ein <code>&lt;style&gt;</code>-Element. In diesem<code>&lt;style&gt;</code>-Element sind die Abstände, 
+also <code>padding</code> und <code>margin</code>, auf <code>0</code> gesetzt. 
+So passt die Karte sich genau an das Dispay an und es wird kein Platz 
+mit Rändern verschwendet. Außerdem haben wir die Höhe mit <code>height: 100vh</code> auf 100 % 
+gesetzt, damit diese voll ausgenutzt wird.</p>
+<p>Die <a href="https://wiki.selfhtml.org/index.php?title=CSS/Wertetypen/Zahlen,_Ma%C3%9Fe_und_Ma%C3%9Feinheiten/Viewportabmessungen&amp;oldid=55341">Einheiten <code>vw</code> und <code>vh</code></a> 
 definieren eine Breite - beziehungsweise Höhe - in Relation zur Größe
-des Browser-Fensters. Dabei steht`vw`für die Breite und` vh`für
-die Höhe des Viewport. Diese Viewport Units ermöglichen es, Größen
-in Relation zur jeweils aktuellen Größe des Browser-Fensters zu
-definieren.
-
-  Den fixen Wert für die Höhe, der im `&lt;div&gt;`-Element des Karten-Objektes enthalten war, habe ich entfernt. So verschwindet auch die Bildlaufleiste am rechten Rand.
-
-  Außerdem ist in diesem Beispiel das Meta-Element`viewport`hinzu gekommen. Somit kann die Seite für mobile Geräte nicht künstlich verkleinert oder vergrößert werden – zoomen ist aber immer noch möglich!
-
-&gt; Bei die Anzeige auf mobilen Geräten spielt das&lt;a class="sigil_index_marker" title="viewport (Meta-Element)" id="sigil_index_id_31"&gt;Meta-Element&lt;/a&gt;`viewport`eine große Rolle. In unserm Beispiel haben wir die Attribute`initial-scale=1.0`,`maximum-scale=1.0`, und`user-scalable=no`verwendet.  
-Das Attribut`initial-scale`legt die anfängliche Zoom-Stufe fest.`1.0`führt dazu, dass die Inhalte in ihrer Originalgröße
-dargestellt werden. Das bedeutet, dass auf einem Display mit 320
-Pixel Breite, eine 320 Pixel breite Grafik die volle Breite
-ausfüllt. Im Gegensatz dazu würde der Wert`2.0`zu einer 2-fachen Vergrößerung führen – das Bild wäre dann nur noch
-halb zu sehen.  
-Das Attribut`user-scalable`bestimmt, ob der Nutzer die Anzeige der Website vergrößern oder
-verkleinern kann.  
-Die Attribute`minimum-scale`und`maximum-scale`ermöglichen es die Zoom-Stufe einzuschränken. Die Vorgabe`maximum-scale=1.0`,
-bewirkt, dass der Inhalt nicht vergrößert werden kann.
-
-### JavaScript
-
-Die Karte wird nun passend auf der Website angezeigt. Soweit so gut! Wir können die Karte aber noch benutzerfreundlicher machen. Jemand der mit einem mobilen Gerät im Internet unterwegs ist, nutzt sein Gerät in der Regel an verschiedenen Standorten. Und meistens ist es so, dass das, was in der Nähe ist, am interessantesten ist. Ideal wäre es also, wenn die Karte sich sofort so öffnet, dass der aktuelle Standort in der Mitte der Karte dargestellt wird. Und das ist möglich. Leaflet bietet Ihnen Funktionen, die Sie nutzen können.
-</code></pre>
-<p>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-<strong>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0,
-maximum-scale=1.0, user-scalable=no" /&gt;
-&lt;style&gt;body {padding: 0;margin: 0;}html, body, #mapid {height: 100vh;width: 100vw;}
-&lt;/style&gt;</strong>
-body {
-padding: 0;
-margin: 0;
-}
-html, body, #mapid {
-height: 100vh;
-width: 100vw;
-}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id="mapid"&gt;&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid', {closePopupOnClick: false}).setView([50.27264, 7.26469], 18);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);</p>
-<p>**mymap.locate({setView: true, maxZoom: 18});
-mymap.on('locationfound', onLocationFound);
-mymap.on('locationerror', onLocationError);</p>
-<p>function onLocationFound(e) {
-var radius = e.accuracy / 2;
-L.marker(e.latlng).addTo(mymap)
-.bindPopup("Sie sind etwa" + radius + " Meter von diesem Punkt entfernt.")
-.openPopup();
-L.circle(e.latlng, radius).addTo(mymap);<strong>
-</strong>}
-**
-function onLocationError(e) {
-alert(e.message);
-}
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_977.html--&gt;</p>
-<pre><code>
-Wenn Sie eine Website besuchen, die standortbezogenes Surfen unterstützt – 
+des Browser-Fensters. Dabei steht <code>vw</code> für die Breite und <code>vh</code> für 
+die Höhe des Viewport. Diese Viewport Units ermöglichen es, Größen 
+in Relation zur jeweils aktuellen Größe des Browser-Fensters zu 
+definieren.</p>
+<p>Den fixen Wert für die Höhe, der im <code>&lt;div&gt;</code>-Element des 
+Karten-Objektes enthalten war, habe ich entfernt. 
+So verschwindet auch die Bildlaufleiste am rechten Rand.</p>
+<p>Außerdem ist in diesem Beispiel das Meta-Element <code>viewport</code> hinzu gekommen. 
+Somit kann die Seite für mobile Geräte nicht künstlich verkleinert oder 
+vergrößert werden – zoomen ist aber immer noch möglich!</p>
+<blockquote>
+<p>Bei die Anzeige auf mobilen Geräten spielt 
+das Meta-Element <code>viewport</code> eine große Rolle. 
+In unserm Beispiel haben wir die Attribute <code>initial-scale=1.0</code>, <code>maximum-scale=1.0</code>, 
+und<code>user-scalable=no</code>verwendet.<br />
+Das Attribut <code>initial-scale</code> legt die anfängliche Zoom-Stufe fest. 
+<code>1.0</code> führt dazu, dass die Inhalte in ihrer Originalgröße
+dargestellt werden. Das bedeutet, dass auf einem Display mit 320 
+Pixel Breite, eine 320 Pixel breite Grafik die volle Breite 
+ausfüllt. Im Gegensatz dazu würde der Wert <code>2.0</code> zu einer 2-fachen 
+Vergrößerung führen – das Bild wäre dann nur noch
+halb zu sehen.<br />
+Das Attribut <code>user-scalable</code> bestimmt, ob der Nutzer die Anzeige 
+der Website vergrößern oder
+verkleinern kann.<br />
+Die Attribute <code>minimum-scale</code> und <code>maximum-scale</code> ermöglichen es 
+die Zoom-Stufe einzuschränken. Die Vorgabe <code>maximum-scale=1.0</code>, 
+bewirkt, dass der Inhalt nicht vergrößert werden kann.</p>
+</blockquote>
+<h3 id="javascript">JavaScript</h3>
+<p>Die Karte wird nun passend auf der Website angezeigt. 
+Soweit so gut! Wir können die Karte aber noch benutzerfreundlicher machen. 
+Jemand der mit einem mobilen Gerät im Internet unterwegs ist, 
+nutzt sein Gerät in der Regel an verschiedenen Standorten. 
+Und meistens ist es so, dass das, was in der Nähe ist, 
+am interessantesten ist. Ideal wäre es also, wenn die Karte sich sofort so öffnet, 
+dass der aktuelle Standort in der Mitte der Karte dargestellt wird. 
+Das ist möglich und Leaflet bietet Ihnen Funktionen, die Sie nutzen können.</p>
+<p>Wenn Sie eine Website besuchen, die standortbezogenes Surfen unterstützt – 
 zum Beispiel die Leaflet Karte im Beispielcode – prüft der Browser, 
 ob Sie Ihren Aufenthaltsort bekannt geben möchten. 
 Wenn Sie zustimmen, berechnet der Browser Ihren Standort über nahe gelegene 
 Funkzugangsknoten oder die IP-Adresse Ihres Computers. 
-Diese ungefähre Ortsangabe wird dann an die anfragende Website weitergegeben.  
-
-Wenn Sie Ihren Standort freigegeben haben, dann sehen beim Aufruf der Karte einen Kreis, der Ihren ungefähren Standort wiedergibt und ein Pop-up Fenster, dass Ihnen erklärt wo Sie sich gerade befinden. Möchten Sie Ihren Standort nicht mit anderen teilen, dann sehen Sie eine Fehlermeldung beim Öffnen der Karte. Diese Fehlermeldung erklärt Ihnen, warum Sie nicht geortet werden können.  
-
-Damit Sie sich auch Bild davon machen könne, wenn Sie das Beispiel gerade nicht praktisch nachvollziehen können, habe ich Ihnen Bilder eingefügt.
-
-![x](media/images/928b.png)
-
-*Abbildung: x.*
-
-&lt;img alt="" src="../Images/data-url-image40.png" id="Bild39"/&gt;
-
-&lt;img alt="" src="../Images/data-url-image41.png" id="Bild40"/&gt;
-
-&lt;img alt="" src="../Images/data-url-image42.png" id="Bild41"/&gt;
-
-Leaflet bietet Ihnen noch weitere &lt;a href="http://leafletjs.com/reference-1.1.0.html#locate-options"&gt;Geolokalisierungsmethoden&lt;/a&gt; und &lt;a href="http://leafletjs.com/reference-1.1.0.html#locationevent"&gt;Geolokalisierungsereignisse&lt;/a&gt; an.
-
-## Ereignisse in Leaflet
-
-Bisher haben wir ausschließlich mit statischen Daten gearbeitet. In der Welt passiert aber fortwährend ganz schön viel und Sie möchten sicherlich mit Ihrer Karte auf das ein oder andere Ereignis reagieren. Vielleicht möchten Sie je nach Standort einen Pop-up Text ändern. Oder Sie möchten auf ein anderes Ereignis reagieren. Vielleicht wissen Sie auch noch gar nicht so genau auf welche Ereignisse Sie reagieren können. Dann shen Sie sich zur Inspiration doch einfach einmal an, was Leaflet Ihnen bietet. Insgesamt bietet Leaflet Ihnen 34 verschiedene Ereignisse, die die sie nutzen können. Alle Ereignisse sind in der &lt;a href="http://leafletjs.com/reference-1.1.0.html#events"&gt;Dokumentation&lt;/a&gt; gut erklärt.
-
-Exemplarisch sehen wir uns mit dem folgenden Programmcode – wieder anhand eines ganz einfache Beispiels – die Vorgehensweise genauer an. Konkret reagieren wir auf einen Mausklick.
-
-</code></pre>
-<p>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid', {closePopupOnClick: false}).setView([50.27264, 7.26469], 7);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);</p>
-<p><strong>mymap.on('click',
-function(){
-alert('Sie haben auf die Karte geklickt.')
-}
-);
-</strong>
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_976.html--&gt;</p>
-<pre><code>
-Leaflet bietet die Methode &lt;a href="http://leafletjs.com/reference-1.1.0.html#evented-on"&gt;`on()`&lt;/a&gt; um auf ein Ereignis zu reagieren. Der erste Parameter, der mit dieser Methode übergeben wird, steht für den Ereignistyp. In unserem Falle ist dies`click`. Der zweite Wert erwartet eine Funktion, die beim Eintreten des Ereignisses ausgeführt werden soll.
-
-&gt; In unserem Beispiel haben wir die Funktion sofort in den Methodenaufruf eingefügt:  
-`mymap.on('click',  
+Diese ungefähre Ortsangabe wird dann an die anfragende Website weitergegeben.  </p>
+<p>Wenn Sie Ihren Standort freigegeben haben, 
+dann sehen beim Aufruf der Karte des letzten Beispiels einen Kreis, 
+der Ihren ungefähren Standort wiedergibt und ein Pop-up Fenster, 
+dass Ihnen erklärt wo Sie sich gerade befinden. 
+Möchten Sie Ihren Standort nicht mit anderen teilen, 
+dann sehen Sie eine Fehlermeldung beim Öffnen der Karte. 
+Diese Fehlermeldung erklärt Ihnen, warum Sie nicht geortet werden können.  </p>
+<p>Damit Sie sich auch Bild davon machen könne, 
+wenn Sie das Beispiel gerade nicht praktisch nachvollziehen können, 
+habe ich Ihnen Bilder eingefügt.</p>
+<p><img src="../media/images/984.png" alt="x" /></p>
+<p><em>Abbildung: Wenn Sie eine Website besuchen, die standortbezogenes Surfen unterstützt prüft der Browser, ob Sie Ihren Aufenthaltsort bekannt geben möchten.</em></p>
+<hr />
+<p><img src="../media/images/984a.png" alt="" /></p>
+<p><em>Abbildung: Möchten Sie Ihren Standort nicht mit anderen teilen, dann sehen Sie eine Fehlermeldung beim Öffnen der Karte. Diese Fehlermeldung erklärt Ihnen, warum Sie nicht geortet werden können.</em></p>
+<hr />
+<p><img src="../media/images/984b.png" alt="x" /></p>
+<p><em>Abbildung: Wenn Sie Ihren Standort freigegeben haben, dann sehen beim Aufruf der Karte des letzten Beispiels einen Kreis, der Ihren ungefähren Standort wiedergibt und ein Pop-up Fenster, dass Ihnen erklärt wo Sie sich gerade befinden.</em></p>
+<p>Leaflet bietet Ihnen noch weitere 
+<a href="https://leafletjs.com/reference-1.1.0.html#map-geolocation-methods">Geolokalisierungsmethoden</a> 
+und 
+<a href="http://leafletjs.com/reference-1.1.0.html#locationevent">Geolokalisierungsereignisse</a> an.</p>
+<h2 id="ereignisse-leaflet">Ereignisse in Leaflet</h2>
+<p>Bisher haben wir ausschließlich mit statischen Daten gearbeitet. 
+In der Welt passiert aber fortwährend ganz schön viel und Sie möchten sicherlich mit 
+Ihrer Karte auf das ein oder andere Ereignis reagieren. 
+Vielleicht möchten Sie je nach Standort einen Pop-up Text ändern. 
+Oder Sie möchten auf ein anderes Ereignis reagieren. 
+Vielleicht wissen Sie auch noch gar nicht so genau auf welche Ereignisse Sie reagieren können. 
+Dann sehen Sie sich zur Inspiration doch einfach einmal an, 
+was Leaflet Ihnen bietet. 
+Insgesamt bietet Leaflet Ihnen 34 verschiedene Ereignisse, 
+die sie nutzen können. Alle Ereignisse sind in 
+der <a href="http://leafletjs.com/reference-1.1.0.html#events">Dokumentation</a> gut erklärt.</p>
+<p>Exemplarisch sehen wir uns mit dem folgenden Programmcode – wieder anhand 
+eines ganz einfache Beispiels – die Vorgehensweise genauer an. 
+Konkret reagieren wir auf einen Mausklick.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid', {}).setView([50.27264, 7.26469], 7);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*mymap.on('click', function()
+*{
+*alert('Sie haben auf die Karte geklickt.')
+*}
+*);
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_976.html--&gt;</code></pre>
+<p>Leaflet bietet die 
+<a href="http://leafletjs.com/reference-1.1.0.html#evented-on">Methode <code>on()</code></a> 
+um auf ein Ereignis zu reagieren. Der erste Parameter, der mit dieser Methode 
+übergeben wird, steht für den Ereignistyp. In unserem Falle ist dies <code>click</code>. 
+Der zweite Wert erwartet eine Funktion, die beim Eintreten des Ereignisses 
+ausgeführt werden soll.</p>
+<blockquote>
+<p>In unserem Beispiel haben wir die Funktion sofort in den Methodenaufruf eingefügt:  </p>
+<pre><code>mymap.on('click',  
 function(){  
 alert('Sie haben auf die Karte geklickt.')  
 }  
-);`  
-Diese Schreibweise wird auch als &lt;a class="sigil_index_marker" title="anonymer Funktionsausdruck" id="sigil_index_id_32"&gt;anonymer Funktionsausdruck&lt;/a&gt;bezeichnet,
-weil die Funktion keinen Namen hat.
+);</code></pre>
+<p>Diese Schreibweise wird auch 
+als anonymer Funktionsausdruck bezeichnet,
+weil die Funktion keinen Namen hat.</p>
+</blockquote>
+<p>Wenn Sie die Karte des vorhergehenden Beispiels im Browser aufrufen und anklicken, 
+sehen Sie die in der nachfolgenden Abbildung dargestellte Meldung.</p>
+<p><img src="../media/images/983.png" alt="x" /></p>
+<p><em>Abbildung: Eine Leaflet Karte, die ein Pop-up Fenster anzeigt, wenn sie mit der Maus angeklickt wird.</em></p>
+<h3 id="eine-benutzerdefinierte-funktionen">Eine benutzerdefinierte Funktionen</h3>
+<p>Die Methoden, die Leaflet Ihnen bietet, kennen Sie nun. 
+Bisher haben Sie immer die Variable <code>e</code> in den Funktionen übergeben. 
+Mit JavaScript können Sie aber auch eigene Variablen übergeben. 
+Außerdem können Sie eigene Funktionen an beliebigen Stellen im Programmcode aufrufen.</p>
+<p>Probieren wir das doch sofort einmal aus. Im nächsten Beispiel erstellen wir einen 
+Marker und verbinden diesen mit einem Pop-up Fenster – und das mithilfe einer 
+selbst erstellten Funktion.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid', {}).setView([50.27264, 7.26469], 7);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 
+*var marker1 = L.marker([50.27264, 7.26469])
+*.addTo(mymap).bindPopup(createPopup("Text als Parameter"));
 
-  Wenn Sie die Karte des vorhergehenden Beispiels im Browser aufrufen und anklicken, sehen Sie die in der nachfolgenden Abbildung dargestellte Meldung.
+*var marker2 = L.marker([51.27264, 6.26469])
+*.addTo(mymap).bindPopup(createPopup("Anderer Text als Parameter"));
 
-![x](media/images/928b.png)
-
-*Abbildung: x.*
-
-&gt; Vielleicht möchten sie selbst eigene Beispiele ausprobieren und diese anderen zeigen.  
-Insbesondere bei der Fehlersuche ist dies oft hilfreich.  
-Dies können Sie mithilfe des &lt;a href="http://playground-leaflet.rhcloud.com/fixo/edit?html,console,output"&gt;Leaflet Playgrounds&lt;/a&gt; tun.
-
-### Eine benutzerdefinierte Funktionen
-
-Die Methoden, die Leaflet Ihnen bietet, kennen Sie nun. Bisher haben Sie immer die Variable`e`in den Funktionen übergeben. Mit JavaScript können Sie aber auch eigene Variablen übergeben. Außerdem können Sie eigene Funktionen an beliebigen Stellen im Programmcode aufrufen.
-
-Probieren wir das doch sofort einmal aus. Im nächsten Beispiel erstellen wir einen Marker und verbinden diesen mit einem Pop-up Fenster – und das mithilfe einer selbst erstellten Funktion.
-</code></pre>
-<p>&lt;!DOCTYPE HTML&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
-&lt;script&gt;
-var mymap = L.map('mapid', {closePopupOnClick: false}).setView([50.27264, 7.26469], 7);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);</p>
-<p>var marker1 = L.marker([50.27264, 7.26469]).addTo(mymap)
-.bindPopup(<strong>createPopup</strong>("Text als Parameter"));</p>
-<p>var marker2 = L.marker([51.27264, 6.26469]).addTo(mymap)
-.bindPopup(<strong>createPopup</strong>("Anderer Text als Parameter"));</p>
-<p><strong>function createPopup(popuptext){
-return L.popup({autoClose:false, keepInView:true, closeButton:false})
-.setContent(popuptext);
-}
-</strong>
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_975.html--&gt;</p>
-<pre><code>
-In diesem Beispiel ging es nur um das Grundsätzliche und die Mächtigkeit von eigenen Funktionen wird mit nur zwei Markern noch nicht klar. Vielleicht können Sie sich aber vorstellen, wie viel Text mithilfe einer benutzerdefinierten Funktion eingespart werden kann.
-
-&gt; Achtung: Wenn Sie bei einem Pop-up Fenster die Eigenschaften`autoClose:false`und`closeButton:false`gleichzeitig setzten, kann dieses Pop-up Fenster tatsächlich nicht
-mehr geschlossen werden.
-
-![x](media/images/928b.png)
-
-*Abbildung: x.*
-
-### Ein interaktives Beispiel
-
-  Und zu guter Letzt möchte ich Ihnen noch ein interaktives Beispiel zeigen.
-</code></pre>
-<p>&lt;!DOCTYPE HTML&gt;
-&lt;html lang="de"&gt;
-&lt;head&gt;
-&lt;meta charset="utf-8"/&gt;
-&lt;title&gt;Eine OpenStreetMap Karte mit Leaflet&lt;/title&gt;
-&lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
-&lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;p&gt;Bitte geben Sie eine Koordinte an:&lt;/p&gt;&lt;br&gt;
-Geographische Breite:&lt;input type="text" id="lat"&gt;&lt;br&gt;
-Geographische Länge:&lt;input type="text" id="long"&gt;&lt;br&gt;
-Name:&lt;input type="text" id="name"&gt;&lt;br&gt;
-<strong>&lt;button onclick="save()"&gt;Speichern&lt;/button&gt;</strong>
-&lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;</p>
-<p>&lt;script&gt;
-var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
-L.tileLayer('<a href="http://{s}.tile.osm.org/{z}/{x}/{y}.png&#039;).addTo(mymap">http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap</a>);</p>
-<p><strong>function save(){
-var p1 = parseFloat(document.getElementById("lat").value);</strong>
-<strong>var p2 = parseFloat(document.getElementById("long").value);
-L.marker([p1,p2]).bindPopup(document.getElementById("name").value).addTo(mymap);</strong>
-<strong>}</strong>
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;!--index_974.html--&gt;</p>
-<pre><code>
-
-
-
-  Im vorhergehenden Beispiel ist eine Schaltfläche integriert, die – wenn sie angeklickt wird – eine benutzerdefinierte Funktion ausführt. Mit der Funktion wird ein Marker mit einem Pop-up Fenster in die Karte eingesetzt. Dies ist nur als Beispiel gedacht. Die können in der benutzerdefinierten Funktion alles Mögliche ausführen – lassen Sie Ihrer Fantasie freien Lauf. Ein weiterer Anwendungsfall könnte eine Art Heiß-Kalt Spiel sein. Sie kennen sicher das einfache Suchspiel.
-
- &gt; Möchten die interaktiv eingefügten Daten in einem Objekt speichern, um einen Überblick über diese zu haben und eventuell weitere Aktionen von dem Datenbestand abhängig zu machen?  
-Das vorhergehende Beispiel könnten Sie in diesem Falle wie folgt erweitern. Sie könnten mithilfe der Zeile  
-`var myStorage = localStorage;`  
-ein &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"&gt;localStorage&lt;/a&gt; Objekt instanziieren. Mit  
-`myStorage.setItem(`  
-`document.getElementById("name").value,`  
-`document.getElementById("lat").value+ "," + document.getElementById("long").value`  
-`);`  
-konnten Sie daraufhin alle eingefügten Objekte speichern und mit diesen arbeiten.  
-Die`sessionStorage`-Eigenschaft
+*function createPopup(popuptext){
+*return L.popup(
+*{autoClose:false, keepInView:true, closeButton:false
+*}
+*).setContent(popuptext);
+*}
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_975.html--&gt;</code></pre>
+<p>In diesem Beispiel ging es nur um das Grundsätzliche. Die Mächtigkeit von eigenen 
+Funktionen wird mit nur zwei Markern vielleicht noch nicht klar. 
+Sie können sich aber sicher vorstellen, wie viel Text mithilfe einer 
+benutzerdefinierten Funktion eingespart werden kann, wenn wir ganz viele Marker mit den gleichen 
+Optionen zur Karte hinzufügen.</p>
+<blockquote>
+<p>Achtung: Wenn Sie bei einem Pop-up Fenster die Eigenschaften 
+<code>autoClose:false</code> und <code>closeButton:false</code> gleichzeitig setzten, 
+kann dieses Pop-up Fenster tatsächlich nicht
+mehr geschlossen werden.</p>
+</blockquote>
+<p><img src="../media/images/982.png" alt="x" /></p>
+<p><em>Abbildung: Eine Leaflet Karte, die zwei Marker anzeigt, die über eine benutzerdefinierte Funktion hinzugefügt wurden.</em></p>
+<h3 id="ein-interaktives-beispiel">Ein interaktives Beispiel</h3>
+<p>Und zu guter Letzt möchte ich Ihnen noch ein interaktives Beispiel zeigen.</p>
+<pre><code> &lt;!DOCTYPE HTML&gt;
+ &lt;html lang="de"&gt;
+ &lt;head&gt;
+ &lt;meta charset="utf-8"/&gt;
+ &lt;title&gt;Eine OSM Karte mit Leaflet&lt;/title&gt;
+ &lt;link rel="stylesheet" href="../leaflet/leaflet.css" /&gt;
+ &lt;script src="../leaflet/leaflet.js"&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+*&lt;p&gt;Bitte geben Sie eine Koordinte an:&lt;/p&gt;&lt;br&gt;
+*Geographische Breite:&lt;input type="text" id="lat"&gt;&lt;br&gt;
+*Geographische Länge:&lt;input type="text" id="long"&gt;&lt;br&gt;
+*Name:&lt;input type="text" id="name"&gt;&lt;br&gt;
+*&lt;button onclick="save()"&gt;Speichern&lt;/button&gt;
+ &lt;div style="height: 700px;" id="mapid"&gt;&lt;/div&gt;
+ &lt;script&gt;
+ var mymap = L.map('mapid').setView([50.27264, 7.26469], 7);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
+*function save()
+*{
+*var p1 = parseFloat(document.getElementById("lat").value);
+*var p2 = parseFloat(document.getElementById("long").value);
+*L.marker([p1,p2]).bindPopup(document.getElementById("name").value)
+*.addTo(mymap);
+*}
+ &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+&lt;!--index_974.html--&gt;</code></pre>
+<p>Im vorhergehenden Beispiel ist eine Schaltfläche integriert, 
+die – wenn sie angeklickt wird – eine benutzerdefinierte Funktion ausführt. 
+Mit der Funktion wird ein Marker mit einem Pop-up Fenster in die Karte eingesetzt. 
+Dies ist nur als Beispiel gedacht. Die können in der benutzerdefinierten Funktion 
+alles Mögliche ausführen – lassen Sie Ihrer Fantasie freien Lauf. 
+Ein weiterer Anwendungsfall könnte eine Art Heiß-Kalt Spiel sein. 
+Sie kennen sicher das einfache Suchspiel.</p>
+<blockquote>
+<p>Möchten Sie die interaktiv eingefügten Daten in einem Objekt speichern, 
+um einen Überblick über diese zu haben und eventuell weitere Aktionen von 
+dem Datenbestand abhängig zu machen?<br />
+Das vorhergehende Beispiel könnten Sie in diesem Falle wie folgt erweitern. 
+Sie könnten mithilfe der Zeile<br />
+<code>var myStorage = localStorage;</code><br />
+ein <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">localStorage Objekt</a> 
+instanziieren. Mit </p>
+<pre><code>myStorage.setItem(
+document.getElementById("name").value,
+document.getElementById("lat").value + 
+"," + 
+document.getElementById("long").value
+);</code></pre>
+<p>können Sie daraufhin alle eingefügten Objekte speichern und mit diesen arbeiten.<br />
+Die <code>sessionStorage</code>-Eigenschaft
 erlaubt den Zugriff auf ein, nur während der aktuellen Sitzung,
-verfügbares Storage-Objekt.`sessionStorage`ist mit einer Ausnahme identisch zu`Window.localStorage`:
-In`localStorage`gespeicherte Daten besitzen kein Verfallsdatum, während Sie im`sessionStorage`mit Ablauf
-der Sitzung gelöscht werden.  
+verfügbares Storage-Objekt. <code>sessionStorage</code> ist mit einer Ausnahme 
+identisch zu <code>Window.localStorage</code>:<br />
+In <code>localStorage</code> gespeicherte Daten besitzen kein Verfallsdatum, während sie 
+im <code>sessionStorage</code> mit Ablauf
+der Sitzung gelöscht werden.<br />
 Eine Sitzung endet mit dem
 Schließen des Browsers, sie übersteht das Neuladen und
 Wiederherstellen einer Webseite. Das Öffnen einer Webseite in einem
 neuen Tabulator oder Browser-Fenster erzeugt jedoch eine neue
-Sitzung. Dies unterscheide ein`sessionStorage`Objekt von einem`Session-Cookie:`&lt;a href="https://developer.mozilla.org/de/docs/Web/API/Window/sessionStorage"&gt;https://developer.mozilla.org/de/docs/Web/API/Window/sessionStorage&lt;/a&gt;
-
-## In diesem Kapitel haben wir ...
-
-In diesem Kapitel haben Sie Punkte, Marker, Linien und Polygone kennen gelernt. 
+Sitzung. Dies unterscheide ein 
+<a href="&lt;https%3A//developer.mozilla.org/de/docs/Web/API/Window/sessionStorage"><code>sessionStorage</code>-Objekt</a> 
+von einem <code>Session-Cookie</code>.</p>
+</blockquote>
+<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
+<p>In diesem Kapitel haben Sie Punkte, Marker, Linien und Polygone kennen gelernt. 
 Sie können diese nun auf eine Leaflet-Karte zeichnen und wissen, 
 wann welches Objekt das richtige Objekt ist. Sie können Layer-Gruppen und 
 Feature-Gruppen voneinander unterscheiden und wissen die Grundlagen zur Anzeige 
 von mobilen Leaflet Karten. Und auf einen Mausklick oder ein anderes Ereignis 
-können Sie entsprechend reagieren.  
-
-Im nächsten Kapitel geht es um das Format GeoJson und darum, wie Sie Daten 
-auch in großen Mengen gut handhaben können.</code></pre><h1 id="geojson">GeoJSON</h1>
+können Sie entsprechend reagieren.  </p>
+<p>Im nächsten Kapitel geht es um das Format GeoJson und darum, wie Sie Daten 
+auch in großen Mengen gut handhaben können.</p><h1 id="geojson">GeoJSON</h1>
 <p><a href="#" id="GeoJSON"></a></p>
 <p>Im letzten Kapitel haben Sie Punkte, Marker, Linien und Polygone kennengelernt. 
 Sie können diese nun auf eine Leaflet-Karte zeichnen und wissen, wann welches 
