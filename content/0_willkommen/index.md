@@ -1,13 +1,13 @@
 # Willkommen
 
-Das Arbeiten mit Geodaten und Landkarten hat durch das 
-[**g**lobale **P**ositionsbestimmung**s**system GPS](https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&oldid=183579881) 
+Das Arbeiten mit Geodaten und digitalen Landkarten hat durch das 
+[**g**lobale **P**ositionsbestimmung**s**system GPS](https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&oldid=183579881)[^1] 
 immer mehr an Relevanz gewonnen. 
 Viele Anwendungen bieten heute sogar online geografische Informationen in Echtzeit an. 
 So finden Sie auch im Internet immer mehr digitale Karten und Anwendungen 
 die mit Geodaten arbeiten.
 
-> [Geodaten](https://de.wikipedia.org/w/index.php?title=Geodaten&oldid=181076558) 
+> [Geodaten](https://de.wikipedia.org/w/index.php?title=Geodaten&oldid=181076558)[^2] 
 sind Informationen, die eine Zuordnung zu einer räumlichen Lage besitzen. 
 90 % aller Daten können einem Ort zugeordnet werden und sind somit Geodaten.
 
@@ -129,3 +129,6 @@ in der Eifel.
 Fragen zum Buch, konstruktive Kritik, Anregungen und Hinweise auf Tippfehler können 
 gerne per E-Mail an die E-Mail-Adresse 
 [info@astrid-guenther.de](mailto:info@astrid-guenther.de) gesandt werden.
+
+[^1]: https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&oldid=183579881 (https://bit.ly/2Rko7MC) 
+[^2]: https://de.wikipedia.org/w/index.php?title=Geodaten&oldid=181076558 (https://bit.ly/2RkeBZT)

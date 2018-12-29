@@ -843,37 +843,50 @@ abgelegt. Die Transportvariante finden Sie unter der Adresse
 
 Nachfolgende Übersicht zeigt Ihnen die verschiedenen Kartenstile von Thunderforest.
 
-![.](media/images/997pioneer.png)
+![.](media/images/997pioneer.png)  
+
 *Abbildung: pioneer*
 
 ---
-![.](media/images/997cycle.png)
+
+![.](media/images/997cycle.png)   
+
 *Abbildung: cycle*
 
 ---
-![.](media/images/997transport.png)
+
+![.](media/images/997transport.png)   
+
 *Abbildung: transport.*
 
 ---
-![.](media/images/997outdoors.png)
+
+![.](media/images/997outdoors.png)  
+
 *Abbildung: outdoors.*
 
 ---
-![.](media/images/997transportdark.png)
+
+![.](media/images/997transportdark.png)  
+
 *Abbildung: transport-dark.*
 
 ---
-![.](media/images/997mobileatlas.png)
+
+![.](media/images/997mobileatlas.png)  
+
 *Abbildung: mobile-atlas.*
 
 ---
 
-![.](media/images/997outdoors.png)
+![.](media/images/997outdoors.png)  
+
 *Abbildung: outdoors.*
 
 ---
 
-![.](media/images/997neigborhood.png)
+![.](media/images/997neigborhood.png)  
+
 *Abbildung: neigborhood.*
 
 ---
@@ -916,12 +929,16 @@ Die Übersicht zeigt Ihnen drei Kartenstile von Stamen.
 ---
 
 ![.](media/images/996toner.png)
+
 *Abbildung: toner.*
 
 ---
 
 ![.](media/images/996terrant.png)
+
 *Abbildung: terraint.*
+
+---
 
 Beim Einbinden einer Karte von Stamen müssen Sie zusätzlich eine 
 JavaScript Datei verlinken. Wie Sie den `StamenTileLayer` genau nutzen, 

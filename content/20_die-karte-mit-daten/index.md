@@ -1261,6 +1261,8 @@ habe ich Ihnen Bilder eingefügt.
 
 *Abbildung: Wenn Sie Ihren Standort freigegeben haben, dann sehen beim Aufruf der Karte des letzten Beispiels einen Kreis, der Ihren ungefähren Standort wiedergibt und ein Pop-up Fenster, dass Ihnen erklärt wo Sie sich gerade befinden.*
 
+---
+
 Leaflet bietet Ihnen noch weitere 
 [Geolokalisierungsmethoden](https://leafletjs.com/reference-1.1.0.html#map-geolocation-methods) 
 und 

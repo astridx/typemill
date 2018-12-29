@@ -1,7 +1,7 @@
-<!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><style>img{max-width:100%}</style></head><body>
+<!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link href="../Styles/MyEBookStylesheet.css" rel="stylesheet" type="text/css" /></head><body>
 <h1 id="willkommen">Willkommen</h1>
-<p>Das Arbeiten mit Geodaten und Landkarten hat durch das 
-<a href="https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&amp;oldid=183579881"><strong>g</strong>lobale <strong>P</strong>ositionsbestimmung<strong>s</strong>system GPS</a> 
+<p>Das Arbeiten mit Geodaten und digitalen Landkarten hat durch das 
+<a href="https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&amp;oldid=183579881"><strong>g</strong>lobale <strong>P</strong>ositionsbestimmung<strong>s</strong>system GPS</a><sup id="fnref1:1"><a href="#fn%3A1" class="footnote-ref">1</a></sup> 
 immer mehr an Relevanz gewonnen. 
 Viele Anwendungen bieten heute sogar online geografische Informationen in Echtzeit an. 
 So finden Sie auch im Internet immer mehr digitale Karten und Anwendungen 
@@ -113,7 +113,15 @@ meinem Mann, meiner Tochter, meinem Hund und meiner Katze in einem kleinen Dorf
 in der Eifel.  </p>
 <p>Fragen zum Buch, konstruktive Kritik, Anregungen und Hinweise auf Tippfehler können 
 gerne per E-Mail an die E-Mail-Adresse 
-<a href="mailto:info@astrid-guenther.de">info@astrid-guenther.de</a> gesandt werden.</p><h1 id="eine-karte-mit-leaflet-erstellen">Eine Karte mit Leaflet erstellen</h1>
+<a href="mailto:info@astrid-guenther.de">info@astrid-guenther.de</a> gesandt werden.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&amp;oldid=183579881">https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&amp;oldid=183579881</a> (<a href="https://bit.ly/2Rko7MC">https://bit.ly/2Rko7MC</a>) &#160;<a href="#fnref1%3A1" rev="footnote" class="footnote-backref">&#8617;</a></p>
+</li>
+</ol>
+</div><h1 id="eine-karte-mit-leaflet-erstellen">Eine Karte mit Leaflet erstellen</h1>
 <p><a href="#" id="EineKarteMitLeafletErstellen"></a></p>
 <p>Zunächst zeige ich Ihnen, wie Sie in vier einfachen Schritten eine 
 <em>digitale Karte</em> mit Leaflet in ein HTML Dokument einbinden.  </p>
@@ -528,7 +536,7 @@ Sie können die Karte vergrößern und verkleinern und in der rechten unteren Ec
 Hinweis darauf, dass die Karte mit Leaflet erstellt wurde.
 Sie können nun die ganze Welt auf dieser Karte erkunden.
 In der nachfolgenden Abbildung sehen Sie diese Karte – so sollte diese bei Ihnen aussehen, wenn Sie meinem Beispiel gefolgt sind.</p>
-<p><img src="../media/images/997.png" alt="Ein Screenshot der eine Landkarte mit Leaflet anzeigt." /></p>
+<p><img src="../Images/997.png" alt="Ein Screenshot der eine Landkarte mit Leaflet anzeigt." /></p>
 <p><em>Abbildung: Ein Screenshot der eine Landkarte mit Leaflet anzeigt.</em></p>
 <p>Bevor wir die Karte nun weiter bearbeiten, sehen wir uns ein bisschen Theorie an. 
 Falls Sie keine Theorie mögen, können sie sofort praktisch 
@@ -550,18 +558,18 @@ oder Längenkreise verbinden Nord- und Südpol. </li>
 <p>So entsteht ein <a href="https://de.wikipedia.org/w/index.php?title=Geographische_Koordinaten&amp;oldid=183407489">grobmaschiges Gitter</a>, 
 anhand dessen jeder die ungefähre 
 Position auf der Erdoberfläche bestimmen kann.</p>
-<p><img src="../media/images/964er.png" alt="Das Gradnetz der Erde - By CIA, Niteowlneils (Public domain), via Wikimedia Commons" />  </p>
+<p><img src="../Images/964er.png" alt="Das Gradnetz der Erde - By CIA, Niteowlneils (Public domain), via Wikimedia Commons" />  </p>
 <p><em>Abbildung: Das Gradnetz der Erde - By CIA, Niteowlneils (Public domain), via Wikimedia Commons</em></p>
 <p>Um die Genauigkeit zu erhöhen, wird jeder Breiten- und Längengrad weiter unterteilt.</p>
 <h4 id="breitengrade">Breitengrade</h4>
 <p>Die <a href="https://de.wikipedia.org/w/index.php?title=Geographische_Breite&amp;oldid=183712238">Breitengrade</a> 
 verlaufen von Osten nach Westen. Vielleicht wissen Sie noch aus dem Erdkundeunterricht in der Schule, dass der Äquator im rechten Winkel zur Erdachse verläuft. Er liegt etwa in der Mitte zwischen Nord- und Südpol. Im geografischen Koordinatensystem gilt er als Ausgangspunkt für die Berechnung der Breitenkreise und ihm wird ein Winkel von 0° zugeordnet.</p>
-<p><img src="../media/images/964br.png" alt="Breitengrade (Latitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons" /></p>
+<p><img src="../Images/964br.png" alt="Breitengrade (Latitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons" /></p>
 <p><em>Abbildung: Breitengrade (Latitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons</em></p>
 <h4 id="langengrade">Längengrade</h4>
 <p>Die <a href="https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&amp;oldid=182518754">Längengrade</a> 
 auf der Erde verlaufen von Norden nach Süden. Sie umspannen die Erde praktisch. Eine Längenkreishälfte wird als Meridian bezeichnet. Die Längenkreise haben keinen natürlichen Nullpunkt. Heute gilt der Meridan, der den Londoner Stadtteil Greenwich durchläuft, als Nullmeridian und somit als Ausgangspunkt für die Berechnung der Längengrade.</p>
-<p><img src="../media/images/964la.png" alt="Längengrade (Longitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons" /></p>
+<p><img src="../Images/964la.png" alt="Längengrade (Longitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons" /></p>
 <p><em>Abbildung: Längengrade (Longitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons</em></p>
 <h3 id="schreibweisen-von-geografischen-koordinaten">Schreibweisen von geografischen Koordinaten</h3>
 <p>Bei der Angabe von geographischen Koordinaten wird heute normalerweise eine von zwei 
@@ -631,7 +639,7 @@ und
 <a href="https://de.wikipedia.org/w/index.php?title=Rastergrafik&amp;oldid=178300838">Rastergrafiken</a> 
 unterscheiden. Im nächsten Bild sehen Sie oben eine Vektorgrafik 
 und unten eine Rastergrafik.</p>
-<p><img src="../media/images/930.png" alt="Vektorgrafik und Rastergrafik" /></p>
+<p><img src="../Images/930.png" alt="Vektorgrafik und Rastergrafik" /></p>
 <p><em>Abbildung: Vektorgrafik und Rastergrafik</em></p>
 <h4 id="vektoren">Vektoren</h4>
 <p><a href="https://de.wikipedia.org/w/index.php?title=Vektorgrafik&amp;oldid=182749111">Vektorgrafiken</a> 
@@ -842,7 +850,7 @@ denen der Namen der Bilddatei berechnet werden kann.</p>
 <p>Zum Beispiel wird das Bild für die niedrigste Zoom-Stufe – 
 also das Bild welches den größten Bereich pro Pixel anzeigt – 
 unter dem Dateinamen  <code>0/0/0.png</code> abgespeichert.</p>
-<p><img src="../media/images/998.png" alt="Das Bild für die niedrigste Zoom-Stufe `0/0/0.png`." /></p>
+<p><img src="../Images/998.png" alt="Das Bild für die niedrigste Zoom-Stufe `0/0/0.png`." /></p>
 <p><em>Abbildung: Das Bild für die niedrigste Zoom-Stufe <code>0/0/0.png</code>.</em></p>
 <p>Die vollständige URL dieses Kachelbildes auf dem Openstreetmap 
 Server ist <code>http://a.tile.openstreetmap.org/0/0/0.png</code>. 
@@ -856,7 +864,7 @@ nachlesen.</p>
 </blockquote>
 <p>Bei der Zoom-Stufe 1 sind die Kacheln, 
 wie in der nachfolgenden Grafik dargestellt, angeordnet.</p>
-<p><img src="../media/images/998a.png" alt="Ein Bild mit allen Kacheln für die zweitniedrigste Zoom-Stufe." /></p>
+<p><img src="../Images/998a.png" alt="Ein Bild mit allen Kacheln für die zweitniedrigste Zoom-Stufe." /></p>
 <p><em>Abbildung: Ein Bild mit allen Kacheln für die zweitniedrigste Zoom-Stufe.</em></p>
 <p>Unter der Adresse <a href="http://a.tile.openstreetmap.org/1/0/0.png">http://a.tile.openstreetmap.org/1/0/0.png</a> 
 finden sie die Grafik, die sich in der Abbildung links oben befindet.</p>
@@ -893,29 +901,29 @@ einfach an das Ende der URL des Tile-Servers an. Zum Beispiel so:
 <p><code>https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=YourApiKey.</code>  </p>
 <hr />
 <p>Nachfolgende Übersicht zeigt Ihnen die verschiedenen Kartenstile von Thunderforest.</p>
-<p><img src="../media/images/997pioneer.png" alt="." />
-<em>Abbildung: pioneer</em></p>
+<p><img src="../Images/997pioneer.png" alt="." />  </p>
+<p><em>Abbildung: pioneer</em></p>
 <hr />
-<p><img src="../media/images/997cycle.png" alt="." />
-<em>Abbildung: cycle</em></p>
+<p><img src="../Images/997cycle.png" alt="." />   </p>
+<p><em>Abbildung: cycle</em></p>
 <hr />
-<p><img src="../media/images/997transport.png" alt="." />
-<em>Abbildung: transport.</em></p>
+<p><img src="../Images/997transport.png" alt="." />   </p>
+<p><em>Abbildung: transport.</em></p>
 <hr />
-<p><img src="../media/images/997outdoors.png" alt="." />
-<em>Abbildung: outdoors.</em></p>
+<p><img src="../Images/997outdoors.png" alt="." />  </p>
+<p><em>Abbildung: outdoors.</em></p>
 <hr />
-<p><img src="../media/images/997transportdark.png" alt="." />
-<em>Abbildung: transport-dark.</em></p>
+<p><img src="../Images/997transportdark.png" alt="." />  </p>
+<p><em>Abbildung: transport-dark.</em></p>
 <hr />
-<p><img src="../media/images/997mobileatlas.png" alt="." />
-<em>Abbildung: mobile-atlas.</em></p>
+<p><img src="../Images/997mobileatlas.png" alt="." />  </p>
+<p><em>Abbildung: mobile-atlas.</em></p>
 <hr />
-<p><img src="../media/images/997outdoors.png" alt="." />
-<em>Abbildung: outdoors.</em></p>
+<p><img src="../Images/997outdoors.png" alt="." />  </p>
+<p><em>Abbildung: outdoors.</em></p>
 <hr />
-<p><img src="../media/images/997neigborhood.png" alt="." />
-<em>Abbildung: neigborhood.</em></p>
+<p><img src="../Images/997neigborhood.png" alt="." />  </p>
+<p><em>Abbildung: neigborhood.</em></p>
 <hr />
 <p>Wenn Sie Thunderforest verwenden möchten, müssen Sie unser bisheriges Beispiel 
 nun in einer Zeile abändern. Sie müssen als Tile Layer nur die im Beispiel 
@@ -943,14 +951,15 @@ Beispiel.</p>
 Informationen zu den Karten von Stamen finden Sie auf der 
 Website <a href="http://maps.stamen.com">http://maps.stamen.com</a>. 
 Die Übersicht zeigt Ihnen drei Kartenstile von Stamen.</p>
-<p><img src="../media/images/996watercolor.png" alt="." />
+<p><img src="../Images/996watercolor.png" alt="." />
 <em>Abbildung: watercolor.</em></p>
 <hr />
-<p><img src="../media/images/996toner.png" alt="." />
-<em>Abbildung: toner.</em></p>
+<p><img src="../Images/996toner.png" alt="." /></p>
+<p><em>Abbildung: toner.</em></p>
 <hr />
-<p><img src="../media/images/996terrant.png" alt="." />
-<em>Abbildung: terraint.</em></p>
+<p><img src="../Images/996terrant.png" alt="." /></p>
+<p><em>Abbildung: terraint.</em></p>
+<hr />
 <p>Beim Einbinden einer Karte von Stamen müssen Sie zusätzlich eine 
 JavaScript Datei verlinken. Wie Sie den <code>StamenTileLayer</code> genau nutzen, 
 können Sie im nachfolgenden Programmcodebeispiel ablesen.</p>
@@ -1124,7 +1133,7 @@ Dann öffnen Sie doch die HTML-Datei des vorherigen Beispiels in Ihrem Browser.
 Mit dem Layer <code>dwd:bluemarble</code> 
 können Sie ein Satellitenbild zu Ihrer Karte hinzufügen. 
 Wie das genau aussieht, sehen Sie im nachfolgenden Bild.</p>
-<p><img src="../media/images/942.png" alt="Ein Satellitenbild, das über einen WMS-Service geladen wurde." /></p>
+<p><img src="../Images/942.png" alt="Ein Satellitenbild, das über einen WMS-Service geladen wurde." /></p>
 <p><em>Abbildung: Ein Satellitenbild, das über einen WMS-Service geladen wurde.</em></p>
 <h3 id="ltilelayerwms-uber-ltilelayerwms">L.tileLayer.wms über L.tileLayer.wms</h3>
 <p>Das Schöne an WMS-Layern ist, das Sie diese übereinander legen können. 
@@ -1169,9 +1178,9 @@ Bereiche, die nicht mit Daten gefüllt sind, werden weiß gezeichnet.
 Außerdem müssen Sie die Option <code>format</code> mit <code>'image/png'</code> belegen. 
 Leaflet lädt ansonsten automatisch das Format <code>'image/jpeg'</code> und dieses Format 
 unterstützt keine Transparenz.</p>
-<p><img src="../media/images/994.png" alt="Mehrere Layer, die über einen WMS-Service geladen wurde." /></p>
+<p><img src="../Images/994.png" alt="Mehrere Layer, die über einen WMS-Service geladen wurde." /></p>
 <p><em>Abbildung: Mehrere Layer, die über einen WMS-Service geladen wurde.</em></p>
-<p><img src="../media/images/994a.png" alt="Mehrere Layer, die über einen WMS-Service geladen wurde." /></p>
+<p><img src="../Images/994a.png" alt="Mehrere Layer, die über einen WMS-Service geladen wurde." /></p>
 <p><em>Abbildung: Mehrere Layer, die über einen WMS-Service geladen wurde.</em></p>
 <h3 id="ltilelayerwms-und-ltilelayer-zusammen-auf-einer-karte">L.tileLayer.wms und L.tileLayer zusammen auf einer Karte</h3>
 <p>Das nachfolgende Beispiel zeigt Ihnen, wie Sie einen 
@@ -1212,7 +1221,7 @@ Schicht legen. Der <code>L.tileLayer</code> ist nicht transparent. Er würde die
 <code>L.tileLayer.wms.Layer</code> Schicht vollständig abdecken.</p>
 <p>Die nachfolgende Abbildung zeigt Ihnen die zwei 
 <code>L.tileLayer.wms</code> Layer über dem <code>L.tileLayer</code> Layer.</p>
-<p><img src="../media/images/994b.png" alt="Zwei `L.tileLayer.wms` Layer über dem `L.tileLayer` Layer." /></p>
+<p><img src="../Images/994b.png" alt="Zwei `L.tileLayer.wms` Layer über dem `L.tileLayer` Layer." /></p>
 <p><em>Abbildung: Zwei <code>L.tileLayer.wms</code> Layer über dem <code>L.tileLayer</code> Layer.</em></p>
 <blockquote>
 <p><strong>Achtung:</strong>
@@ -1290,7 +1299,7 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 &lt;!--index_989.html--&gt;</code></pre>
 <p>In der nächsten Abbildung sehen Sie die Karte, die angezeigt werden sollte, 
 wenn Sie die vorhergehende HTML-Datei in einem Browser öffnen.</p>
-<p><img src="../media/images/993.png" alt="Eine einfache Leaflet Karte." /></p>
+<p><img src="../Images/993.png" alt="Eine einfache Leaflet Karte." /></p>
 <p><em>Abbildung: Eine einfache Leaflet Karte - 700 Pixel hoch und Zoomstufe 7.</em></p>
 <p>Diese Karte ist bisher nicht sehr spannend. 
 Landkarten, die Straßen und Orte anzeigen, findet man wie Sand am Meer. 
@@ -1423,7 +1432,7 @@ in Kapitel <a href="#inCustomMarkers">Custom Markers</a> genauer an.
 In der Karte des vorhergehenden Beispiels können Sie den Marker 
 im Browser mit der Maus bewegen, da die Option <code>draggable</code> auf <code>true</code> gesetzt wurde. 
 Probieren Sie es aus!</p>
-<p><img src="../media/images/992.png" alt="Ein Marker auf einer Leaflet Karte." /></p>
+<p><img src="../Images/992.png" alt="Ein Marker auf einer Leaflet Karte." /></p>
 <p><em>Abbildung: Ein Marker auf einer Leaflet Karte der mit der Maus verschoben werden kann.</em></p>
 <blockquote>
 <p>Sie müssen für 
@@ -1483,7 +1492,7 @@ Konkret legen wir im Beispiel mit <code>color: 'red'</code> die Farbe der Linie 
 diese soll rot sein. Mit <code>weight: 8</code> bestimmen wir, dass die Linie 8 Pixel 
 dick sein soll.</p>
 <p>In der nächsten Abbildung sehen Sie genau diese Linie.</p>
-<p><img src="../media/images/991.png" alt="Ein Polyine-Objekt auf einer Leaflet Karte." /></p>
+<p><img src="../Images/991.png" alt="Ein Polyine-Objekt auf einer Leaflet Karte." /></p>
 <p><em>Abbildung: Ein Polyline-Objekt auf einer Leaflet Karte.</em></p>
 <h4 id="polygone">Polygone</h4>
 <p><a href="#" id="DieKarteMitDatenBestueckenPolygone"></a></p>
@@ -1538,7 +1547,7 @@ finden Sie in der
  &lt;/body&gt;
  &lt;/html&gt;
 &lt;!--index_985.html--&gt;</code></pre>
-<p><img src="../media/images/990.png" alt="Ein Polygone-Objekt auf einer Leaflet Karte." /></p>
+<p><img src="../Images/990.png" alt="Ein Polygone-Objekt auf einer Leaflet Karte." /></p>
 <p><em>Abbildung: Ein <code>Polygone</code>-Objekt auf einer Leaflet Karte.</em></p>
 <h3 id="rechtecke-und-kreise">Rechtecke und Kreise</h3>
 <p>Um einen Kreis oder ein Rechteck zu erstellen benötigt man eigentlich 
@@ -1593,7 +1602,7 @@ Das Rechteck</p>
 <strong><code>[50.27264, 7.26469]</code></strong><br />
 <code>])</code></p>
 <p>Und wie das Rechteck des Beispiels aussieht, zeigt Ihnen die nachfolgende Abbildung.</p>
-<p><img src="../media/images/989rechteck.png" alt="Ein `Rectangle`-Objekt auf einer Leaflet Karte." /></p>
+<p><img src="../Images/989rechteck.png" alt="Ein `Rectangle`-Objekt auf einer Leaflet Karte." /></p>
 <p><em>Abbildung: Ein <code>Rectangle</code>-Objekt auf einer Leaflet Karte.</em></p>
 <p>In diesem Zusammenhang ist vielleicht ganz interessant wie Leaflet das 
 Koordinatensystem der Erde verarbeitet. Dieses Koordinatensystem ist ja kein 
@@ -1616,16 +1625,16 @@ Dabei liegen die beiden Punkte ganz dicht beieinander.
 Analog wird auch ein Rechteck mit diesen Eckpunkten, also mit den Eckpunkten 
 <code>[50, -180]</code> und <code>[51, 180]</code>, um die ganze Erde gezeichnet. 
 Und das, obwohl die Ecken hier ganz nah beieinander liegen.</p>
-<p><img src="../media/images/929a.png" alt="Um von der Koordinate `[50, -180]` zur Koordinate `[51, 180]` zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. In der Mitte des Pazifik ist die Welt getrennt. Hier gibt es keine Verbindung." /></p>
+<p><img src="../Images/929a.png" alt="Um von der Koordinate `[50, -180]` zur Koordinate `[51, 180]` zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. In der Mitte des Pazifik ist die Welt getrennt. Hier gibt es keine Verbindung." /></p>
 <p><em>Abbildung: Um von der Koordinate <code>[50, -180]</code> zur Koordinate <code>[51, 180]</code> zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. In der Mitte des Pazifik ist die Welt getrennt. Hier gibt es keine Verbindung.</em></p>
 <hr />
-<p><img src="../media/images/929b.png" alt="Von der Koordinate `[50, -1]` zur Koordinate `[51, 1]` nimmt auch Leaflet die kürzeste Verbindung." /></p>
+<p><img src="../Images/929b.png" alt="Von der Koordinate `[50, -1]` zur Koordinate `[51, 1]` nimmt auch Leaflet die kürzeste Verbindung." /></p>
 <p><em>Abbildung: Von der Koordinate <code>[50, -1]</code> zur Koordinate <code>[51, 1]</code> nimmt auch Leaflet die kürzeste Verbindung.</em></p>
 <hr />
-<p><img src="../media/images/929c.png" alt="Um von der Koordinate `[90, 7]` zur Koordinate `[-90, 6]` zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. In der Mitte des Pazifik ist die Welt getrennt. Hier gibt es keine Verbindung." /></p>
+<p><img src="../Images/929c.png" alt="Um von der Koordinate `[90, 7]` zur Koordinate `[-90, 6]` zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. In der Mitte des Pazifik ist die Welt getrennt. Hier gibt es keine Verbindung." /></p>
 <p><em>Abbildung: Um von der Koordinate <code>[90, 7]</code> zur Koordinate <code>[-90, 6]</code> zu gelangen, muss man mit Leaflet einmal um die ganze Erde laufen. In der Mitte des Pazifik ist die Welt getrennt. Hier gibt es keine Verbindung.</em></p>
 <hr />
-<p><img src="../media/images/929d.png" alt="Von der Koordinate `[1, 7]` zur Koordinate `[-1, 6]` nimmt auch Leaflet die kürzeste Verbindung." /></p>
+<p><img src="../Images/929d.png" alt="Von der Koordinate `[1, 7]` zur Koordinate `[-1, 6]` nimmt auch Leaflet die kürzeste Verbindung." /></p>
 <p><em>Abbildung: Von der Koordinate <code>[1, 7]</code> zur Koordinate <code>[-1, 6]</code> nimmt auch Leaflet die kürzeste Verbindung.</em></p>
 <h4 id="kreise">Kreise</h4>
 <p>Anhand des nachfolgenden Programmcode können Sie erkennen, 
@@ -1664,7 +1673,7 @@ Diese Breite passt für die Zoom-Stufe 7. Probieren Sie doch einmal aus,
 wie der Rand aussieht, wenn Sie die Karte vergrößern. Sie werden feststellen, 
 dass man irgendwann nur noch den Rand sieht und es wichtig sein könnte, 
 dessen Größe immer relativ zur Zoom-Stufe zu setzen.</p>
-<p><img src="../media/images/988_kreis.png" alt="Ein `Circle`-Objekt auf einer Leaflet Karte." /></p>
+<p><img src="../Images/988_kreis.png" alt="Ein `Circle`-Objekt auf einer Leaflet Karte." /></p>
 <p><em>Abbildung: Ein <code>Circle</code>-Objekt auf einer Leaflet Karte.</em></p>
 <h2 id="mehrere-poly-objekte-auf-einer-ebene">Mehrere Poly-Objekte auf einer Ebene</h2>
 <p>In den vorhergehenden Beispielen haben wir jedes Element auf einem separaten Layer – 
@@ -1768,7 +1777,7 @@ Ein Objekt vom Typ <code>Polygon</code> und auch ein <code>Polyline</code>-Objek
 die beiden Klassen erweitern die Leaflet
 <a href="http://leafletjs.com/reference-1.1.0.html#layer">Klasse Layer</a>.  </p>
 </blockquote>
-<p><img src="../media/images/987.png" alt="Zwei Polyline-Objekte auf einer Ebene." /></p>
+<p><img src="../Images/987.png" alt="Zwei Polyline-Objekte auf einer Ebene." /></p>
 <p><em>Abbildung: Zwei Polyline-Objekte auf einer Ebene.</em></p>
 <h3 id="mehrere-polygon-objekte-auf-einer-ebene">Mehrere Polygon-Objekte auf einer Ebene</h3>
 <p>In diesem Kapitel zeige ich Ihnen ein Beispiel, 
@@ -1823,7 +1832,7 @@ dann können Sie sich den Vorteil dieser
 sicherlich gut vorstellen.</p>
 <p>In der nächsten Abbildung sehen sie keine Ländergrenzen. 
 Der Einfachheit halber habe ich mich auf zwei Dreiecke beschränkt.</p>
-<p><img src="../media/images/986.png" alt="Zwei Polygone-Objekte auf einer Ebene." /></p>
+<p><img src="../Images/986.png" alt="Zwei Polygone-Objekte auf einer Ebene." /></p>
 <p><em>Abbildung: Zwei Polygone-Objekte auf einer Ebene mit dem selben Pop-up.</em></p>
 <h4 id="mehrere-sich-uberschneidende-polygon-objekte-auf-einer-ebene">Mehrere sich überschneidende Polygon Objekte auf einer Ebene</h4>
 <p>Die Besonderheit bei einem Polygon ist, dass es einen Außen- und einen 
@@ -1833,14 +1842,14 @@ dann beeinflussen diese sich gegenseitig, wenn Flächen übereinander liegen.
 In der nachfolgenden Tabelle habe ich verschiedene Konstellationen mit Bild 
 und Text aufgenommen. Anhand von Beispielen ist das Zusammenspiel 
 der verschiedenen Bereiche meiner Meinung nach am leichtesten nachzuvollziehen.</p>
-<p><img src="../media/images/928a.png" alt="x" /></p>
+<p><img src="../Images/928a.png" alt="x" /></p>
 <p><em>Abbildung:</em>  </p>
 <p>Beginnen wir mit einem einfachen Polygone:  </p>
 <pre><code>L.polygon([  
 [ [1, 1], [1, 10], [10, 10], [10, 1] ]  
 ])</code></pre>
 <hr />
-<p><img src="../media/images/928b.png" alt="x" /></p>
+<p><img src="../Images/928b.png" alt="x" /></p>
 <p><em>Abbildung:</em>  </p>
 <p>Wenn Sie innerhalb dieses Polygons ein weiteres Polygon zeichnen, 
 dann wird der Innenbereich des ersten Polygon um die Fläche des zweiten 
@@ -1851,7 +1860,7 @@ Polygone ausgeschnitten.  </p>
 *[ [2, 2], [2, 5], [5, 5], [5, 2] ]  
  ])</code></pre>
 <hr />
-<p><img src="../media/images/928c.png" alt="x" /></p>
+<p><img src="../Images/928c.png" alt="x" /></p>
 <p><em>Abbildung:</em>  </p>
 <p>In dieses zweite Polygon können Sie nun wiederum ein Polygon zeichnen. 
 Nun wird diese Fläche wieder voll als Innenbereich gezeichnet.  </p>
@@ -1861,7 +1870,7 @@ Nun wird diese Fläche wieder voll als Innenbereich gezeichnet.  </p>
 *[ [3, 3], [3, 4], [4, 4], [4, 3] ] 
  ])</code></pre>
 <hr />
-<p><img src="../media/images/928d.png" alt="x" /></p>
+<p><img src="../Images/928d.png" alt="x" /></p>
 <p><em>Abbildung:</em>  </p>
 <p>Zeichnen Sie nun ein weiteres Polygon, dass Innenbereich und 
 Außenbereich gleichzeitig abdeckt, dann wird der abgedeckte 
@@ -2094,7 +2103,7 @@ Text <code>marker1.openPopup();</code> am Ende Ihres Skripts an.</p>
 </blockquote>
 <p>Wie die Karte zum vorhergehenden Programmcodeausschnitt 
 im Browser aussieht, sehen Sie in der nachfolgenden Abbildung.</p>
-<p><img src="../media/images/985.png" alt="Pop-ups auf einer Leaflet Karte." /></p>
+<p><img src="../Images/985.png" alt="Pop-ups auf einer Leaflet Karte." /></p>
 <p><em>Abbildung: Pop-ups auf einer Leaflet Karte.</em></p>
 <blockquote>
 <p>Ich hatte Ihnen zu Beginn dieses Kapitels schon erklärt, dass Leaflet standardmäßig
@@ -2274,14 +2283,15 @@ Diese Fehlermeldung erklärt Ihnen, warum Sie nicht geortet werden können.  </p
 <p>Damit Sie sich auch Bild davon machen könne, 
 wenn Sie das Beispiel gerade nicht praktisch nachvollziehen können, 
 habe ich Ihnen Bilder eingefügt.</p>
-<p><img src="../media/images/984.png" alt="x" /></p>
+<p><img src="../Images/984.png" alt="x" /></p>
 <p><em>Abbildung: Wenn Sie eine Website besuchen, die standortbezogenes Surfen unterstützt prüft der Browser, ob Sie Ihren Aufenthaltsort bekannt geben möchten.</em></p>
 <hr />
-<p><img src="../media/images/984a.png" alt="" /></p>
+<p><img src="../Images/984a.png" alt="" /></p>
 <p><em>Abbildung: Möchten Sie Ihren Standort nicht mit anderen teilen, dann sehen Sie eine Fehlermeldung beim Öffnen der Karte. Diese Fehlermeldung erklärt Ihnen, warum Sie nicht geortet werden können.</em></p>
 <hr />
-<p><img src="../media/images/984b.png" alt="x" /></p>
+<p><img src="../Images/984b.png" alt="x" /></p>
 <p><em>Abbildung: Wenn Sie Ihren Standort freigegeben haben, dann sehen beim Aufruf der Karte des letzten Beispiels einen Kreis, der Ihren ungefähren Standort wiedergibt und ein Pop-up Fenster, dass Ihnen erklärt wo Sie sich gerade befinden.</em></p>
+<hr />
 <p>Leaflet bietet Ihnen noch weitere 
 <a href="https://leafletjs.com/reference-1.1.0.html#map-geolocation-methods">Geolokalisierungsmethoden</a> 
 und 
@@ -2341,7 +2351,7 @@ weil die Funktion keinen Namen hat.</p>
 </blockquote>
 <p>Wenn Sie die Karte des vorhergehenden Beispiels im Browser aufrufen und anklicken, 
 sehen Sie die in der nachfolgenden Abbildung dargestellte Meldung.</p>
-<p><img src="../media/images/983.png" alt="x" /></p>
+<p><img src="../Images/983.png" alt="x" /></p>
 <p><em>Abbildung: Eine Leaflet Karte, die ein Pop-up Fenster anzeigt, wenn sie mit der Maus angeklickt wird.</em></p>
 <h3 id="eine-benutzerdefinierte-funktionen">Eine benutzerdefinierte Funktionen</h3>
 <p>Die Methoden, die Leaflet Ihnen bietet, kennen Sie nun. 
@@ -2391,7 +2401,7 @@ Optionen zur Karte hinzufügen.</p>
 kann dieses Pop-up Fenster tatsächlich nicht
 mehr geschlossen werden.</p>
 </blockquote>
-<p><img src="../media/images/982.png" alt="x" /></p>
+<p><img src="../Images/982.png" alt="x" /></p>
 <p><em>Abbildung: Eine Leaflet Karte, die zwei Marker anzeigt, die über eine benutzerdefinierte Funktion hinzugefügt wurden.</em></p>
 <h3 id="ein-interaktives-beispiel">Ein interaktives Beispiel</h3>
 <p>Und zu guter Letzt möchte ich Ihnen noch ein interaktives Beispiel zeigen.</p>
@@ -2868,7 +2878,7 @@ also keine Löcher hat.</p>
     ]
 }
 </code></pre>
-<p><img src="../media/images/928b.png" alt="Ein Polygon mit zwei Innenringen" /></p>
+<p><img src="../Images/928b.png" alt="Ein Polygon mit zwei Innenringen" /></p>
 <p><em>Abbildung: Ein Polygon mit einem Innenring. Der Innenring definiert einen Außenbereich im Polygon – er schneidet quasi ein Loch in das Polygon .</em></p>
 <hr />
 <pre><code>{
@@ -2898,7 +2908,7 @@ also keine Löcher hat.</p>
     ]
 }
 </code></pre>
-<p><img src="../media/images/928c.png" alt="Ein Polygon mit zwei Innenringen" /></p>
+<p><img src="../Images/928c.png" alt="Ein Polygon mit zwei Innenringen" /></p>
 <p><em>Abbildung: Ein Polygon mit zwei Innenringen – der zweite Innenring wird innerhalb des ersten Innenringes gezeichnet. Dieser zweite Innenring zeichnet einen neuen Innenbereich in den Außenbereich der durch den ersten Innenring entstanden ist.</em></p>
 <hr />
 <blockquote>
@@ -3249,7 +3259,7 @@ Ganz konkret erweitert die Klasse GeoJSON die Klasse
 <a href="http://leafletjs.com/reference#featuregroup">FeatureGroup</a>.</p>
 </blockquote>
 <p>Auf der nachfolgenden Abbildung können Sie sich das Ergebnis ansehen.</p>
-<p><img src="../media/images/955.png" alt="Ein Marker auf einer Leaflet Karte mithilfe von GeoJSON eingefügt." /></p>
+<p><img src="../Images/955.png" alt="Ein Marker auf einer Leaflet Karte mithilfe von GeoJSON eingefügt." /></p>
 <p><em>Abbildung: Ein Marker auf einer Leaflet Karte mithilfe von GeoJSON eingefügt.</em></p>
 <blockquote>
 <p>Wenn Sie an die Zeile<br />
@@ -3314,7 +3324,7 @@ Ihrer Karte anzeigen könnten.</p>
  &lt;/html&gt;
 &lt;!--index_972.html--&gt;</code></pre>
 <p>Voila! Drei Elemente mit Standardeigenschaften auf der Leaflet Karte.</p>
-<p><img src="../media/images/961.png" alt="Drei Element auf einer Leaflet Karte mithilfe von GeoJSON eingefügt." /></p>
+<p><img src="../Images/961.png" alt="Drei Element auf einer Leaflet Karte mithilfe von GeoJSON eingefügt." /></p>
 <p><em>Abbildung: Drei Elemente auf einer Leaflet Karte mithilfe von GeoJSON eingefügt.</em></p>
 <h3 id="geojson-aus-leaflet-exportieren">GeoJSON aus Leaflet exportieren</h3>
 <p>So, und nun machen wir genau das Gegenteil. 
@@ -3370,7 +3380,7 @@ konvertieren.</p>
 </blockquote>
 <p>Die nachfolgende Abbildung zeigt das Bild, welches Sie im Browser sehen, 
 wenn Sie die HTML-Datei des vorausgehenden Beispiels im Browser öffnen.</p>
-<p><img src="../media/images/960.png" alt="Ein Marker auf einer Leaflet Karte, der seinen eigenen - ins GeoJSON Format konvertieren - Programmcode zeigt." /></p>
+<p><img src="../Images/960.png" alt="Ein Marker auf einer Leaflet Karte, der seinen eigenen - ins GeoJSON Format konvertieren - Programmcode zeigt." /></p>
 <p><em>Abbildung: Ein Marker auf einer Leaflet Karte, der seinen eigenen - ins GeoJSON Format konvertieren - Programmcode zeigt.</em></p>
 <p>Sie werden nun sicher mein Beispiel als umständlich ansehen. 
 Ich habe einen Marker, denn ich ohne zusätzliche Schritte auf der Karten hätte 
@@ -3486,7 +3496,7 @@ erstellen. Die Zeile<br />
 reicht völlig aus.</p>
 </blockquote>
 <p>Auf der Karte sehen Sie nun die Objekte in der für sie bestimmten Farbe.</p>
-<p><img src="../media/images/959.png" alt="Drei Element auf einer Karte in unterschiedlichen Farben." /></p>
+<p><img src="../Images/959.png" alt="Drei Element auf einer Karte in unterschiedlichen Farben." /></p>
 <p><em>Abbildung: Drei Element auf einer Karte in unterschiedlichen Farben mithilfe der Option <code>style</code>.</em></p>
 <h4 id="ein-komplexeres-beispiel-eine-andere-farbe-beim-uberrollen-m">Ein komplexeres Beispiel: Eine andere Farbe beim Überrollen mit der Maus</h4>
 <p>Im vorherigen Kapitel haben Sie gelernt, wie Sie mit der Option 
@@ -3567,7 +3577,7 @@ Im Grunde genommen handelt sich bei dem Marker um ein Image.
 Das HTML-Element Image verfügt nicht über die CSS Eigenschaft <code>color</code>. 
 Wenn Sie das Aussehen des Markers ändern möchten, 
 dann müssten Sie diesem eine andere Bilddatei zuordnen.</p>
-<p><img src="../media/images/958.png" alt="Drei Element auf einer Karte die sich grün färben, wenn man die Maus über sie bewegt." /></p>
+<p><img src="../Images/958.png" alt="Drei Element auf einer Karte die sich grün färben, wenn man die Maus über sie bewegt." /></p>
 <p><em>Abbildung: Drei Element auf einer Karte die sich grün färben, wenn man die Maus über sie bewegt.</em></p>
 <p>Wenn Sie ein schon angeklicktes Element
 mit der Farbe Grau einfärben möchten, dann könnten Sie dies über
@@ -3662,7 +3672,7 @@ ein Pop-up anhängen können – und zwar jedem ein individuelles.
 Der Text für das Pop-up wird aus den GeoJSON Daten ausgelesen, 
 er versteckt sich in der Eigenschaft <code>feature.properties.name</code>.</p>
 <p>Das nachfolgende Bild stellt die drei Marker dar.</p>
-<p><img src="../media/images/957.png" alt="Drei Marker mit individuellem Pop-up Text." /></p>
+<p><img src="../Images/957.png" alt="Drei Marker mit individuellem Pop-up Text." /></p>
 <p><em>Abbildung: Drei Marker mit individuellem Pop-up Text.</em></p>
 <p>Nun würden wir dem Marker aber vielleicht auch gerne ein spezielles Aussehen geben. 
 Vielleicht möchten Sie sogar jeden Marker unterschiedlich gestalten. 
@@ -3763,7 +3773,7 @@ in Ihrem Browser an.
 Auf den ersten Blick hat sich nichts zu dem Beispiel des vorherigen Kapitels geändert. 
 Auf den zweiten Blick werden Sie feststellen, dass Sie nur den Marker von 
 Dorf 1 auf der Karte verschieben können.</p>
-<p><img src="../media/images/956.png" alt="Drei Marker auf einer Karte. Sie können nur einen Marker mit der Maus bewegen." /></p>
+<p><img src="../Images/956.png" alt="Drei Marker auf einer Karte. Sie können nur einen Marker mit der Maus bewegen." /></p>
 <p><em>Abbildung: Drei Marker auf einer Karte. Sie können nur einen Marker mit der Maus bewegen.</em></p>
 <h4 id="filtern-mit-der-option-filter">Filtern mit der Option filter</h4>
 <p>Mithilfe der Option <code>filter</code> können Sie große Datenbestände auf das 
@@ -3828,7 +3838,7 @@ Ansonsten, ist die Ausgabe der Filterfunktion wegen <code>default:  return false
 <p>Die nachfolgende Abbildung zeigt es Ihnen: Nur Dorf 1 wird angezeigt. 
 Die beiden anderen Orte, die sich in den GeoJSON Daten befinden, 
 werden heraus gefiltert. Sie sehen nur einen Marker.</p>
-<p><img src="../media/images/955.png" alt="Nur ein Marker wird angezeigt! Alle anderen Marker werden herausgefiltert." /></p>
+<p><img src="../Images/955.png" alt="Nur ein Marker wird angezeigt! Alle anderen Marker werden herausgefiltert." /></p>
 <p><em>Abbildung: Nur ein Marker wird angezeigt! Alle anderen Marker werden herausgefiltert.</em></p>
 <h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir …</h2>
 <p>In diesem Kapitel haben wir uns das Format GeoJSON genau angesehen. 
@@ -3884,7 +3894,7 @@ können Sie dies beispielsweise bei
 <a href="https://de.wikipedia.org/w/index.php?title=Kerndichtesch%C3%A4tzer&amp;oldid=182712162">Wikipedia</a> 
 nachlesen.</p>
 </blockquote>
-<p><img src="../media/images/946.png" alt="(By Drleft (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia Commons)" /></p>
+<p><img src="../Images/946.png" alt="(By Drleft (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia Commons)" /></p>
 <p><em>Abbildung: (By Drleft (Own work) [CC BY-SA 3.0 (<a href="http://creativecommons.org/licenses/by-sa/3.0">http://creativecommons.org/licenses/by-sa/3.0</a>) or GFDL (<a href="http://www.gnu.org/copyleft/fdl.html">http://www.gnu.org/copyleft/fdl.html</a>)], via Wikimedia Commons).</em></p>
 <p>Meist werden bei geringer Intensität oder geringer Dichte kalte Farben verwendet. 
 Bei einem hohen Aufkommen wird der Bereich mit warmen Farben eingefärbt. 
@@ -3966,7 +3976,7 @@ Hierfür zeige ich Ihnen im nächsten Kapitel eine andere Leaflet Erweiterung.</
 <p>Das Ergebnis sehen Sie im nachfolgenden Bild. 
 Da wir noch nichts gestaltet haben, sehen Sie die Standardansicht. 
 Diese ist noch sehr rudimentär. Das geht besser, Sie werden sehen.</p>
-<p><img src="../media/images/950.png" alt="Heatmap" /></p>
+<p><img src="../Images/950.png" alt="Heatmap" /></p>
 <p><em>Abbildung: Heatmap zur Anzeige der Dichte von Punkten.</em></p>
 <h4 id="stile-und-optionen">Stile und Optionen</h4>
 <p>Das <a href="https://github.com/Leaflet/Leaflet.heat">Plugin Leaflet.heat</a> 
@@ -4008,15 +4018,15 @@ geben Sie idealerweise nahe beim Wert 1 an.
 Das Zentrum ist der Bereich in dem die Punkte am dichtesten beieinander liegen. </li>
 </ul>
 <h5 id="nachfolgend-sehen-sie-einen-vergleich-einer-ansichten-mit-un">Nachfolgend sehen Sie einen Vergleich einer Ansichten mit unterschiedlichen Werten für die Optionen blur, gradient und maxZoom</h5>
-<p><img src="../media/images/980a.png" alt="`blur` *= 1*" /></p>
+<p><img src="../Images/980a.png" alt="`blur` *= 1*" /></p>
 <p><em>Abbildung: <code>blur</code> </em>= 1<em> - Es werden soviele Punkte zusammengefasst, dass jeder Hitzepunkt der Heatmap sehr scharf dargestellt wird. Ein Zentrum ist nicht mehr auszumachen.</em></p>
-<p><img src="../media/images/980b.png" alt="`blur` *= 40*" /></p>
+<p><img src="../Images/980b.png" alt="`blur` *= 40*" /></p>
 <p><em>Abbildung: <code>blur</code> </em>= 40<em> - Randbereiche und Zentrum sind erkennbar.</em></p>
-<p><img src="../media/images/980c.png" alt="`maxZoom` * = 6*" /></p>
+<p><img src="../Images/980c.png" alt="`maxZoom` * = 6*" /></p>
 <p><em>Abbildung: <code>maxZoom</code> </em> = 6<em> - Bei dieser niedrigen Zoomstufe kann die Verteilung nicht visualisiert werden. Alles liegt so nah beieinander, dass nur ein Punkt zu sehen ist.</em></p>
-<p><img src="../media/images/980d.png" alt="`maxZoom` * = 15*" /></p>
+<p><img src="../Images/980d.png" alt="`maxZoom` * = 15*" /></p>
 <p><em>Abbildung: <code>maxZoom</code> </em> = 15<em> - Bei dieser Zoomstufe kann eine Verteilung dargestellt werden.</em></p>
-<p><img src="../media/images/980e.png" alt="`gradien {0.1: &#039;#edf8fb&#039;, 0.2: &#039;#ccece6&#039;, 0.3: &#039;#99d8c9&#039;, 0.5: &#039;#66c2a4&#039;, 0.7: &#039;#2ca25f&#039;, 1: &#039;#006d2c&#039;}`" /></p>
+<p><img src="../Images/980e.png" alt="`gradien {0.1: &#039;#edf8fb&#039;, 0.2: &#039;#ccece6&#039;, 0.3: &#039;#99d8c9&#039;, 0.5: &#039;#66c2a4&#039;, 0.7: &#039;#2ca25f&#039;, 1: &#039;#006d2c&#039;}`" /></p>
 <p><em>Abbildung: Eine Heatmap mit benutzerdefinierten Farben: <code>gradien {0.1: '#edf8fb', 0.2: '#ccece6', 0.3: '#99d8c9',</code> <code>0.5: '#66c2a4', 0.7: '#2ca25f', 1: '#006d2c'}</code>.</em></p>
 <blockquote>
 <p>Gefallen Ihnen die standardmäßig gesetzten kalten und warmen
@@ -4079,7 +4089,7 @@ einen Punkt zum Heatmap Layer hinzufügen.</p>
  &lt;/html&gt;
 &lt;!--index_964.html--&gt;</code></pre>
 <p>In der nächsten Abbildung können Sie den neu hinzugefügten Punkt erkennen.</p>
-<p><img src="../media/images/979.png" alt="Heatmap mit einem mithilfe der Methode `addLatLng` hinzugefügten Punkt." /></p>
+<p><img src="../Images/979.png" alt="Heatmap mit einem mithilfe der Methode `addLatLng` hinzugefügten Punkt." /></p>
 <p><em>Abbildung: Heatmap mit einem mithilfe der Methode <code>addLatLng</code> hinzugefügten Punkt.</em></p>
 <blockquote>
 <p>Möchten Sie es Website Besuchern 
@@ -4179,7 +4189,7 @@ Sie ändert einfach das Aussehen, also die CSS-Eigenschaften der Ebene. </li>
 </ul>
 <p>Einen Screenshot der Karte zu diesem Beispiel sehen Sie in der nachfolgenden 
 Abbildung.</p>
-<p><img src="../media/images/953.png" alt="Eine Karte mit Schaltfläche die die Methoden `add()`, `newPoint()`, `reset()` oder `setOptions()` per Klick ausführen." /></p>
+<p><img src="../Images/953.png" alt="Eine Karte mit Schaltfläche die die Methoden `add()`, `newPoint()`, `reset()` oder `setOptions()` per Klick ausführen." /></p>
 <p><em>Abbildung: Eine Karte mit Schaltfläche die die Methoden <code>add()</code>, <code>newPoint()</code>, <code>reset()</code> oder <code>setOptions()</code> der Klasse L.heatLayer per Klick ausführen.</em></p>
 <h4 id="marker">Marker</h4>
 <p>Im nächsten Beispiel zeige ich Ihnen, wie Sie zu jedem Punkt in einer Heatmap 
@@ -4233,7 +4243,7 @@ Diesen dritten Wert haben wir dann in der Methode
 <code>bindPopup(points[i][2],{keepInView)</code> 
 dazu genutzt, einen individuellen Marker zu kreieren.</p>
 <p>So wie in der nächsten Abbildung könnte die fertige Karte auch bei Ihnen aussehen.</p>
-<p><img src="../media/images/980.png" alt="Eine Heatmap mit benutzerdefinierten Markern pro Hitzepunkt." /></p>
+<p><img src="../Images/980.png" alt="Eine Heatmap mit benutzerdefinierten Markern pro Hitzepunkt." /></p>
 <p><em>Abbildung: Eine Heatmap mit benutzerdefinierten Markern pro Hitzepunkt.</em></p>
 <h3 id="heatmaps-mit-leaflet-intensitat">Heatmaps mit Leaflet – Intensität</h3>
 <p>Im vorhergehenden Kapitel haben wir eine Heatmap mithilfe des 
@@ -4307,7 +4317,7 @@ Zum Schluss fügen Sie diesen Layer nun zum Kartenobjekt hinzu.
 Die Anweisung hierfür lautet: 
 <code>L.Map('mapid', { center: new L.LatLng(50.0586, 7.6568),</code> <code>zoom: 8, layers: [baseLayer,</code><strong><code>heatmapLayer</code></strong><code>]});</code>.</p>
 <p>Wie das aussehen sollte, können Sie sich in der nächsten Abbildung ansehen.</p>
-<p><img src="../media/images/952.png" alt="Eine Heatmap - erstellt mithilfe des Plugins [heatmap.js](https://github.com/pa7/heatmap.js) - die die Intensität darstellt." /></p>
+<p><img src="../Images/952.png" alt="Eine Heatmap - erstellt mithilfe des Plugins [heatmap.js](https://github.com/pa7/heatmap.js) - die die Intensität darstellt." /></p>
 <p><em>Abbildung: Eine Heatmap - erstellt mithilfe des Plugins <a href="https://github.com/pa7/heatmap.js">heatmap.js</a> - die die Intensität darstellt.</em></p>
 <h4 id="dokumentation-und-methoden">Dokumentation und Methoden</h4>
 <p>Das nachfolgende Beispiel demonstriert Ihnen, wie unterschiedlich Punkte 
@@ -4375,7 +4385,7 @@ Die Werte für die Intensität betragen 99, 60, 40 und 20 bei einem maximalen We
 von 100. 
 In der nachfolgenden Abbildung sehen Sie die unterschiedliche Darstellung 
 auf der Karte.</p>
-<p><img src="../media/images/949.png" alt="Punkte mit unterschiedlicher Intensität auf einer Heatmap." /></p>
+<p><img src="../Images/949.png" alt="Punkte mit unterschiedlicher Intensität auf einer Heatmap." /></p>
 <p><em>Abbildung: Punkte mit unterschiedlicher Intensität auf einer Heatmap.</em></p>
 <h3 id="interaktive-heatmaps">Interaktive Heatmaps</h3>
 <p>Besonders spannend sind Karten, wenn wenn man sie bearbeiten und somit verändern kann. 
@@ -4435,7 +4445,7 @@ wenn jemand auf die Karte klickt.</p>
 Zunächst wird die Karte ganz normal angezeigt. Sie sehen keinen Wärmepunkt. 
 Wenn Sie mit der Maus eine Stelle auf der Karte klicken, 
 wird an dieser Koordinate ein Wärmepunkt hinzugefügt.</p>
-<p><img src="../media/images/951.png" alt="Die Leaflet Karte dieses Beispiels, nachdem mit der Maus einmal auf sie geklickt wurde." /></p>
+<p><img src="../Images/951.png" alt="Die Leaflet Karte dieses Beispiels, nachdem mit der Maus einmal auf sie geklickt wurde." /></p>
 <p><em>Abbildung: Die Leaflet Karte dieses Beispiels, nachdem mit der Maus einmal auf sie geklickt wurde.</em></p>
 <h3 id="animierte-heatmaps">Animierte Heatmaps</h3>
 <p>Das ist fast wie Kino – im nächsten Beispiel verändert sich die Karte automatisch.</p>
@@ -4526,7 +4536,7 @@ einzelnen Aufrufen definieren.</p>
 </blockquote>
 <p>So wie im nachfolgenden Bild sieht die Karte nur alle 6 Sekunden aus. 
 In der Zwischenzeit wechselt die Ansicht zweimal.</p>
-<p><img src="../media/images/950.png" alt="Eine Heatmap mit wechselnden Daten - hier sehen Sie die Daten der Variablen `point1`." /></p>
+<p><img src="../Images/950.png" alt="Eine Heatmap mit wechselnden Daten - hier sehen Sie die Daten der Variablen `point1`." /></p>
 <p><em>Abbildung: Eine Heatmap mit wechselnden Daten - hier sehen Sie die Daten der Variablen <code>point1</code>.</em></p>
 <h2 id="choroplethenkarte">Choroplethenkarte</h2>
 <p><a href="#" id="inChoroplethenkarte"></a></p>
@@ -4751,7 +4761,7 @@ vollständigen Beispiel zusammengesetzt.</p>
  &lt;/html&gt;
 &lt;!--index_957.html--&gt;</code></pre>
 <p>In Ihrem Browser sollte die Karte nun so wie in der nächsten Abbildung aussehen.</p>
-<p><img src="../media/images/947.png" alt="Choroplethenkarten - Verteilung der Bevölkerung in Rheinland-Pfalz." /></p>
+<p><img src="../Images/947.png" alt="Choroplethenkarten - Verteilung der Bevölkerung in Rheinland-Pfalz." /></p>
 <p><em>Abbildung: Choroplethenkarten - Verteilung der Bevölkerung in Rheinland-Pfalz.</em></p>
 <p>In diesem Beispiel haben wir einen festen Wert ganz unabhängig von anderen Werten 
 verwendet. Wir haben die Bevölkerungszahl unabhängig von der Flächengröße 
@@ -4858,7 +4868,7 @@ nicht mehr dunkel eingefärbt sind. Im ersten Beispiel,
 in dem wir mit den absoluten Zahlen gearbeitet haben, 
 waren diese Bereiche teilweise dunkel. 
 Die Bevölkerungszahl ist aber in Relation zur Fläche dort gar nicht hoch.</p>
-<p><img src="../media/images/948.png" alt="Choroplethenkarten - Dichte der Bevölkerung in Rheinland-Pfalz." /></p>
+<p><img src="../Images/948.png" alt="Choroplethenkarten - Dichte der Bevölkerung in Rheinland-Pfalz." /></p>
 <p><em>Abbildung: Choroplethenkarten - Dichte der Bevölkerung in Rheinland-Pfalz.</em></p>
 <h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir …</h2>
 <p>In diesem Kapitel haben Sie alles das, 
@@ -4902,7 +4912,7 @@ wenn kein individuelles Image angegeben ist.
 Ich habe die Bilder hier nachfolgend abgedruckt. 
 Wenn Sie dieses Buch bisher durchgearbeitet haben, 
 kommen Ihnen die Bilder sicher teilweise bekannt vor.</p>
-<p><img src="../media/images/978.png" alt="(Bilder, die standardmäßig in Leaflet verwendet werden.)" /></p>
+<p><img src="../Images/978.png" alt="(Bilder, die standardmäßig in Leaflet verwendet werden.)" /></p>
 <p><em>Abbildung: Bilder, die standardmäßig in Leaflet verwendet werden.</em></p>
 <p>Oft ist es so, dass das Bekannte vertraut ist und man sich deshalb damit 
 sicher und wohl fühlt. Manchmal möchte man aber aus der Reihen tanzen. 
@@ -4937,7 +4947,7 @@ und eines, das den Schatten zeigt – dann können wir diese beiden Bilder als
 Marker in Ihre Karte einbinden. Ich habe hier zum Ausprobieren die Bilddateien 
 aus dem Leaflet Tutorial 
 <a href="http://leafletjs.com/examples/custom-icons/">Markers with Custom Icons</a> verwenden.</p>
-<p><img src="../media/images/945.png" alt="(Bilddateien aus dem Leaflet Tutorial [Markers with Custom Icons](http://leafletjs.com/examples/custom-icons/).)" /></p>
+<p><img src="../Images/945.png" alt="(Bilddateien aus dem Leaflet Tutorial [Markers with Custom Icons](http://leafletjs.com/examples/custom-icons/).)" /></p>
 <p><em>Abbildung: Bilddateien aus dem Leaflet Tutorial <a href="http://leafletjs.com/examples/custom-icons/">Markers with Custom Icons</a>.</em></p>
 <p>Im nachfolgenden Beispiel habe ich den Text, 
 der für die Anzeige des benutzerdefinierten Markers verantwortlich ist, 
@@ -5014,7 +5024,7 @@ nach etwas verwirrend, weil im Gegensatz zu den anderen Optionen
 für die gleiche Wirkung ein Minuszeichen vorangestellt werden muss. 
 Wenn Sie das Pop-up Fenster links obenhalb der zu markierenden Position öffnen möchten, 
 müssen Sie bei der Option <code>popupAnchor</code> also ein Minuszeichen voran stellen!  </p>
-<p><img src="../media/images/928.png" alt="(Das Bild zu einem Marker auf einer Leaflet Karte positionieren.)" /></p>
+<p><img src="../Images/928.png" alt="(Das Bild zu einem Marker auf einer Leaflet Karte positionieren.)" /></p>
 <p><em>Abbildung: Das Bild zu einem Marker auf einer Leaflet Karte richtig positionieren.</em></p>
 <p>Im Kapitel <a href="#DieKarteMitDatenBestuecken">Die Karte mit Daten bestücken</a>  –  genau 
 im Unterkapitel <a href="#DieKarteMitDatenBestueckenPunkteundMarker">Punkte und Marker</a><br />
@@ -5031,7 +5041,7 @@ Im Programmcode geben Sie dazu einfach den Namen des eben erstellen
 <p>Wenn Sie das HTML Dokument dieses Beispiels im Browser öffnen, 
 sehen Sie eine Karte auf der das grüne Icon als Marker an der festgelegten Koordinate 
 – passend positioniert – erscheint.</p>
-<p><img src="../media/images/977.png" alt="(Eine Karte mit einem benutzerdefinierten Icon als Marker.)" /></p>
+<p><img src="../Images/977.png" alt="(Eine Karte mit einem benutzerdefinierten Icon als Marker.)" /></p>
 <p><em>Abbildung: Eine Karte mit einem benutzerdefinierten Icon als Marker.</em></p>
 <h3 id="eigenschaften-eines-individuellen-marker">Eigenschaften eines individuellen Marker</h3>
 <p>Ein eigenes Marker Bild erstellen Sie in Leaflet mithilfe der 
@@ -5232,7 +5242,7 @@ schon einmal erwähnt.</p>
 <p>Im nachfolgenden Bild sehen Sie das Ergebnis. 
 Jeder Marker wird nun mit einem individuellen Icon erstellt. 
 Die meisten Optionen sind gleich – allerdings hat jeder Marker seine eigene Farbe.</p>
-<p><img src="../media/images/976.png" alt="(Drei Marker mit unterschiedlichen Icons, die mithilfe einer Elternklasse erstellt wurden.)" /></p>
+<p><img src="../Images/976.png" alt="(Drei Marker mit unterschiedlichen Icons, die mithilfe einer Elternklasse erstellt wurden.)" /></p>
 <p><em>Abbildung: Drei Marker mit unterschiedlichen Icons, die mithilfe einer Elternklasse erstellt wurden.</em></p>
 <h2 id="ein-marker-plugin">Ein Marker Plugin</h2>
 <p><a href="#" id="inEinMarkerPlugin"></a></p>
@@ -5254,7 +5264,7 @@ Trotzdem behalten Sie die volle Kontrolle über den Stil der Marker.
 Konkret heißt das: Sie können über unbegrenzte Farben und viele Eigenschaften verfügen. 
 Das Plugin Leaflet.BeautifyIcon bietet auch die Möglichkeit, Schriftart und Glyphen, 
 also die grafische Darstellung von Schriftzeichen, anzupassen.</p>
-<p><img src="../media/images/974.png" alt="Marker, die mithilfe des Plugins [Leaflet.BeautifyMarker](https://github.com/marslan390/BeautifyMarker) erstellt wurden." /></p>
+<p><img src="../Images/974.png" alt="Marker, die mithilfe des Plugins [Leaflet.BeautifyMarker](https://github.com/marslan390/BeautifyMarker) erstellt wurden." /></p>
 <p><em>Abbildung: Marker, die mithilfe des Plugins <a href="https://github.com/marslan390/BeautifyMarker">Leaflet.BeautifyMarker</a> erstellt wurden.</em></p>
 <p>Damit Sie sich dieses besser vorstellen können, habe ich ein Beispiel erstellt.</p>
 <pre><code> &lt;!DOCTYPE HTML&gt;
@@ -5334,7 +5344,7 @@ Es macht Spaß diese zu erkunden.
 Wie die Optionen wirken, die ich verwendet haben, können Sie sich im nächsten Bild 
 teilweise ansehen. Das sich eines der Icons dreht, erkennen Sie allerdings nur, 
 wenn Sie die HTML Datei mit der Karte selbst im Browser öffnen.</p>
-<p><img src="../media/images/975.png" alt="(Eine Leaflet Karte mit `Leaflet.BeautifyMarker`-Markern.)" /></p>
+<p><img src="../Images/975.png" alt="(Eine Leaflet Karte mit `Leaflet.BeautifyMarker`-Markern.)" /></p>
 <p><em>Abbildung: Eine Leaflet Karte mit drei verschiedenen <code>Leaflet.BeautifyMarker</code>-Markern.</em></p>
 <blockquote>
 <p>Ich hatte Ihnen ja schon geschrieben,
@@ -5409,7 +5419,7 @@ Die Datei <code>points.js</code> enthält 380 Punkte und sieht auszugsweise wie 
 Marker hinzufügen. 
 Das Objekt <code>markerClusterGroup</code> übernimmt nun die ganze Arbeit für uns.</p>
 <p>So wie in der nachfolgenden Abbildung zu sehen ist, könnte Ihre Karte aussehen.</p>
-<p><img src="../media/images/952.png" alt="Viele Marker auf einer Leaflet Karte, die in Cluster gruppiert sind." /></p>
+<p><img src="../Images/952.png" alt="Viele Marker auf einer Leaflet Karte, die in Cluster gruppiert sind." /></p>
 <p><em>Abbildung: Viele Marker auf einer Leaflet Karte, die in Cluster gruppiert sind..</em></p>
 <h3 id="optionen-methoden-und-ereignisse">Optionen, Methoden und Ereignisse</h3>
 <p>Sie können einem Cluster jede Menge Optionen mitgeben und sehr viele 
@@ -5653,7 +5663,7 @@ die Möglichkeiten diese Plugins zu sehen und ein Gefühl für die Anwendung zu 
  &lt;/html&gt;
 &lt;!--index_947.html--&gt;</code></pre>
 <p>Die nächste Abbildung zeigt Ihnen die drei im vorherigen Beispiel erstellen Marker.</p>
-<p><img src="../media/images/972a.png" alt="Drei mithilfe des [Leaflet Data Visualization Framework (DVF)](https://github.com/humangeo/leaflet-dvf) erstellte Marker." /></p>
+<p><img src="../Images/972a.png" alt="Drei mithilfe des [Leaflet Data Visualization Framework (DVF)](https://github.com/humangeo/leaflet-dvf) erstellte Marker." /></p>
 <p><em>Abbildung: Drei mithilfe des <a href="https://github.com/humangeo/leaflet-dvf">Leaflet Data Visualization Framework (DVF)</a> erstellte Marker.</em></p>
 <h3 id="diagramme-als-marker">Diagramme als Marker</h3>
 <p>Das außergewöhnlichste an diesem Plugin ist meiner Meinung nach die Einfachheit, 
@@ -5739,7 +5749,7 @@ Das Prinzip wird so aber meiner Meinung nach klar.
 Das Beispiel zeigt Ihnen, wie Sie Daten in Form eines Diagramms mithilfe des 
 Leaflet Data Visualization Framework auf Ihrer Leaflet Karte einblenden können. 
 Und das nachfolgende Bild zeigt Ihnen das Ergebnis.</p>
-<p><img src="../media/images/972.png" alt="Mithilfe des [Leaflet Data Visualization Framework (DVF)](https://github.com/humangeo/leaflet-dvf) erstellte Marker, die Diagramme beinhalten." /></p>
+<p><img src="../Images/972.png" alt="Mithilfe des [Leaflet Data Visualization Framework (DVF)](https://github.com/humangeo/leaflet-dvf) erstellte Marker, die Diagramme beinhalten." /></p>
 <p><em>Abbildung: Mithilfe des <a href="https://github.com/humangeo/leaflet-dvf">Leaflet Data Visualization Framework (DVF)</a> erstellte Marker, die Diagramme beinhalten.</em></p>
 <h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir …</h2>
 <p>In diesem Kapitel haben wir der Leaflet Karte eine individuelle Note gegeben. 
@@ -5929,10 +5939,10 @@ Dabei werden Sie sehen, dass das Ereignis <code>on('load')</code> auch immer dan
 wenn die Karte erschoben wird, eintritt.</p>
 <p>Die beiden nachfolgenden Abbildungen zeigen Ihnen die Basiskarte mit dem Namen 
 gray – einmal mit und einmal ohne optionale Ebene.</p>
-<p><img src="../media/images/943.png" alt="Die Basiskarte Gray mit optionale Ebene" /></p>
+<p><img src="../Images/943.png" alt="Die Basiskarte Gray mit optionale Ebene" /></p>
 <p><em>Abbildung: Die Basiskarte Gray mit optionale Ebene.</em></p>
 <hr />
-<p><img src="../media/images/944.png" alt="Die Basiskarte Gray ohne optionale Ebene" /></p>
+<p><img src="../Images/944.png" alt="Die Basiskarte Gray ohne optionale Ebene" /></p>
 <p><em>Abbildung: Die Basiskarte Gray ohne optionale Ebene.</em></p>
 <h3 id="unterschiedliche-basemaps-auswahlen">Unterschiedliche Basemaps auswählen</h3>
 <p>Im nächsten Beispiel habe ich im HTML-Dokument eine Auswahllist 
@@ -5992,7 +6002,7 @@ Danach wird eine neue Ebene mit der gewünschten Option erstellt –
 <p>Im Ergebnis können Sie sich mithilfe der Auswahlliste alle ESRI Karten ansehen. 
 Oder Sie können es einem Website-Besucher ermöglichen die Karte, 
 die dieser am schönsten findet, für seine Ansicht zu aktivieren.</p>
-<p><img src="../media/images/942.png" alt="Dieses Bild zeigt die ESRI Basiskarte Imagery." /></p>
+<p><img src="../Images/942.png" alt="Dieses Bild zeigt die ESRI Basiskarte Imagery." /></p>
 <p><em>Abbildung: Dieses Bild zeigt die ESRI Basiskarte Imagery.</em></p>
 <h2 id="shapefiles">Shapefiles</h2>
 <p>Das Dateiformat Shapefile wurde von der Firma ESRI für die Software ArcView entwickelt. 
@@ -6048,7 +6058,7 @@ einbinden. Da das Shapefile Format kompliziert ist, ist es gut, dass
 es im Internet Websites gibt, auf denen man eine Shapefile Datei
 testen kann. Eine dieser Websites ist 
 <a href="http://leaflet.calvinmetcalf.com">http://leaflet.calvinmetcalf.com</a>.
-<img src="../media/images/969.png" alt="Test eines Shapefiles mithilfe der Website [http://leaflet.calvinmetcalf.com](http://leaflet.calvinmetcalf.com)." />
+<img src="../Images/969.png" alt="Test eines Shapefiles mithilfe der Website [http://leaflet.calvinmetcalf.com](http://leaflet.calvinmetcalf.com)." />
 <em>Abbildung: Test eines Shapefiles mithilfe der Website <a href="http://leaflet.calvinmetcalf.com">http://leaflet.calvinmetcalf.com</a>. Das getestet Shapefile <code>vg2500_geo84.zip</code> finden Sie in den Beispieldateien </em></p>
 </blockquote>
 <h3 id="wie-binden-sie-shapefiles-ihre-leaflet-karte-ein">Wie binden Sie Shapefiles in Ihre Leaflet Karte ein?</h3>
@@ -6060,7 +6070,7 @@ dass die Verwendung, Erstellung und Freigabe von Geodaten einfach macht.
 Ich habe mir den oben verlinkten Datensatz mit den Verwaltungsgrenzen 
 von Deutschland kopiert. Die Datei landet unter dem Namen <code>vg2500_geo84.zip</code> 
 bei mir auf dem Computer.</p>
-<p><img src="../media/images/970.png" alt="Download eines Shapefiles von der Adresse https://www.arcgis.com." /></p>
+<p><img src="../Images/970.png" alt="Download eines Shapefiles von der Adresse https://www.arcgis.com." /></p>
 <p><em>Abbildung: Download eines Shapefiles von der Adresse arcgis.com.</em></p>
 <p>Wie ich die Shape Datei mit Leaflet in eine Karte integriere, 
 zeigt Ihnen das nachfolgende Beispiel. 
@@ -6107,7 +6117,7 @@ Eigenschaften, die in der Shape Datei enthalten sind,
 werden in diesem Beispiel noch nicht angezeigt. 
 Das Anzeigen von Eigenschaften und das Zuordnen anderer Stile habe 
 ich für das nächste Beispiel aufgehoben.</p>
-<p><img src="../media/images/967.png" alt="Eine Karte auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird." /></p>
+<p><img src="../Images/967.png" alt="Eine Karte auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird." /></p>
 <p><em>Abbildung: Eine Karte, auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird.</em></p>
 <h4 id="deutsche-verwaltungsgrenzen-mit-optionen">Deutsche Verwaltungsgrenzen mit Optionen</h4>
 <p>Im nächsten Beispiel sehen Sie, 
@@ -6146,7 +6156,7 @@ Die Belegung der Option <code>style</code> mit
 der Shape Datei schwarz und füllt die Formen mit der Farbe Rot – 
 bei einer Transparenz von 75 Prozent.</p>
 <p>Das rot gefärbte Deutschland können Sie sich in der nächsten Abbildung ansehen.</p>
-<p><img src="../media/images/968.png" alt="Eine Karte auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird." /></p>
+<p><img src="../Images/968.png" alt="Eine Karte auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird." /></p>
 <p><em>Abbildung: Eine Karte, auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird. In diesem Beispiel wurden die Farben geändert.</em></p>
 <h4 id="ein-pop-fenster">Ein Pop-up-Fenster</h4>
 <p>Schön wäre es, wenn man für jede Verwaltungseinheit 
@@ -6187,7 +6197,7 @@ Im nächsten Beispiel sehen Sie, wie Sie dies umsetzen können.</p>
 <p>Auf diese Art und Weise können Sie auch
 das Aussehen einer Form, abhängig vom Wert eines Attributes
 gestalten.</p>
-<p><img src="../media/images/966.png" alt="Eine Karte auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird." /></p>
+<p><img src="../Images/966.png" alt="Eine Karte auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird." /></p>
 <p><em>Abbildung: Eine Karte, auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird. In diesem Beispiel wird der Name der Verwaltungseinheit angezeigt, wenn man mit der Maus die entsprechende Form anklickt.</em></p>
 <h4 id="ein-pop-fenster-mit-allen-informationen-des-features">Ein Pop-up-Fenster mit allen Informationen des Features</h4>
 <p>Sie wissen nicht, welche Eigenschaften in der Shape Datei genau für die 
@@ -6240,7 +6250,7 @@ Den Text mit allen Schlüssel-Wert-Paaren fügen wir am Schluss als Pop-up
 Text zum Layer hinzu.  </p>
 <p>Als Ergebnis sehen Sie alle möglichen Schlüssel-Wert-Paare 
 in einem Pop-up Fenster über Ihrer Karte, sobald Sie eine Fläche anklicken.</p>
-<p><img src="../media/images/965.png" alt="Eine Karte auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird." /></p>
+<p><img src="../Images/965.png" alt="Eine Karte auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird." /></p>
 <p><em>Abbildung: Eine Karte, auf der ein Shapefile, dass die deutschen Verwaltungsgrenzen enthält, angezeigt wird. In diesem Beispiel werden alle Informationen zur Verwaltungseinheit angezeigt, wenn man mit der Maus die entsprechende Form anklickt.</em></p>
 <h2 id="esri-services">ESRI Services</h2>
 <p>Sie wissen nun wie Sie eine ESRI Basiskarte laden, 
@@ -6350,7 +6360,7 @@ Die Adresse zur Dokumentation des hier verwendeten Services hatte
 ich Ihnen weiter oben schon genannt.</p>
 <p>Die nachfolgende Abbildung zeigt Ihnen alle 
 – im Web Service Behindertenparkplätze des Geoportals Köln eingetragenen – Parkplätze.</p>
-<p><img src="../media/images/938.png" alt="Eine Karte, auf der die Behindertenparkplatze in der Stadt Köln mithilfe eines Webservices angezeigt werden." /></p>
+<p><img src="../Images/938.png" alt="Eine Karte, auf der die Behindertenparkplatze in der Stadt Köln mithilfe eines Webservices angezeigt werden." /></p>
 <p><em>Abbildung: Eine Karte auf der die Behindertenparkplatze in der Stadt Köln mithilfe eines Webservices angezeigt werden. Sie können Informationen zum Parkplatz in einem Pop-up einsehen.</em></p>
 <h3 id="geocoding">Geocoding</h3>
 <p>Was ist <a href="https://de.wikipedia.org/w/index.php?title=Georeferenzierung&amp;oldid=174938538">Geocoding</a>? 
@@ -6468,7 +6478,7 @@ Sehen sich die Dokumentation unter Adresse
 <a href="http://esri.github.io/esri-leaflet/api-reference/controls/geosearch.html">http://esri.github.io/esri-leaflet/api-reference/controls/geosearch.html</a> an. 
 Vielleicht ist da sogar eine Option dabei, auf die Sie selbst nicht gekommen wären, 
 die sie aber als nützlich ansehen.</p>
-<p><img src="../media/images/937.png" alt="Nach Eingabe einer Adresse den passenden Ort auf der Karte finden." /></p>
+<p><img src="../Images/937.png" alt="Nach Eingabe einer Adresse den passenden Ort auf der Karte finden." /></p>
 <p><em>Abbildung: Nach Eingabe einer Adresse den passenden Ort auf der Karte finden.</em></p>
 <h4 id="mithilfe-eines-parameters-der-url-den-passenden-ort-finden">Mithilfe eines Parameters in der URL den passenden Ort finden</h4>
 <p>Manchmal kommt es vor, dass Sie eine Karte schon an einer bestimmten Adresse zentriert öffnen möchten. Wie Sie so etwas umsetzten können, zeigt Ihnen das nächste Beispiel.</p>
@@ -6565,7 +6575,7 @@ ist in der Dokumentation beschrieben:
 <p>Voilà! Wenn sie an die URL, unter der Sie Ihre Leaflet Karte abegelegt haben, 
 den Text <code>?test=56751 Gering</code> anhängen, wird Ihnen die in der 
 nachfolgenden Abbildung dargestellte Karte angezeigt.</p>
-<p><img src="../media/images/936.png" alt="Mithilfe eines Parameters in der URL den passenden Ort finden." /></p>
+<p><img src="../Images/936.png" alt="Mithilfe eines Parameters in der URL den passenden Ort finden." /></p>
 <p><em>Abbildung: Mithilfe eines Parameters in der URL den passenden Ort finden.</em></p>
 <h4 id="nach-klick-auf-die-karte-die-passende-adresse-ausgeben">Nach Klick auf die Karte die passende Adresse ausgeben</h4>
 <p>Umgekehrtes Geocoding ist die Bezeichnung für die Umwandlung geografischer Koordinaten in, 
@@ -6615,7 +6625,7 @@ die angeklickt wurde, erstellt.
 Das Ergebnis der Suche – also die gefundene Adresse – wird schlussendlich als Text 
 in einem Pop-up zum Marker angezeigt.</p>
 <p>Wie dieses Pop-up aussieht, können Sie sich in der nächsten Abbildung ansehen.</p>
-<p><img src="../media/images/936.png" alt="Nach Klick auf die Karte die passende Adresse ausgeben." /></p>
+<p><img src="../Images/936.png" alt="Nach Klick auf die Karte die passende Adresse ausgeben." /></p>
 <p><em>Abbildung: Nach Klick auf die Karte die passende Adresse ausgeben.</em></p>
 <p>Die Dokumentation zum ESRI Reverse Geocoding finden Sie unter der Internetadresse 
 [<a href="http://esri.github.io/esri-leaflet/api-reference/tasks/reverse-geocode.html](http://esri.github.io/esri-leaflet/api-reference/tasks/reverse-geocode.html">http://esri.github.io/esri-leaflet/api-reference/tasks/reverse-geocode.html](http://esri.github.io/esri-leaflet/api-reference/tasks/reverse-geocode.html</a>]. </p>
@@ -6714,7 +6724,7 @@ Dies erreichen wir mit der Zeile <code>bodengeologieLayer.</code><strong><code>s
 <p>Das Ergebnis sehen Sie in der nächsten Abbildung. 
 Wenn Sie in der Auswahlliste den Eintrag <em>Schiefer</em> auswählen, 
 werden nur die Regionen in denen Schiefer vorkommt, auf der Karte als Bereich angezeigt.</p>
-<p><img src="../media/images/935a.png" alt="Karte zur Veranschaulichung der Bodengeologie mithilfe eines [Feature Layer Service](https://esri.github.io/esri-leaflet/api-reference/services/feature-layer-service.html)." /></p>
+<p><img src="../Images/935a.png" alt="Karte zur Veranschaulichung der Bodengeologie mithilfe eines [Feature Layer Service](https://esri.github.io/esri-leaflet/api-reference/services/feature-layer-service.html)." /></p>
 <p><em>Abbildung: Karte zur Veranschaulichung der Bodengeologie mithilfe eines <a href="https://esri.github.io/esri-leaflet/api-reference/services/feature-layer-service.html">Feature Layer Service</a>.</em></p>
 <h4 id="abstand-visualisieren">Abstand visualisieren</h4>
 <p>Ein weiteres Merkmal, das auf Landkarten oft wichtig ist, 
@@ -6773,7 +6783,7 @@ werden im Anschluss rot (#BA454E) gefärbt. Alle anderen bekommen die Farbe Blau
 <p>Das Ergebnis sehen Sie im nächsten Bild. 
 Sobald Sie einen Punkt auf der Karte anklicken, werden alle Geologien im Abstand 
 von 5000 Metern um die angeklickte Stelle rot hervorgehoben.</p>
-<p><img src="../media/images/935b.png" alt="Karte zur Veranschaulichung der Bodengeologie mithilfe eines [Feature Layer Service](https://esri.github.io/esri-leaflet/api-reference/services/feature-layer-service.html)." /></p>
+<p><img src="../Images/935b.png" alt="Karte zur Veranschaulichung der Bodengeologie mithilfe eines [Feature Layer Service](https://esri.github.io/esri-leaflet/api-reference/services/feature-layer-service.html)." /></p>
 <p><em>Abbildung: Karte zur Veranschaulichung der Bodengeologie mithilfe eines <a href="https://esri.github.io/esri-leaflet/api-reference/services/feature-layer-service.html">Feature Layer Service</a>. Außerdem werden per Klick die Bodengeologien die in einem bestimmten Abstand zur angeklickten Position liegen farblich hervorgehoben.</em></p>
 <h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir …</h2>
 <p>In diesem Teil haben wir uns als erstes die Karten, 
@@ -6946,7 +6956,7 @@ Die Route wird berechnet und im rechten oberen Teil angezeigt.
 Anders als gewünscht werden Sie aber über eine Straße, auf der viele Autos fahren, geführt. 
 Dabei möchten Sie gerne wandern. Außerdem sind die Texte in englischer Sprache. 
 Das geht sicher besser!</p>
-<p><img src="../media/images/927.png" alt="Eine Karte auf der eine Route angezeigt wird." /></p>
+<p><img src="../Images/927.png" alt="Eine Karte auf der eine Route angezeigt wird." /></p>
 <p><em>Abbildung: Eine Karte auf der eine Route angezeigt wird.</em></p>
 <h2 id="options">Options</h2>
 <p><a href="#" id="leafletroutingmachineoptions"></a></p>
@@ -7037,11 +7047,11 @@ Wie dies geht zeigt Ihnen das nächste Beispiel.</p>
 <p>Sie können die URL, von der die Route abgefragt wird, auch direkt eingeben. Im Falle von 
 <a href="http://project-osrm.org">http://project-osrm.org</a> könnte dies wie folgt aussehen:
 <a href="https://router.project-osrm.org/route/v1/driving/7.262993,50.273543;7.276211,50.281168">https://router.project-osrm.org/route/v1/driving/7.262993,50.273543;7.276211,50.281168</a>. 
-<img src="../media/images/926a.png" alt="Direkter Aufruf OSRM-Server." />
+<img src="../Images/926a.png" alt="Direkter Aufruf OSRM-Server." />
 <em>Abbildung: Direkter erfolgreichewr Aufruf OSRM-Server.</em><br />
 Falls Ihnen die Meldung <em>'Too Many Requests'</em> angezeigt wird, müssen Sie nichts falsch gemacht haben. 
 In dem Fall ist der Server gerade überlastet. Versuchen Sie es einfach später noch einmal.
-<img src="../media/images/926b.png" alt="Direkter Aufruf OSRM-Server." />
+<img src="../Images/926b.png" alt="Direkter Aufruf OSRM-Server." />
 <em>Abbildung: Direkter fehlerhafter Aufruf OSRM-Server.</em></p>
 </blockquote>
 <p>Im nächsten Bild sehen Sie, dass das Routing im Mapbox Beispiel 
@@ -7049,7 +7059,7 @@ nun eher zu einem Wanderer
 passt und die Texte sind auch in deutscher Sprache. 
 Das ist schon einmal gut. 
 Aber es geht ja meist noch besser. </p>
-<p><img src="../media/images/926.png" alt="Eine Karte auf der eine Route für Wanderer in deutscher Sprache angezeigt wird." /></p>
+<p><img src="../Images/926.png" alt="Eine Karte auf der eine Route für Wanderer in deutscher Sprache angezeigt wird." /></p>
 <p><em>Abbildung: Eine Karte auf der eine Route für Wanderer in deutscher Sprache angezeigt wird.</em></p>
 <p>Wahrscheinlich möchten Sie, dass die Adressen, zwischen denen geroutet wird, 
 variabel auf der Karte verändert werden können. 
@@ -7110,7 +7120,7 @@ Wert <code>L.Control.Geocoder.nominatim({})</code> belegt.
 Und das war es schon!  </p>
 <p>Als Ergebnis sehen Sie nun zwei Textfelder im oberen rechten Bereich auf Ihrer Karte. 
 In diese können Sie Adressen eingeben und so Ihre Route benutzerfreundlich abändern.</p>
-<p><img src="../media/images/925.png" alt="Eine Karte auf der eine Route angezeigt wird." /></p>
+<p><img src="../Images/925.png" alt="Eine Karte auf der eine Route angezeigt wird." /></p>
 <p><em>Abbildung: Eine Karte auf der eine Route angezeigt wird. Sie können die Route ändern, indem Sie eine Adresse in einem der Textfelder rechts oben eingeben.</em></p>
 <h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
 <p>Gegenstand dieses Kapitels war Routing. 

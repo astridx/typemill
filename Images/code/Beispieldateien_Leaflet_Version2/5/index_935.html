@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Eine OSM Karte mit Leaflet</title>
+<link rel="stylesheet" href="../leaflet/leaflet.css" />
+<script src="../leaflet/leaflet.js"></script>
+<script src="esri-leaflet.js"></script>
+</head>
+<body>
+<select id="bodengeologieID">
+<option value="">Reset</option>
+<option value="PARAMADOTXT='Saure regionalmetamorphe Gesteine'">Saure regionalmetamorphe Gesteine</option>
+<option value="PARAMADOTXT='fluvioglaziale Sedimente'">fluvioglaziale Sedimente</option>
+<option value="PARAMADOTXT='Kalkstein'">Kalkstein</option>
+<option value="PARAMADOTXT='Geschiebelehm/Geschiebemergel'">Geschiebelehm/Geschiebemergel</option>
+<option value="PARAMADOTXT='Mergel'">Mergel</option>
+<option value="PARAMADOTXT='Toniger Lehm'">Toniger Lehm</option>
+<option value="PARAMADOTXT='Tiefengesteine bzw. Plutonite'">Tiefengesteine bzw. Plutonite</option>
+<option value="PARAMADOTXT='keine Informationen'">keine Informationen</option>
+<option value="PARAMADOTXT='Basische bis ultrabasische vulkanischen Gesteine (Vulkanite)'">Basische bis ultrabasische vulkanischen Gesteine (Vulkanite)</option>
+<option value="PARAMADOTXT='Löss'">Löss</option>
+<option value="PARAMADOTXT='Residualton'">Residualton</option>
+<option value="PARAMADOTXT='Fluviale Tone, Schluffe und Lehme'">Fluviale Tone, Schluffe und Lehme</option>
+<option value="PARAMADOTXT='Sandstein'">Sandstein</option>
+<option value="PARAMADOTXT='Sande der Flussterrassen'">Sande der Flussterrassen</option>
+<option value="PARAMADOTXT='Tonstein'">Tonstein</option>
+<option value="PARAMADOTXT='Steiniger Lehm'">Steiniger Lehm</option>
+<option value="PARAMADOTXT='Residuallehm'">Residuallehm</option>
+<option value="PARAMADOTXT='Schiefer'">Schiefer</option>
+</select>
+<div style="height: 700px" id="mapid"></div>
+<script>
+var mymap = L.map('mapid', {}).setView([50.27264, 7.26469], 12);
+L.esri.basemapLayer('Gray').addTo(mymap);
+var url = 'http://services.arcgis.com/OLiydejKCZTGhvWg/ArcGIS/rest/services/BodenGeologie/FeatureServer/0';
+var bodengeologie = document.getElementById('bodengeologieID');
+var bodengeologieLayer  = L.esri.featureLayer({
+url: url
+}).addTo(mymap);
+var popupTemplate = "<h3>Details:</h3>\n\
+PARAMADOTXT: {PARAMADOTXT}<br>";
+bodengeologieLayer.bindPopup(function (layer){
+console.log(layer.feature.properties);
+return L.Util.template(popupTemplate, layer.feature.properties)
+});
+bodengeologie.addEventListener('change', function(){
+bodengeologieLayer.setWhere(bodengeologie.value);
+});
+</script>
+</body>
+</html>
