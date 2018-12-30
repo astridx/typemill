@@ -14,7 +14,7 @@ sind Informationen, die eine Zuordnung zu einer räumlichen Lage besitzen.
 Sie lesen dieses Buch sicherlich, weil Sie mit dem Gedanken spielen eine digitale Karte 
 anzubieten - höchstwahrscheinlich auf einer Website. Die Grundlagen zu dem, 
 was ich in diesem Buch geschrieben habe, finden Sie alle in der 
-[Dokumentation zu Leaflet](https://leafletjs.com/reference) - oder zu den 
+[Dokumentation zu Leaflet](https://leafletjs.com/reference)[^3] - oder zu den 
 jeweiligen Plugins - öffentlich im Internet. 
 Diese Dokumentationen habe ich hier im Buch verlinkt. Warum habe ich trotzdem 
 dieses Buch geschrieben?  
@@ -48,10 +48,10 @@ genau dieses Buch zum Start mit Leaflet gewünscht.
 ## Was ist Leaflet?
 
 [Leaflet](https://leafletjs.com/reference) ist eine 
-Open Source [JavaScript](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070)-Bibliothek, 
+Open Source [JavaScript](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070)-Bibliothek[^4], 
 die Ihnen das 
 Bereitstellen von Karten auf Ihrer Webseite einfach macht. 
-[Open Source](https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/OpenSource/OpenSource.html) 
+[Open Source](https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/OpenSource/OpenSource.html)[^5] 
 bedeutet unter anderem, dass der Programmcode einsehbar ist. 
 Jeder mit den notwendigen Kenntnissen kann prüfen, wie die Anwendung genau 
 funktioniert. Und was noch wichtiger ist: Jeder kann Leaflet verwenden, 
@@ -83,8 +83,8 @@ bestimmten Koordinaten schieben.
 
 ## Was sollten Sie mitbringen?
 
-Ich gehe davon aus, dass Sie über grundlegende [HTML](https://de.wikipedia.org/w/index.php?title=HTML5&oldid=182888530) 
-und [CSS](https://de.wikipedia.org/w/index.php?title=Cascading_Style_Sheets&oldid=181828388) 
+Ich gehe davon aus, dass Sie über grundlegende [HTML](https://de.wikipedia.org/w/index.php?title=HTML5&oldid=182888530)[^6] 
+und [CSS](https://de.wikipedia.org/w/index.php?title=Cascading_Style_Sheets&oldid=181828388)[^7] 
 Kenntnisse verfügen. 
 Sie sollten auf alle Fälle wissen, wie Sie CSS und ein 
 [JavaScript](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070)-Skript 
@@ -94,23 +94,23 @@ arbeiten.
 > [CSS](http://www.w3.org/Style/CSS/)
 ist eine Stylesheet-Sprache für digitale Dokumente. Stylesheet-Sprachen werden
 verwendet, um Dokumente und Benutzeroberflächen zu gestalten. Dabei ist ein
-Stylesheet mit einer [Formatvorlage](https://de.wikipedia.org/wiki/Formatvorlage) zu
+Stylesheet mit einer [Formatvorlage](https://de.wikipedia.org/w/index.php?title=Formatvorlage&oldid=183843814)[^8] zu
 vergleichen. Grundidee hierbei ist die Trennung von Dateninhalten und Design.
-Zusammen mit HTML und dem [DOM](https://wiki.selfhtml.org/wiki/JavaScript/DOM) ist CSS
+Zusammen mit HTML und dem [DOM](https://wiki.selfhtml.org/index.php?title=JavaScript/DOM&oldid=61063)[^9] ist CSS
 eines der wichtigsten Elemente im Internet. CSS ist ein so genannter lebendiger 
-Standard und wird vom [W3C](https://www.w3.org/) und dem [WHATWG](https://whatwg.org/) permanent 
+Standard und wird vom [W3C](https://www.w3.org/)[^10] und dem [WHATWG](https://whatwg.org/)[^11] permanent 
 weiterentwickelt.  
 
 . 
-> [HTML](https://de.wikipedia.org/w/index.php?title=HTML5&oldid=182888530) 
+> [HTML](https://de.wikipedia.org/w/index.php?title=HTML5&oldid=182888530)[^12] 
 ist eine textbasierte Auszeichnungssprache zur Strukturierung digitaler 
 Dokumente wie Texte mit Hyperlinks, Bildern und anderen Inhalten. HTML-Dokumente 
 sind die Grundlage des World Wide Web und werden von Webbrowsern dargestellt.
  
-Für das Verständnis der Beispiele sind darüber hinaus grundlegende [JavaScript](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070) 
+Für das Verständnis der Beispiele sind darüber hinaus grundlegende [JavaScript](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070)[^13] 
 Kenntnisse hilfreich. Für die Entwicklung dynamischer Webseiten ist JavaScript unerlässlich. 
 
-> Mit [JavaScript](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070) 
+> Mit [JavaScript](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070)[^14] 
 lassen sich kleine Hilfsroutinen und auch komplexen Bibliotheken schreiben. 
 
 ## Die Autorin
@@ -132,3 +132,15 @@ gerne per E-Mail an die E-Mail-Adresse
 
 [^1]: https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&oldid=183579881 (https://bit.ly/2Rko7MC) 
 [^2]: https://de.wikipedia.org/w/index.php?title=Geodaten&oldid=181076558 (https://bit.ly/2RkeBZT)
+[^3]: https://leafletjs.com/reference
+[^4]: https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070 (https://bit.ly/2Tc84hc)
+[^5]: https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/OpenSource/OpenSource.html (https://bit.ly/2EWuWNB)
+[^6]: https://de.wikipedia.org/w/index.php?title=HTML5&oldid=182888530 (https://bit.ly/2GMpjnY)
+[^7]: https://de.wikipedia.org/w/index.php?title=Cascading_Style_Sheets&oldid=181828388 (https://bit.ly/2BNqmyh)
+[^8]: https://de.wikipedia.org/w/index.php?title=Formatvorlage&oldid=183843814 (https://bit.ly/2BKOul8)
+[^9]: https://wiki.selfhtml.org/index.php?title=JavaScript/DOM&oldid=61063 (https://bit.ly/2LJJCkQ)
+[^10]: https://www.w3.org/
+[^11]: https://whatwg.org
+[^12]: https://de.wikipedia.org/w/index.php?title=HTML5&oldid=182888530 (https://bit.ly/2RszPoi)
+[^13]: https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070 (https://bit.ly/2Tc84hc)
+[^14]: https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070 (https://bit.ly/2Tc84hc)

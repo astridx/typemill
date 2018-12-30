@@ -55,7 +55,7 @@ die Sie beim Erstellen des Images für einen Leaflet Marker beachten sollten.
 
 Falls Sie keine Grafiken besitzen und auch nicht selbst Hand anlegen möchten, 
 dann können Sie entweder die Übungen mit den Beispielbildern des  
-[Leaflet Tutorials](http://leafletjs.com/examples/custom-icons/) durcharbeiten – 
+[Leaflet Tutorials](http://leafletjs.com/examples/custom-icons/)[^1] durcharbeiten – 
 oder Sie blättern direkt weiter zum nächsten Kapitel. 
 Das Kapitel [Ein Marker Plugin](#inEinMarkerPlugin) bietet Ihnen einen Kompromiss. 
 Sie benötigen keine eigenen Grafiken, können einem Marker aber trotzdem ein 
@@ -63,10 +63,10 @@ anderes Aussehen verleihen.
 
 > Sie möchten gerne selbst die Grafiken erstellen, wissen aber noch nicht genau 
 wie und womit? Dann sehen Sie
-sich doch das Programm [GIMP](https://www.gimp.org) an. GIMP
+sich doch das Programm [GIMP](https://www.gimp.org)[^2] an. GIMP
 (GNU Image Manipulation Program) ist eine gute kostenlose Alternative
 zum Bildbearbeitungsprogramm 
-[Photoshop von Adobe](http://www.adobe.com/de/products/photoshop.html) und 
+[Photoshop von Adobe](http://www.adobe.com/de/products/photoshop.html)[^3] und 
 kommt mit zahlreichen professionellen 
 Bearbeitungsfunktionen.  
   
@@ -74,7 +74,7 @@ Wenn Sie zwei Bilder haben – also ein Bild, das Ihren Marker selbst darstellt
 und eines, das den Schatten zeigt – dann können wir diese beiden Bilder als 
 Marker in Ihre Karte einbinden. Ich habe hier zum Ausprobieren die Bilddateien 
 aus dem Leaflet Tutorial 
-[Markers with Custom Icons](http://leafletjs.com/examples/custom-icons/) verwenden.
+[Markers with Custom Icons](http://leafletjs.com/examples/custom-icons/)[^1] verwenden.
 
 ![(Bilddateien aus dem Leaflet Tutorial [Markers with Custom Icons](http://leafletjs.com/examples/custom-icons/).)](media/images/945.png)
 
@@ -199,7 +199,7 @@ sehen Sie eine Karte auf der das grüne Icon als Marker an der festgelegten Koor
 ### Eigenschaften eines individuellen Marker
 
 Ein eigenes Marker Bild erstellen Sie in Leaflet mithilfe der 
-Kasse [L.icon](http://leafletjs.com/reference-1.1.0.html#icon). 
+[Kasse `L.icon`](http://leafletjs.com/reference.html#icon)[^4]. 
 Das haben Sie eben praktisch gesehen. Diese Klasse bietet Ihnen eine Menge Optionen.
 
 - `iconUrl:`  
@@ -247,7 +247,7 @@ dem eigentlichen Marker Bild -
 den Namen einer CSS-Klasse definieren. 
 
 [](#){#RetinaDisplay}
-> Besonderheiten beim [Retina Display](https://de.wikipedia.org/w/index.php?title=Retina-Display&oldid=183031043)  
+> Besonderheiten beim [Retina Display](https://de.wikipedia.org/w/index.php?title=Retina-Display&oldid=183031043)[^5]  
 Hochauflösende Displays haben eine höhere Pixeldichte als gewöhnliche Monitore.
 Auf der gleichen Fläche werden etwa viermal so viele Pixel
 dargestellt. Der Vorteil dieser Technologie liegt darin, dass die
@@ -398,10 +398,10 @@ für Sie erstellt wurden:
 `return new L.Icon(options);`  
 ` };`  
 Die Funktion `L.icon` können Sie sich auf Github in der 
-Datei [icon.js](https://github.com/Leaflet/Leaflet/blob/7ed780cd35474f2acf0f17e7394807ff0973a031/src/layer/marker/Icon.js#L153) 
+Datei [icon.js](https://github.com/Leaflet/Leaflet/blob/7ed780cd35474f2acf0f17e7394807ff0973a031/src/layer/marker/Icon.js#L153)[^6] 
 ansehen.  
 Leaflet setzt hier das Entwurfsmuster 
-[Fabrikmethode](https://de.wikipedia.org/w/index.php?title=Fabrikmethode&oldid=183961607) 
+[Fabrikmethode](https://de.wikipedia.org/w/index.php?title=Fabrikmethode&oldid=183961607)[^7] 
 ein. Das Muster beschreibt, wie ein Objekt
 durch Aufruf einer Methode, anstatt durch direkten Aufruf eines
 Konstruktors, erzeugt wird. Dies hatte ich im Kapitel 
@@ -432,7 +432,7 @@ Objekten unterstützen.
 
 ### BeautifyMarker
 
-[Leaflet.BeautifyMarker](https://github.com/marslan390/BeautifyMarker), 
+[Leaflet.BeautifyMarker](https://github.com/marslan390/BeautifyMarker)[^8], 
 ist ein einfaches Plugin, das bunte Marker ganz ohne eigene Grafik zu 
 einer Leaflet-Karte hinzufügt. 
 Trotzdem behalten Sie die volle Kontrolle über den Stil der Marker. 
@@ -500,17 +500,16 @@ Damit Sie sich dieses besser vorstellen können, habe ich ein Beispiel erstellt.
 <!--index_953.html-->
 ```
 
-Was müssen Sie tun, wenn Sie das Plugin 
-[Leaflet.BeautifyMarker](https://github.com/marslan390/BeautifyMarker) 
+Was müssen Sie tun, wenn Sie das 
+[Plugin `Leaflet.BeautifyMarker`](https://github.com/marslan390/BeautifyMarker)[^8] 
 verwenden möchten? 
 Zunächst einmal müssen Sie die notwendigen Skripte und Stylesheet Dateien einbinden. 
 Das ist zum einen das Skript und die CSS-Datei zum Plugin selbst. 
 Diese Dateien können Sie über die Website [https://github.com/marslan390/BeautifyMarker](https://github.com/marslan390/BeautifyMarker) herunterladen. 
-Zum anderen können Sie zusammen mit [Leaflet.BeautifyMarker](https://github.com/marslan390/BeautifyMarker) 
-Drittdienste nutzen. 
+Zum anderen können Sie zusammen mit Leaflet.BeautifyMarker Drittdienste nutzen. 
 Sie können 
-[Font Awesome CSS](https://fontawesome.com/v4.7.0/) und 
-[Bootstrap CSS](https://getbootstrap.com/docs/3.4/) 
+[Font Awesome CSS](https://fontawesome.com/v4.7.0/)[^9] und 
+[Bootstrap CSS](https://getbootstrap.com/docs/3.4/)[^10] 
 einbinden. 
 Ich habe im Beispiel die CSS-Dateien von Font Awesome und von Boostrap eingebunden, 
 um Ihnen dies zu demonstrieren. 
@@ -540,7 +539,7 @@ wenn Sie die HTML Datei mit der Karte selbst im Browser öffnen.
 dass es jede Menge Plugins für Leaflet gibt und dies gilt für den
 Bereich Marker besonders. Die meisten sind auf der Website von
 Leaflet aufgelistet. Diese Liste finden Sie unter der Adresse 
-[https://leafletjs.com/plugins.html#markers--renderers](https://leafletjs.com/plugins.html#markers--renderers).
+[https://leafletjs.com/plugins.html#markers--renderers](https://leafletjs.com/plugins.html#markers--renderers)[^11].
  
 ## Cluster
 [](#){#inCluster}
@@ -557,7 +556,7 @@ diese aber beim Hineinzoomen in die Karte zu Clustern zusammengefasst werden.
 So hat der Benutzer alle Informationen passend zur Kartenanzeige.
 
 In diesem Kapitel erfahren Sie, wie Sie 
-das Plugin [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) 
+das [Plugin `Leaflet.markercluster`](https://github.com/Leaflet/Leaflet.markercluster)[^12] 
 zum Clustern von Marker Objekten verwenden und so eine große Anzahl von Marker 
 Objekten auf einer Karte benutzerfreundlich und übersichtlich darstellen können. 
 Sehen Sie sich das nachfolgende Beispiel an, um zu verstehen, wie das Clustern von 
@@ -597,8 +596,8 @@ Marker Objekten funktioniert.
 <!--index_952.html-->
 ```
 
-Das haben wir gemacht: Als erstes haben wir die notwendigen Dateien zum Plugin 
-[Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) 
+Das haben wir gemacht: Als erstes haben wir die notwendigen Dateien zum 
+[Plugin `Leaflet.markercluster`](https://github.com/Leaflet/Leaflet.markercluster)[^12] 
 eingebunden. Damit wir auch genug Marker zum Clustern zur Verfügung haben, 
 haben wir dann Punkte über eine externe Datei eingebunden. 
 Die Datei `points.js` enthält 380 Punkte und sieht auszugsweise wie folgt aus:  
@@ -642,7 +641,7 @@ ausschalten. Aktiviert bewirkt diese Option das Folgende:
 Wenn Sie die Maus über einen Cluster bewegen, blendet sich ein Polygon ein, 
 dass die Grenzen des Bereichs in dem die Marker sich befinden, anzeigt.
 Alle Optionen, Methoden und Ereignisse finden Sie in der Dokumentation zum Plugin 
-auf Github: [https://github.com/Leaflet/Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster).
+auf Github[^12].
 
 ## Marker animieren
 [](#){#inMarkeranimieren}
@@ -650,7 +649,7 @@ auf Github: [https://github.com/Leaflet/Leaflet.markercluster](https://github.co
 ### Hüpfende Marker
 
 Wenn Sie einen Marker animieren möchten, unterstützt Sie beispielsweise das 
-Plugin [leaflet.bouncemarker](https://github.com/maximeh/leaflet.bouncemarker). 
+[Plugin `leaflet.bouncemarker`](https://github.com/maximeh/leaflet.bouncemarker)[^13]. 
 Wie Sie den hüpfenden Marker in Ihre Karte einbinden, zeige ich Ihnen wieder 
 anhand eines Beispiels.
 
@@ -693,8 +692,8 @@ Gelandet!.
 
 Es gibt sehr viele spannende Ideen, die man mit einer Karte umsetzen kann. 
 Möchten Sie vielleicht mit Ihrem Marker einen Weg beschreiben? 
-Dann ist das Plugin 
-[Leaflet.AnimatedMarker](https://github.com/openplans/Leaflet.AnimatedMarker) 
+Dann ist das 
+[Plugin `Leaflet.AnimatedMarker`](https://github.com/openplans/Leaflet.AnimatedMarker)[^14] 
 vielleicht etwas für Sie. 
 Mit diesem Plugin können Sie einen Marker so animieren, 
 dass er einer Linie folgt. 
@@ -732,10 +731,11 @@ das auf einer Straße fährt?
 #### Einen Marker in Bewegung versetzen und wieder stoppen
 
 Wenn Sie die Bewegung des Markers beeinflussen möchten, 
-unterstützt Sie das Plugin [Leaflet.AnimatedMarker](https://github.com/openplans/Leaflet.AnimatedMarker) auch. 
+unterstützt Sie das 
+[Plugin `Leaflet.AnimatedMarker`](https://github.com/openplans/Leaflet.AnimatedMarker)[^14] auch. 
 Bauen Sie zum Testen zwei Schaltenflächen ein, 
 über die Sie den Maker anhalten oder starten können.
-[Leaflet.AnimatedMarker](https://github.com/openplans/Leaflet.AnimatedMarker) 
+[`Leaflet.AnimatedMarker`](https://github.com/openplans/Leaflet.AnimatedMarker)[^14] 
 bietet Ihnen Methoden mit passender Funktionalität. Sie müssen diese Methoden nur 
 der passenden Schaltfläche zuordnen. 
 
@@ -776,19 +776,18 @@ Das nächste Beispiel will Ihnen eine Idee zur Umsetzung dieser Aufabenstellung 
 ```
 
 Wie Sie sehen, können Sie die Funktionen `start()` und `stop()`, 
-die Ihnen das Plugin 
-[Leaflet.AnimatedMarker](https://github.com/openplans/Leaflet.AnimatedMarker) 
+die Ihnen das 
+[Plugin `Leaflet.AnimatedMarker`](https://github.com/openplans/Leaflet.AnimatedMarker)[^14] 
 zur Verfügung stellt, nutzen.
 
 #### Plugins kombinieren
 
 Und natürlich können Sie Plugins auch kombinieren. 
 Ihrer Kreativität sind keine Grenzen gesteckt. 
-Schon allein mit den beiden gerade gezeigten 
-Plugins 
-[Leaflet.AnimatedMarker](https://github.com/openplans/Leaflet.AnimatedMarker) 
-und 
-[leaflet.bouncemarker](https://github.com/maximeh/leaflet.bouncemarker) 
+Schon allein mit den beiden gerade gezeigten Plugins 
+[`Leaflet.AnimatedMarker`](https://github.com/openplans/Leaflet.AnimatedMarker)[^14] 
+und
+[`leaflet.bouncemarker`](https://github.com/maximeh/leaflet.bouncemarker)[^13] 
 können Sie einen Marker auf der Karte Aktionen ausführen lassen und 
 ihn am Schluss gekonnt aus dem Bild hüpfen lassen. 
 Sehen Sie selbst, probieren Sie das nächste Beispiel aus!
@@ -839,7 +838,7 @@ Möchten Sie gerne mit Ihrer Karte Daten visualisieren.
 Heatmaps und Choroplethenkarten sind aber nicht das Richtige für Sie? 
 Sie können Daten mithilfe von Markern in überzeugende Karten verwandeln. 
 Hierbei unterstützt Sie das Plugin
-[Leaflet Data Visualization Framework (DVF)](https://github.com/humangeo/leaflet-dvf). 
+[Leaflet Data Visualization Framework (DVF)](https://github.com/humangeo/leaflet-dvf)[^15]. 
 Leider ist dieses Plugin zu dem Zeitpunkt, 
 zu dem ich dieses Kapitel geschrieben haben, 
 nicht mit der neuesten Leaflet Version kompatibel. 
@@ -1023,3 +1022,18 @@ die zum Thema Ihrer Website passen?
 Im nächsten Kapitel erfahren Sie, wie Sie Daten und Anwendungen dieses Institutes 
 verwenden können.  
 
+[^1]: http://leafletjs.com/examples/custom-icons/
+[^2]: https://www.gimp.org
+[^3]: http://www.adobe.com/de/products/photoshop.html
+[^4]: http://leafletjs.com/reference.html#icon
+[^5]: https://de.wikipedia.org/w/index.php?title=Retina-Display&oldid=183031043 (https://bit.ly/2EWQ4Ej)
+[^6]: https://github.com/Leaflet/Leaflet/blob/7ed780cd35474f2acf0f17e7394807ff0973a031/src/layer/marker/Icon.js#L153 (https://bit.ly/2Rn8Z0N)
+[^7]: https://de.wikipedia.org/w/index.php?title=Fabrikmethode&oldid=183961607 (https://bit.ly/2BOhDvK)
+[^8]: https://github.com/marslan390/BeautifyMarker
+[^9]: https://fontawesome.com/v4.7.0/
+[^10]: https://getbootstrap.com/docs/3.4/
+[^11]: https://leafletjs.com/plugins.html#markers--renderers
+[^12]: https://github.com/Leaflet/Leaflet.markercluster
+[^13]: https://github.com/maximeh/leaflet.bouncemarker
+[^14]: https://github.com/openplans/Leaflet.AnimatedMarker
+[^15]: https://github.com/humangeo/leaflet-dvf

@@ -5,7 +5,7 @@ Wenn Sie intensiver mit digitalen Landkarten arbeiten,
 möchten Sie sicherlich auch einmal Daten eines Geoinformationssystems (GIS) auf 
 Ihrer Karte anzeigen.
 
-> Ein [Geoinformationssystem](https://de.wikipedia.org/w/index.php?title=Geoinformationssystem&oldid=183596912)
+> Ein [Geoinformationssystem](https://de.wikipedia.org/w/index.php?title=Geoinformationssystem&oldid=183596912)[^1]
 ist ein Informationssystem zur Erfassung, Bearbeitung, Organisation,
 Analyse und Präsentation von Daten, die einen Bezug zu einer Stelle
 auf unserer Erde haben. Zu einem Geoinformationssystem gehören dabei
@@ -14,19 +14,19 @@ Anwendungen selbst.
  
 Wenn Sie Daten eines Geoinformationssystems nutzen möchten, 
 werden Sie früher oder später über den Begriff 
-[Shapefile](https://de.wikipedia.org/w/index.php?title=Shapefile&oldid=183295349) 
+[Shapefile](https://de.wikipedia.org/w/index.php?title=Shapefile&oldid=183295349)[^2] 
 oder Shape Datei stolpern. 
 Aber auch wenn Sie nie auf den Begriff 
 Shape Datei 
 stoßen werden Sie vielleicht einmal einen Webservice nutzen, 
 der Endpunkt eines ARCServers ist. 
 Außerdem werden Sie sicher auch das 
-[ESRI Inc (Environmental Systems Research Institute)](https://de.wikipedia.org/w/index.php?title=ESRI&oldid=182723856) 
+[ESRI Inc (Environmental Systems Research Institute)](https://de.wikipedia.org/w/index.php?title=ESRI&oldid=182723856)[^3] 
 kennenlernen. 
 Dieses Institut ist ein US-amerikanischer Softwarehersteller. 
 Das ESRI hat sich auf Geoinformationssysteme spezialisiert. 
 Das Unternehmen hat unter anderem die Anwendung 
-[ArcGIS](https://de.wikipedia.org/w/index.php?title=ArcGIS&oldid=183028892) 
+[ArcGIS](https://de.wikipedia.org/w/index.php?title=ArcGIS&oldid=183028892)[^4] 
 erstellt und das Dateiformat Shapefiles eingeführt.
 
 > Die wesentlichen Produkte des ESRI sind
@@ -111,7 +111,7 @@ Jede Ebene ist speziell für eine Basiskarte kreiert worden. Wenn Sie möchten, 
 Alle möglichen Basiskarten mit optionalen Ebenen können Sie auch in der 
 Dokumentation des Leaflet Plugins nachlesen. 
 Genau finden Sie diese Informationen unter der Adresse 
-[https://esri.github.io/esri-leaflet/api-reference/layers/basemap-layer.html](https://esri.github.io/esri-leaflet/api-reference/layers/basemap-layer.html).
+[https://esri.github.io/esri-leaflet](https://esri.github.io/esri-leaflet/api-reference/layers/basemap-layer.html)[^5].
 
 > Wenn Sie möchten, können Sie die Anzeige von
 Basemaps bei höheren Auflösungen auf Retina-Geräten mit der Option 
@@ -119,7 +119,7 @@ Basemaps bei höheren Auflösungen auf Retina-Geräten mit der Option
 Basemap auf einem Retina Display in Retina-Auflösungen ausgegeben.
 Was ein Retina Display ist, habe ich Ihnen im Kapitel 
 [Custom Markers](#RetinaDisplay) in einem Hinweis erklärt. 
-Die [Option `detectRetina`](http://leafletjs.com/reference-1.2.0.html#tilelayer-detectretina) 
+Die [Option `detectRetina`](http://leafletjs.com/reference-1.2.0.html#tilelayer-detectretina)[^6] 
 ist eine Leaflet Funktion.  
 
 ```
@@ -280,7 +280,7 @@ Shape Dateien sind speziell für die Verarbeitung von Geodaten entwickelt worden
 
 ### Was genau verbirgt sich hinter dem Begriff Shapefile
 
-Ein [Shapefile](https://de.wikipedia.org/w/index.php?title=Shapefile&oldid=183295349) ist keine einzelne Datei. 
+Ein [Shapefile](https://de.wikipedia.org/w/index.php?title=Shapefile&oldid=183295349)[^2] ist keine einzelne Datei. 
 In der Regel handelt es sich um mehrere Dateien, 
 die zu einem Zip-Archiv zusammengefasst sind. 
 In diesem Zip-Archiv müssen mindestens die drei nachfolgend genannten 
@@ -292,7 +292,7 @@ Dateitypen vorhanden sein:
 
 > Weitere Informationen zu Shapefiles und wie Sie diese selbst erstellen können, 
 finden Sie auf der Website 
-[http://desktop.arcgis.com/de/arcmap/10.3/manage-data/shapefiles/creating-a-new-shapefile.htm](http://desktop.arcgis.com/de/arcmap/10.3/manage-data/shapefiles/creating-a-new-shapefile.htm).
+[http://desktop.arcgis.com](http://desktop.arcgis.com/de/arcmap/10.3/manage-data/shapefiles/creating-a-new-shapefile.htm)[^7].
 
 ### Wie kommen Sie an ein Shapefiles
 
@@ -320,7 +320,7 @@ Einige dieser Daten, zum Beispiel die Flurgrenzen, stehen als Shapefile zur Verf
 
 Wenn Sie per Internetsuche keine passenden Daten finden, können Sie auf der 
 Website von Openstreetmap, insbesondere auf der 
-Unterseite [https://wiki.openstreetmap.org/wiki/Shapefiles](https://wiki.openstreetmap.org/wiki/Shapefiles) 
+Unterseite [https://wiki.openstreetmap.org/wiki/Shapefiles](https://wiki.openstreetmap.org/w/index.php?title=Shapefiles&oldid=1640971)[^8] 
 nach weiteren Anbietern suchen. 
 Neben weiteren Informationen zum Shapefile Format gibt es hier auch eine Liste mit 
 Anbietern von Shapefiles.
@@ -331,8 +331,11 @@ Insbesondere dann nicht, wenn Sie Daten von anderen in Ihre Arbeit
 einbinden. Da das Shapefile Format kompliziert ist, ist es gut, dass
 es im Internet Websites gibt, auf denen man eine Shapefile Datei
 testen kann. Eine dieser Websites ist 
-[http://leaflet.calvinmetcalf.com](http://leaflet.calvinmetcalf.com).
+[http://leaflet.calvinmetcalf.com](http://leaflet.calvinmetcalf.com)[^8].
+
+
 ![Test eines Shapefiles mithilfe der Website [http://leaflet.calvinmetcalf.com](http://leaflet.calvinmetcalf.com).](media/images/969.png)
+
 *Abbildung: Test eines Shapefiles mithilfe der Website [http://leaflet.calvinmetcalf.com](http://leaflet.calvinmetcalf.com). Das getestet Shapefile `vg2500_geo84.zip` finden Sie in den Beispieldateien *
 
 ### Wie binden Sie Shapefiles in Ihre Leaflet Karte ein?
@@ -340,7 +343,7 @@ testen kann. Eine dieser Websites ist
 #### Deutsche Verwaltungsgrenzen als Shapefile in der Leaflet Karte
 
 Die Shape Datei, die ich im nächsten Beispiel verwende, habe ich von der 
-Website [https://www.arcgis.com/home/item.html?id=ae25571c60d94ce5b7fcbf74e27c00e0](https://www.arcgis.com/home/item.html?id=ae25571c60d94ce5b7fcbf74e27c00e0) kopiert. 
+Website [https://www.arcgis.com](https://www.arcgis.com/home/item.html?id=ae25571c60d94ce5b7fcbf74e27c00e0)[^9] kopiert. 
 Die Firma ESRI bietet auf dieser Website mit ArcGIS ein Geoinformationssystem, 
 dass die Verwendung, Erstellung und Freigabe von Geodaten einfach macht. 
 Ich habe mir den oben verlinkten Datensatz mit den Verwaltungsgrenzen 
@@ -553,10 +556,10 @@ In dieser Option erstellen wir eine Variable, genau ein Array, mit dem Namen
 `holder`. Als nächstes durchlaufen wir in einer Schleife alle Schlüssel, 
 die in den Eigenschaften der Shape Datei, also in `feature.properties` enthalten sind. 
 Wir fügen mit 
-[`push()`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/push) 
+[`push()`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/push)[^10] 
 jeden Eintrag in das Array `holder` ein und separieren diesen von dem 
 nächsten Eintrag mit 
-[`join()`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/join). 
+[`join()`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/join)[^11]. 
 Den Text mit allen Schlüssel-Wert-Paaren fügen wir am Schluss als Pop-up 
 Text zum Layer hinzu.  
 
@@ -611,14 +614,13 @@ Die Dokumentation zu den Layern finden Sie unter der Adresse
 ### L.esri.DynamicMapLayer
 
 Für das nachfolgende Beispiel habe ich Daten des 
-[Geoportals Köln](http://www.stadt-koeln.de/politik-und-verwaltung/geoportal/) genutzt. 
+[Geoportals Köln](http://www.stadt-koeln.de/politik-und-verwaltung/geoportal/)[^12] genutzt. 
 Dieses Portal bietet den Zugriff auf offene Daten, Dienste und Anwendungen 
 verschiedener Herkunft. Das Geoportal Köln zentralisieren nach eigenen Angaben 
 Informationen aus den Bereichen Umwelt, Verkehr, Vermessung und Planung. 
 Jeder hat die Möglichkeit die Geodaten des Geoportal Köln zu nutzen, 
 anzusehen und zu analysieren. Informationen zum Geoportal Köln finden Sie auf der 
-Website der Stadt Köln, genau unter der Adresse 
-[http://www.stadt-koeln.de/politik-und-verwaltung/geoportal](http://www.stadt-koeln.de/politik-und-verwaltung/geoportal). 
+Website der [Stadt Köln](http://www.stadt-koeln.de/politik-und-verwaltung/geoportal/)[^12]. 
 Die Dokumentation zur Schnittstelle des Web Services finden Sie unter 
 der Adresse [https://geoportal.stadt-koeln.de/arcgis/](https://geoportal.stadt-koeln.de/arcgis/). 
 Wenn Sie dann auf den Eintrag *Behindertenparkplätze* klicken sehen Sie die Angaben, 
@@ -701,21 +703,19 @@ Die nachfolgende Abbildung zeigt Ihnen alle
 
 ### Geocoding
 
-Was ist [Geocoding](https://de.wikipedia.org/w/index.php?title=Georeferenzierung&oldid=174938538)? 
+Was ist [Geocoding](https://de.wikipedia.org/w/index.php?title=Georeferenzierung&oldid=174938538)[^13]? 
 Geocoding bezeichnet die Umwandlung von Adressen wie *'Kirchstraße 13, 56571 Muster'* 
 in geografische Koordinaten wie *'50.423021 Breite'* und *'7.083739 Länge'*. 
 Nur so können Sie nämlich einen Marker auf einer Karte platzieren oder 
 die Karte an einer bestimmten Adresse zentriert öffnen.
 
 > Nicht nur ESRI bietet Geocoding Dienste an. Auch OpenStreetMap bietet 
-Ihnen diesen Service. [Nominatim](https://nominatim.openstreetmap.org) 
+Ihnen diesen Service. [Nominatim](https://nominatim.openstreetmap.org)[^14] 
 ist eine Anwendung, mithilfe derer OpenStreetMap Daten anhand von
 Texten durchsucht werden können. Diese Texte sind in der Regel eine
 Adresse oder ein Teil einer Adresse. Falls der Suchtext mit einer 
 Eigenschaft eines OpenStreetMap-Objektes, übereinstimmt, wird die Koordinate zu
 diesem Objekt auf eine Suchanfrage hin zurückgegeben. 
-Sie finden die Anwendung Nominatim unter der Adresse 
-[https://nominatim.openstreetmap.org](https://nominatim.openstreetmap.org) im Internet.  
 
 > Da Nominatim auf OpenStreetMap Daten beruht,
 können Sie sich nicht darauf verlassen, dass alle Adressen
@@ -723,12 +723,12 @@ eingetragen sind. OSM ist keine kommerzielle Firma, sondern ein
 Projekt das auf der Mitarbeit von Freiwilligen beruht. Dafür können
 Sie aber selbst Einfluss auf den Datenbestand nehmen. Bei
 OpenStreetMap kann jeder mitmachen: 
-[http://wiki.openstreetmap.org/wiki/DE:Getting_Involved](http://wiki.openstreetmap.org/wiki/DE:Getting_Involved).
+[http://wiki.openstreetmap.org/wiki/DE:Getting_Involved](http://wiki.openstreetmap.org/wiki/DE:Getting_Involved)[^15].
 Ein Pluign, dass unter anderem Nominatim als Service nutze, ist das Plugin 
-[Leaflet Control Geocoder](https://github.com/perliedman/leaflet-control-geocoder). Dieses sehen wir uns im nächsten Kapitel an.
+[Leaflet Control Geocoder](https://github.com/perliedman/leaflet-control-geocoder)[^16]. Dieses sehen wir uns im nächsten Kapitel an.
 
 Ich zeige Ihnen in diesem Kapitel anhand des 
-[ESRI Leaflet Geocoder Plugins](https://github.com/Esri/esri-leaflet-geocoder) folgendes:
+[ESRI Leaflet Geocoder Plugins](https://github.com/Esri/esri-leaflet-geocoder)[^17] folgendes:
 
 - Ich zeige Ihnen, wie Sie eine Adresse in eine Koordinate umwandeln können. 
 - Ich zeige Ihnen, wie Sie eine Koordinate in eine Adresse umwandeln können. 
@@ -804,7 +804,7 @@ der Ebene entfernt und die neuen Suchergebnisse als Marker auf der Ebene platzie
 
 > Ihre Adresse wird
 nicht auf der Karte gefunden? Das ESRI Leaflet Geocoder Control
-findet mithilfe der [Methode `geosearch()`](http://esri.github.io/esri-leaflet/api-reference/controls/geosearch.html) 
+findet mithilfe der [Methode `geosearch()`](http://esri.github.io/esri-leaflet/api-reference/controls/geosearch.html)[^18] 
 standardmäßig nur Adressen, die aktuell auch sichtbar auf der Karte
 sind. Erst wenn Ihre - sicher vorhandene - Adresse auch bei einer Zoom-Stufe von 0 nicht
 gefunden wird, stimmt etwas nicht. Falls Sie lieber sofort die ganze
@@ -871,7 +871,8 @@ Manchmal kommt es vor, dass Sie eine Karte schon an einer bestimmten Adresse zen
 Was haben wir genau gemacht? Angenommen, wir haben in der Adresszeile des Browsers 
 den Text  `?test=56751 Gering`  an die URL angefügt. Dieser Text würde im 
 Beispiel als erstes in der Variablen `x` gespeichert. 
-Hierzu wird die [Eigenschaft `location.search`](https://wiki.selfhtml.org/wiki/JavaScript/Location/search) 
+Hierzu wird die 
+[Eigenschaft `location.search`](https://wiki.selfhtml.org/index.php?title=JavaScript/Location/search&oldid=58666)[^19] 
 zu Hilfe genommen. Diese Eigenschaft speichert eine Zeichenkette die, 
 durch ein Fragezeichen getrennt, zur aktuellen URL gehört. 
 Die Variable `x` enthält also nun den Text `test=56751 Gering`. 
@@ -888,7 +889,7 @@ Und diesen Text können wir nun als Suchtext in die Methode `text()`
 des Geocode Objektes eingeben und auf dem Ergebnis die Methode `run()` ausführen.
 
 > Weitere Informationen zu `decodeURIComponent()` finden Sie unter der Adresse
-[https://wiki.selfhtml.org/wiki/JavaScript/decodeURIComponent](https://wiki.selfhtml.org/wiki/JavaScript/decodeURIComponent).
+[https://wiki.selfhtml.org/](https://wiki.selfhtml.org/index.php?title=JavaScript/decodeURIComponent&oldid=48866)[^20].
 
 ```
 L.esri.Geocoding.geocode()
@@ -905,7 +906,7 @@ mymap.setView(result.results[0].latlng,13);
 Die Rückruffunktion, die daraufhin ausgeführt wird, erstellt einen Marker 
 für das erste Ergebnis und zentriert diesen Marker, 
 bei einer Zoom-Stufe von 13, in der Karte. Eine 
-[Rückruffunktion](https://de.wikipedia.org/wiki/R%C3%BCckruffunktion) ist eine 
+[Rückruffunktion](https://de.wikipedia.org/w/index.php?title=R%C3%BCckruffunktion&oldid=180146705)[^21] ist eine 
 Funktion, die einer anderen Funktion als Parameter übergeben und von dieser erst 
 später, unter definierten Bedingungen mit definierten Argumenten, aufgerufen wird. 
 Eine solche Funktion kennen Sie sicher auch unter dem englischen Namen 
@@ -933,7 +934,7 @@ L.esri.Geocoding.geocode()
 
 Welche Funktionen Sie genau verwenden können, 
 ist in der Dokumentation beschrieben: 
-[https://esri.github.io/esri-leaflet/api-reference/tasks/geocode.html](https://esri.github.io/esri-leaflet/api-reference/tasks/geocode.html).
+[https://esri.github.io/](https://esri.github.io/esri-leaflet/api-reference/tasks/geocode.html)[^22].
 
 Voilà! Wenn sie an die URL, unter der Sie Ihre Leaflet Karte abegelegt haben, 
 den Text `?test=56751 Gering` anhängen, wird Ihnen die in der 
@@ -1004,7 +1005,7 @@ Wie dieses Pop-up aussieht, können Sie sich in der nächsten Abbildung ansehen.
 
 
 Die Dokumentation zum ESRI Reverse Geocoding finden Sie unter der Internetadresse 
-[http://esri.github.io/esri-leaflet/api-reference/tasks/reverse-geocode.html](http://esri.github.io/esri-leaflet/api-reference/tasks/reverse-geocode.html]. 
+[http://esri.github.io/](http://esri.github.io/esri-leaflet/api-reference/tasks/reverse-geocode.html][^23]. 
 
 ### Feature Services
 
@@ -1016,15 +1017,15 @@ Sie möchten sicherlich nur die für Sie und Ihre Anwender relevanten Daten auf 
 Karte anzeigen. Eine Lösung für diese Aufgabe erarbeiten wir in diesem Kapitel.
 
 In diesem Beispiel werden wir die 
-[Klasse `L.esri.featureLayer`](https://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html) 
+[Klasse `L.esri.featureLayer`](https://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html)[^24] 
 instanziieren. Vorher haben wir mit der 
-Klasse [`L.esri.dynamicMapLayer`](https://esri.github.io/esri-leaflet/api-reference/layers/dynamic-map-layer.html) 
+Klasse [`L.esri.dynamicMapLayer`](https://esri.github.io/esri-leaflet/api-reference/layers/dynamic-map-layer.html)[^25] 
 gearbeitet. Vielleicht fragen Sie sich nun, wie die beiden Klassen sich genau 
 unterscheiden. 
 ESRI erklärt dies wie folgt: Mit einem 
-[Feature-Service](http://resources.arcgis.com/de/help/main/10.2/index.html#//0154000002w8000000) 
+[Feature-Service](http://resources.arcgis.com/de/help/main/10.2/index.html#//0154000002w8000000)[^26] 
 können Sie Funktionen über das Internet bereitstellen. 
-Mit dem [Karten-Service](http://resources.arcgis.com/de/help/main/10.2/index.html#//0154000002m7000000) 
+Mit dem [Karten-Service](http://resources.arcgis.com/de/help/main/10.2/index.html#//0154000002m7000000)[^27] 
 können Sie Karten im Web bereitstellen. 
 Meiner Meinung nach ist ein *Feature Service* ein spezieller *Karten-Service* – 
 denn ein Feature Service setzt eine Karte voraus.
@@ -1040,7 +1041,7 @@ dem Blog GIS IQ – [https://gis-iq.esri.de/](https://gis-iq.esri.de)
 So, nun kommen wir zum praktischen Beispiel. Wir konfigurieren eine Abfrage zum 
 Filtern von Daten. Konkret verwenden wir Daten zur Bodengeologie, deren Daten 
 über die Adresse 
-[http://services.arcgis.com/OLiydejKCZTGhvWg/ArcGIS/rest/services/BodenGeologie/FeatureServer](http://services.arcgis.com/OLiydejKCZTGhvWg/ArcGIS/rest/services/BodenGeologie/FeatureServer) 
+[http://services.arcgis.com](http://services.arcgis.com/OLiydejKCZTGhvWg/ArcGIS/rest/services/BodenGeologie/FeatureServer)[^28] 
 bereit gestellt werden.
 
 ```
@@ -1169,7 +1170,7 @@ Zunächst werden im Beispiel Bodengeologien mithilfe des Objektes
 `L.esri.featureLayer` zur Karte hinzugefügt. 
 Soweit gibt es keinen Unterschied zum vorherigen Beispiel. 
 Danach rufen wir die Funktion `nearby()` des 
-[Objektes `L.esri.Query()`](https://esri.github.io/esri-leaflet/api-reference/tasks/query.html) 
+[Objektes `L.esri.Query()`](https://esri.github.io/esri-leaflet/api-reference/tasks/query.html)[^29] 
 für jeden Marker auf. 
 Alle die Marker, die sich in einem Abstand von 5000 Metern befinden, 
 werden im Anschluss rot (#BA454E) gefärbt. Alle anderen bekommen die Farbe Blau (#3388FF);
@@ -1190,3 +1191,33 @@ die ESRI anbietet, angesehen.
 Danach haben wir mit einem Shapefile gearbeitet und ESRI Webservices genutzt. 
 Sie wissen nun was ein `L.esri.DynamicMapLayer,` 
 was Geocoding und was ein `L.esri.FeatureLayer` ist.
+
+[^1]: https://de.wikipedia.org/w/index.php?title=Geoinformationssystem&oldid=183596912 (https://bit.ly/2EXsUOo)
+[^2]: https://de.wikipedia.org/w/index.php?title=Shapefile&oldid=183295349 (https://bit.ly/2rYJGnL)
+[^3]: https://de.wikipedia.org/w/index.php?title=ESRI&oldid=182723856 (https://bit.ly/2LFncRH)
+[^4]: https://de.wikipedia.org/w/index.php?title=ArcGIS&oldid=183028892 (https://bit.ly/2F05aJk)
+[^5]: https://esri.github.io/esri-leaflet/api-reference/layers/basemap-layer.html
+[^6]: http://leafletjs.com/reference-1.2.0.html#tilelayer-detectretina
+[^7]: http://desktop.arcgis.com/de/arcmap/10.3/manage-data/shapefiles/creating-a-new-shapefile.htm (https://bit.ly/2GNRQcV)
+[^8]: http://leaflet.calvinmetcalf.com
+[^9]: https://www.arcgis.com/home/item.html?id=ae25571c60d94ce5b7fcbf74e27c00e0 (https://bit.ly/2CEvFS3)
+[^10]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+[^11]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+[^12]: http://www.stadt-koeln.de/politik-und-verwaltung/geoportal/
+[^13]: https://de.wikipedia.org/w/index.php?title=Georeferenzierung&oldid=174938538 (https://bit.ly/2ETwZTu)
+[^14]: https://nominatim.openstreetmap.org 
+[^15]: http://wiki.openstreetmap.org/wiki/DE:Getting_Involved
+[^16]: https://github.com/perliedman/leaflet-control-geocoder
+[^17]: https://github.com/Esri/esri-leaflet-geocoder
+[^18]: http://esri.github.io/esri-leaflet/api-reference/controls/geosearch.html
+[^19]: https://wiki.selfhtml.org/index.php?title=JavaScript/Location/search&oldid=58666 (https://bit.ly/2QbKv6d)
+[^20]: https://wiki.selfhtml.org/index.php?title=JavaScript/decodeURIComponent&oldid=48866 (https://bit.ly/2BPl6Kn)
+[^21]: https://de.wikipedia.org/w/index.php?title=R%C3%BCckruffunktion&oldid=180146705 (https://bit.ly/2Td1WVY)
+[^22]: https://esri.github.io/esri-leaflet/api-reference/tasks/geocode.html
+[^23]: http://esri.github.io/esri-leaflet/api-reference/tasks/reverse-geocode.html
+[^24]: https://esri.github.io/esri-leaflet/api-reference/layers/feature-layer.html
+[^25]: https://esri.github.io/esri-leaflet/api-reference/layers/dynamic-map-layer.html
+[^26]: http://resources.arcgis.com/de/help/main/10.2/index.html#//0154000002w8000000 (https://bit.ly/2GK1mO5)
+[^27]: http://resources.arcgis.com/de/help/main/10.2/index.html#//0154000002m7000000 (https://bit.ly/2VfqdN3)
+[^28]: http://services.arcgis.com/OLiydejKCZTGhvWg/ArcGIS/rest/services/BodenGeologie/FeatureServer (https://bit.ly/2Qa7rCY)
+[^29]: https://esri.github.io/esri-leaflet/api-reference/tasks/query.html

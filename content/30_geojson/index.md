@@ -4,27 +4,26 @@
 Im letzten Kapitel haben Sie Punkte, Marker, Linien und Polygone kennengelernt. 
 Sie können diese nun auf eine Leaflet-Karte zeichnen und wissen, wann welches 
 Objekt das Richtige ist. 
-Sie können [Layer-Gruppen](https://leafletjs.com/reference-1.3.4.html#layergroup) und 
-[Feature-Gruppen](https://leafletjs.com/reference-1.3.4.html#featuregroup) 
+Sie können [Layer-Gruppen](https://leafletjs.com/reference.html#layergroup)[^1] und 
+[Feature-Gruppen](https://leafletjs.com/reference.html#featuregroup)[^2] 
 voneinander abgrenzen und Sie wissen, was bei der Anzeige einer Leaflet Karten auf 
 einem kleinen Display zu beachten ist. 
 Außerdem können Sie nun auf einen Mausklick oder ein anderes Ereignis 
 entsprechend reagieren.  
 Im nächsten Kapitel geht es um das Format 
-[GeoJson](https://de.wikipedia.org/wiki/GeoJSON) und darum, wie 
+[GeoJson](https://de.wikipedia.org/w/index.php?title=GeoJSON&oldid=183228442)[^3] und darum, wie 
 Sie Daten auch in großen Mengen gut handhaben können.
 
-[GeoJSON](https://de.wikipedia.org/wiki/GeoJSON) ist ein offenes Format, 
+GeoJSON ist ein offenes Format, 
 welches es einfach macht, 
 geografische Daten zu beschreiben. Dabei richtet es sich nach einer Spezifikation – 
 nämlich nach der 
-[Simple-Feature-Access-Spezifikation](https://de.wikipedia.org/wiki/Simple_Feature_Access). 
+[Simple-Feature-Access-Spezifikation](https://de.wikipedia.org/w/index.php?title=Simple_Feature_Access&oldid=171319596)[^4]. 
 Für die Beschreibung der Geodaten verwendet GeoJSON 
-die [JavaScript Objekt Notation (JSON)](https://de.wikipedia.org/wiki/JavaScript_Object_Notation).
+die [JavaScript Objekt Notation (JSON)](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070)[^5].
 
-> Hinter dem Begriff [Simple-Feature-Access-Spezifikation](https://de.wikipedia.org/wiki/Simple_Feature_Access) 
-versteckt sich eine Spezifikation des 
-[Open Geospatial Consortium (OGC)](https://de.wikipedia.org/wiki/Open_Geospatial_Consortium). 
+> Hinter dem Begriff *Simple-Feature-Access-Spezifikation versteckt sich eine Spezifikation des 
+[Open Geospatial Consortium (OGC)](https://de.wikipedia.org/w/index.php?title=Open_Geospatial_Consortium&oldid=180537320)[^6]. 
 Diese Spezifikation beinhaltet eine allgemein gültige Beschreibung für 
 Geodaten und deren Geometrien. Dadurch, dass die Spezifikation allgemeingültig ist, 
 können diese Daten gut ausgetauscht werden. Das OGC ist eine gemeinnützige Organisation, 
@@ -42,15 +41,15 @@ das Verarbeiten von GeoJSON-Daten anbietet.
 ## Die Entwicklungsgeschichte von GeoJSON
 [](#){#inEntwicklungsgeschichteGejson}
 
-[GeoJSON](https://de.wikipedia.org/wiki/GeoJSON) baut auf 
-[JSON](https://de.wikipedia.org/wiki/JavaScript_Object_Notation) auf. 
+[GeoJSON](https://de.wikipedia.org/w/index.php?title=GeoJSON&oldid=183228442)[^3] baut auf 
+[JSON](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070)[^5] auf. 
 Bevor JSON als Datenformat spezifiziert wurde, gab es die erweiterbare 
-Auszeichnungssprache [XML](https://de.wikipedia.org/wiki/Extensible_Markup_Language) 
+Auszeichnungssprache [XML](https://de.wikipedia.org/w/index.php?title=Extensible_Markup_Language&oldid=183475842)[^8] 
 (englisch: Extensible Markup Language).  
 
 Immer wenn etwas Neues entsteht, gibt es einen Grund dafür!
 
-XML wurde [1998 veröffentlicht](https://www.w3.org/TR/1998/REC-xml-19980210), 
+XML wurde [1998 veröffentlicht](https://www.w3.org/TR/1998/REC-xml-19980210)[^9], 
 um Daten zwischen Maschinen austauschen zu können, 
 ohne das Menschen nacharbeiten müssen. 
 Dies wurde in Zeiten des Internets immer wichtiger. 
@@ -71,13 +70,13 @@ Zunächst einmal bieten alle drei Formate folgendes:
 
 Sehen wir uns in diesem Kapitel die einzelnen Formate einmal genauer an um zu erkennen, 
 welche Vorteile das Format JSON – beim Arbeiten mit 
-[Geodaten](https://de.wikipedia.org/wiki/Geodaten) das Format GeoJSON – gegenüber XML bringt.
+[Geodaten](https://de.wikipedia.org/w/index.php?title=Geodaten&oldid=181076558)[^10] das Format GeoJSON – gegenüber XML bringt.
 
 #### XML
 
 XML beschreibt die Struktur von Daten. 
 Anhand der *Tags* wird den Daten eine Bedeutung – eine 
-[Semantik](https://de.wikipedia.org/wiki/Semantik)  – gegeben. 
+[Semantik](https://de.wikipedia.org/w/index.php?title=Semantik&oldid=184048296)[^11]  – gegeben. 
 Durch das Tag-System von XML werden oft kleine Datenbestände sehr aufgebläht und 
 dadurch unübersichtlich. 
 Außerdem ist das Ansprechen einzelner Tags in einer XML-Datei teilweise recht kompliziert.
@@ -90,8 +89,8 @@ vielmehr geht es um die syntaktische Anordnung.
 Da JSON Daten strukturiert, können leicht Objekte aus diesen Daten definiert werden.
 JSON wird fortwährend weiterentwickelt. Im Dezember 1999 wurde die erste JSON Format-Spezifikation verabschiedet. 
 Aktuell wird es durch zwei konkurrierende Standards spezifiziert, 
-[RFC 8259](https://tools.ietf.org/html/rfc8259) und 
-[ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+[RFC 8259](https://tools.ietf.org/html/rfc8259)[^12] und 
+[ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)[^13].
 
 Der große Vorteil von JSON im Vergleich zu XML liegt in der einfachen Handhabung. 
 Da JSON selbst gültiges Javascript darstellt, kann es direkt ausgeführt und somit 
@@ -114,7 +113,7 @@ auf einer interaktiven Karte angezeigt.
 [Github](https://github.com/blog/1528-there-s-a-map-for-that) 
 erstellt diese Karten schon seit 2013 mit Leaflet. Dies können Sie
 sich beispielsweise im Repository 
-[world.geo.json](https://github.com/astridx/world.geo.json/blob/master/countries.geo.json) ansehen.
+[world.geo.json](https://github.com/astridx/world.geo.json/blob/master/countries.geo.json)[^14] ansehen.
 
 Schon ein kleines Beispiel veranschaulicht, 
 dass XML für das Beschreiben des gleichen Objektes mehr Zeichen benötigt als JSON. 
@@ -168,7 +167,7 @@ bearbeiten können.
  
 Zur zeitlichen Einordnung: GoeJSON ist noch recht jung. 
 - Im Juni 2008 wurde die erste GeoJSON Format-Spezifikation verabschiedet. 
-- Im August 2016 wurde die [RFC (Requests for Comments) 7946](http://geojson.org/) veröffentlicht.
+- Im August 2016 wurde die [RFC (Requests for Comments) 7946](http://geojson.org/)[^15] veröffentlicht.
 
 > Die formale Spezifikation des GeoJSON Formates finden Sie unter der 
 Adresse [https://tools.ietf.org/html/rfc7946](https://tools.ietf.org/html/rfc7946) 
@@ -184,21 +183,21 @@ Zusätzlich können Sie einer Geometrie aber auch eine Bedeutung geben.
 Sie können jedem Element Eigenschaften zuordnen. Zum Beispiel können Sie einer 
 Linie die Eigenschaft `typ=straße` oder `name=Kirchstraße` mitgeben. 
 In diesem Fall erstellen Sie ein GeoJSON Objekt vom Typ 
-[Feature](https://tools.ietf.org/html/rfc7946#section-3.2). 
+[Feature](https://tools.ietf.org/html/rfc7946#section-3.2)[^17]. 
 Wenn Sie mehrere Feature-Objekte zu einer Gruppe zusammen fassen möchten, 
 können Sie diese zu einer Sammlung von Features zusammen fassen. 
 Hierfür gibt es den GeoJSON Typ 
-[FeatureCollection](https://tools.ietf.org/html/rfc7946#section-3.3). 
+[FeatureCollection](https://tools.ietf.org/html/rfc7946#section-3.3)[^18]. 
 Das Verständnis dieser Konzepte bringt viele Vorteile. 
 Es hilft Ihnen auch, die Arbeit mit Geodaten im Allgemeinen zu verstehen: 
 Die Grundkonzepte, die in GeoJSON angewandt werden, 
 sind schon seit vielen Jahren ein Teil 
-von [Geoinformationssystemen](https://de.wikipedia.org/wiki/Geoinformationssystem). 
+von [Geoinformationssystemen](https://de.wikipedia.org/w/index.php?title=Geoinformationssystem&oldid=183596912)[^19]. 
 Beginnen wir aber von vorne.
 
 #### Eine Geometrie
 
-Eine [Geometrie](https://de.wikipedia.org/w/index.php?title=GeoJSON&oldid=183228442#Geometrien) 
+Eine [Geometrie](https://de.wikipedia.org/w/index.php?title=GeoJSON&oldid=183228442#Geometrien)[^20] 
 ist eine Form. 
 Alle Formen in GeoJSON werden mit einer oder mehrerer Koordinaten beschrieben. 
 Eine Koordinate heißt in GeoJSON *Position*.  
@@ -229,7 +228,7 @@ nämlich die geografische Längen und die geografische Breite.
 GeoJSON unterstützt drei Dimensionen – neben der geografischen Länge 
 und der geografischen Breite können Sie zusätzlich die Höhe auf der Erde angeben.
 
-> Beim [globalen Navigationssatellitensystem (GPS)](http://wiki.openstreetmap.org/wiki/DE:Genauigkeit_von_GPS-Daten) 
+> Beim [globalen Navigationssatellitensystem (GPS)](https://wiki.openstreetmap.org/w/index.php?title=DE:Genauigkeit_von_GPS-Daten&oldid=1581004)[^21] 
 ist noch eine vierte Große relevant. 
 Neben der horizontalen Position und der Höhe spielt auch
 die aktuelle Zeit eine Rolle.
@@ -280,7 +279,7 @@ mit der Position gespeichert. So konnte ein Sportler später nachsehen, wie
 sich sein Puls am Berg und im Tal unterscheidet. Da dies nicht der Sinn 
 einer Position ist, führte dieses Vorgehen teilweise zu Problemen 
 in anderen GeoJSON Anwendungen. 
-In der [neuen GeoJSON Spezifikation](https://tools.ietf.org/html/rfc7946#section-3.1.1) 
+In der [neuen GeoJSON Spezifikation](https://tools.ietf.org/html/rfc7946#section-3.1.1)[^22] 
 ist das Speichern von mehr als drei Werten pro Position nun nicht mehr zulässig.
 
 ##### Point
@@ -296,8 +295,8 @@ Die genaue Schreibweise sehen Sie nachfolgend.
 }
 ```
 
-In Leaflet wird der Typ [Point](https://tools.ietf.org/html/rfc7946#section-3.1.2) 
-als [Marker](https://leafletjs.com/reference-1.3.4.html#marker) zur Karte hinzugefügt.
+In Leaflet wird der Typ [Point](https://tools.ietf.org/html/rfc7946#section-3.1.2)[^23] 
+als [Marker](https://leafletjs.com/reference.html#marker)[^24] zur Karte hinzugefügt.
 
 ##### Multipoint
 
@@ -336,8 +335,8 @@ In GeoJSON wird eine Linie mit dem Typ LineString dargestellt.
 }
 ```
 
-Ein GeoJSON Objekt vom Typ [LineString](https://tools.ietf.org/html/rfc7946#section-3.1.4) entspricht einem 
-[Polyline Objekt](https://tools.ietf.org/html/rfc7946#section-3.1.5) in Leaflet.
+Ein GeoJSON Objekt vom Typ [LineString](https://tools.ietf.org/html/rfc7946#section-3.1.4)[^25] entspricht einem 
+[Polyline Objekt](https://leafletjs.com/reference.html#polyline)[^26] in Leaflet.
 
 ##### MultiLineString
 
@@ -365,8 +364,8 @@ LineString-Koordinaten-Arrays angegeben.
 ```
 
 Ein GeoJSON Objekt vom Typ 
-[MultiLineString](https://tools.ietf.org/html/rfc7946#section-3.1.5) 
-entspricht einem Leaflet [Polyline Objekt](https://tools.ietf.org/html/rfc7946#section-3.1.5), welches mehr als eine abgeschlossene 
+[MultiLineString](https://tools.ietf.org/html/rfc7946#section-3.1.5)[^27] 
+entspricht einem Leaflet [Polyline Objekt](https://leafletjs.com/reference.html#polyline)[^26], welches mehr als eine abgeschlossene 
 Linie definiert. 
 Das bedeute, dass alle Linien zusammen auf einem Layer gezeichnet werden.  
 
@@ -388,10 +387,9 @@ Wie die Löcher in einem Polygon entstehen, habe ich Ihnen im Kapitel
 [Die Karte mit Daten bestücken](#DieKarteMitDatenBestuecken) 
 im Unterkapitel 
 [Polygone](#DieKarteMitDatenBestueckenPolygone) 
-erklärt. 
-Ein GeoJSON Objekt vom Typ 
-[Polygon](https://tools.ietf.org/html/rfc7946#section-3.1.6) 
-entspricht einem [Polygon Objekt](https://leafletjs.com/reference-1.3.4.html#polygon) in Leaflet. 
+erklärt. Ein GeoJSON Objekt vom Typ 
+[Polygon](https://tools.ietf.org/html/rfc7946#section-3.1.6)[^29] 
+entspricht einem [Polygon Objekt](https://leafletjs.com/reference.html#polygon)[^30] in Leaflet. 
 Die Koordinatenliste enthält bei einem Polygon – analog zu Leaflets Polygon – 
 eine Ebene mehr als die Koordinatenliste des Typs LineString. 
 Ich habe die relevante Klammerung im nachfolgenden Beispiel mit einem Stern markiert.
@@ -425,11 +423,11 @@ Ich wiederhole mich.
 Polygone haben einen Innenbereich, und dieser Innenbereich kann Löcher haben. 
 Aus diesem Grund ist beim Typ Polygone in der GeoJSON Spezifikation ein 
 neuer Begriff zu lesen, nämlich der Begriff 
-[LinearRing](https://tools.ietf.org/html/rfc7946#section-3.1.6). 
+[LinearRing](https://tools.ietf.org/html/rfc7946#section-3.1.6)[^29]. 
 Ein LinearRing ist ein geschlossener LineString mit vier oder mehr Positionen. 
 Obwohl ein LinearRing nicht explizit als GeoJSON-Geometrie-Typ eingeführt ist, 
 wird der Begriff in der 
-[Polygon-Geometrie-Typ-Definition](https://tools.ietf.org/html/rfc7946#section-3.1.6) 
+[Polygon-Geometrie-Typ-Definition](https://tools.ietf.org/html/rfc7946#section-3.1.6)[^29] 
 der Spezifikation erwähnt.
 
 Ein *LinearRing* ist entweder die äußere Ringposition, 
@@ -587,8 +585,8 @@ also mehr als einem LinearString – zusammen als MultiPolygon gruppieren.
 ```
 
 Ein GeoJSON Objekt vom Typ 
-[MultiPolygon](https://tools.ietf.org/html/rfc7946#section-3.1.7) entspricht einem 
-[Leaflet Polygon Objekt](https://leafletjs.com/reference-1.3.4.html#polygon), 
+[MultiPolygon](https://tools.ietf.org/html/rfc7946#section-3.1.7)[^33] entspricht einem 
+[Leaflet Polygon Objekt](https://leafletjs.com/reference.html#polygon)[^30], 
 welches mehr als ein Polygon definiert. 
 Das bedeute, dass alle Formen zusammen auf einen Layer gezeichnet werden.  
 
@@ -600,7 +598,7 @@ eines Objektes auf der Erde. Unsere Welt enthält eine Menge Objekte,
 die gemeinsame Eigenschaften haben. 
 Wenn wir diesen Objekten diese gemeinsamen Eigenschaften auf einen 
 Schlag zuordnen möchten, können wir diese Objekte mit dem 
-Typ [GeometryCollection](https://tools.ietf.org/html/rfc7946#section-3.1.8) 
+Typ [GeometryCollection](https://tools.ietf.org/html/rfc7946#section-3.1.8)[^35] 
 zusammenfassen. Zum Beispiel haben die beiden Geometrien im nachfolgenden Beispiel 
 denselben Namen.
 
@@ -662,7 +660,7 @@ Das nachfolgende Programmcodebeispiel enthält ein ganz einfaches Feature Elemen
 
 Im nächsten Beispiel sehen Sie ein etwas komplexeres 
 Feature. Sie erkennen hier, dass eine Eigenschaft eines Feature Elements 
-mit jedem [JSON-Objekt Datentyp](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070#Datenstruktur_und_Formatdefinition) 
+mit jedem [JSON-Objekt Datentyp](https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070#Datenstruktur_und_Formatdefinition)[^36] 
 beschrieben werden kann.
 
 ```
@@ -762,7 +760,7 @@ können Sie im nachfolgenden Beispiel ablesen.
 ```
 
 Ein Objekt vom Typ 
-[FeatureCollection](https://tools.ietf.org/html/rfc7946#section-3.3) 
+[FeatureCollection](https://tools.ietf.org/html/rfc7946#section-3.3)[^18] 
 enthält ein Schlüssel-Wert-Paar. 
 Der Wert ist ein Array das aus Feature Objekten besteht und der Schlüssel 
 lautet Features. Wie der Name schon sagt, darf das Array ausschließlich 
@@ -779,7 +777,7 @@ Sie möchten gerne GeoJSON nutzen und
 haben auch schon die ersten Dateien erstellt.
 Vielleicht sind Sie auch schon auf das ein oder andere Problem
 gestoßen oder möchten einfach nur mit der Syntax vertraut werden.
-Auf der Website [http://geojsonlint.com](http://geojsonlint.com)
+Auf der Website [http://geojsonlint.com](http://geojsonlint.com)[^38]
 können Sie Ihre GeoJSON Daten testen.
   
 ### Die Grenzen von GeoJSON
@@ -789,8 +787,8 @@ Kapitel näher gebracht. Wie jedes andere Format hat GeoJSON aber auch seine Gre
 Diese sind nun Thema dieses Kapitels.
 
 - GeoJSON hat kein Konstrukt das eine Komprimierung unterstützt 
-wie beispielsweise [TopoJSON](https://github.com/topojson/topojson) 
-oder [OSM XML](http://wiki.openstreetmap.org/wiki/OSM_XML). 
+wie beispielsweise [TopoJSON](https://github.com/topojson/topojson)[^39] 
+oder [OSM XML](https://wiki.openstreetmap.org/w/index.php?title=OSM_XML&oldid=1419416)[^40]. 
 - GeoJSON unterstützt die gleichen Datentypen wie JSON. 
 JSON unterstützt nicht jeden Datentyp. Zum Beispiel gibt es keinen Typ 
 für Datumswerte in JSON. 
@@ -890,10 +888,10 @@ zum Leaflet-Kartenobjekt hinzugefügt.
 Mehr mussten wir nicht tun! Das Ergebnis ist ein Standard Marker 
 an der Stelle auf der Erde, die das GeoJSON Point Element beschreibt.
 
-> Das Leaflet-Objekt [GeoJSON](http://leafletjs.com/reference#geojson) 
+> Das Leaflet-Objekt [GeoJSON](http://leafletjs.com/reference#geojson)[^41] 
 ist ein Leaflet-Layer. Also eine Ebene. 
 Ganz konkret erweitert die Klasse GeoJSON die Klasse 
-[FeatureGroup](http://leafletjs.com/reference#featuregroup).
+[FeatureGroup](http://leafletjs.com/reference#featuregroup)[^2].
 
 Auf der nachfolgenden Abbildung können Sie sich das Ergebnis ansehen.
 
@@ -1026,7 +1024,7 @@ hinzufügen können.
 
 > Im vorausgehenden Beispiel habe ich die Methode `JSON.stringify()` 
 beim Erstellen des Textes im Pop-up Fenster angewandt. Mit
-der Methode [JSON.stringify()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) 
+der Methode [JSON.stringify()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)[^43] 
 können Sie eine JavaScript Variable in einen Text im JSON-Format 
 konvertieren.
 
@@ -1074,15 +1072,15 @@ Der Export des Polyline Objektes würde wie folgt aussehen:
 ### Stylen
 
 Ein GeoJSON Layer biete Ihnen mit der 
-[Methode `setStyle()`](https://leafletjs.com/reference-1.1.0.html#geojson-setstyle) 
+[Methode `setStyle()`](https://leafletjs.com/reference.html#geojson-setstyle)[^44] 
 die Möglichkeit das Aussehen der Kartenschicht zu gestalten.  
 
 Sie können neben den hier beschriebenen Optionen auf eine große Auswahl 
 weitere Stil Optionen zugreifen. 
 Die vollständige Liste finden Sie in der 
 Dokumentation von Leaflet. 
-Sehen Sie sich dazu die Optionen zur Klasse Path an: 
-[http://leafletjs.com/reference-1.1.0.html#path](http://leafletjs.com/reference-1.1.0.html#path).
+Sehen Sie sich dazu die Optionen zur 
+[Klasse `Path`](http://leafletjs.com/reference.html#path)[^45] an. 
 
 #### Beim Erstellen eines GeoJSON Layer einen Stil mitgeben
 
@@ -1299,11 +1297,11 @@ für den Kartenersteller voraus. Und, beim Arbeiten mit vielen Daten werden
 Sie die Möglichkeit, alle Features mit einem Schlag zu bearbeiten, 
 zu schätzen lernen. 
 Iterieren können sie in Leaflet durch GeoJSON Objekte mithilfe der 
-[Methode `onEachFeature()`](http://leafletjs.com/reference-1.1.0.html#geojson-oneachfeature).
+[Methode `onEachFeature()`](http://leafletjs.com/reference.html#geojson-oneachfeature)[^46].
 
 #### OnEachFeature() – Bearbeite jedes Feature
 
-[`onEachFeature()`](http://leafletjs.com/reference-1.1.0.html#geojson-oneachfeature) 
+[`onEachFeature()`](http://leafletjs.com/reference.html#geojson-oneachfeature)[^46] 
 ist eine Methode, die einmal für jedes im Layer vorhandene GeoJSON Objekt 
 vom Typ Feature aufgerufen wird. 
 Nützlich ist diese Option zum Anhängen von Ereignissen oder Pop-up Fenstern 
@@ -1374,13 +1372,13 @@ Vielleicht möchten Sie sogar jeden Marker unterschiedlich gestalten.
 Der Marker wird automatisch mit Standardwerten erstellt. 
 Aber Leaflet wäre nicht Leaflet, wenn es hierfür keine Lösung hätte. 
 Leaflet bietet Ihnen eine andere Methode für diesen Zweck an. 
-Die [Methode heißt `pointtoLayer()`](https://leafletjs.com/reference-1.3.4.html#geojson-pointtolayer) und ein Beispiel dazu, 
+Die [Methode heißt `pointtoLayer()`](https://leafletjs.com/reference.html#geojson-pointtolayer)[^48] und ein Beispiel dazu, 
 wie Sie mit dieser Methode einen eigenen Marker erstellen und 
 mit individuellen Optionen versehen können, finden Sie im nächsten Kapitel.
 
 #### PointToLayer – Punkt zu Ebene
 
-Die [Methode `pointtoLayer()`](https://leafletjs.com/reference-1.3.4.html#geojson-pointtolayer), 
+Die [Methode `pointtoLayer()`](https://leafletjs.com/reference.html#geojson-pointtolayer)[^48], 
 die wir uns in diesem Kapitel ansehen, 
 ist spezielle für die Arbeit mit einem GeoJSON Objekten vom Typ `Point` gemacht. 
 Dieses Objekt ist das GeoJSON Pendant zum Leaflet-Marker. 
@@ -1566,3 +1564,44 @@ wie wir mit den Daten auch
 - Fragen beantworten 
 
 können.
+
+[^1]: https://leafletjs.com/reference.html#layergroup
+[^2]: https://leafletjs.com/reference.html#featuregroup
+[^3]: https://de.wikipedia.org/w/index.php?title=GeoJSON&oldid=183228442 (https://bit.ly/2VkXTca)
+[^4]: https://de.wikipedia.org/w/index.php?title=Simple_Feature_Access&oldid=171319596 (https://bit.ly/2SrASSX)
+[^5]: https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070 (https://bit.ly/2Tc84hc)
+[^6]: https://de.wikipedia.org/w/index.php?title=Open_Geospatial_Consortium&oldid=180537320 (https://bit.ly/2CFhNHj)
+[^8]: https://de.wikipedia.org/w/index.php?title=Extensible_Markup_Language&oldid=183475842 (https://bit.ly/2Tgs16p)
+[^9]: https://www.w3.org/TR/1998/REC-xml-19980210
+[^10]: https://de.wikipedia.org/w/index.php?title=Geodaten&oldid=181076558 (https://bit.ly/2RkeBZT)
+[^11]: https://de.wikipedia.org/w/index.php?title=Semantik&oldid=184048296 (https://bit.ly/2BOes7i)
+[^12]: https://tools.ietf.org/html/rfc8259
+[^13]: http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf (https://bit.ly/2PF27HE)
+[^14]: https://github.com/astridx/world.geo.json/blob/master/countries.geo.json (https://bit.ly/2GNF5yL)
+[^15]: http://geojson.org/
+[^17]: https://tools.ietf.org/html/rfc7946#section-3.2
+[^18]: https://tools.ietf.org/html/rfc7946#section-3.3
+[^19]: https://de.wikipedia.org/w/index.php?title=Geoinformationssystem&oldid=183596912 (https://bit.ly/2EXsUOo)
+[^20]: https://de.wikipedia.org/w/index.php?title=GeoJSON&oldid=183228442#Geometrien (https://bit.ly/2ApdXR5)
+[^21]: https://wiki.openstreetmap.org/w/index.php?title=DE:Genauigkeit_von_GPS-Daten&oldid=1581004 (https://bit.ly/2CHnbtL)
+[^22]: https://tools.ietf.org/html/rfc7946#section-3.1.1
+[^23]: https://tools.ietf.org/html/rfc7946#section-3.1.2
+[^24]: https://leafletjs.com/reference.html#marker
+[^25]: https://tools.ietf.org/html/rfc7946#section-3.1.4
+[^26]: https://leafletjs.com/reference.html#polyline
+[^27]: https://tools.ietf.org/html/rfc7946#section-3.1.5
+[^29]: https://tools.ietf.org/html/rfc7946#section-3.1.6
+[^30]: https://leafletjs.com/reference.html#polygon
+[^33]: https://tools.ietf.org/html/rfc7946#section-3.1.7
+[^35]: https://tools.ietf.org/html/rfc7946#section-3.1.8
+[^36]: https://de.wikipedia.org/w/index.php?title=JavaScript_Object_Notation&oldid=183718070#Datenstruktur_und_Formatdefinition (https://bit.ly/2s0QAZt)
+[^38]: http://geojsonlint.com
+[^39]: https://github.com/topojson/topojson
+[^40]: https://wiki.openstreetmap.org/w/index.php?title=OSM_XML&oldid=1419416 (https://bit.ly/2VhEdpn)
+[^41]: http://leafletjs.com/reference#geojson
+[^43]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify (https://mzl.la/2GMQZck)
+[^44]: https://leafletjs.com/reference.html#geojson-setstyle
+[^45]: http://leafletjs.com/reference.html#path
+[^46]: http://leafletjs.com/reference.html#geojson-oneachfeature
+[^48]: https://leafletjs.com/reference.html#geojson-pointtolayer
+ 

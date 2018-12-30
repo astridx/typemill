@@ -23,7 +23,7 @@ Zahlen – den Koordinaten – beschrieben. In Leaflet gibt es neben dem Punkt
 noch ein komfortableres Element – nämlich den Marker.  
 Auf einer realen Karte könnte ein Marker zum Beispiel einen 
 interessanten Ort, also einen 
-[Point of Interest (POI)](https://de.wikipedia.org/w/index.php?title=Point_of_Interest&oldid=155530967) 
+[Point of Interest (POI)](https://de.wikipedia.org/w/index.php?title=Point_of_Interest&oldid=155530967)[^1] 
 darstellen. 
 - Linien:  
 Eine Linie besteht aus mindestens zwei Punkten die miteinander verbunden sind.  
@@ -87,7 +87,7 @@ Beginnen wir mit einem besonderen Ort – beziehungsweise einem besonderen Punkt
 
 #### Punkte
 
-Die Leaflet [Klasse `Point`](https://leafletjs.com/reference-1.3.4.html#point) 
+Die Leaflet [Klasse `Point`](https://leafletjs.com/reference.html#point)[^3] 
 stellt einen Punkt mit X- und Y-Koordinaten in *Pixeln* 
 dar.
 
@@ -97,7 +97,7 @@ mit die Karte angezeigt wird, angeben.
 
 Objekte vom Typ `Point` sind in Leaflet nicht zur Anzeige gedacht. 
 Vielmehr wird mit Ihnen gearbeitet. Zum Beispiel gibt es die 
-[Methode `panBy`()](https://leafletjs.com/reference-1.3.4.html#map-panby), 
+[Methode `panBy`()](https://leafletjs.com/reference.html#map-panby)[^2], 
 mit der die Karte um eine gegebene Anzahl von Pixeln verschoben werden kann.
 
 Sie merken schon. Ein Objekt vom Typ `Point` ist nicht das, was wir möchten, 
@@ -106,7 +106,7 @@ Um einen Punkt als etwas Besonderes zu markieren,
 möchten Sie sicher eher einen Marker mit Informationen an dieser Stelle – 
 also an den *geografischen* Koordinaten – anzeigen. 
 Und für diesen Zweck bietet Leaflet ein spezielles Objekt – 
-das [`Marker`-Objekt](https://leafletjs.com/reference-1.3.4.html#marker).
+das [`Marker`-Objekt](https://leafletjs.com/reference.html#marker)[^5].
 
 Im nachfolgenden Programmcode-Beispiel sehen wir uns zunächst kurz an, 
 was Sie mit einem Punkt anstellen können.
@@ -151,10 +151,10 @@ Das Verschieben der Karte wäre auf diesem nicht zu erkennen.
 
 #### Marker
 
-Die Leaflet [Klasse `Marker`](https://leafletjs.com/reference-1.3.4.html#marker) wird verwendet, 
+Die Leaflet [Klasse `Marker`](https://leafletjs.com/reference.html#marker)[^5] wird verwendet, 
 um anklickbare und/oder verschiebbare *Symbole* auf einer Karte anzuzeigen. 
 Die Klasse erweitert die 
-[Klasse `Layer`](https://leafletjs.com/reference-1.3.4.html#layer). 
+[Klasse `Layer`](https://leafletjs.com/reference.html#layer)[^4]. 
 In der Regel wird dieses anklickbare und/oder verschiebbare *Symbole* 
 mit einem Pop-up Fenster erweitert, auf dem weitere Informationen zu 
 der entsprechenden Stelle auf der Erde enthalten sind.
@@ -222,7 +222,7 @@ tabindex="0"
 ```
 
 Alle Optionen und Methoden, die Ihnen die Leaflet Klasse `Marker` bietet, 
-können Sie in der [Leaflet Dokumentation](https://leafletjs.com/reference-1.3.4.html#marker) nachlesen.
+können Sie in der [Leaflet Dokumentation](https://leafletjs.com/reference.html#marker)[^5] nachlesen.
 
 Im nächsten Bild sehen Sie den Marker in die Karte integriert. 
 Als Bild wurde ein Standardbild verwendet, da wir die Option `icon` nicht gesetzt haben. 
@@ -258,9 +258,9 @@ auswählen.
 #### Linien
 
 Linien können Sie in Leaflet mit der Klasse 
-[Polyline](https://leafletjs.com/reference-1.3.2.html#polyline) erstellen. 
+[Polyline](https://leafletjs.com/reference.html#polyline)[^7] erstellen. 
 Die Klasse `Polyline` erweitert die abstrakte Klasse 
-[Path](http://leafletjs.com/reference-1.3.2.html#path). 
+[Path](http://leafletjs.com/reference.html#path)[^6]. 
 Diese Klasse ermöglicht es Ihnen eine einfache Linie oder mehrere 
 aneinandergereihte Liniensegmente zu erstellen.
 
@@ -313,7 +313,7 @@ In der nächsten Abbildung sehen Sie genau diese Linie.
 
 Ein Polygone ist eine geschlossene Linie – also eine Linie die 
 einen *Innenbereich* von einem *Außenbereich* abtrennt. 
-Mit der [Klasse `Polygone`](http://leafletjs.com/reference-1.1.0.html#polygon) 
+Mit der [Klasse `Polygone`](http://leafletjs.com/reference.html#polygon) 
 können Sie, wie der Name schon sagt, `Polygone`-Objekte auf Ihre Karte zeichnen. 
 Die Klasse `Polygone` erweitert die Klasse `Polyline` und somit auch die Klasse 
 `Path`. Alle Methoden und Optionen dieser Klassen können Sie somit
@@ -334,7 +334,7 @@ Programmcode und das konkrete Polygon sehen Sie
 im darauf folgenden Bild. 
 Alle Methoden und Optionen, die Sie auf ein `Polygon`-Objekt anwenden könne, 
 finden Sie in der 
-[Leaflet Dokumentation](https://leafletjs.com/reference-1.3.4.html#polygon).
+[Leaflet Dokumentation](https://leafletjs.com/reference.html#polygon)[^8].
 
 ```
  <!DOCTYPE HTML>
@@ -386,7 +386,7 @@ jeweils ein Beispiel für beide Formen.
 
 Der nachfolgende Programmcode zeigt Ihnen an einem Beispiel, 
 wie Sie ein Rechteck – also ein Objekt vom 
-[Typ `Rectangle`](https://leafletjs.com/reference-1.3.4.html#rectangle) – 
+[Typ `Rectangle`](https://leafletjs.com/reference.html#rectangle)[^9] – 
 in eine Leaflet Karte einfügen.
 
 ```
@@ -444,7 +444,7 @@ In diesem Zusammenhang ist vielleicht ganz interessant wie Leaflet das
 Koordinatensystem der Erde verarbeitet. Dieses Koordinatensystem ist ja kein 
 gewöhnliches Koordinatensystem, sondern ein sphärisches. 
 Unter einer 
-[Sphäre](https://de.wikipedia.org/w/index.php?title=Sph%C3%A4re_(Mathematik)&oldid=178382030) 
+[Sphäre](https://de.wikipedia.org/w/index.php?title=Sph%C3%A4re_(Mathematik)&oldid=178382030)[^10] 
 versteht man in der Mathematik ganz vereinfacht ausgedrückt 
 die Oberfläche einer Kugel. Und auf einer Kugel führen, im Gegensatz zu einer Ebene, 
 immer zwei Linien auf direktem Wege von einem Punkt zu einem anderen Punkt. 
@@ -489,7 +489,7 @@ Und das, obwohl die Ecken hier ganz nah beieinander liegen.
 
 Anhand des nachfolgenden Programmcode können Sie erkennen, 
 wie ein Kreis – also ein Objekt vom 
-[Typ `Circle`](https://leafletjs.com/reference-1.3.4.html#circle) – 
+[Typ `Circle`](https://leafletjs.com/reference.html#circle)[^11] – 
 in eine Leaflet Karte eingefügt wird.
 
 ```
@@ -628,7 +628,7 @@ einmal zuweisen müssen. Beide Linien werden gleichzeitig schwarz gefärbt.
 Am meisten Vorteile bringt aber die Tatsache, dass beide Linien eine 
 Ebene darstellen. Dies bedeutet, dass die Methode `fitBounds()` die beiden Linien 
 als ein Objekt sieht und die Abgrenzungen dieses einen Objektes berechnet. 
-Die [Methode `fitBounds()`](http://leafletjs.com/reference-1.1.0.html#map-fitbounds) 
+Die [Methode `fitBounds()`](http://leafletjs.com/reference.html#map-fitbounds)[^12] 
 verschiebt eine Karte an die Stelle, an der die übergebenen Koordinaten sich befinden, 
 und setzt die Zoom-Stufe so, dass die Karte für die übergebenen Abgenzungen ideal 
 angezeigt wird. Würden die beiden Linien nicht auf einer Ebenen liegen, 
@@ -638,7 +638,7 @@ anzuzeigen.
 > Noch einmal zur Erinnerung:
 Ein Objekt vom Typ `Polygon` und auch ein `Polyline`-Objekt ist eine Ebene – 
 die beiden Klassen erweitern die Leaflet
-[Klasse Layer](http://leafletjs.com/reference-1.1.0.html#layer).  
+[Klasse Layer](http://leafletjs.com/reference.html#layer)[^4].  
 
 ![Zwei Polyline-Objekte auf einer Ebene.](media/images/987.png)
 
@@ -685,7 +685,7 @@ bei dem mehrere Polygone zusammen erstellt werden.
 ```
 
 In diesem Beispiel sehen Sie, wie Sie mit der 
-[Methode `bindPopup()`](https://leafletjs.com/reference-1.3.4.html#layer-bindpopup) 
+[Methode `bindPopup()`](https://leafletjs.com/reference.html#layer-bindpopup)[^13] 
 ein Pop-up Fenster zu einem Element hinzufügen können. 
 Später im Buch werden Pop-up Fenster noch einmal Thema sein. 
 An dieser Stelle habe ich die Methode gewählt, weil ich der Meinung bin, 
@@ -698,7 +698,7 @@ zusammengefasst sind, dann ist es ein Leichtes,
 allen Gebieten eines Landes das gleiche Pop-up Fenster zuzuweisen. 
 Und wenn Sie nun die ganze Welt auf Ihrer Karte abdecken möchten, 
 dann können Sie sich den Vorteil dieser 
-[Layer-Technik](https://de.wikipedia.org/w/index.php?title=Layertechnik&oldid=73960532) 
+[Layer-Technik](https://de.wikipedia.org/w/index.php?title=Layertechnik&oldid=73960532)[^14] 
 sicherlich gut vorstellen.
 
 In der nächsten Abbildung sehen sie keine Ländergrenzen. 
@@ -792,7 +792,7 @@ Typen auf einem Layer zusammen gruppieren möchten.
 ### Layer-Gruppen
 [](#){#DieKarteMitDatenBestueckenLayergruppen}
 
-Die Leaflet [Klasse `LayerGroup`](https://leafletjs.com/reference-1.3.4.html#layergroup) 
+Die Leaflet [Klasse `LayerGroup`](https://leafletjs.com/reference.html#layergroup)[^15] 
 wird verwendet, um mehrere Layer oder Ebenen zu gruppieren. 
 So können Sie diese Ebenen wie eine Ebene behandeln. 
 Wenn Sie ein Objekt vom Typ `LayerGroup` zur Karte hinzufügen, 
@@ -867,7 +867,7 @@ myLayerGroup.addLayer(marker2);
 
 Entfernen können sie das `LayerGroup`-Objekt – und somit alle zu ihr 
 gehörenden Objekt auf einen Schlag – mit der 
-[Methode `removeLayer()`](https://leafletjs.com/reference-1.3.4.html#layergroup-removelayer). 
+[Methode `removeLayer()`](https://leafletjs.com/reference.html#layergroup-removelayer)[^16]. 
 Im vohergehenden vollständigen Beispiel konkret mit der Zeile  
  
 `myLayerGroup.removeLayer(polyline);`.
@@ -875,9 +875,9 @@ Im vohergehenden vollständigen Beispiel konkret mit der Zeile
 ### Feature-Gruppen
 
 Die 
-[Klasse-`FeatureGroup`](https://leafletjs.com/reference-1.3.4.html#featuregroup) 
+[Klasse-`FeatureGroup`](https://leafletjs.com/reference.html#featuregroup)[^17] 
 erweitert die 
-[Klasse `LayerGroup`](https://leafletjs.com/reference-1.3.4.html#layergroup). 
+[Klasse `LayerGroup`](https://leafletjs.com/reference.html#layergroup)[^15]. 
 Während die Klasse `LayerGroup` eher Methoden zum Gruppieren von Layern bereit 
 stellt, geht es in der `FeatureGroup` hauptsächlich um das gemeinsame 
 Verarbeiten von Ereignissen und das Hinzufügen von Stylen.
@@ -972,18 +972,18 @@ myfeatureGroup.removeLayer(polyline);
 ## Popups
 
 In diesem Kapitel geht es um Leaflet-Objekte vom 
-Typ [`Popup`](https://leafletjs.com/reference-1.3.4.html#popup). 
+Typ [`Popup`](https://leafletjs.com/reference.html#popup)[^18]. 
 Mithilfe dieses Objekts können Sie 
 [Pop-up Fenster] an bestimmten Stellen auf Ihrem Karten Objekt öffnen. 
 Wenn Sie die 
-[Methode `openPopup()`](http://leafletjs.com/reference-1.1.0.html#map-openpopup) 
+[Methode `openPopup()`](http://leafletjs.com/reference.html#map-openpopup)[^19] 
 einsetzten, um das Pop-up Fenster zu öffnen, 
 stellt Leaflet sicher, dass nur ein Pop-up zur gleichen Zeit geöffnet ist. 
 Ich empfehle Ihnen diese Methode einzusetzen, weil ich der Meinung bin, 
 das das gleichzeitige Öffnen von mehreren Pop-up Fenstern nicht benutzerfreundlich ist. 
 Nichtsdestotrotz kann es aber sein, dass Sie gerne mehrere Pop-up Fenster 
 gleichzeitig anzeigen möchten. In diesem Fall müssen Sie das Pop-up Fenster 
-mit der [Methode `addLayer()`](http://leafletjs.com/reference-1.1.0.html#map-addlayer) 
+mit der [Methode `addLayer()`](http://leafletjs.com/reference.html#map-addlayer)[^20] 
 auf einem eigenen Layer einbinden.
 
 So nun aber genug der Theorie. Sehen Sie sich das alles anhand des 
@@ -1079,7 +1079,7 @@ Plugins angezeigt werden können.
 
 > Genaue Informationen zu den unterstützten
 Browsern finden Sie auf der Website von 
-[Leaflet im Bereich Features](https://leafletjs.com/index.html#features).
+[Leaflet im Bereich Features](https://leafletjs.com/index.html#features)[^21].
 
 Jede Website, die eine Leaflet Karte anzeigt, 
 kann vom Entwickler auf die gleiche Art und Weise programmiert werden. 
@@ -1088,12 +1088,12 @@ Ein paar erwähnenswerte Punkte gibt es aber trotzdem und das,
 was meiner Meinung nach erwähnenswert ist, finden Sie in diesem Kapitel.
 
 Das Spannendste bei der Arbeit mit mobilen Anwendungen ist sicherlich 
-die [Funktion `locate()`](https://leafletjs.com/reference-1.3.4.html#map-locate). 
+die [Funktion `locate()`](https://leafletjs.com/reference.html#map-locate)[^22]. 
 Diese Funktion versucht, den Benutzer mit der 
-[W3C Geolocation API](https://de.wikipedia.org/w/index.php?title=W3C_Geolocation_API&oldid=173190043) 
-zu lokalisieren. Die 
-[W3C Geolocation API](https://de.wikipedia.org/w/index.php?title=W3C_Geolocation_API&oldid=173190043) 
-ist eine einheitliche Webbrowser-Programmierschnittstelle zum Ermitteln des geografischen Standorts des zugehörigen Endgeräts. Aber beginnen wir von vorne mit dem Bereich HTML und CSS.
+[W3C Geolocation API](https://de.wikipedia.org/w/index.php?title=W3C_Geolocation_API&oldid=173190043)[^23] 
+zu lokalisieren. Die *W3C Geolocation API* ist eine einheitliche 
+Webbrowser-Programmierschnittstelle zum Ermitteln des geografischen Standorts 
+des zugehörigen Endgeräts. Aber beginnen wir von vorne mit dem Bereich HTML und CSS.
 
 ### HTML und CSS
 
@@ -1168,10 +1168,10 @@ Der Eintrag
 gibt an einer Stelle, an der das Objekt `e` instanziiert ist, 
 den Inhalt dieses Objektes in der Konsole aus.  
 Die Konsole können Sie im Browser 
-[Mozilla Firefox](https://www.mozilla.org/de/firefox/new/) 
+[Mozilla Firefox](https://www.mozilla.org/de/firefox/new/)[^24] 
 über das Menü  
 `Extras | Web Entwickler | Web Konsole` öffnen.  
-Im Browser [Google Chrome](https://www.google.de/chrome/browser/desktop/index.html) 
+Im Browser [Google Chrome](https://www.google.de/chrome/browser/desktop/index.html)[^25] 
 finden Sie die Konsole über das Menü 
 `Tools | Javascipt-Konsole`.
 
@@ -1182,7 +1182,7 @@ So passt die Karte sich genau an das Dispay an und es wird kein Platz
 mit Rändern verschwendet. Außerdem haben wir die Höhe mit `height: 100vh` auf 100 % 
 gesetzt, damit diese voll ausgenutzt wird.
 
-Die [Einheiten `vw` und `vh`](https://wiki.selfhtml.org/index.php?title=CSS/Wertetypen/Zahlen,_Ma%C3%9Fe_und_Ma%C3%9Feinheiten/Viewportabmessungen&oldid=55341) 
+Die [Einheiten `vw` und `vh`](https://wiki.selfhtml.org/index.php?title=CSS/Wertetypen/Zahlen,_Ma%C3%9Fe_und_Ma%C3%9Feinheiten/Viewportabmessungen&oldid=55341)[^26] 
 definieren eine Breite - beziehungsweise Höhe - in Relation zur Größe
 des Browser-Fensters. Dabei steht `vw` für die Breite und `vh` für 
 die Höhe des Viewport. Diese Viewport Units ermöglichen es, Größen 
@@ -1245,7 +1245,7 @@ Damit Sie sich auch Bild davon machen könne,
 wenn Sie das Beispiel gerade nicht praktisch nachvollziehen können, 
 habe ich Ihnen Bilder eingefügt.
 
-![x](media/images/984.png)
+![](media/images/984.png)
 
 *Abbildung: Wenn Sie eine Website besuchen, die standortbezogenes Surfen unterstützt prüft der Browser, ob Sie Ihren Aufenthaltsort bekannt geben möchten.*
 
@@ -1264,9 +1264,9 @@ habe ich Ihnen Bilder eingefügt.
 ---
 
 Leaflet bietet Ihnen noch weitere 
-[Geolokalisierungsmethoden](https://leafletjs.com/reference-1.1.0.html#map-geolocation-methods) 
+[Geolokalisierungsmethoden](https://leafletjs.com/reference.html#map-geolocation-methods)[^27] 
 und 
-[Geolokalisierungsereignisse](http://leafletjs.com/reference-1.1.0.html#locationevent) an.
+[Geolokalisierungsereignisse](http://leafletjs.com/reference.html#locationevent)[^28] an.
 
 ## Ereignisse in Leaflet
 
@@ -1280,7 +1280,7 @@ Dann sehen Sie sich zur Inspiration doch einfach einmal an,
 was Leaflet Ihnen bietet. 
 Insgesamt bietet Leaflet Ihnen 34 verschiedene Ereignisse, 
 die sie nutzen können. Alle Ereignisse sind in 
-der [Dokumentation](http://leafletjs.com/reference-1.1.0.html#events) gut erklärt.
+der [Dokumentation](http://leafletjs.com/reference.html#events)[^29] gut erklärt.
 
 Exemplarisch sehen wir uns mit dem folgenden Programmcode – wieder anhand 
 eines ganz einfache Beispiels – die Vorgehensweise genauer an. 
@@ -1312,7 +1312,7 @@ Konkret reagieren wir auf einen Mausklick.
 ```
 
 Leaflet bietet die 
-[Methode `on()`](http://leafletjs.com/reference-1.1.0.html#evented-on) 
+[Methode `on()`](http://leafletjs.com/reference.html#evented-on)[^30] 
 um auf ein Ereignis zu reagieren. Der erste Parameter, der mit dieser Methode 
 übergeben wird, steht für den Ereignistyp. In unserem Falle ist dies `click`. 
 Der zweite Wert erwartet eine Funktion, die beim Eintreten des Ereignisses 
@@ -1445,7 +1445,7 @@ dem Datenbestand abhängig zu machen?
 Das vorhergehende Beispiel könnten Sie in diesem Falle wie folgt erweitern. 
 Sie könnten mithilfe der Zeile  
 `var myStorage = localStorage;`  
-ein [localStorage Objekt](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 
+ein [localStorage Objekt](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)[^31] 
 instanziieren. Mit 
 ```  
 myStorage.setItem(
@@ -1468,7 +1468,7 @@ Schließen des Browsers, sie übersteht das Neuladen und
 Wiederherstellen einer Webseite. Das Öffnen einer Webseite in einem
 neuen Tabulator oder Browser-Fenster erzeugt jedoch eine neue
 Sitzung. Dies unterscheide ein 
-[`sessionStorage`-Objekt](<https://developer.mozilla.org/de/docs/Web/API/Window/sessionStorage) 
+[`sessionStorage`-Objekt](https://developer.mozilla.org/de/docs/Web/API/Window/sessionStorage)[^32] 
 von einem `Session-Cookie`.
   
 ## In diesem Kapitel haben wir ...
@@ -1482,3 +1482,36 @@ können Sie entsprechend reagieren.
 
 Im nächsten Kapitel geht es um das Format GeoJson und darum, wie Sie Daten 
 auch in großen Mengen gut handhaben können.
+
+[^1]: https://de.wikipedia.org/w/index.php?title=Point_of_Interest&oldid=155530967 (https://bit.ly/2LDyLbW)
+[^2]: https://leafletjs.com/reference.html#map-panby
+[^3]: https://leafletjs.com/reference.html#point
+[^4]: https://leafletjs.com/reference.html#layer
+[^5]: https://leafletjs.com/reference.html#marker
+[^6]: http://leafletjs.com/reference.html#path
+[^7]: http://leafletjs.com/reference.html#polyline
+[^8]: http://leafletjs.com/reference.html#polygon
+[^9]: https://leafletjs.com/reference.html#rectangle
+[^10]: https://de.wikipedia.org/w/index.php?title=Sph%C3%A4re_(Mathematik)&oldid=178382030 (https://bit.ly/2EX3r6T)
+[^11]: https://leafletjs.com/reference.html#circle
+[^12]: http://leafletjs.com/reference.html#map-fitbounds
+[^13]: https://leafletjs.com/reference.html#layer-bindpopup
+[^14]: https://de.wikipedia.org/w/index.php?title=Layertechnik&oldid=73960532 (https://bit.ly/2TiykGx)
+[^15]: https://leafletjs.com/reference.html#layergroup
+[^16]: https://leafletjs.com/reference.html#layergroup-removelayer
+[^17]: https://leafletjs.com/reference.html#featuregroup
+[^18]: https://leafletjs.com/reference.html#popup
+[^19]: http://leafletjs.com/reference.html#map-openpopup
+[^20]: http://leafletjs.com/reference.html#map-addlayer
+[^21]: https://leafletjs.com/index.html#features
+[^22]: https://leafletjs.com/reference.html#map-locate
+[^23]: https://de.wikipedia.org/w/index.php?title=W3C_Geolocation_API&oldid=173190043 (https://bit.ly/2Vfbd1H)
+[^24]: https://www.mozilla.org/de/firefox/new/
+[^25]: https://www.google.de/chrome/browser/desktop/index.html
+[^26]: https://wiki.selfhtml.org/index.php?title=CSS/Wertetypen/Zahlen,_Ma%C3%9Fe_und_Ma%C3%9Feinheiten/Viewportabmessungen&oldid=55341 (https://bit.ly/2GNCXaf)
+[^27]: https://leafletjs.com/reference.html#map-geolocation-methods
+[^28]: http://leafletjs.com/reference.html#locationevent
+[^29]: http://leafletjs.com/reference.html#events
+[^30]: http://leafletjs.com/reference.html#evented-on
+[^31]: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage (https://mzl.la/2n4WEjv)
+[^31]: https://developer.mozilla.org/de/docs/Web/API/Window/sessionStorage (https://mzl.la/2Apjxmx)

@@ -3,14 +3,14 @@
 
 Last, but not least möchte ich Ihnen ein 
 Routing Plugin vorstellen, nämlich die 
-[Leaflet Routing Machine](https://github.com/perliedman/leaflet-routing-machine) 
+[Leaflet Routing Machine](https://github.com/perliedman/leaflet-routing-machine)[^1] 
 von Per Liedmann.
 
 > Auch das ESRI bietet ein Routing Plugin. Jede Leaflet Erweiterung hat 
 ihre Vorteile und ihre Nachteile. Falls Sie die Routing Version des
 Environmental Systems Research Institute ESRI einsetzen möchten,
 finden Sie alle Informationen hierfür unter der Adresse
-[https://github.com/jgravois/lrm-esri](https://github.com/jgravois/lrm-esri).
+[https://github.com/jgravois/lrm-esri](https://github.com/jgravois/lrm-esri)[^2].
 
 ## In diesem Kapitel werden wir …
 
@@ -50,7 +50,7 @@ Das bedeutet auch, dass Poller oder Absperrpfosten, an denen kein Auto vorbeikom
 auch als solche eingezeichnet sind. Ganz wichtig ist es, dass Abbiegeverbote 
 an Kreuzungen auf der Karte klar gekennzeichnet sind. 
 Wie OpenStreetMap das macht, können Sie unter anderem auf der Website 
-[https://wiki.openstreetmap.org/w/index.php?title=OSM_tags_for_routing](https://wiki.openstreetmap.org/w/index.php?title=OSM_tags_for_routing&oldid=1214478) 
+[https://wiki.openstreetmap.org](https://wiki.openstreetmap.org/w/index.php?title=OSM_tags_for_routing&oldid=1214478)[^2] 
 nachlesen.
 
 Um bei der Routen-Berechnung die schnellste Route bestimmen zu können, 
@@ -115,7 +115,7 @@ Nachfolgende finden Sie das erste Beispiel für diesen Themenbereich.
 ```
 
 Was haben wir genau gemacht? Zunächst einmal haben wir die für die Verwendung der 
-[Leaflet Routing Machine](http://www.liedman.net/leaflet-routing-machine) 
+[Leaflet Routing Machine](http://www.liedman.net/leaflet-routing-machine)[^1] 
 erforderlichen Dateien eingebunden. Verantwortlich hierfür sind die Zeilen
 
 ```
@@ -146,7 +146,7 @@ die die Route berechnen soll, mit dem Eintrag
 `router: L.Routing.mapbox('pk.ihrkey')` 
 festgelegt. Für die Nutzung des Mapbox Routers benötigen Sie ein 
 Zugriffstoken. Dieses können Sie unter der Adresse 
-[https://www.mapbox.com/api-documentation/#access-tokens](https://www.mapbox.com/api-documentation/#access-tokens) 
+[https://www.mapbox.com](https://www.mapbox.com/api-documentation/#access-tokens)[^3] 
 anfordern. 
 In dieser Dokumentation finden Sie auch weitere Informationen 
 zum Router und zu den Lizenzbedingungen. Im nächsten Programmcodeblock habe ich 
@@ -239,14 +239,14 @@ wie Sie die Sprache und das Routing Profil verändern können.
  Der Mapbox Router bietet Ihnen unter anderem die Optionen 
 `profil` und `language`. 
 Die Namen sagen es schon aus. Als 
-[Profil](https://www.mapbox.com/api-documentation/#retrieve-directions) 
+[Profil](https://www.mapbox.com/api-documentation/#retrieve-directions)[^4] 
 können Sie einstellen, ob Sie wandern, radeln oder lieber 
 mit dem Auto fahren möchten. 
-Die Option [language](https://www.mapbox.com/api-documentation/#instructions-languages) 
+Die [Option `language`](https://www.mapbox.com/api-documentation/#instructions-languages)[^5] 
 bietet Ihnen eine Menge unterschiedlicher Sprachen. 
 Möchten Sie noch etwas anderes ändern? 
 Die Dokumentation zum Router von Mapbox finden Sie unter der Adresse 
-[https://www.mapbox.com/api-documentation/#introduction](https://www.mapbox.com/api-documentation/#introduction).
+[https://www.mapbox.com/](https://www.mapbox.com/api-documentation/#introduction)[^6].
 
 
 > Wenn Sie lieber eine andere Software zur
@@ -296,14 +296,17 @@ Wie dies geht zeigt Ihnen das nächste Beispiel.
 > Sie können die URL, von der die Route abgefragt wird, auch direkt eingeben. Im Falle von 
 [http://project-osrm.org](http://project-osrm.org) könnte dies wie folgt aussehen:
 [https://router.project-osrm.org/route/v1/driving/7.262993,50.273543;7.276211,50.281168](https://router.project-osrm.org/route/v1/driving/7.262993,50.273543;7.276211,50.281168). 
+
 ![Direkter Aufruf OSRM-Server.](media/images/926a.png)
+
 *Abbildung: Direkter erfolgreichewr Aufruf OSRM-Server.*  
+
 Falls Ihnen die Meldung *'Too Many Requests'* angezeigt wird, müssen Sie nichts falsch gemacht haben. 
 In dem Fall ist der Server gerade überlastet. Versuchen Sie es einfach später noch einmal.
+
 ![Direkter Aufruf OSRM-Server.](media/images/926b.png)
+
 *Abbildung: Direkter fehlerhafter Aufruf OSRM-Server.*
-
-
 
 Im nächsten Bild sehen Sie, dass das Routing im Mapbox Beispiel 
 nun eher zu einem Wanderer 
@@ -365,7 +368,7 @@ Hier im Beispiel kombinieren wir nun Routing und Geocoding. Sehen Sie selbst:
 ```
 
 In diesem Beispiel haben wir das vorhergehende Beispiel mit dem 
-Plugin [Geocoder Control](https://github.com/perliedman/leaflet-control-geocoder) 
+Plugin [Geocoder Control](https://github.com/perliedman/leaflet-control-geocoder)[^7] 
 erweitert. Konkret haben wir mithilfe der Zeilen
 
 ```
@@ -373,8 +376,8 @@ erweitert. Konkret haben wir mithilfe der Zeilen
 <link rel="stylesheet" href="Control.Geocoder.css"/>
 ```
 
-die Skript-Datei und die CSS-Datei des 
-[Geocoder Control](https://github.com/perliedman/leaflet-control-geocoder) 
+die Skript-Datei und die CSS-Datei des Plugin 
+[Geocoder Control](https://github.com/perliedman/leaflet-control-geocoder)[^7] 
 von Per Liedmann eingebunden. 
 Die aktuellste Version dieses Plugins können Sie unter der 
 Adresse [https://github.com/perliedman/leaflet-control-geocoder/releases](https://github.com/perliedman/leaflet-control-geocoder/releases) 
@@ -401,3 +404,10 @@ Danach haben wir das Plugin Leaflet Routing Machine in unsere
 Leaflet Karte integriert und mithilfe von Optionen und Geocoding 
 flexibler und benutzerfreundlicher gemacht.
 
+[^1]: http://www.liedman.net/leaflet-routing-machine
+[^2]: https://wiki.openstreetmap.org/w/index.php?title=OSM_tags_for_routing&oldid=1214478 (https://bit.ly/2TmoAeJ)
+[^3]: https://www.mapbox.com/api-documentation/#access-tokens
+[^4]: https://www.mapbox.com/api-documentation/#retrieve-directions
+[^5]: https://www.mapbox.com/api-documentation/#instructions-languages
+[^6]: https://www.mapbox.com/api-documentation/#introduction
+[^7]: https://github.com/perliedman/leaflet-control-geocoder

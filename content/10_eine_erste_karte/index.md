@@ -57,7 +57,7 @@ Sie haben zwei Möglichkeiten die notwendigen Dateien in Ihr HTML-Dokument zu in
 1. Binden Sie die Dateien über ein CDN in Ihr HTML-Dokument ein. 
 2. Kopieren Sie die Dateien und binden Sie die lokale Kopie in Ihr HTML-Dokument ein. 
 
-> Ein [Content Delivery Network](https://de.wikipedia.org/wiki/Content_Delivery_Network) 
+> Ein [Content Delivery Network](https://de.wikipedia.org/w/index.php?title=Content_Delivery_Network&oldid=181620918)[^1] 
 oder Content *Distribution* Network (CDN) ist ein
 Netz von Servern, das über das Internet verbundenen ist. Die
 Server in diesem Netzwerk bieten Inhalte zum Download an.
@@ -94,7 +94,7 @@ Auch wenn die Dateien der Leaflet Bibliothek nun automatisch über das CDN herun
 Ein Aufruf Ihrer Datei in Ihrem Browser öffnet immer noch ein leeres Browser-Fenster. 
 Erst im letzten Schritt, im Kapitel *[Fügen Sie eine Schicht mit Kacheln – einen Tile-Layer – zum Karten-Objekt hinzu](#FuegenSieEineSchichtMitKachelnHinzu),* wird die Karte sichtbar.
 
-> Fast alle modernen Browser unterstützen [Subresource Integrity (SRI)](https://en.wikipedia.org/w/index.php?title=Subresource_Integrity&oldid=839480720) 
+> Fast alle modernen Browser unterstützen [Subresource Integrity (SRI)](https://en.wikipedia.org/w/index.php?title=Subresource_Integrity&oldid=839480720)[^2] 
 und auch 
 Leaflet verwendet diese
 Sicherheitsfunktion. SRI steht für die Überprüfung der Integrität
@@ -129,7 +129,7 @@ zu Ihrem HTML-Dokument ein Verzeichnis höher - im Unterverzeichnis `/leaflet` a
 Ihrem Webserver abgelegt haben.
 
 >  Wenn Sie mit 
-[relativen Pfadangaben](https://de.wikipedia.org/w/index.php?title=Pfadname&oldid=182767239) 
+[relativen Pfadangaben](https://de.wikipedia.org/w/index.php?title=Pfadname&oldid=182767239)[^3] 
 arbeiten, 
 setzen Sie die Links innerhalb eines
 Projektes mit Hilfe von Punkten. Der große Vorteil von relativen
@@ -177,7 +177,7 @@ Tags – also ein *binary*
 Tag – verwendet habe.  
 **`<link`** `rel="stylesheet" href="../leaflet/leaflet.css"`**`/>`**  
 **`<script`**`src="../leaflet/leaflet.js"`**`></script>`**  
-[HTML unterscheidet](https://de.wikipedia.org/w/index.php?title=Hilfe:Tags&oldid=181586744#Syntax) 
+[HTML unterscheidet](https://de.wikipedia.org/w/index.php?title=Hilfe:Tags&oldid=181586744#Syntax)[^4] 
 zwischen Tags, die nie
 Inhalt enthalten können – nämlich den *void*-Tags –, und
 solchen, die prinzipiell Inhalt enthalten können. Im ersten Fall
@@ -224,9 +224,9 @@ Um das im vorherigen Abschnitt beschriebene Problem zu umgehen wurde früher oft
 empfohlen, den JavaScript-Code möglichst nah am schließenden 
 `<body>`-Tag in die Website zu integrieren. Zu dieser Empfehlung gibt 
 es mit HTML5 zwei gute Alternativen – nämlich die Attribute 
-[`defer`](https://wiki.selfhtml.org/index.php?title=Referenz:HTML/Attribute/defer&oldid=27295) 
+[`defer`](https://wiki.selfhtml.org/index.php?title=Referenz:HTML/Attribute/defer&oldid=27295)[^5] 
 und 
-[`async`](https://wiki.selfhtml.org/index.php?title=Referenz:HTML/Attribute/async&oldid=27294).
+[`async`](https://wiki.selfhtml.org/index.php?title=Referenz:HTML/Attribute/async&oldid=27294)[^6].
 
 Sofern Sie das Attribut `defer` verwenden, wird das Skript ausgeführt, 
 wenn das HTML-Dokument geladen und für die Ansicht umgewandelt - also geparst - ist. 
@@ -307,7 +307,7 @@ den Beispielen diese einfache Methode. Durch das direkte Festlegen von
 Formaten gehen allerdings im praktischen Einsatz viele Vorteile
 verloren. Alternative Varianten zum Einbinden von Stylesheets finden
 Sie unter anderem unter der Adresse 
-[https://wiki.selfhtml.org/wiki/CSS/alternative_Stylesheets](https://wiki.selfhtml.org/index.php?title=CSS/alternative_Stylesheets&oldid=61905).
+[https://wiki.selfhtml.org/wiki/CSS/alternative_Stylesheets](https://wiki.selfhtml.org/index.php?title=CSS/alternative_Stylesheets&oldid=61905)[^7].
 
 Im nachfolgenden Programmcodeausschnitt sehen Sie die relevante Zeile mit einem Stern 
 markiert.
@@ -369,11 +369,11 @@ einem Großbuchstaben – beispielsweise `L.Map` – benannt und diese
 müssen mit `new` erstellt werden. Es gibt aber Shortcuts mit Kleinbuchstaben
  – `L.map` – die aus Bequemlichkeitsgründen von den Leaflet-Programmierern
 für Sie erstellt wurden. Leaflet setzt hier das Entwurfsmuster 
-[Fabrikmethode](https://de.wikipedia.org/w/index.php?title=Fabrikmethode&oldid=183961607) 
+[Fabrikmethode](https://de.wikipedia.org/w/index.php?title=Fabrikmethode&oldid=183961607)[^8] 
 ein. Das Muster beschreibt, wie ein Objekt
 durch Aufruf einer Methode anstatt durch direkten Aufruf 
 eines Konstruktors erzeugt wird.  
-Wollen Sie sich dies selbst ansehen? Die [Funktion `L.map()`](https://github.com/Leaflet/Leaflet/blob/7ed780cd35474f2acf0f17e7394807ff0973a031/src/map/Map.js#L1708) der Klasse `L.Map` 
+Wollen Sie sich dies selbst ansehen? Die [Funktion `L.map()`](https://github.com/Leaflet/Leaflet/blob/7ed780cd35474f2acf0f17e7394807ff0973a031/src/map/Map.js#L1708)[^9] der Klasse `L.Map` 
 finden Sie auf Github ganz am Ende in der Datei `map.js`. Ein weiteres Beispiel 
 finden Sie zu Beginn des Kapitels [Custom Markers](#Fabrikmethode2).
 
@@ -452,7 +452,7 @@ soll und kann die Kartenschicht zeichnen.
 verschiedenen Methoden verketten können. Dies ist möglich, weil die
 unterschiedlichen Methoden Objekte zurückgeben, die wieder
 Funktionen enthalten. Leaflet setzt das Entwurfsmuster 
-[Fabrikmethode](https://de.wikipedia.org/w/index.php?title=Fabrikmethode&oldid=183961607) 
+[Fabrikmethode](https://de.wikipedia.org/w/index.php?title=Fabrikmethode&oldid=183961607)[^10] 
 ein. So konnten wir 
 `.addTo(mymap)` einfach an `L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png')` anhängen.
 Alternativ hätten wir zuerst ein TileLayer Objekt erstellen müssen und 
@@ -494,12 +494,12 @@ können Sie die genaue Position eines jedes Punktes auf der Erdoberfläche angeb
 
 Das Grad-Netz der Erde ist ein gedachtes Koordinatensystem auf der Erdoberfläche mit sich rechtwinklig schneidenden Längen- und Breitenkreisen. Zum Aufbau dieses Koordinatensystems wird unser Erdball zunächst in 180 Breitenkreise und 360 Längenkreise eingeteilt.
 
-- Die  [Breitengrade](https://de.wikipedia.org/w/index.php?title=Geographische_Breite&oldid=183712238) 
+- Die  [Breitengrade](https://de.wikipedia.org/w/index.php?title=Geographische_Breite&oldid=183712238)[^11] 
 oder Breitenkreise verlaufen parallel zum Äquator. 
-- Die [Längengrade](https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&oldid=182518754) 
+- Die [Längengrade](https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&oldid=182518754)[^12] 
 oder Längenkreise verbinden Nord- und Südpol. 
 
-So entsteht ein [grobmaschiges Gitter](https://de.wikipedia.org/w/index.php?title=Geographische_Koordinaten&oldid=183407489), 
+So entsteht ein [grobmaschiges Gitter](https://de.wikipedia.org/w/index.php?title=Geographische_Koordinaten&oldid=183407489)[^13], 
 anhand dessen jeder die ungefähre 
 Position auf der Erdoberfläche bestimmen kann.
 
@@ -520,7 +520,7 @@ verlaufen von Osten nach Westen. Vielleicht wissen Sie noch aus dem Erdkundeunte
 
 #### Längengrade
 
-Die [Längengrade](https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&oldid=182518754) 
+Die [Längengrade](https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&oldid=182518754)[^14] 
 auf der Erde verlaufen von Norden nach Süden. Sie umspannen die Erde praktisch. Eine Längenkreishälfte wird als Meridian bezeichnet. Die Längenkreise haben keinen natürlichen Nullpunkt. Heute gilt der Meridan, der den Londoner Stadtteil Greenwich durchläuft, als Nullmeridian und somit als Ausgangspunkt für die Berechnung der Längengrade.
 
 ![Längengrade (Longitude) - By Pearson Scott Foresman (Public domain), via Wikimedia Commons](media/images/964la.png)
@@ -530,7 +530,7 @@ auf der Erde verlaufen von Norden nach Süden. Sie umspannen die Erde praktisch.
 ### Schreibweisen von geografischen Koordinaten
 
 Bei der Angabe von geographischen Koordinaten wird heute normalerweise eine von zwei 
-Schreibweisen verwendet: Entweder das [Sexagesimalsystem](https://de.wikipedia.org/wiki/Sexagesimalsystem), 
+Schreibweisen verwendet: Entweder das [Sexagesimalsystem](https://de.wikipedia.org/w/index.php?title=Sexagesimalsystem&oldid=184103468)[^15], 
 welches von Wikipedia 
 verwendet wird, oder die Dezimalschreibweise, die von Computerprogrammen bevorzugt wird. 
 Im Laufe unserer Geschichte haben sich allerdings eine Menge mehr unterschiedlicher 
@@ -538,14 +538,14 @@ Systeme entwickelt.
 
 > Falls Sie einmal in die Verlegenheit
 kommen sollten und eine Koordinate von einem System in ein anderes
-umrechnen müssen, kann ich Ihnen die Website [https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10](https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10) 
+umrechnen müssen, kann ich Ihnen die Website [https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10](https://www.deine-berge.de/Rechner/Koordinaten/Dezimal/51,10)[^16] 
 empfehlen,
 weil diese das Umrechnen zwischen vielen verschiedenen Systemen
 unterstützt.
 
 #### Das Sexagesimalsystem
 
-Das [Sexagesimalsystem](https://de.wikipedia.org/wiki/Sexagesimalsystem) 
+Das [Sexagesimalsystem](https://de.wikipedia.org/w/index.php?title=Sexagesimalsystem&oldid=184103468)[^17] 
 ist die traditionelle Schreibweise. Dieses System heißt 
 Sexagesimal, weil ein Grad eines Breitengrades 60 Minuten entspricht. Somit basiert 
 das Sexagesimalsystem auf der Zahl 60. Und der lateinische Name der Zahl 60 ist 
@@ -590,10 +590,10 @@ Beispielsweise werden im Dezimalsystem die Koordinaten der Zugspitze mit `47.421
 ## Exkurs: Wie werden Landkarten auf einer Website angezeigt?
 
 Eine Karte ist im Grunde genommen nichts anderes als die Darstellung 
-einer [Abbildung](https://de.wikipedia.org/w/index.php?title=Abbild&oldid=182130782) 
-oder [Grafik](https://de.wikipedia.org/w/index.php?title=Grafik&oldid=182761925). 
+einer [Abbildung](https://de.wikipedia.org/w/index.php?title=Abbild&oldid=182130782)[^18] 
+oder [Grafik](https://de.wikipedia.org/w/index.php?title=Grafik&oldid=182761925)[^19]. 
 Abbildungen oder Grafiken müssen, damit sie von Computern verarbeitet werden können, 
-in einem [Grafikformat](https://de.wikipedia.org/w/index.php?title=Grafikformat&oldid=183935915) 
+in einem [Grafikformat](https://de.wikipedia.org/w/index.php?title=Grafikformat&oldid=183935915)[^20] 
 gespeichert werden. Bevor wir uns genau ansehen, wie die Grafiken für 
 Landkarten erstellt werden, erkläre ich Ihnen nachfolgend kurz 
 die wesentlichen Unterschiede dieser beiden Formate.
@@ -602,9 +602,9 @@ die wesentlichen Unterschiede dieser beiden Formate.
 
 Ein Grafikformat ist ein Dateiformat, das den Aufbau einer Bilddatei beschreibt. 
 Bei den Grafikformaten können Sie alles in allem 
-zwischen [Vektorgrafiken](https://de.wikipedia.org/w/index.php?title=Vektorgrafik&oldid=182749111) 
+zwischen [Vektorgrafiken](https://de.wikipedia.org/w/index.php?title=Vektorgrafik&oldid=182749111)[^21] 
 und 
-[Rastergrafiken](https://de.wikipedia.org/w/index.php?title=Rastergrafik&oldid=178300838) 
+[Rastergrafiken](https://de.wikipedia.org/w/index.php?title=Rastergrafik&oldid=178300838)[^22] 
 unterscheiden. Im nächsten Bild sehen Sie oben eine Vektorgrafik 
 und unten eine Rastergrafik.
 
@@ -614,14 +614,14 @@ und unten eine Rastergrafik.
 
 #### Vektoren
 
-[Vektorgrafiken](https://de.wikipedia.org/w/index.php?title=Vektorgrafik&oldid=182749111) 
+[Vektorgrafiken](https://de.wikipedia.org/w/index.php?title=Vektorgrafik&oldid=182749111)[^23] 
 basieren, im Gegensatz zu Rastergrafiken, nicht auf einem Pixelraster, 
 indem jedem Bildpunkt ein Farbwert zugeordnet ist. 
 Vektorgrafiken basieren auf einer Formel, die die Elemente, aus denen das Bild aufgebaut ist, genau beschreibt. Ein Kreis kann in einer Vektorgrafik anhand des Mittelpunktes, des Radiuses, der Linienstärke und der Farbe vollständig beschrieben werden. Deshalb müssen auch nur diese Parameter gespeichert werden. Je nach Bildgröße benötigen Vektorgrafiken daher oft weniger Speicherplatzbedarf als Rastergrafiken. Außerdem können sie im Gegensatz zur Rastergrafik stufenlos und verlustfrei skaliert, also vergrößert oder verkleinert werden.
 
 #### Rastergrafiken
 
-[Rastergrafiken](https://de.wikipedia.org/w/index.php?title=Rastergrafik&oldid=178300838) 
+[Rastergrafiken](https://de.wikipedia.org/w/index.php?title=Rastergrafik&oldid=178300838)[^24] 
 kennen Sie sicherlich auch unter dem Namen Pixelgrafik oder 
 Bitmap. Dieses Format beschreibt die Bilder in Form einer Anordnung von Pixeln 
 als Raster. Pixel sind im Grunde genommen nichts anderes als Bildpunkten, 
@@ -656,7 +656,7 @@ wie möglich sein.
 Aus diesem Grund wird die Karte für kleine Ausschnitte im Vorfeld berechnet 
 und in einem Rasterformat gespeichert. 
 Als Rasterformat wird 
-[PNG](https://de.wikipedia.org/w/index.php?title=Portable_Network_Graphics&oldid=183603310) 
+[PNG](https://de.wikipedia.org/w/index.php?title=Portable_Network_Graphics&oldid=183603310)[^25] 
 verwendet. Wie dies genau gemacht wird, erkläre ich Ihnen im nächsten Kapitel.
 
 ### Wir unterteilen die Welt in Kacheln
@@ -694,7 +694,7 @@ Bereich von 0,3 Metern auf der Erde entspricht. Damit kann man schon etwas anfan
 |   19      |275 Milliarden|       76 Meter          |      0,3 Meter     |
 
 Die vollständige Tabelle können Sie unter der Adresse 
-[http://wiki.openstreetmap.org/wiki/Zoom_levels](https://wiki.openstreetmap.org/w/index.php?title=Zoom_levels&oldid=1620415) 
+[http://wiki.openstreetmap.org/wiki/Zoom_levels](https://wiki.openstreetmap.org/w/index.php?title=Zoom_levels&oldid=1620415)[^26] 
 mit weiteren Angaben im Internet abrufen.
 
 > Vielleicht probieren Sie nun das Zoomen im vorangegangene Beispiel 
@@ -788,7 +788,7 @@ http://a.tile.openstreetmap.org/0/0/0.png in Ihrem Internetbrowser.
 
 > Tiefer gehend können Sie das Thema auf
 der Website von OpenStreetMap, genau unter der Adresse 
-[http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames](https://wiki.openstreetmap.org/w/index.php?title=Slippy_map_tilenames&oldid=1706759), 
+[http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames](https://wiki.openstreetmap.org/w/index.php?title=Slippy_map_tilenames&oldid=1706759)[^27], 
 nachlesen.
 
 Bei der Zoom-Stufe 1 sind die Kacheln, 
@@ -810,15 +810,15 @@ Kacheln eines anderen Providers – zu verwenden.
 Die Antwort ist: Ja, meist ist es ist genauso einfach!
 
 Ich zeige Ihnen dies hier anhand von zwei weiteren Providern, 
-nämlich [thunderforest.com](https://www.thunderforest.com) und
-[stamen.com](https://stamen.com). Im Kapitel 
+nämlich [thunderforest.com](https://www.thunderforest.com)[^28] und
+[stamen.com](https://stamen.com)[^29]. Im Kapitel 
 [ESRI - Environmental Systems Research Institute](#EnvironmentalSystemsResearchInstituteBasemaps) finden Sie 
 weitere Beispiele.
 
-> Mögen Sie die Karten von [GoogleMaps](https://www.google.com/maps) und möchten Sie gerne die Kacheln von 
+> Mögen Sie die Karten von [GoogleMaps](https://www.google.com/maps)[^30] und möchten Sie gerne die Kacheln von 
 Google für Ihre digitale Karte nutzen? Wenn Sie dies zusammen mit 
 Leaflet tun möchten, können Sie dies mithifle des Plugins 
-[L.GridLayer.GoogleMutant](https://gitlab.com/IvanSanchez/Leaflet.GridLayer.GoogleMutant).
+[L.GridLayer.GoogleMutant](https://gitlab.com/IvanSanchez/Leaflet.GridLayer.GoogleMutant)[^31].
 
 ### Thunderforest
 
@@ -826,7 +826,7 @@ Thunderforest bietet Ihnen gleich neun verschiedene Kachel-Varianten. Sie erreic
 
 > Um Kacheln von Thunderforest zu
 verwenden, müssen Sie ein Zugriffstoken anfordern. Dieses Token können Sie über 
-die Adresse [https://www.thunderforest.com/docs/apikeys](https://www.thunderforest.com/docs/apikeys) 
+die Adresse [https://www.thunderforest.com/docs/apikeys](https://www.thunderforest.com/docs/apikeys)[^32] 
 selbst erstellen. Wenn Sie ihre Karte erstellen, hängen Sie dieses Zugriffstoken 
 einfach an das Ende der URL des Tile-Servers an. Zum Beispiel so: 
 `https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=YourApiKey`  
@@ -996,7 +996,7 @@ erkläre ich Ihnen im Kapitel zu [ESRI](#EnvironmentalSystemsResearchInstitute).
 > Haben Sie noch nicht den Kartenstil gefunden, den Sie suchen oder sind Sie einfach nur
 neugierig, welche Karten sonst noch angeboten werden? Verweise auf
 weitere Tile-Server-Provider finden Sie unter der Adresse: 
-[http://wiki.openstreetmap.org/wiki/Tiles](https://wiki.openstreetmap.org/w/index.php?title=Tiles&oldid=1550873).
+[http://wiki.openstreetmap.org/wiki/Tiles](https://wiki.openstreetmap.org/w/index.php?title=Tiles&oldid=1550873)[^33].
 
 ## Images als Layer – Web-Map-Service
 
@@ -1011,8 +1011,8 @@ dass es für diese Aufgabenstellungen adäquatere Techniken gibt.
 ### Eine einfache Leaflet-Karte mithilfe des Web-Map-Services erstellen
 
 Eine Alternative zur schon beschriebenen Kachel-Technik ist der 
-[Web-Map-Service (WMS)](https://de.wikipedia.org/w/index.php?title=Web_Map_Service&oldid=176931156). 
-Der WMS ist ein Spezialfall eines [Web Services](https://de.wikipedia.org/w/index.php?title=Webservice&oldid=177080675). 
+[Web-Map-Service (WMS)](https://de.wikipedia.org/w/index.php?title=Web_Map_Service&oldid=176931156)[^34]. 
+Der WMS ist ein Spezialfall eines [Web Services](https://de.wikipedia.org/w/index.php?title=Webservice&oldid=177080675)[^35]. 
 Dieser Service bietet Ihnen eine Schnittstelle zum Abrufen von 
 Landkartenausschnitten über das Internet.
 
@@ -1022,7 +1022,7 @@ Die Funktionen
 Diese sind für die Anzeige der Karte nicht relevant. 
 - Die Funktion `GetMap` ist die, die wir uns genauer ansehen und die von 
 Leaflet angewendet wird. 
-- Bei einem Aufruf von `GetMap` liefert der WMS ein [georeferenziertes](https://de.wikipedia.org/w/index.php?title=Georeferenzierung&oldid=174938538) 
+- Bei einem Aufruf von `GetMap` liefert der WMS ein [georeferenziertes](https://de.wikipedia.org/w/index.php?title=Georeferenzierung&oldid=174938538)[^36] 
 Rasterbild.  
 
 > Bei einem 
@@ -1047,9 +1047,7 @@ Zum Beispiel können Sie angeben,
 
 Mit folgendem URL-Abruf erhalten Sie beispielsweise ein speziell 
 zusammengestelltes Bild vom GeoWebservice des 
-[Deutschen Wetterdienstes](http://www.dwd.de/).
-
-[https://maps.dwd.de/geoserver/dwd/ows?service=WMS&version=1.3&request=GetMap&layers=dwd:Warnungen_Landkreise&bbox=6.15,51.76,14.90,55.01&width=512&height=418&srs=EPSG:4326&format=image%2Fjpeg&CQL_FILTER=EC_II%20IN%20('51','52')](https://maps.dwd.de/geoserver/dwd/ows?service=WMS&version=1.3&request=GetMap&layers=dwd:Warnungen_Landkreise&bbox=6.15,51.76,14.90,55.01&width=512&height=418&srs=EPSG:4326&format=image%2Fjpeg&CQL_FILTER=EC_II%20IN%20('51','52'))
+[Deutschen Wetterdienstes](http://www.dwd.de/)[^37] [^38].
 
 `https://maps.dwd.de/geoserver/dwd/ows?service=WMS&version=1.3`  
 `&request=GetMap`  
@@ -1260,3 +1258,42 @@ die Landkreise darstellen, werden dahingegen immer eingeblendet.
 In diesem Kapitel haben Sie auf unterschiedliche Arten eine Karte erstellt. 
 
 In den nächsten Kapiteln werden wir diese Karte mit Elementen und Informationen füllen.
+
+[^1]: https://de.wikipedia.org/w/index.php?title=Content_Delivery_Network&oldid=181620918 (https://bit.ly/2TncQZt)
+[^2]: https://en.wikipedia.org/w/index.php?title=Subresource_Integrity&oldid=839480720 (https://bit.ly/2Srb5tX)
+[^3]: https://de.wikipedia.org/w/index.php?title=Pfadname&oldid=182767239 (https://bit.ly/2VjlJVn)
+[^4]: https://de.wikipedia.org/w/index.php?title=Hilfe:Tags&oldid=181586744#Syntax (https://bit.ly/2An9HSe)
+[^5]: https://wiki.selfhtml.org/index.php?title=Referenz:HTML/Attribute/defer&oldid=27295 (https://bit.ly/2Vjsu9G)
+[^6]: https://wiki.selfhtml.org/index.php?title=Referenz:HTML/Attribute/async&oldid=27294 (https://bit.ly/2GKVC6B)
+[^7]: https://wiki.selfhtml.org/index.php?title=CSS/alternative_Stylesheets&oldid=61905 (https://bit.ly/2QaS1OJ)
+[^8]: https://de.wikipedia.org/w/index.php?title=Fabrikmethode&oldid=183961607 (https://bit.ly/2CGuphr)
+[^9]: https://github.com/Leaflet/Leaflet/blob/7ed780cd35474f2acf0f17e7394807ff0973a031/src/map/Map.js#L1708 (https://bit.ly/2rYnQAu)
+[^10]: https://www.deine-berge.de/Rechner/Koordinaten/Dezimal (https://bit.ly/2LFGXIF)
+[^11]: https://de.wikipedia.org/w/index.php?title=Geographische_Breite&oldid=183712238 (https://bit.ly/2QUyoQa)
+[^12]: https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&oldid=182518754 (https://bit.ly/2EWcXqT)
+[^13]: https://de.wikipedia.org/w/index.php?title=Geographische_Koordinaten&oldid=183407489 (https://bit.ly/2EWbzoK)
+[^14]: https://de.wikipedia.org/w/index.php?title=Geographische_L%C3%A4nge&oldid=182518754 (https://bit.ly/2VklXMi)
+[^15]: https://de.wikipedia.org/w/index.php?title=Sexagesimalsystem&oldid=184103468 (https://bit.ly/2BNBWct)
+[^16]: https://www.deine-berge.de/Rechner/Koordinaten/Dezimal (https://bit.ly/2Rm9MiB)
+[^17]: https://de.wikipedia.org/w/index.php?title=Sexagesimalsystem&oldid=184103468 (https://bit.ly/2CFPCYQ)
+[^18]: https://de.wikipedia.org/w/index.php?title=Abbild&oldid=182130782 (https://bit.ly/2VlsDd5)
+[^19]: https://de.wikipedia.org/w/index.php?title=Grafik&oldid=182761925 (https://bit.ly/2Sm6uJw)
+[^20]: https://de.wikipedia.org/w/index.php?title=Grafikformat&oldid=183935915 (https://bit.ly/2LFLrPM)
+[^21]: https://de.wikipedia.org/w/index.php?title=Vektorgrafik&oldid=182749111 (https://bit.ly/2Anvaum)
+[^22]: https://de.wikipedia.org/w/index.php?title=Rastergrafik&oldid=178300838 (https://bit.ly/2s2EBdO)
+[^23]: https://de.wikipedia.org/w/index.php?title=Vektorgrafik&oldid=182749111 (https://bit.ly/2TfHG5W)
+[^24]: https://de.wikipedia.org/w/index.php?title=Rastergrafik&oldid=178300838 (https://bit.ly/2Rrhhos)
+[^25]: https://de.wikipedia.org/w/index.php?title=Portable_Network_Graphics&oldid=183603310 (https://bit.ly/2LEmzrl)
+[^26]: https://wiki.openstreetmap.org/w/index.php?title=Zoom_levels&oldid=1620415 (https://bit.ly/2SoGX2k)
+[^27]: http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames (https://bit.ly/2AkHATQ)
+[^28]: https://www.thunderforest.com
+[^29]: https://stamen.com
+[^30]: https://www.google.com/maps
+[^31]: https://gitlab.com/IvanSanchez/Leaflet.GridLayer.GoogleMutant (https://bit.ly/2Q6oSUV)
+[^32]: https://www.thunderforest.com/docs/apikeys
+[^33]: https://wiki.openstreetmap.org/w/index.php?title=Tiles&oldid=1550873
+[^34]: https://de.wikipedia.org/w/index.php?title=Web_Map_Service&oldid=176931156
+[^35]: https://de.wikipedia.org/w/index.php?title=Webservice&oldid=177080675
+[^36]: https://de.wikipedia.org/w/index.php?title=Georeferenzierung&oldid=174938538
+[^37]: http://www.dwd.de
+[^38]: [https://maps.dwd.de/geoserver/dwd/ows?service=WMS&version=1.3&request=GetMap&layers=dwd:Warnungen_Landkreise&bbox=6.15,51.76,14.90,55.01&width=512&height=418&srs=EPSG:4326&format=image/jpeg&CQL_FILTER=EC_II%20IN%20(%2751%27,%2752%27)](https://maps.dwd.de/geoserver/dwd/ows?service=WMS&version=1.3&request=GetMap&layers=dwd:Warnungen_Landkreise&bbox=6.15,51.76,14.90,55.01&width=512&height=418&srs=EPSG:4326&format=image/jpeg&CQL_FILTER=EC_II%20IN%20(%2751%27,%2752%27)) (https://bit.ly/2VeGFx3)

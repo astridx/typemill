@@ -20,7 +20,7 @@ nun in diesem Kapitel näher an. Beginnen wir mit der Heatmap.
 
 ## Heatmaps
 
-[Heatmaps](https://de.wikipedia.org/w/index.php?title=Heatmap&oldid=181851051) kennen wir im Deutschen auch 
+[Heatmaps](https://de.wikipedia.org/w/index.php?title=Heatmap&oldid=181851051)[^1] kennen wir im Deutschen auch 
 unter dem Namen Wärmebild.
 
 ### Was ist eine Heatmap?
@@ -47,7 +47,7 @@ wird je nach Anzahl der Punkte die passende Farbe im Bereich eingeblendet.
 Dieses Verfahren nennt man Multivariate Kerndichte Schätzung
 (englisch: Multivariate kernel density estimation). Detaillierter
 können Sie dies beispielsweise bei 
-[Wikipedia](https://de.wikipedia.org/w/index.php?title=Kerndichtesch%C3%A4tzer&oldid=182712162) 
+[Wikipedia](https://de.wikipedia.org/w/index.php?title=Kerndichtesch%C3%A4tzer&oldid=182712162)[^2] 
 nachlesen.
 
 ![(By Drleft (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia Commons)](media/images/946.png)
@@ -57,8 +57,8 @@ nachlesen.
 Meist werden bei geringer Intensität oder geringer Dichte kalte Farben verwendet. 
 Bei einem hohen Aufkommen wird der Bereich mit warmen Farben eingefärbt. 
 Dies erklärt auch den Namen Heatmap – der englische Begriff für Hitze ist *heat*. 
-Blau gilt als [kalte Farbe](https://de.wikipedia.org/w/index.php?title=Kalte_Farbe&oldid=182760035), 
-Rot, Orange und Gelb gelten als [warme Farben](https://de.wikipedia.org/w/index.php?title=Warme_Farbe&oldid=137765311).
+Blau gilt als [kalte Farbe](https://de.wikipedia.org/w/index.php?title=Kalte_Farbe&oldid=182760035)[^3], 
+Rot, Orange und Gelb gelten als [warme Farben](https://de.wikipedia.org/w/index.php?title=Warme_Farbe&oldid=137765311)[^4].
 
 ### Heatmaps in Leaflet – Dichte
 
@@ -70,12 +70,12 @@ die im Normalfall nicht zur Darstellung einer digitalen Karte benötigt wird.
 Leaflet selbst konzentriert sich auf die Anwendungsfälle, 
 die üblicherweise beim Anzeigen einer Karte benötigt werden – 
 ist aber offen für Plugins. 
-Eines dieser Plugins ist [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat).
+Eines dieser Plugins ist [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat)[^5].
 
 > Weitere Plugins, mit denen Sie
 Wärmeabbildungen oder ähnliche Visualisierungen aus Vektordaten
 erstellen können, finden Sie auf der Website von Leaflet im Bereich
-Plugins: [http://leafletjs.com/plugins.html#heatmaps](http://leafletjs.com/plugins.html#heatmaps).
+Plugins: [http://leafletjs.com/plugins.html#heatmaps](http://leafletjs.com/plugins.html#heatmaps)[^6].
 
 Nachfolgende finden Sie das erste Beispiel für diesen Themenbereich.
 
@@ -147,7 +147,7 @@ Diese ist noch sehr rudimentär. Das geht besser, Sie werden sehen.
 
 #### Stile und Optionen
 
-Das [Plugin Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) 
+Das [Plugin Leaflet.heat](https://github.com/Leaflet/Leaflet.heat)[^5] 
 erlaubt es Ihnen Parameter zu übergeben. Dabei haben Sie folgende Möglichkeiten:
 
 - `minOpacity:`  
@@ -210,7 +210,7 @@ Das Zentrum ist der Bereich in dem die Punkte am dichtesten beieinander liegen.
 
 > Gefallen Ihnen die standardmäßig gesetzten kalten und warmen
 Farben nicht? Möchten Sie lieber Ihre eigene Farbzusammenstellung
-nutzen? Die Website [http://colorbrewer2.org](http://colorbrewer2.org) 
+nutzen? Die Website [http://colorbrewer2.org](http://colorbrewer2.org)[^7] 
 hilft beim Auswählen von Farben.
 
 #### Methoden
@@ -284,7 +284,7 @@ In der nächsten Abbildung können Sie den neu hinzugefügten Punkt erkennen.
 > Möchten Sie es Website Besuchern 
 ermöglichen selbst Punkte zur Heatmap auf ihrer Karte hinzuzufügen? Eine
 Demo auf der Website zum Plugin zeigt genau solch ein Beispiel: 
-[http://leaflet.github.io/Leaflet.heat/demo/draw.html](http://leaflet.github.io/Leaflet.heat/demo/draw.html)
+[http://leaflet.github.io/Leaflet.heat/demo/draw.html](http://leaflet.github.io/Leaflet.heat/demo/draw.html)[^8]
 
 
 ##### Die Methoden addLatLng(), addLatLngs() und setOptions() der Klasse L.heatLayer zusammen in einem Beispiel
@@ -457,15 +457,15 @@ So wie in der nächsten Abbildung könnte die fertige Karte auch bei Ihnen ausse
 ### Heatmaps mit Leaflet – Intensität
 
 Im vorhergehenden Kapitel haben wir eine Heatmap mithilfe des 
-Plugins [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) erstellt. 
+Plugins [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat)[^5] erstellt. 
 Diese Heatmap hat die Dichte von Punkten auf einer Karte visualisierte. 
 Wir haben bisher die Möglichkeit die Intensität zu visualisieren nicht genutzt. 
 Ich stelle Ihnen hier ein anderes Plugin für diesen Zweck vor. 
 Als nächstes möchte ich nun mit Ihnen eine Heatmap, die die Intensität 
 der Eigenschaft eines Punktes darstellt, mithilfe des Plugins 
-[heatmap.js](https://github.com/pa7/heatmap.js) erarbeiten. 
+[heatmap.js](https://github.com/pa7/heatmap.js)[^9] erarbeiten. 
 Herunterladen können Sie das Plugin unter der Adresse 
-[https://www.patrick-wied.at/static/heatmapjs/plugin-leaflet-layer.html](https://www.patrick-wied.at/static/heatmapjs/plugin-leaflet-layer.html). 
+[https://www.patrick-wied.at/static/heatmapjs/plugin-leaflet-layer.html](https://www.patrick-wied.at/static/heatmapjs/plugin-leaflet-layer.html)[^10]. 
 Hier finden Sie auch die Dokumentation zum Plugin.
 
 Nachfolgende sehen Sie das erste Beispiel.
@@ -766,11 +766,11 @@ Wenn Sie also die Variable `points1` im globalen Bereich initialisieren –
 also nicht in einem Funktionskontext –, 
 dann schreiben Sie diese Variablen implizit in ein
 globales Objekt. In einem Browser ist dies das [Objekt 
-`window`](https://developer.mozilla.org/de/docs/Web/API/Window).
+`window`](https://developer.mozilla.org/de/docs/Web/API/Window)[^11].
 Der Wert dieser Variablen kann mit der Punkt Notation oder der Klammer Notation
 abgerufen werden. Also entweder mit var `name = window.points1;` oder mit 
 `var name = window['points1'];`. 
-Außerdem haben wir die [Methode `setInterval()`](https://developer.mozilla.org/de/docs/Web/API/WindowTimers/setInterval) 
+Außerdem haben wir die [Methode `setInterval()`](https://developer.mozilla.org/de/docs/Web/API/WindowTimers/setInterval)[^12] 
 eingesetzt. Mit dieser Methode können Sie eine Funktion
 wiederholt aufrufen. Hierbei können Sie ein Intervall zwischen den
 einzelnen Aufrufen definieren.
@@ -791,7 +791,7 @@ in denen Punkte dichter vorkommen, farblich hervorgehoben.
 Dann haben wir zusätzlich das Plugin `heat.js` geladen und Bereiche, 
 in denen die Punkte eine hohe Intensität haben, farblich besonders markiert.  
 
-Eine [Choroplethenkarte](https://de.wikipedia.org/w/index.php?title=Choroplethenkarte&oldid=175744569) 
+Eine [Choroplethenkarte](https://de.wikipedia.org/w/index.php?title=Choroplethenkarte&oldid=175744569)[^13] 
 macht erst einmal nichts anderes. 
 Sie visualisiert die Dichte oder die Intensität bestimmter Objekte. 
 Sie tut dies aber auf eine andere Art und Weise als die Heatmap. 
@@ -827,21 +827,21 @@ Beginnen tun wir ganz vorne mit dem Klären der Frage: Wo bekommen Sie die Daten
 Wenn Sie nicht selbst über Daten verfügen, können sie auf jede Menge 
 offener Data zugreifen.
 
-> [Open Data](https://de.wikipedia.org/w/index.php?title=Open_Data&oldid=182539018), 
+> [Open Data](https://de.wikipedia.org/w/index.php?title=Open_Data&oldid=182539018)[^14], 
 also offene Daten, sind Daten, die von jedem ohne jegliche
 Einschränkungen verwendet und weitergegeben werden dürfen. Warum
 gibt es Open Data? Viele Menschen vertreten die Meinung, dass frei
 nutzbare Daten zu mehr Transparenz und Zusammenarbeit führen. Die
 Bereitstellung offener Daten durch öffentliche Einrichtungen wird
 als eine Voraussetzung für 
-[Open Government](https://de.wikipedia.org/w/index.php?title=Open_Government&oldid=180459228), 
+[Open Government](https://de.wikipedia.org/w/index.php?title=Open_Government&oldid=180459228)[^15], 
 also der Öffnung von Regierung und Verwaltung
 gegenüber der Bevölkerung und der Wirtschaft, angesehen. Die
 Befürworter von Open Data teilen somit viele Argumente mit den
-Befürwortern von [Open-Source](https://de.wikipedia.org/w/index.php?title=Open_Source&oldid=183919330). 
+Befürwortern von [Open-Source](https://de.wikipedia.org/w/index.php?title=Open_Source&oldid=183919330)[^16]. 
 Open Data und Leaflet als Open Source Software passen gut zusammen.
 
-[GeoJSON Utilities](http://opendatalab.de/projects/geojson-utilities/) 
+[GeoJSON Utilities](http://opendatalab.de/projects/geojson-utilities/)[^17] 
 ist ein Projekt, welches den Export von Gemeindeflächen, Landkreisflächen und 
 Bundeslandflächen in Deutschland im GeoJSON Format ermöglicht. 
 Jede exportierte Fläche enthält zusätzliche Eigenschaften wie die Einwohnerzahl 
@@ -1176,3 +1176,22 @@ Sie können nun die Anzeige von absoluten und relativen Werten selbst umsetzten.
 Im nächsten Kapitel werden wir noch einmal den Schwerpunkt auf 
 die individuelle Gestaltung setzten. 
 Hier geht es um benutzerdefinierte Marker.
+
+[^1]: https://de.wikipedia.org/w/index.php?title=Heatmap&oldid=181851051 (https://bit.ly/2QfyE7m)
+[^2]: https://de.wikipedia.org/w/index.php?title=Kerndichtesch%C3%A4tzer&oldid=182712162 (https://bit.ly/2TgsRjy)
+[^3]: https://de.wikipedia.org/w/index.php?title=Kalte_Farbe&oldid=182760035 (https://bit.ly/2ApvMiS)
+[^4]: https://de.wikipedia.org/w/index.php?title=Warme_Farbe&oldid=137765311 (https://bit.ly/2Qb78I7)
+[^5]: https://github.com/Leaflet/Leaflet.heat
+[^6]: http://leafletjs.com/plugins.html#heatmaps
+[^7]: http://colorbrewer2.org
+[^8]: http://leaflet.github.io/Leaflet.heat/demo/draw.html
+[^9]: https://github.com/pa7/heatmap.js
+[^10]: https://www.patrick-wied.at/static/heatmapjs/plugin-leaflet-layer.html
+[^11]: https://developer.mozilla.org/de/docs/Web/API/Window
+[^12]: https://developer.mozilla.org/de/docs/Web/API/WindowTimers/setInterval
+[^13]: https://de.wikipedia.org/w/index.php?title=Choroplethenkarte&oldid=175744569 (https://bit.ly/2EWbx0d)
+[^14]: https://de.wikipedia.org/w/index.php?title=Open_Data&oldid=182539018 (https://bit.ly/2ViIEQT)
+[^15]: https://de.wikipedia.org/w/index.php?title=Open_Government&oldid=180459228 (https://bit.ly/2EWqgsa)
+[^16]: https://de.wikipedia.org/w/index.php?title=Open_Source&oldid=183919330 (https://bit.ly/2BQ7r5E)
+[^17]: http://opendatalab.de/projects/geojson-utilities/
+ 
