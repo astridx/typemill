@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function getValue() {
+    if (true) {
+        var value = "Prima"; // gibt "Prima" aus.
+        return value;
+    } else {
+        return value; // value existiert hier mit dem Wert "undefined"
+    }
+}
+window.addEventListener("load", function () {
+console.log(getValue());
+});
+</script>    
+</body>
+</html>
+<!--999.html-->

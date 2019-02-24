@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function getValue() {
+    console.log(typeof value); // Ausgabe: undefined
+    if (true) {
+        let value = "Prima";
+        console.log(typeof value); // Ausgabe: String
+    }
+    console.log(typeof value); // Ausgabe: undefined
+    return true;
+}
+window.addEventListener("load", function () {
+console.log(getValue());
+});
+</script>    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function getValue() {
+    var funktionen = [];
+    var names = ['Astrid', 'Nina', 'Elmar'];
+    
+    for (let name of names) {
+        funktionen.push(function() {
+            console.log(name);
+        });
+    }
+    funktionen.forEach(function(funktion){
+        funktion(); 
+    });
+    return true;
+}
+window.addEventListener("load", function () {
+console.log(getValue());
+});
+</script>    
+</body>
+</html>

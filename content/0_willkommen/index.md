@@ -1,5 +1,7 @@
 # Willkommen
 
+todo https://de.wikipedia.org/wiki/JavaScript
+
 Das Arbeiten mit Geodaten und digitalen Landkarten hat durch das 
 [**g**lobale **P**ositionsbestimmung**s**system GPS](https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&oldid=183579881)[^1] 
 immer mehr an Relevanz gewonnen. 

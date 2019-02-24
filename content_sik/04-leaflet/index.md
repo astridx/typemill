@@ -1,4 +1,6 @@
 # Leaflet
+images: mogrify -path /var/www/html/typemill2/media/images  -resize 500x500 *.png
+
 
 Dies ist ein kostenloses Buch über [LeafletJs](https://leafletjs.com/).
 

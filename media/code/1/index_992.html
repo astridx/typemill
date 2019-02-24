@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function getValue() {
+    const stadt = {
+        name: "Koblenz"
+    }
+    stadt.name = "Bonn"; // Mögliche Neuzuweisung
+    stadt.fluss = "Rhein"; // Mögliche Neuzuweisung
+    
+    const stadt = { // SyntaxError: redeclaration of const stadt
+        name: "Bonn" 
+    } 
+    return true;
+}
+window.addEventListener("load", function () {
+console.log(getValue());
+});
+</script>    
+</body>
+</html>

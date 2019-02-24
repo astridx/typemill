@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function getValue() {
+    for (let i = 0; i < 5; i++) {
+        console.log(i); // Ausgabe: 0 1 2 3 4
+    }
+    console.log(i); // ReferenceError: i is not defined
+    return true;
+}
+window.addEventListener("load", function () {
+console.log(getValue());
+});
+</script>    
+</body>
+</html>

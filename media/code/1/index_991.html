@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function getValue() {
+    console.log(typeof value1); // Ausgabe: undefined
+    console.log(typeof value2); // ReferenceError: can't access lexical declaration
+                                // `value2' before initialization
+    let value2 = "Prima"; 
+
+    return true;
+}
+window.addEventListener("load", function () {
+console.log(getValue());
+});
+</script>    
+</body>
+</html>

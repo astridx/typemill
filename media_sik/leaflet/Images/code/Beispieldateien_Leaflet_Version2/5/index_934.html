@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Eine OSM Karte mit Leaflet</title>
+<link rel="stylesheet" href="../leaflet/leaflet.css" />
+<script src="../leaflet/leaflet.js"></script>
+<script src="esri-leaflet.js"></script>
+</head>
+<body>
+<div style="height: 700px" id="mapid"></div>
+<script>
+var mymap = L.map('mapid', {}).setView([50.27264, 7.26469], 12);
+L.esri.basemapLayer('Gray').addTo(mymap);
+var url = 'http://services.arcgis.com/OLiydejKCZTGhvWg/ArcGIS/rest/services/BodenGeologie/FeatureServer/0';
+var bodengeologie = document.getElementById('bodengeologieID');
+var bodengeologieLayer  = L.esri.featureLayer({
+url: url
+}).addTo(mymap);
+var nearbyIds = [];
+mymap.on('click', function(e){
+bodengeologieLayer.query().nearby(e.latlng, 5000).ids(function(error, ids){
+for (var j = 0; j < nearbyIds.length; j++) {
+bodengeologieLayer.setFeatureStyle(nearbyIds[j],{
+color: '#3388FF',
+}
+);
+}
+nearbyIds = ids;
+for (var i = 0; i < ids.length; i++) {
+bodengeologieLayer.setFeatureStyle(ids[i], {
+color: '#BA454E',
+});
+}
+});
+});
+</script>
+</body>
+</html>
