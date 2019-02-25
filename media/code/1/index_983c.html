@@ -8,15 +8,14 @@
 <script>
 function getValue() {
     var funktionen = [];
-    var names = ['Astrid', 'Nina', 'Elmar'];
-    
-    for (var name of names) {
+    for (const i = 0; i < 5;) {
         funktionen.push(function() {
-            console.log(name);
+            console.log(i);
         });
+        break;
     }
     funktionen.forEach(function(funktion){
-        funktion(); 
+        funktion(); // Ausgabe: 0 1 2 3 4
     });
     return true;
 }

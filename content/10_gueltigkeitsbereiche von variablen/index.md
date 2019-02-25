@@ -5,6 +5,7 @@ https://de.wikipedia.org/w/index.php?title=JavaScript&oldid=184218223#Versionsge
 
 ## In diesem Kapitel werden wir …
 Zunächst zeige ich Ihnen, wie Sie 
+Todo Meldungen immer mit Firefox
 
 ## var - Deklaration und Hoisting
 
@@ -150,17 +151,32 @@ zeigt Ihnend das nachfolgende Beispiel.
 <!--index_998d.html -->
 ```
 
-todo innerhalb ist aber möglich
-
-
-Wenn sie den Programmcode nachvollzogen haben, stimmen Sie sicher mit mir überein, 
-das die Ausgabe der Datei `998d.html` eher den Erwartungen entspricht, als die Ausgabe 
+Haben Sie den Programmcode ausprobiert? Dann stimmen Sie sicher mit mir überein, 
+das die Ausgabe der Datei `998d.html` intuitiver ist als die Ausgabe 
 der Datei `999a.html`. Weil wir die Variable `value` mit `let` deklariert haben, 
 wird die Deklaration nicht im Hintergrund vom Interpeter an den Anfang der 
 Funktion verschoben. Ein Zugriff auf die Variable `value` ist nun außerhalb 
 der `if`-Anweisung nicht möglich. Da die Variable `value` nur deklariert wird, 
 wenn die Bedingung der `if`-Anweisung erfüllt ist, kann auch im `else`-Block 
-nicht auf diese zugegriffen werden.
+nicht auf diese zugegriffen werden. Das nächste Beispiel zeigt Ihnen, 
+dass die Deklaration der Variable `value` am Anfang des Blocks in dem diese 
+gültig ist erfolgt. Auf die Variable `value` kann erst nach der Deklaration 
+zugegriffen werden. Allerdings ist die Fehlermeldung innerhalb des Blocks, 
+indem die Variable deklariert wird, eine andere. 
+
+
+```
+function getValue() {
+    if (true) {
+        return value; // gibt "ReferenceError: can't access lexical 
+                      //declaration `value' before initialization" ausgeben.
+        let value = "Prima";
+    } else {
+        return value; // würde "ReferenceError: value is not defined" ausgeben.
+    }
+}
+<!--index_998e.html -->
+```
 
 ### Keine Mehrfachverwendung
 
@@ -206,7 +222,7 @@ Die Deklaration einer Variablen mit `const` erstellt eine Konstante.
 Der Gültigkeitsbereich einer mit `const` deklarierten Variablen ist, 
 genau wie bei einer mit `let` deklarierten Variable, auf den lokalen Block begrenzt. 
 Der Wert einer Konstanten muss bei der Deklaration initialisiert werden und 
-kann nicht verändert werden.
+kann später nicht verändert werden.
 
 ```
 function getValue() {
@@ -263,13 +279,12 @@ im Nachhinein nicht geändert werden.
  }
 <!--index_993.html -->
 ```
-todo Ausgaben sidn vom Browser abhängig.
 
 #### const und Objekte
 
-Erklärungsbedürftig ist die Behandlung von Konstanten in JavaScript. Wenn ein 
-Objekt als Konstante deklariert wurde, dann ist nur das Objekt selbst konstant. 
-Die Eigenschaften des Objektes können verändert werden.
+Erklärungsbedürftig ist die Behandlung von Konstanten in JavaScript, wenn ein 
+Objekt als Konstante deklariert wurde. In diesem Falle ist nur das Objekt 
+selbst konstant. Die Eigenschaften des Objektes können verändert werden.
 
 ```
 function getValue() {
@@ -311,22 +326,34 @@ Methode wie `typeof` verwendet wird.
 In vorhergehenden Beispiel wird auf die Variablen `value1` und 
 `value2` mithilfe von `typeof` 
 zugegriffen. Im Falle von `value1` ist dies auch kein Problem. Bei `value2` 
-tritt hingegen ein Fehler auf, weil `value2` im später gleichen 
-Gültigkeitsbereich mit `let` deklariert wird. Die gleiche Deklaration in einem 
-anderen Gültigkeitsbereich 
-wäre kein Problem.
+tritt hingegen ein Fehler auf, weil `value2` im gleichen 
+Gültigkeitsbereich später noch einmal mit `let` deklariert wird.  
 
-> Die *Temporal Dead Zone (TDZ)* wurde in der Spezifikation *ECMAScript 6* 
-nicht explizit erwähnt. Der Begriff wird aber häufig zur Erklärung eingesetzt. Die 
-TDZ entsteht, weil der JavaScript Interpreter sich eine Block beim Einlesen vollständig 
-ansieht. Wenn er eine mit `var` deklarierte Variable findet, dann setzt er die 
+Die gleiche Deklaration in einem 
+anderen Gültigkeitsbereich 
+wäre kein Problem, wie Beispiel `index_991c.html` zeigt. 
+
+```
+function getValue() {
+    console.log(typeof value1); // Ausgabe: undefined
+    console.log(typeof value2); // Ausgabe: undefined
+
+    if (true) {
+        let value2 = "Prima";
+    }
+        
+    return true;
+}
+<!--index_991c.html -->
+```
+
+> Die Bezeichnung *Temporal Dead Zone (TDZ)* sucht man in der Spezifikation 
+*ECMAScript 6* vergeblich. Der Begriff wird aber häufig zur Erklärung eingesetzt. Die 
+TDZ entsteht, weil der JavaScript-Interpreter sich einen Block schon beim Einlesen 
+vollständig ansieht. Wenn er eine mit `var` deklarierte Variable findet, dann setzt er die 
 Deklaration an den Beginn der Funktion oder in den globalen Gültigkeitsbereich. Findet 
 der Interpreter eine mit `let` oder `const` deklarierte Variable, dann setzt er diese 
 in die TDZ - solange, bis die eigenliche Deklaration erfolgt.
-
-
-> Die Beispiele zur TDZ verwenden hier mithilfe von `let` deklarierte Variablen. Das 
-Gleiche gilt aber auch für Variablen, die mit `const` deklariert wurden.
 
 ```
 function getValue() {
@@ -345,15 +372,18 @@ Die Variable `value2` befindet sich nicht in der TDZ wenn der Befehl
 `console.log(typeof value)` ausgeführt wird. Das bedeutet konkret, dass die Variable 
 frei aber tatsächlich `undefinded` ist.
 
+> Die Beispiele zur TDZ verwenden hier mithilfe von `let` deklarierte Variablen. Das 
+Gleiche gilt aber auch für Variablen, die mit `const` deklariert wurden.
+
 ## Gültigkeitsbereich (Scope) in Schleifen
 
-Eine weitere Besonderheit von JavaScript ist der Gültigkeitsbereich bei 
+Eine weitere Besonderheit von JavaScript ist der Gültigkeitsbereich innerhalb von 
 Schleifen. Beim Druchlaufen 
 von Schleifen bringt es viele Vorteile wenn die Gültikeitesbereiche der Variablen 
-übersichtlich und getrennt sind. In einer Schleife wird häufig ein Zähler 
+übersichtlich und getrennt sind. In einer Schleife wird häufig eine Variable als Zähler 
 verwendet. Das nächste Beispiel zeigt Ihnen, dass der Gültigkeitsbereich einer 
 solchen Zählervariablen nicht übersichtlich und getrennt ist, wenn diese Variable 
-mit `var` deklariert wurde. 
+mit `var` deklariert wird. 
 
 ```
  function getValue() {
@@ -373,7 +403,8 @@ Variable `i` wird in der Regel nur lokal in der Schleife benötigt und sollte au
 nur hier ihren Gültigkeitsbereich haben. Bei der Verwendung von `var` zur Deklaration 
 wird diese Deklaration aufgrund von 
 [Hoisting](https://de.wikipedia.org/w/index.php?title=Hoisting&oldid=166784898) 
-nach oben geschoben.
+an den Anfang der Funktion geschoben und ist somit innerhalb der vollständigen 
+Funktion gültig.
 
 Das nächste Beispiel nutzt anstelle von `var` eine mit `let` deklarierte Variabel als 
 Zähler. Das Ergebnis ist das erwartete Verhalten.
@@ -396,8 +427,8 @@ keine Verwirrung mehr stiften.
 
 ### Funktionen in Schleifen
 
-Hoisting und das Verhalten von `var` machend das Arbeiten mit Funktionen in Schleifen 
-problematisch. Das nächste Beispiel zeigt Ihnen, was ich genau meine.
+Hoisting und das Verhalten von `var` machen das Arbeiten mit Funktionen in Schleifen 
+unvorhersehbar. Das nächste Beispiel zeigt Ihnen, auf was ich genau hinaus will.
 
 ```
 function getValue() {
@@ -415,25 +446,24 @@ function getValue() {
 <!--index_988.html -->
 ```
 
-Sicherlich haben Sie die Ausgabe `0 1 2 3 4` erwartet. Anstelle davon wurde aber
+Haben Sie die Ausgabe `0 1 2 3 4` erwartet? Anstelle davon wurde aber
 `5 5 5 5 5` ausgegeben. Der Grund hierfür ist, dass dieselbe Variable `i` über alle 
 Iterationen der Schleife hinweg geteilt wird. Aufgrund von Hoisting wurde 
 die Variable `i` außerhalb der Schleife deklariert. Alle Funktionen, die in der 
 Schleife erstellt wurden, halten eine Referenz auf die selbe Variable `i`. 
 Diese Variable `i` hat den Wert `5`, wenn alle Schleifendurchläufe beendet sind. 
-Wenn `console.log(i)` aufgrund von 
-
+Wenn dann `console.log(i)` aufgrund von 
 ```
 funktionen.forEach(function(funktion){
     funktion(); 
 });
 ```
-fünfmal ausgeführt wird, wird Wert `5` fünfmal ausgegeben.  
+fünfmal ausgeführt wird, wird der Wert `5` fünfmal ausgegeben.  
 
-Eine Lösung für dieses Problem ist *IIFE*. *IIFE* steht für *Immediately-invoked Function Expression*, 
+Eine Lösung für dieses Problem ist [IIFE](https://wiki.selfhtml.org/index.php?title=IIFE&oldid=59916). *IIFE* steht für *Immediately-invoked Function Expression*, 
 also ein sofort ausgeführter Funktionsausdruck. Das hört sich sehr kompliziert an. Meiner Meinung nach 
 ist es auch kompliziert. Ich habe *IIFE* hier nur der Vollständigkeithalber aufgenommen. 
-Im nächsten Kapitel findes Sie ein einfachere Lösung.  
+Im nächsten Kapitel finden Sie eine einfachere Lösung mit ECMAScript 6.  
 
 ```
 function getValue() {
@@ -453,41 +483,275 @@ function getValue() {
 <!--index_987.html -->
 ```
 
-Das Beispiel der Datei `index_987.html` verwendet eine IIFE.
-
-### let in Schleifen
+Das Beispiel der Datei `index_987.html` verwendet eine IIFE. Das Grundgerüst 
+einer IIFE finden Sie im nächsten Programmcodebeispiel.
 
 ```
- function getValue() {
-     var funktionen = [];
-*    for (var i = 0; i < 5; i++) {
-         funktionen.push(function() {
-             console.log(i);
-         });
-     }
-     funktionen.forEach(function(funktion){
-         funktion(); // Ausgabe: 0 1 2 3 4
-     });
-     return true;
- }
+(function (foo) {
+    //...
+})(foo);
+```
+
+Dieses Grundgerüst sieht noch recht einfach aus. Beispiel `index_987.html` wirkt hingegen 
+recht kompliziert. Deshalb sehen wir uns die relevanten Teile genauer an. 
+Die Variable `i` wird im Beispiel `index_987.html` an die IIFE übergeben. Im 
+nachfolgenden Programmcodebeispiel habe ich die IIFE des Beispiel `index_987.html` 
+für sich alleine eingefügt.
+
+```
+...
+...(function(value) {
+       return function (){
+           console.log(value);
+       }
+   }(i))...
+...
+```
+
+Die IIFE speichert die 
+Variable `i` in einer eigenen Kopie. In unserem Beispiel erhält diese Kopie 
+den Namen `value`. Die Kopie der Variablen `i`, also `value` wird nun in der 
+Funktion verwendet. Dies führt dazu, dass die Ausgabe der Schleife nun eher der 
+Erwartung eines Programmierers entspricht, als die Ausgabe der Schleife in Beispiel 
+`index_988.html`. 
+Wie schon erwähnt bietet ECMAScript 6 glücklicherweise eine einfacherer Möglichkeit, 
+diese Ausgabe zu erreichen. Und  diese Möglichkeit sehen wir uns im nächsten Kapitel an.
+
+
+### let in Schleifen
+Eine mit let deklarierte Variable `i` in der Schleifenbedingung vereinfacht 
+die arbeit mit der Schleife ungemein. 
+Bei jedem Schleifendurchlauf wird aufgrund von `let` eine neue Variable `i` 
+erstellt und mit dem aktuellen 
+Wert initialisiert. Das nächste Beispiel zeigt Ihnen, dass man so vollständig 
+auf das komplizierte 
+IIFE Konstrukt verzichten kann.
+
+```
+function getValue() {
+    var funktionen = [];
+    for (let i = 0; i < 5; i++) {
+        funktionen.push(function() {
+            console.log(i);
+        });
+    }
+    funktionen.forEach(function(funktion){
+        funktion(); // Ausgabe: 0 1 2 3 4
+    });
+    return true;
+}
+window.addEventListener("load", function () {
+console.log(getValue());
+});
 <!--index_986.html -->
 ```
 
-Das Beispiel der Datei `index_986.html` tut genau das, was das Beispiel 
-der Datei `index_987.html` tat.
+Das Beispiel der Datei `index_986.html` errechnet genau das, was das Beispiel 
+der Datei `index_987.html` errechnete - allerdings auf eine wesentlich 
+komfortable Art.
+
+todo for in und for of erklären?
 
 Mit dem Beispiel der Datei `index_985.html` können Sie sich davon überzeugen, dass das 
-was gerade für eine forEach Schleife beschrieben habe auch für for in und for of Schleifen.
+was ich gerade für eine forEach Schleife beschrieben habe, auch auf `for-in` und `for-of` 
+Schleifen zutrifft.  
 
+`for-of`:
+
+```
+function getValue() {
+    var funktionen = [];
+    var names = ['Astrid', 'Nina', 'Elmar'];
+    
+    for (let name of names) {
+        funktionen.push(function() {
+            console.log(name);
+        });
+    }
+    funktionen.forEach(function(funktion){
+        funktion(); 
+    });
+    return true;
+}
 <!--index_985.html -->
-<!--index_985a.html -->
+```
 
+`for-in`:
 
+```
+function getValue() {
+    var funktionen = [];
+    var object = {
+        1 : "a",
+        2 : "b",
+        3 : "c"
+    };
+    
+    for (let key in object) {
+        funktionen.push(function() {
+            console.log(key);
+        });
+    }
+    funktionen.forEach(function(funktion){
+        funktion(); 
+    });
+    return true;
+}
+<!--index_984.html -->
+```
 
+In den Beispielen zur `for-in`-Schleife und zur `for-of`-Schleife wird bei jedem 
+Schleifendurchlauf eine Kopie von `key` angelegt. Dies geschieht, weil `key` 
+mit `let` deklariert wurde. Für die Ausgabe wird immre diese Kopier verwendet. 
+Deshalb ist die Ausgabe im ersten Fall `Astrid Nina Elmar` und im zweiten Fall 
+`1 2 3`. 
+Wenn `key` mit `var` deklariert würde, würde im ersten 
+Fall dreimal `Elmar` ausgegeben und im zweiten Fall dreimal `3`.
 
 ### const in Schleifen
 
+Die ECMAScript 6 Spezifikation verbietet die Verwendung von Konstanten als 
+Schleifenbedingung nicht. Wer eine Konstante als Schleifenbedingung verwenden 
+möchte, sollte sich die Zusammenhänge genau ansehen. Die `for-in`-Schleife und 
+die `for-of`-Schleife nutzen eine Konstante anders, als eine normale 
+`for`-Schleife es tut.
+
+#### For-Schleife
+
+In einer einfache For-Schleife ist es zwar erlaubt die Schleifenbedingung als 
+Konstante zu initialisieren. Es ist aber in den meisten Fällen nicht sinnvoll. 
+Bei der Ausführung der Schleife wird nämlich ein Fehler gemeldet, wenn 
+der Wert der Konstanten geändert werden soll.
+
+```
+function getValue() {
+    var funktionen = [];
+    for (const i = 0; i < 5; i++) {
+        funktionen.push(function() {
+            console.log(i);
+        });
+    }
+    funktionen.forEach(function(funktion){
+        funktion(); // Ausgabe: TypeError: invalid assignment to const i
+    });
+    return true;
+}
+<!--index_983.html -->
+```
+
+Im vorhergehen Beispiel wird die Variable `i` als Konstante deklariert. Der erste 
+Schleifendurchlauf ist erfolgreich. Bei diesem Schleifendurchlauf ist der Wert 
+der Variablen `i` gleich `0`. Beim nächsten Schleifendurchlauf tritt dann allerdings 
+ein Fehler auf. Dieser Fehler tritt genau auf, wenn `i++` ausgeführt werden soll.
+Die Fehlermeldung lautet im Browser Firefox `TypeError: invalid assignment to const i`.  
+
+Das nächste Programmcodebeispiel zeigt ein etwas konstruiertes Beispiel. 
+Im Beispiel wird 
+in der Schleifenbedingung eine Konstante verwendet. Es tritt aber kein Fehler auf, 
+weil die Schleife mit `break` abbricht, bevor `i++` ausgeführt wird.
+
+```
+function getValue() {
+    var funktionen = [];
+    for (const i = 0; i < 5;) {
+        funktionen.push(function() {
+            console.log(i);
+        });
+        break;
+    }
+    funktionen.forEach(function(funktion){
+        funktion(); // Ausgabe: 0
+    });
+    return true;
+}
+<!--index_983c.html -->
+```
+
+#### For-in-Schleife und For-of-Schleife
+
+In einer `for-in`-Schleife oder einer `for-of`-Schleife kann hingegen mit einer 
+Konstanten gearbeitet werden. 
+
+```
+function getValue() {
+    var funktionen = [];
+    var names = ['Astrid', 'Nina', 'Elmar'];
+    
+    for (const name of names) {
+        funktionen.push(function() {
+            console.log(name);
+        });
+    }
+    funktionen.forEach(function(funktion){
+        funktion(); // Ausgabe: Astrid Nina Elmar
+    });
+    return true;
+}
+<!--index_983a.html -->
+```
+
+```
+function getValue() {
+    var funktionen = [];
+    var object = {
+        1 : "a",
+        2 : "b",
+        3 : "c"
+    };
+    
+    for (const key in object) {
+        funktionen.push(function() {
+            console.log(key);
+        });
+    }
+    funktionen.forEach(function(funktion){
+        funktion(); // Ausgabe: 1 2 3
+    });
+    return true;
+}
+<!--index_983b.html -->
+```
+
+Der warum in einer `for-in`-Schleife oder einer `for-of`-Schleife eine Konstante 
+als Schleifenbedingung keinen Fehler erzeugt ist bei genauem Hinsehen einfach. Beim 
+Schleifendurchlauf wird keiner Konstanten ein anderer Wert zugeordnet. Es wird 
+vielmehr die Zuordnung zu zur Konstanten `name` oder `key` geändert.
+
 ## Globaler Gültigkeitsbereich (Scope)
+
+Auch im globalen Gültigkeitsbereich gibt es Unterschiede zwischen `var` und 
+den ECMAScript 6- Neulingen `let` beziehungsweise `const`.  
+
+Zum einen überschreibt eine im globalen Gültigkeitsbereich mit `var` 
+deklarierte Variable die gleichnamige Eigenschaft im `window` Objekt. 
+Das nachfolgende Beispiel verdeutlich das gerade beschriebene. So hat 
+JavaScript in der Vergangenheit immer gearbeitet.
+
+```
+console.log(window.RegExp); // Ausgabe: function RegExp()
+var RegExp = "Neuer Wert für RegExp";
+console.log(window.RegExp); // Ausgabe: "Neuer Wert für RegExp"
+<!--index_982.html -->
+```
+
+Wenn anstelle von `var` eine Variable im globalen Gültikeitsbereich mit `let` 
+beziehungsweise `const` deklariert wird wird das `window` Objekt nicht verändert.
+
+```
+console.log(window.RegExp); // Ausgabe: function RegExp()
+let RegExp = "Neuer Wert für RegExp";
+console.log(window.RegExp); // Ausgabe: function RegExp()
+<!--index_981.html -->
+```
+
+Dadurch, dass das globale `window`-Objekt im Falle von `let` 
+beziehungsweise `const`nicht geändert wird, ist die Variablenzuweisunge 
+sicherer. Das unbewusste überschreiben von Eigenschaften im `window`-Objekt kann 
+nicht vorkommen.
+
+> Die Verwendung von `var` kann zur Deklaration einer 
+globalen Variablen dennnoch sinnvoll sein. Auf diese Art und Weise können Variablen 
+von unterschiedlichen HTML-Dokumenten gleichzeitig genutzt werden.
 
 ## Erfolgsmethode - best practice
 
@@ -496,8 +760,6 @@ was gerade für eine forEach Schleife beschrieben habe auch für for in und for 
 
 ## In diesem Kapitel haben wir ...
 
-In diesem Kapitel haben Sie auf unterschiedliche Arten eine Karte erstellt. 
-
-In den nächsten Kapiteln werden wir diese Karte mit Elementen und Informationen füllen.
+xxx
 
 [^1]: https://de.wikipedia.org/w/index.php?title=Interpreter&oldid=182588640 (https://bit.ly/2GT9nQS)

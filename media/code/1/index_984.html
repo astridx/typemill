@@ -8,11 +8,15 @@
 <script>
 function getValue() {
     var funktionen = [];
-    var names = ['Astrid', 'Nina', 'Elmar'];
+    var object = {
+        1 : "a",
+        2 : "b",
+        3 : "c"
+    };
     
-    for (var name of names) {
+    for (let key in object) {
         funktionen.push(function() {
-            console.log(name);
+            console.log(key);
         });
     }
     funktionen.forEach(function(funktion){

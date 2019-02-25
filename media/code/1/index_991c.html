@@ -7,17 +7,13 @@
 <body>
 <script>
 function getValue() {
-    var funktionen = [];
-    var names = ['Astrid', 'Nina', 'Elmar'];
-    
-    for (var name of names) {
-        funktionen.push(function() {
-            console.log(name);
-        });
+    console.log(typeof value1); // Ausgabe: undefined
+    console.log(typeof value2); // ReferenceError: can't access lexical declaration
+                                // `value2' before initialization
+    if (true) {
+        let value2 = "Prima";
     }
-    funktionen.forEach(function(funktion){
-        funktion(); 
-    });
+        
     return true;
 }
 window.addEventListener("load", function () {
