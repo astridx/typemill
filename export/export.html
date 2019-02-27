@@ -744,9 +744,202 @@ beziehungsweise <code>const</code>nicht geändert wird, ist die Variablenzuweisu
 sicherer. Das unbewusste überschreiben von Eigenschaften im <code>window</code>-Objekt kann 
 nicht vorkommen.</p>
 <blockquote>
-<p>kll</p>
+<p>Die Verwendung von <code>var</code> kann zur Deklaration einer 
+globalen Variablen dennnoch sinnvoll sein. Auf diese Art und Weise können Variablen 
+von unterschiedlichen HTML-Dokumenten gleichzeitig genutzt werden.</p>
 </blockquote>
 <h2 id="erfolgsmethode-best-practice">Erfolgsmethode - best practice</h2>
+<blockquote>
+<p><strong>Achtung:</strong></p>
+</blockquote>
+<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
+<p>xxx</p>
+<div class="footnotes">
+<hr />
+<ol>
+</ol>
+</div><h1 id="ecmascript-6-arbeiten-mit-strings">ECMAScript 6 - Arbeiten mit Strings</h1>
+<p><a href="#" id="ArbeitenMitStrings"></a></p>
+<h2 id="diesem-kapitel-werden-wir">In diesem Kapitel werden wir …</h2>
+<p>Zunächst zeige ich Ihnen, wie Sie 
+Todo Meldungen immer mit Firefox</p>
+<h2 id="besser-unicode-unterstutzung">Besser Unicode-Unterstützung</h2>
+<h3 id="utf-16">UTF-16</h3>
+<p>ECMAScript 5 entstand, als 16 Bit ausreichten, um alle vorhandene Unicode-Zeichen 
+abzubilden. Später wurde Unicode um weitere Zeichen mit einem erweitert. 
+Dies hat zur Folge, 
+dass 16 Bit nicht mehr ausreichen, um alle möglichen Unicode-Zeichen darzustellen.</p>
+<blockquote>
+<p>Das Ziel von Unicode ist es, alle in Gebrauch befindlichen Schriftsysteme 
+und Zeichen zu kodieren. Der Zeichenumfang ist dazu 
+in 17 Ebenen (englisch planes) gegliedert. 
+Sechs dieser Ebenen werden bereits verwendet, die restlichen sind für spätere Nutzung reserviert. 
+Die ursprünglichen 16 Bit sind unter dem Namen <em>Basic Multilingual Plane</em> 
+(BMP; deutsch Mehrsprachige Basis-Ebene, auch als Plane 0 bezeichnet) bekannt.</p>
+</blockquote>
+<p>Damit die ursprünglichen 16 Bit auch weiterhin problemlos 
+verwendet werden könne, speichert UTF-16 die ursprünglichen Unicode-Zeichen in der BMP 
+weiterhin in 16 Bit. 
+Alle neuen Unicode-Zeichen werden hingegen in 32 Bit 
+gespeichert, also in zwei 16-Bit-Werten. 
+Diese beiden 16-Bit-Werte werden als <em>Ersatzpaar</em> (englisch surrogate pair) bezeichnet. 
+Streng genommen wird ein Unicode-Zeichen außerhalb der BMP in einer 
+<em>UTF-16-Codeeinheit</em> anstelle eines <em>Unicode-Zeichens</em> gespeichert.</p>
+<p>So können Sie alle Methoden die auf 16 Bit begrenzt sind weiterhin 
+nutzen. Zumindest solange die Zeichen der BMP ausreichen - das heißt solange 
+Sie keine der neuen Unicode-Zeichen verwenden.</p>
+<p>Wenn Sie eine vollständige Unicode-Unterstützung benötigen, kann die Verwendung 
+der alten Methoden zu versteckten Fehlern führen.</p>
+<blockquote>
+<p>Ein sehr populäres Beispiel für Unicode-Zeichen, die nicht im BMP 
+enthalten sind sind Emojis: Das einfache lachende Gesicht 😀 
+<a href="https://unicode-table.com/de/#1F600">U + 1F600</a>
+kann nicht in einem einzelnen Zeichen dargestellt werden.</p>
+</blockquote>
+<p>Was ich genau mit versteckten Fehler meine, verdeutlicht der nachfolgende 
+Programmcode. Als Beispiel habe ich das Leerzeichen und das Emoji mit dem 
+lachenden Gesicht gegenübergestellt. 
+Die Unicode-Nummer des Emoji mit dem 
+lachenden Gesicht ist <code>U+1F600</code> und der HTML-Code dazu 
+ist <code>&amp;#128512;</code>. 
+Die Unicode-Nummer das Ausrufezeichen ist <code>U+0021</code> und der HTML-Code dazu 
+ist <code>&amp;#33;</code>.</p>
+<pre><code>let text = "😀";
+console.log(text.length); // Ausgabe: 2
+console.log(/^.$/.test(text)); // Ausgabe: false
+console.log(text.charAt(0)); // Ausgabe: �
+console.log(text.charAt(1)); // Ausgabe: �
+console.log(text.charCodeAt(0)); // Ausgabe: 55357
+console.log(text.charCodeAt(1)); // Ausgabe: 56832
+
+text = "!";
+console.log(text.length); // Ausgabe: 1
+console.log(/^.$/.test(text)); // Ausgabe: true
+console.log(text.charAt(0)); // Ausgabe: "!"
+console.log(text.charAt(1)); // Ausgabe: ""
+console.log(text.charCodeAt(0)); // Ausgabe: 33
+console.log(text.charCodeAt(1)); // Ausgabe: NaN
+&lt;!--index_980.html --&gt;</code></pre>
+<p>Es wird kein Fehler angezeigt, aber anders als erwartet  </p>
+<ul>
+<li>gibt <code>text.length</code> für das lachende Gesicht den Wert 2 anstelle von 1 zurück.</li>
+<li>wird das lachende Gesicht beim der Prüfung eines Regulären Ausdrucks nicht 
+als ein Zeichen erkannt.</li>
+<li>es der <code>charAt()</code>-Methode nicht möglich ein Zeichen zurückzugeben.</li>
+<li>gibt die <code>charCodeAt()</code>-Methode für jedes der beiden Zeichen in der UTF-16-Codeeinheit 
+das Unicode-Zeichen für die BMP aus. </li>
+</ul>
+<p>Falls Sie mit Unicode-Zeichen oberhalb der BMP arbeiten sind die Methoden 
+<code>charAt()</code> und <code>charCodeAt()</code> nicht die richtige Wahl für Sie. Diese arbeiten 
+ausschließlich im BMP-Bereich korrekt. Und noch schlimmer: Bei Unicode-Zeichen 
+außerhalb der BMP melden diese keinen Fehler. Mit ECMAScript 6 sind 
+Methoden hinzugekommen, die den neuen Bereich korrekt unterstützen.</p>
+<blockquote>
+<p>Die Unicode-Nummer ist ein hexadezimaler Wert. Der HTML-Code ist die 
+ins Dezimalsystem umgerechnete Unicode-Nummer.
+Möchten Sie das Umrechnen von einem Zahlenformat in ein anderes Zahlenformat 
+gerne selbst 
+nachvollziehen. Falls Sie hierzu Hilfe benötigen ist die Website<br />
+<a href="https://www.arndt-bruenner.de/mathe/scripts/Zahlensysteme.htm">https://www.arndt-bruenner.de/mathe/scripts/Zahlensysteme.htm</a> vielleicht das 
+Richtige für Sie.</p>
+</blockquote>
+<h3 id="codepointat">codePointAt()</h3>
+<p>Eine Methode, eine vollständige Unicode-Unterstützung bietet ist <code>codePointAt()</code></p>
+<pre><code>let text = "😀";
+console.log(text.codePointAt(0)); // Ausgabe: 128512
+console.log(text.codePointAt(1)); // Ausgabe: 56832
+
+text = "!";
+console.log(text.codePointAt(0)); // Ausgabe: 33
+console.log(text.codePointAt(1)); // Ausgabe: undefined
+&lt;!--index_979.html --&gt;</code></pre>
+<p>Noch einmal zur Wiederholung: Die Unicode-Nummer des Emoji mit dem 
+lachenden Gesicht ist <code>U+1F600</code> und der HTML-Code dazu 
+ist <code>&amp;#128512;</code>. 
+Die Unicode-Nummer das Ausrufezeichen ist <code>U+0021</code> und der HTML-Code dazu 
+ist <code>&amp;#33;</code>. <code>codePointAt(0)</code> gibt nun also in beiden Fällen denn korrekten Wert 
+zurück.</p>
+<blockquote>
+<p>Bei der verwendung der <code>codePointAt()</code>-Method ist allerdings noch wichtig 
+darauf zu achten, das auch hier die UTF-16-Codeeinheit zürckgegeben wird - also 
+zwei Unicode-Zeichen. Sehen sich zur verdeutlichung nachfolgenden Programmcode an.</p>
+</blockquote>
+<pre><code>let text = "😀!";
+console.log(text.codePointAt(0)); // Ausgabe: 128512
+console.log(text.codePointAt(1)); // Ausgabe: 56832
+console.log(text.codePointAt(2)); // Ausgabe: 33
+console.log(text.codePointAt(1)); // Ausgabe: undefined
+&lt;!--index_979a.html --&gt;</code></pre>
+<blockquote>
+<p>Wenn Sie herausfinden möchten, ob Sie es mit einem Unicode-Zeichen oder einer 
+UTF-16-Codeeinheit zu tun haben, können Sie die Methode <code>codePointAt(0)</code> zu Hilfe 
+nehmen. Eine Möglichkeit zeigt Ihnen das nächste Codebeispiel.</p>
+<pre><code>console.log(is32Bit("😅")); // Ausgabe: true
+console.log(is32Bit("!"));  // Ausgabe: false
+function is32Bit(c){
+return c.codePointAt(0) &gt; 0xFFFF;
+}
+&lt;!--index_978.html --&gt;</code></pre>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>BMP-Bereich</th>
+<th>vollständige Unicode-Unterstützung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>charCodeAt()</td>
+<td>codePointAt()</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stringfromcodepoint">String.fromCodePoint()</h3>
+<p>Im vorhergehenden Kapitel haben wir HTML-Code eines Zeichens ermittelt. In 
+diesem Kapitel machen wir das Gegenteil. Bisher war für die Errechnung eines 
+Zeichens aus einem HTML-Code die Methode 
+<code>fromCharCode()</code> das Mittel der Wahl. Genau wie <code>charCodeAt()</code> deckt <code>fromCharCode()</code> 
+außschließlich den BMP-Bereich korrekt ab. Analog zu <code>codePointAt()</code> 
+für <code>charCodeAt()</code> gibt es die fromCodePoint()-Methode als Pentant zu 
+<code>fromCharCode()</code>. <code>fromCodePoint()</code> bietet das gleiche Ergebnis 
+wie <code>fromCharCode()</code> bei einer vollständige Unicode-Unterstützung.</p>
+<table>
+<thead>
+<tr>
+<th>BMP-Bereich</th>
+<th>vollständige Unicode-Unterstützung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fromCharCode()</td>
+<td>fromCodePoint()</td>
+</tr>
+<tr>
+<td>charCodeAt()</td>
+<td>codePointAt()</td>
+</tr>
+</tbody>
+</table>
+<h3 id="normalize">normalize()</h3>
+<h3 id="u-flag">u-Flag</h3>
+<h2 id="andere-string-verbesserungen">Andere String-Verbesserungen</h2>
+<h3 id="identifizieren">Identifizieren</h3>
+<h3 id="ersetzen">Ersetzen</h3>
+<h2 id="andere-verbesserungen-bei-der-arbeite-mit-regularen-ausdruck">Andere Verbesserungen bei der Arbeite mit Regulären Ausdrücken</h2>
+<h3 id="y-flag">y-Flag</h3>
+<h3 id="duplizieren">Duplizieren</h3>
+<h3 id="flag-eigenschaften">Flag-Eigenschaften</h3>
+<h2 id="templates">Templates</h2>
+<h3 id="syntax">Syntax</h3>
+<h3 id="multiline">Multiline</h3>
+<h3 id="ersetzungen">Ersetzungen</h3>
+<h3 id="tagged">Tagged</h3>
+<pre><code>console.log(window.RegExp); // Ausgabe: function RegExp()
+let RegExp = "Neuer Wert für RegExp";
+console.log(window.RegExp); // Ausgabe: function RegExp()
+&lt;!--index_981.html --&gt;</code></pre>
 <blockquote>
 <p><strong>Achtung:</strong></p>
 </blockquote>
