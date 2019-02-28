@@ -832,8 +832,9 @@ das Unicode-Zeichen für die BMP aus. </li>
 <p>Falls Sie mit Unicode-Zeichen oberhalb der BMP arbeiten sind die Methoden 
 <code>charAt()</code> und <code>charCodeAt()</code> nicht die richtige Wahl für Sie. Diese arbeiten 
 ausschließlich im BMP-Bereich korrekt. Und noch schlimmer: Bei Unicode-Zeichen 
-außerhalb der BMP melden diese keinen Fehler. Mit ECMAScript 6 sind 
-Methoden hinzugekommen, die den neuen Bereich korrekt unterstützen.</p>
+außerhalb der BMP melden diese keinen Fehler.  </p>
+<p>Mit ECMAScript 6 sind 
+Methoden hinzugekommen, die den neuen Bereich korrekt unterstützen. </p>
 <blockquote>
 <p>Die Unicode-Nummer ist ein hexadezimaler Wert. Der HTML-Code ist die 
 ins Dezimalsystem umgerechnete Unicode-Nummer.
@@ -881,20 +882,6 @@ return c.codePointAt(0) &gt; 0xFFFF;
 }
 &lt;!--index_978.html --&gt;</code></pre>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>BMP-Bereich</th>
-<th>vollständige Unicode-Unterstützung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>charCodeAt()</td>
-<td>codePointAt()</td>
-</tr>
-</tbody>
-</table>
 <h3 id="stringfromcodepoint">String.fromCodePoint()</h3>
 <p>Im vorhergehenden Kapitel haben wir HTML-Code eines Zeichens ermittelt. In 
 diesem Kapitel machen wir das Gegenteil. Bisher war für die Errechnung eines 
@@ -923,32 +910,82 @@ wie <code>fromCharCode()</code> bei einer vollständige Unicode-Unterstützung.<
 </tbody>
 </table>
 <h3 id="normalize">normalize()</h3>
-<h3 id="u-flag">u-Flag</h3>
-<h2 id="andere-string-verbesserungen">Andere String-Verbesserungen</h2>
-<h3 id="identifizieren">Identifizieren</h3>
-<h3 id="ersetzen">Ersetzen</h3>
-<h2 id="andere-verbesserungen-bei-der-arbeite-mit-regularen-ausdruck">Andere Verbesserungen bei der Arbeite mit Regulären Ausdrücken</h2>
-<h3 id="y-flag">y-Flag</h3>
-<h3 id="duplizieren">Duplizieren</h3>
-<h3 id="flag-eigenschaften">Flag-Eigenschaften</h3>
-<h2 id="templates">Templates</h2>
-<h3 id="syntax">Syntax</h3>
-<h3 id="multiline">Multiline</h3>
-<h3 id="ersetzungen">Ersetzungen</h3>
-<h3 id="tagged">Tagged</h3>
-<pre><code>console.log(window.RegExp); // Ausgabe: function RegExp()
+<p>Ein interessanter Aspekt beim Vergleichen oder beim Sortieren von Strings sind 
+die unterschiedlichen Möglichkeiten, mit denen das gleiche Zeichen dargestellt 
+werden kann. 
+Beispielsweise kann der Buchstabe <code>Ä</code> als einzelnes Unicode-Zeichen 
+<code>U + 00E4 LATIN SMALL LETIN A MIT DIAERESIS</code> oder als zwei Unicode-Zeichen 
+<code>U + 0061 LATIN SMALL LETIN A</code> and <code>U + 0308 COMBINING DIAERESIS</code> dargestellt werden. 
+Meistens wird die erste Form verwendet. 
+Wenn sie zwei Strings vergleiche, die den Buchstaben <code>Ä</code> auf unterschiedliche Art 
+speichern, dann kann dies beim Sortieren oder beim Vergleichen unerwarteten Ergebnissen 
+führen.</p>
+<blockquote>
+<p>Es gibt vier Normalformen: </p>
+<ul>
+<li>die kanonische Dekomposition (NFD), </li>
+<li>die kanonische Dekomposition gefolgt von einer kanonischen Komposition (NFC), </li>
+<li>die kompatible Dekomposition (NFKD) und </li>
+<li>die kompatible Dekomposition gefolgt von einer kanonischen Komposition (NFKC).  </li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Eine genaue Erklärung dieser Formen führt 
+hier zu weit. Einen guten Einstieg zum Thema bietet Ihnen Wikpedia: 
+<a href="https://de.wikipedia.org/w/index.php?title=Normalisierung_(Unicode)&amp;oldid=178027174">https://de.wikipedia.org/w/index.php?title=Normalisierung_(Unicode)&amp;oldid=178027174</a> 
+Was Sie sich auf jeden Fall merken sollten: Beim Vergleichen - beziehungsweise beim 
+Sortieren - müssen beide zu vergleichenden Strings in der gleichen Normalform vorliegen. 
+Andernfalls kann es Probleme geben.</p>
+</blockquote>
+<p>Wie erreichen Sie, dass ein String in eine bestimmte Normalform überführt wird? 
+Seit ECMAScript 6 können Sie hierfür die Methode <code>normalize()</code> verwenden. Im nächsten 
+Beispiel sehen Sie beispielhaft, wie Sie die Methode <code>normalize()</code> praktisch einsetzen 
+können. </p>
+<p>``` let eins = "Äpfel";
+let zwei = "Äpfel";</p>
+<p>let einsNFD = eins.normalize("NFD");
+let zweiNFD = zwei.normalize("NFD");</p>
+<p>let einsNFC = eins.normalize("NFC");
+let zweiNFC = zwei.normalize("NFC");</p>
+<p>console.log(eins===zwei); //true
+console.log(eins===einsNFD); //false
+console.log(eins===einsNFC); //true</p>
+<p>console.log(eins===zweiNFD); //false
+console.log(eins===zweiNFC); //true
+&lt;!--index_978.html --&gt;</p>
+<pre><code>
+
+
+### u-Flag
+## Andere String-Verbesserungen
+### Identifizieren
+### Ersetzen
+## Andere Verbesserungen bei der Arbeite mit Regulären Ausdrücken
+### y-Flag
+### Duplizieren
+### Flag-Eigenschaften 
+## Templates
+### Syntax
+### Multiline
+### Ersetzungen
+### Tagged
+
+
+
+</code></pre>
+<p>console.log(window.RegExp); // Ausgabe: function RegExp()
 let RegExp = "Neuer Wert für RegExp";
 console.log(window.RegExp); // Ausgabe: function RegExp()
-&lt;!--index_981.html --&gt;</code></pre>
-<blockquote>
-<p><strong>Achtung:</strong></p>
-</blockquote>
-<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
-<p>xxx</p>
-<div class="footnotes">
-<hr />
-<ol>
-</ol>
-</div><h1 id="auf-wiedersehen">Auf Wiedersehen</h1>
+&lt;!--index_981.html --&gt;</p>
+<pre><code>
+
+&gt; **Achtung:**
+
+
+## In diesem Kapitel haben wir ...
+
+xxx
+
+[^1]: https://de.wikipedia.org/w/index.php?title=Interpreter&amp;oldid=182588640 (https://bit.ly/2GT9nQS)</code></pre><h1 id="auf-wiedersehen">Auf Wiedersehen</h1>
 <p>Ich hoffe, dass Ihnen der Rundgang durch LeafletJs gefallen hat und Sie jede 
 Menge für sich mitnehmen konnten.</p></html>

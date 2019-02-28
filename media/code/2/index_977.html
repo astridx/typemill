@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let eins = "Äpfel";
+let zwei = "Äpfel";
+
+let einsNFD = eins.normalize("NFD");
+let zweiNFD = zwei.normalize("NFD");
+
+let einsNFC = eins.normalize("NFC");
+let zweiNFC = zwei.normalize("NFC");
+
+console.log(eins===zwei); //true
+console.log(eins===einsNFD); //false
+console.log(eins===einsNFC); //true
+
+console.log(eins===zweiNFD); //false
+console.log(eins===zweiNFC); //true
+</script>    
+</body>
+</html>

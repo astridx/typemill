@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function codePointLengthWithU(text){
+    let sum = text.match(/[\s\S]/gu);
+    return sum ? sum.length : 0;
+} 
+function codePointLengthWithoutU(text){
+    let sum = text.match(/[\s\S]/g);
+    return sum ? sum.length : 0;
+} 
+let text = "😀";
+console.log(text.length); // Ausgabe: 2
+console.log(codePointLengthWithU(text)); // Ausgabe: 1
+console.log(codePointLengthWithoutU(text)); // Ausgabe: 2
+
+text = "!";
+console.log(text.length); // Ausgabe: 1
+console.log(codePointLengthWithU(text)); // Ausgabe: 1
+console.log(codePointLengthWithoutU(text)); // Ausgabe: 1
+</script>    
+</body>
+</html>

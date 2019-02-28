@@ -163,14 +163,178 @@ wie `fromCharCode()` bei einer vollständige Unicode-Unterstützung.
 | fromCharCode()| fromCodePoint() |
 | charCodeAt()| codePointAt() |
 
-
-
 ### normalize()
+
+Ein interessanter Aspekt beim Vergleichen oder beim Sortieren von Strings sind 
+die unterschiedlichen Möglichkeiten, mit denen das gleiche Zeichen dargestellt 
+werden kann. 
+Beispielsweise kann der Buchstabe `Ä` als einzelnes Unicode-Zeichen 
+`U + 00E4 LATIN SMALL LETIN A MIT DIAERESIS` oder als zwei Unicode-Zeichen 
+`U + 0061 LATIN SMALL LETIN A` and `U + 0308 COMBINING DIAERESIS` dargestellt werden. 
+Meistens wird die erste Form verwendet. 
+Wenn sie zwei Strings vergleiche, die den Buchstaben `Ä` auf unterschiedliche Art 
+speichern, dann kann dies beim Sortieren oder beim Vergleichen unerwarteten Ergebnissen 
+führen.
+
+> Es gibt vier Normalformen: 
+- die kanonische Dekomposition (NFD), 
+- die kanonische Dekomposition gefolgt von einer kanonischen Komposition (NFC), 
+- die kompatible Dekomposition (NFKD) und 
+- die kompatible Dekomposition gefolgt von einer kanonischen Komposition (NFKC).  
+
+In JavaScript ist ein String standardmäßig in der Normalform NFC.
+
+> Eine genaue Erklärung dieser Formen führt 
+hier zu weit. Einen guten Einstieg zum Thema bietet Ihnen Wikpedia: 
+https://de.wikipedia.org/w/index.php?title=Normalisierung_(Unicode)&oldid=178027174 . 
+Was Sie sich auf jeden Fall merken sollten: Beim Vergleichen - beziehungsweise beim 
+Sortieren - müssen beide zu vergleichenden Strings in der gleichen Normalform vorliegen. 
+Andernfalls kann es Probleme geben.
+
+Wie erreichen Sie, dass ein String in eine bestimmte Normalform überführt wird? 
+Seit ECMAScript 6 können Sie hierfür die Methode `normalize()` verwenden. Im nächsten 
+Beispiel sehen Sie beispielhaft, wie Sie die Methode `normalize()` praktisch einsetzen 
+können. 
+
+``` 
+let eins = "Äpfel";
+let zwei = "Äpfel";
+
+let einsNFD = eins.normalize("NFD");
+let zweiNFD = zwei.normalize("NFD");
+
+let einsNFC = eins.normalize("NFC");
+let zweiNFC = zwei.normalize("NFC");
+
+console.log(eins===zwei); //true
+console.log(eins===einsNFD); //false
+console.log(eins===einsNFC); //true
+
+console.log(eins===zweiNFD); //false
+console.log(eins===zweiNFC); //true
+<!--index_977.html -->
+```
+
+Das Programmcodebeispiel spricht für sich. Falls der String `Äpfel` in unterschiedlichen  
+Normalformen vorliegt, schlägt eine Prüfung auf Gleichheit fehl.
+
+Falls Sie bisher noch nie auf ein Problem mit unterschiedlichen Unicode Normalformen 
+gestoßen sind, dann ist es nicht wahrscheinlich, dass Sie diese Methode benötigen. Es 
+schade jedoch nie diese Methode für den Fall der Fälle im Hinterkopf zu behalten.
+
 ### u-Flag
-## Andere String-Verbesserungen
+
+#### Das u-Flag in Aktion
+
+Im Beispiel 980.html hatte ich gezeigt, dass eine Prüfung eines regulären Ausdrucks 
+auf die Länge ein unerwartetes Ergebnis bringt, wenn das Zeichen im regulären Ausdruck 
+sich nicht im BMP Bereich befindet. 
+Ein Unicode-Zeichen außerhalb der BMP wird wie schon beschrieben in einer 
+*UTF-16-Codeeinheit* anstelle eines *Unicode-Zeichens* gespeichert. 
+
+ECMAScript 6 schafft hier mit dem u-Flag abhilfe. Wenn dieses Flag gesetzt ist, 
+wird der reguläre Ausdruck nicht anhand von *UTF-16-Codeeinheit* interpretiert
+
+``` 
+let text = "😀";
+console.log(text.length); // Ausgabe: 2
+console.log(/^.$/.test(text)); // Ausgabe: false
+console.log(/^.$/u.test(text)); // Ausgabe: false
+
+text = "!";
+console.log(text.length); // Ausgabe: 1
+console.log(/^.$/.test(text)); // Ausgabe: true
+console.log(/^.$/u.test(text)); // Ausgabe: false
+<!--index_976.html -->
+```
+
+#### Codepoints zählen
+
+``` 
+function codePointLengthWithU(text){
+    let sum = text.match(/[\s\S]/gu);
+    return sum ? sum.length : 0;
+} 
+function codePointLengthWithoutU(text){
+    let sum = text.match(/[\s\S]/g);
+    return sum ? sum.length : 0;
+} 
+let text = "😀";
+console.log(text.length); // Ausgabe: 2
+console.log(codePointLengthWithU(text)); // Ausgabe: 1
+console.log(codePointLengthWithoutU(text)); // Ausgabe: 2
+
+text = "!";
+console.log(text.length); // Ausgabe: 1
+console.log(codePointLengthWithU(text)); // Ausgabe: 1
+console.log(codePointLengthWithoutU(text)); // Ausgabe: 1
+<!--index_975.html -->
+```
+
+#### Browserunterstüztung des u-Flags
+
+``` 
+function hasUFlag(){
+    try {
+        let pattern = new RegExp(".", "u");
+        return true;
+    } catch (ex) {
+        return false;
+    }
+} 
+console.log(hasUFlag()); // Ausgabe true wenn das u-Flag vom Browser unterstüzt wird
+<!--index_974.html -->
+```
+
+## Andere Verbesserungen im Zusammenhang mit Zeichenketten
+
+Das Suchen von Zeichenketten innerhalb von Zeichenketten war bisher recht 
+aufwendig. 
+
 ### Identifizieren
-### Ersetzen
-## Andere Verbesserungen bei der Arbeite mit Regulären Ausdrücken
+
+#### Zeichenketten in Zeichenketten
+
+Um eine Zeichenkette innerhalb einer Zeichenkette zu finden, war bisher der Weg 
+über die `indexOf()`-Methode das Mittel der Wahl. Mit ECMAScript 6 gibt es nun 
+zusätzlich die Methoden 
+- `startsWith()`
+- `endsWith()`
+- `includes()`
+
+```
+let meinString = "ECMAScript 6 mit Beispielen lernen";
+
+console.log(meinString.startsWith("E")); // Ausgabe true
+console.log(meinString.endsWith("n")); // Ausgabe true
+console.log(meinString.includes("i")); // Ausgabe true
+
+console.log(meinString.startsWith("i")); // Ausgabe false
+console.log(meinString.endsWith("lernen")); // Ausgabe true
+console.log(meinString.includes("ä")); // Ausgabe false
+
+console.log(meinString.startsWith("i", 7)); // Ausgabe true
+console.log(meinString.endsWith("r", 7)); // Ausgabe true
+console.log(meinString.includes("i", 22)); // Ausgabe true
+console.log(meinString.includes("i", 23)); // Ausgabe false
+<!--index_973.html -->
+```
+
+
+### repeat()
+
+```
+let meinString = "ECMAScript6;";
+console.log(meinString.repeat(1)); // Ausgabe: ECMAScript6;
+console.log(meinString.repeat(2)); // Ausgabe: ECMAScript6;ECMAScript6;
+console.log(meinString.repeat(3)); // Ausgabe: ECMAScript6;ECMAScript6;ECMAScript6;
+<!--index_972.html -->
+```
+
+
+## Andere Verbesserungen bei der Arbeite mit regulären Ausdrücken
+
+Reguläre Ausdrücke spielen in JavaScript eine große Rolle. 
 ### y-Flag
 ### Duplizieren
 ### Flag-Eigenschaften 

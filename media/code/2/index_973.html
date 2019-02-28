@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let meinString = "ECMAScript 6 mit Beispielen lernen";
+
+console.log(meinString.startsWith("E")); // Ausgabe true
+console.log(meinString.endsWith("n")); // Ausgabe true
+console.log(meinString.includes("i")); // Ausgabe true
+
+console.log(meinString.startsWith("i")); // Ausgabe false
+console.log(meinString.endsWith("lernen")); // Ausgabe true
+console.log(meinString.includes("ä")); // Ausgabe false
+
+console.log(meinString.startsWith("i", 7)); // Ausgabe true
+console.log(meinString.endsWith("r", 7)); // Ausgabe true
+console.log(meinString.includes("i", 22)); // Ausgabe true
+console.log(meinString.includes("i", 23)); // Ausgabe false
+</script>    
+</body>
+</html>
