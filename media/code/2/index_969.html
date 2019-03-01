@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let rex = /ab/iu;
+console.log(rex.toString()); // Ausgabe: /ab/i
+
+// ECMAScript 5
+console.log(
+        rex.toString().substring(
+        rex.toString().lastIndexOf("/") + 1, rex.length
+        )); // Ausgabe: iu
+
+// ECMAScript 6
+console.log(rex.source); // Ausgabe: ab
+console.log(rex.flags); // Ausgabe: iu
+</script>    
+</body>
+</html>

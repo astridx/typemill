@@ -336,8 +336,55 @@ console.log(meinString.repeat(3)); // Ausgabe: ECMAScript6;ECMAScript6;ECMAScrip
 
 Reguläre Ausdrücke spielen in JavaScript eine große Rolle. 
 ### y-Flag
+
+```
+
+<!--index_971.html -->
+```
+
+https://stackoverflow.com/questions/4542304/what-does-regex-flag-y-do
+
 ### Duplizieren
-### Flag-Eigenschaften 
+
+
+> Das g-Flag steht für die globale Suche. Globale Suche bedeutet, dass alle 
+Überenstimmungen gefunden werden - abhängig von der Groß- oder Kleinschreibung. 
+Das i-Flag sucht Überenstimmungen unabhängig von der Groß- oder Kleinschreibung.
+
+
+```
+let rexWithi = /ab/i;
+let rexWithg = new RegExp(rexWithi, "g");
+
+console.log(rexWithi.toString()); // Ausgabe: /ab/i
+console.log(rexWithg.toString()); // Ausgabe: /ab/g
+
+console.log(rexWithi.test("ab")); // Ausgabe: true
+console.log(rexWithg.test("ab")); // Ausgabe: true
+
+console.log(rexWithi.test("AB")); // Ausgabe: true
+console.log(rexWithg.test("AB")); // Ausgabe: false
+<!--index_970.html -->
+```
+
+### Flag-Eigenschaften
+
+```
+let rex = /ab/iu;
+console.log(rex.toString()); // Ausgabe: /ab/i
+
+// ECMAScript 5
+console.log(
+        rex.toString().substring(
+        rex.toString().lastIndexOf("/") + 1, rex.length
+        )); // Ausgabe: iu
+
+// ECMAScript 6
+console.log(rex.source); // Ausgabe: ab
+console.log(rex.flags); // Ausgabe: iu
+<!--index_969.html -->
+```
+ 
 ## Templates
 ### Syntax
 ### Multiline

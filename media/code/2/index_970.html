@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let rexWithi = /ab/i;
+let rexWithg = new RegExp(rexWithi, "g");
+
+
+console.log(rexWithi.toString()); // Ausgabe: /ab/i
+console.log(rexWithg.toString()); // Ausgabe: /ab/g
+
+console.log(rexWithi.test("ab")); // Ausgabe: true
+console.log(rexWithg.test("ab")); // Ausgabe: true
+
+console.log(rexWithi.test("AB")); // Ausgabe: true
+console.log(rexWithg.test("AB")); // Ausgabe: false
+</script>    
+</body>
+</html>

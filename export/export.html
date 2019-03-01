@@ -929,10 +929,11 @@ führen.</p>
 <li>die kompatible Dekomposition gefolgt von einer kanonischen Komposition (NFKC).  </li>
 </ul>
 </blockquote>
+<p>In JavaScript ist ein String standardmäßig in der Normalform NFC.</p>
 <blockquote>
 <p>Eine genaue Erklärung dieser Formen führt 
 hier zu weit. Einen guten Einstieg zum Thema bietet Ihnen Wikpedia: 
-<a href="https://de.wikipedia.org/w/index.php?title=Normalisierung_(Unicode)&amp;oldid=178027174">https://de.wikipedia.org/w/index.php?title=Normalisierung_(Unicode)&amp;oldid=178027174</a> 
+<a href="https://de.wikipedia.org/w/index.php?title=Normalisierung_(Unicode)&amp;oldid=178027174">https://de.wikipedia.org/w/index.php?title=Normalisierung_(Unicode)&amp;oldid=178027174</a> . 
 Was Sie sich auf jeden Fall merken sollten: Beim Vergleichen - beziehungsweise beim 
 Sortieren - müssen beide zu vergleichenden Strings in der gleichen Normalform vorliegen. 
 Andernfalls kann es Probleme geben.</p>
@@ -941,51 +942,133 @@ Andernfalls kann es Probleme geben.</p>
 Seit ECMAScript 6 können Sie hierfür die Methode <code>normalize()</code> verwenden. Im nächsten 
 Beispiel sehen Sie beispielhaft, wie Sie die Methode <code>normalize()</code> praktisch einsetzen 
 können. </p>
-<p>``` let eins = "Äpfel";
-let zwei = "Äpfel";</p>
-<p>let einsNFD = eins.normalize("NFD");
-let zweiNFD = zwei.normalize("NFD");</p>
-<p>let einsNFC = eins.normalize("NFC");
-let zweiNFC = zwei.normalize("NFC");</p>
-<p>console.log(eins===zwei); //true
+<pre><code>let eins = "Äpfel";
+let zwei = "Äpfel";
+
+let einsNFD = eins.normalize("NFD");
+let zweiNFD = zwei.normalize("NFD");
+
+let einsNFC = eins.normalize("NFC");
+let zweiNFC = zwei.normalize("NFC");
+
+console.log(eins===zwei); //true
 console.log(eins===einsNFD); //false
-console.log(eins===einsNFC); //true</p>
-<p>console.log(eins===zweiNFD); //false
+console.log(eins===einsNFC); //true
+
+console.log(eins===zweiNFD); //false
 console.log(eins===zweiNFC); //true
-&lt;!--index_978.html --&gt;</p>
-<pre><code>
+&lt;!--index_977.html --&gt;</code></pre>
+<p>Das Programmcodebeispiel spricht für sich. Falls der String <code>Äpfel</code> in unterschiedlichen<br />
+Normalformen vorliegt, schlägt eine Prüfung auf Gleichheit fehl.</p>
+<p>Falls Sie bisher noch nie auf ein Problem mit unterschiedlichen Unicode Normalformen 
+gestoßen sind, dann ist es nicht wahrscheinlich, dass Sie diese Methode benötigen. Es 
+schade jedoch nie diese Methode für den Fall der Fälle im Hinterkopf zu behalten.</p>
+<h3 id="u-flag">u-Flag</h3>
+<h4 id="das-u-flag-aktion">Das u-Flag in Aktion</h4>
+<p>Im Beispiel 980.html hatte ich gezeigt, dass eine Prüfung eines regulären Ausdrucks 
+auf die Länge ein unerwartetes Ergebnis bringt, wenn das Zeichen im regulären Ausdruck 
+sich nicht im BMP Bereich befindet. 
+Ein Unicode-Zeichen außerhalb der BMP wird wie schon beschrieben in einer 
+<em>UTF-16-Codeeinheit</em> anstelle eines <em>Unicode-Zeichens</em> gespeichert. </p>
+<p>ECMAScript 6 schafft hier mit dem u-Flag abhilfe. Wenn dieses Flag gesetzt ist, 
+wird der reguläre Ausdruck nicht anhand von <em>UTF-16-Codeeinheit</em> interpretiert</p>
+<pre><code>let text = "😀";
+console.log(text.length); // Ausgabe: 2
+console.log(/^.$/.test(text)); // Ausgabe: false
+console.log(/^.$/u.test(text)); // Ausgabe: false
 
+text = "!";
+console.log(text.length); // Ausgabe: 1
+console.log(/^.$/.test(text)); // Ausgabe: true
+console.log(/^.$/u.test(text)); // Ausgabe: false
+&lt;!--index_976.html --&gt;</code></pre>
+<h4 id="codepoints-zahlen">Codepoints zählen</h4>
+<pre><code>function codePointLengthWithU(text){
+    let sum = text.match(/[\s\S]/gu);
+    return sum ? sum.length : 0;
+} 
+function codePointLengthWithoutU(text){
+    let sum = text.match(/[\s\S]/g);
+    return sum ? sum.length : 0;
+} 
+let text = "😀";
+console.log(text.length); // Ausgabe: 2
+console.log(codePointLengthWithU(text)); // Ausgabe: 1
+console.log(codePointLengthWithoutU(text)); // Ausgabe: 2
 
-### u-Flag
-## Andere String-Verbesserungen
-### Identifizieren
-### Ersetzen
-## Andere Verbesserungen bei der Arbeite mit Regulären Ausdrücken
-### y-Flag
-### Duplizieren
-### Flag-Eigenschaften 
-## Templates
-### Syntax
-### Multiline
-### Ersetzungen
-### Tagged
+text = "!";
+console.log(text.length); // Ausgabe: 1
+console.log(codePointLengthWithU(text)); // Ausgabe: 1
+console.log(codePointLengthWithoutU(text)); // Ausgabe: 1
+&lt;!--index_975.html --&gt;</code></pre>
+<h4 id="browserunterstuztung-des-u-flags">Browserunterstüztung des u-Flags</h4>
+<pre><code>function hasUFlag(){
+    try {
+        let pattern = new RegExp(".", "u");
+        return true;
+    } catch (ex) {
+        return false;
+    }
+} 
+console.log(hasUFlag()); // Ausgabe true wenn das u-Flag vom Browser unterstüzt wird
+&lt;!--index_974.html --&gt;</code></pre>
+<h2 id="andere-verbesserungen-im-zusammenhang-mit-zeichenketten">Andere Verbesserungen im Zusammenhang mit Zeichenketten</h2>
+<p>Das Suchen von Zeichenketten innerhalb von Zeichenketten war bisher recht 
+aufwendig. </p>
+<h3 id="identifizieren">Identifizieren</h3>
+<h4 id="zeichenketten-zeichenketten">Zeichenketten in Zeichenketten</h4>
+<p>Um eine Zeichenkette innerhalb einer Zeichenkette zu finden, war bisher der Weg 
+über die <code>indexOf()</code>-Methode das Mittel der Wahl. Mit ECMAScript 6 gibt es nun 
+zusätzlich die Methoden </p>
+<ul>
+<li><code>startsWith()</code></li>
+<li><code>endsWith()</code></li>
+<li><code>includes()</code></li>
+</ul>
+<pre><code>let meinString = "ECMAScript 6 mit Beispielen lernen";
 
+console.log(meinString.startsWith("E")); // Ausgabe true
+console.log(meinString.endsWith("n")); // Ausgabe true
+console.log(meinString.includes("i")); // Ausgabe true
 
+console.log(meinString.startsWith("i")); // Ausgabe false
+console.log(meinString.endsWith("lernen")); // Ausgabe true
+console.log(meinString.includes("ä")); // Ausgabe false
 
-</code></pre>
-<p>console.log(window.RegExp); // Ausgabe: function RegExp()
+console.log(meinString.startsWith("i", 7)); // Ausgabe true
+console.log(meinString.endsWith("r", 7)); // Ausgabe true
+console.log(meinString.includes("i", 22)); // Ausgabe true
+console.log(meinString.includes("i", 23)); // Ausgabe false
+&lt;!--index_973.html --&gt;</code></pre>
+<h3 id="repeat">repeat()</h3>
+<pre><code>let meinString = "ECMAScript6;";
+console.log(meinString.repeat(1)); // Ausgabe: ECMAScript6;
+console.log(meinString.repeat(2)); // Ausgabe: ECMAScript6;ECMAScript6;
+console.log(meinString.repeat(3)); // Ausgabe: ECMAScript6;ECMAScript6;ECMAScript6;
+&lt;!--index_972.html --&gt;</code></pre>
+<h2 id="andere-verbesserungen-bei-der-arbeite-mit-regularen-ausdruck">Andere Verbesserungen bei der Arbeite mit regulären Ausdrücken</h2>
+<p>Reguläre Ausdrücke spielen in JavaScript eine große Rolle. </p>
+<h3 id="y-flag">y-Flag</h3>
+<h3 id="duplizieren">Duplizieren</h3>
+<h3 id="flag-eigenschaften">Flag-Eigenschaften</h3>
+<h2 id="templates">Templates</h2>
+<h3 id="syntax">Syntax</h3>
+<h3 id="multiline">Multiline</h3>
+<h3 id="ersetzungen">Ersetzungen</h3>
+<h3 id="tagged">Tagged</h3>
+<pre><code>console.log(window.RegExp); // Ausgabe: function RegExp()
 let RegExp = "Neuer Wert für RegExp";
 console.log(window.RegExp); // Ausgabe: function RegExp()
-&lt;!--index_981.html --&gt;</p>
-<pre><code>
-
-&gt; **Achtung:**
-
-
-## In diesem Kapitel haben wir ...
-
-xxx
-
-[^1]: https://de.wikipedia.org/w/index.php?title=Interpreter&amp;oldid=182588640 (https://bit.ly/2GT9nQS)</code></pre><h1 id="auf-wiedersehen">Auf Wiedersehen</h1>
+&lt;!--index_981.html --&gt;</code></pre>
+<blockquote>
+<p><strong>Achtung:</strong></p>
+</blockquote>
+<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
+<p>xxx</p>
+<div class="footnotes">
+<hr />
+<ol>
+</ol>
+</div><h1 id="auf-wiedersehen">Auf Wiedersehen</h1>
 <p>Ich hoffe, dass Ihnen der Rundgang durch LeafletJs gefallen hat und Sie jede 
 Menge für sich mitnehmen konnten.</p></html>
