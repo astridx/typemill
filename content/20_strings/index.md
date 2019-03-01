@@ -385,21 +385,55 @@ console.log(rex.flags); // Ausgabe: iu
 <!--index_969.html -->
 ```
  
-## Templates
+## Template-Strings
+
+https://de.wikipedia.org/wiki/Dom%C3%A4nenspezifische_Sprache
+
 ### Syntax
+
+Template-Strings sind anstelle von doppelten bzw. einfachen 
+Anführungszeichen in Back-Ticks (` `) (grave accent) eingeschlossen. 
+Template-Strings können Platzhalter beinhalten, die durch 
+das Dollarsymbol gefolgt von geschweiften Klammern gekennzeichnet 
+sind (${expression}).
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings
+
+```
+
+<!--index_968.html -->
+```
+
 ### Multiline
+
+Vor ECMAScript 6 war es nur auf Umwegen möglich eine Zeichenkette auf 
+mehrere Zeilen zu verteilen.
+
+```
+
+<!--index_967.html -->
+```
+
+```
+
+<!--index_966.html -->
+```
+
 ### Ersetzungen
+
+```
+
+<!--index_965.html -->
+```
+
 ### Tagged
 
-
-
-
 ```
-console.log(window.RegExp); // Ausgabe: function RegExp()
-let RegExp = "Neuer Wert für RegExp";
-console.log(window.RegExp); // Ausgabe: function RegExp()
-<!--index_981.html -->
+
+<!--index_964.html -->
 ```
+
+
+
 
 > **Achtung:**
 

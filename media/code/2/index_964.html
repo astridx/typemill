@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function gibweiter(literals, ...substitutions){
+    let ergebnis = "";
+    for (let i = 0; i < substitutions.length; i++){
+        ergebnis += literals[i];
+        ergebnis += substitutions[i];
+    }
+    ergebnis += literals[literals.length -1];
+    return ergebnis;
+}
+let anzahl = 10;
+let preis = 0.25;
+let nachricht = gibweiter`${anzahl} Artikel kosten €${(anzahl * preis).toFixed(2)}`;
+console.log(nachricht);
+</script>    
+</body>
+</html>

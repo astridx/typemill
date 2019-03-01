@@ -1049,9 +1049,51 @@ console.log(meinString.repeat(3)); // Ausgabe: ECMAScript6;ECMAScript6;ECMAScrip
 <h2 id="andere-verbesserungen-bei-der-arbeite-mit-regularen-ausdruck">Andere Verbesserungen bei der Arbeite mit regulären Ausdrücken</h2>
 <p>Reguläre Ausdrücke spielen in JavaScript eine große Rolle. </p>
 <h3 id="y-flag">y-Flag</h3>
+<pre><code>
+&lt;!--index_971.html --&gt;</code></pre>
+<p><a href="https://stackoverflow.com/questions/4542304/what-does-regex-flag-y-do">https://stackoverflow.com/questions/4542304/what-does-regex-flag-y-do</a></p>
 <h3 id="duplizieren">Duplizieren</h3>
+<blockquote>
+<p>Das g-Flag steht für die globale Suche. Globale Suche bedeutet, dass alle 
+Überenstimmungen gefunden werden - abhängig von der Groß- oder Kleinschreibung. 
+Das i-Flag sucht Überenstimmungen unabhängig von der Groß- oder Kleinschreibung.</p>
+</blockquote>
+<pre><code>let rexWithi = /ab/i;
+let rexWithg = new RegExp(rexWithi, "g");
+
+console.log(rexWithi.toString()); // Ausgabe: /ab/i
+console.log(rexWithg.toString()); // Ausgabe: /ab/g
+
+console.log(rexWithi.test("ab")); // Ausgabe: true
+console.log(rexWithg.test("ab")); // Ausgabe: true
+
+console.log(rexWithi.test("AB")); // Ausgabe: true
+console.log(rexWithg.test("AB")); // Ausgabe: false
+&lt;!--index_970.html --&gt;</code></pre>
 <h3 id="flag-eigenschaften">Flag-Eigenschaften</h3>
-<h2 id="templates">Templates</h2>
+<pre><code>let rex = /ab/iu;
+console.log(rex.toString()); // Ausgabe: /ab/i
+
+// ECMAScript 5
+console.log(
+        rex.toString().substring(
+        rex.toString().lastIndexOf("/") + 1, rex.length
+        )); // Ausgabe: iu
+
+// ECMAScript 6
+console.log(rex.source); // Ausgabe: ab
+console.log(rex.flags); // Ausgabe: iu
+&lt;!--index_969.html --&gt;</code></pre>
+<h2 id="template-strings">Template-Strings</h2>
+<p><a href="https://de.wikipedia.org/wiki/Dom%C3%A4nenspezifische_Sprache">https://de.wikipedia.org/wiki/Dom%C3%A4nenspezifische_Sprache</a></p>
+<p>Template-Strings sind anstelle von doppelten bzw. einfachen 
+Anführungszeichen in Back-Ticks (<code> </code>) (grave accent) eingeschlossen. 
+Template-Strings können Platzhalter beinhalten, die durch 
+das Dollarsymbol gefolgt von geschweiften Klammern gekennzeichnet 
+sind (${expression}).
+<a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings</a></p>
+<pre><code>
+&lt;!--index_968.html --&gt;</code></pre>
 <h3 id="syntax">Syntax</h3>
 <h3 id="multiline">Multiline</h3>
 <h3 id="ersetzungen">Ersetzungen</h3>
