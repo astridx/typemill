@@ -9,7 +9,7 @@ Todo Meldungen immer mit Firefox
 
 
 
-## Besser Unicode-Unterstützung
+## Verbesserte Unicode-Unterstützung
 
 ### UTF-16
 

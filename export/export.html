@@ -763,7 +763,7 @@ von unterschiedlichen HTML-Dokumenten gleichzeitig genutzt werden.</p>
 <h2 id="diesem-kapitel-werden-wir">In diesem Kapitel werden wir …</h2>
 <p>Zunächst zeige ich Ihnen, wie Sie 
 Todo Meldungen immer mit Firefox</p>
-<h2 id="besser-unicode-unterstutzung">Besser Unicode-Unterstützung</h2>
+<h2 id="verbesserte-unicode-unterstutzung">Verbesserte Unicode-Unterstützung</h2>
 <h3 id="utf-16">UTF-16</h3>
 <p>ECMAScript 5 entstand, als 16 Bit ausreichten, um alle vorhandene Unicode-Zeichen 
 abzubilden. Später wurde Unicode um weitere Zeichen mit einem erweitert. 
@@ -1086,6 +1086,7 @@ console.log(rex.flags); // Ausgabe: iu
 &lt;!--index_969.html --&gt;</code></pre>
 <h2 id="template-strings">Template-Strings</h2>
 <p><a href="https://de.wikipedia.org/wiki/Dom%C3%A4nenspezifische_Sprache">https://de.wikipedia.org/wiki/Dom%C3%A4nenspezifische_Sprache</a></p>
+<h3 id="syntax">Syntax</h3>
 <p>Template-Strings sind anstelle von doppelten bzw. einfachen 
 Anführungszeichen in Back-Ticks (<code> </code>) (grave accent) eingeschlossen. 
 Template-Strings können Platzhalter beinhalten, die durch 
@@ -1094,14 +1095,87 @@ sind (${expression}).
 <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings</a></p>
 <pre><code>
 &lt;!--index_968.html --&gt;</code></pre>
-<h3 id="syntax">Syntax</h3>
 <h3 id="multiline">Multiline</h3>
+<p>Vor ECMAScript 6 war es nur auf Umwegen möglich eine Zeichenkette auf 
+mehrere Zeilen zu verteilen.</p>
+<pre><code>
+&lt;!--index_967.html --&gt;</code></pre>
+<pre><code>
+&lt;!--index_966.html --&gt;</code></pre>
 <h3 id="ersetzungen">Ersetzungen</h3>
+<pre><code>
+&lt;!--index_965.html --&gt;</code></pre>
 <h3 id="tagged">Tagged</h3>
-<pre><code>console.log(window.RegExp); // Ausgabe: function RegExp()
-let RegExp = "Neuer Wert für RegExp";
-console.log(window.RegExp); // Ausgabe: function RegExp()
-&lt;!--index_981.html --&gt;</code></pre>
+<pre><code>
+&lt;!--index_964.html --&gt;</code></pre>
+<blockquote>
+<p><strong>Achtung:</strong></p>
+</blockquote>
+<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
+<p>xxx</p>
+<div class="footnotes">
+<hr />
+<ol>
+</ol>
+</div><h1 id="ecmascript-6-funktionen">ECMAScript 6 - Funktionen</h1>
+<p><a href="#" id="Funktionen"></a></p>
+<h2 id="diesem-kapitel-werden-wir">In diesem Kapitel werden wir …</h2>
+<p>Zunächst zeige ich Ihnen, wie Sie 
+Todo Meldungen immer mit Firefox</p>
+<h2 id="standardwerte">Standardwerte</h2>
+<h3 id="ecmascript-5">ECMAScript 5</h3>
+<pre><code>function standardwert(variable1, timeout){
+timeout = timeout || 1000;
+...
+}
+&lt;!--index_963.html --&gt;</code></pre>
+<pre><code>function standardwert(variable1, timeout){
+timeout = (typeof timeout !== "undefined") ? timeout : 1000;    
+console.log(timeout);
+}
+window.addEventListener("load", function () {
+standardwert();
+});
+&lt;!--index_963.html --&gt;</code></pre>
+<h3 id="ecmascript-6">ECMAScript 6</h3>
+<p>ECMAScript 6 vereinfacht die die Zuweisung eines Standardwertes. Zustätzlich 
+ist diese Art der Zuweisung übersichtlicher.</p>
+<pre><code>function standardwert(variable1, timeout = 1000){
+console.log(timeout);
+}
+window.addEventListener("load", function () {
+standardwert();
+});
+&lt;!--index_962.html --&gt;</code></pre>
+<h3 id="auswirkungen-auf-arguments-objekt">Auswirkungen auf Arguments Objekt</h3>
+<h3 id="expressions">Expressions</h3>
+<h3 id="tdz">TDZ</h3>
+<h2 id="unnamed-functions">Unnamed functions</h2>
+<h3 id="ecmascript-5">ECMAScript 5</h3>
+<h3 id="rest-parameter">Rest Parameter</h3>
+<h2 id="konstruktor">Konstruktor</h2>
+<h2 id="spread-operator">Spread Operator</h2>
+<h2 id="name-eigenschaft">Name Eigenschaft</h2>
+<h3 id="passende-namen-wahlen">Passende Namen wählen</h3>
+<h3 id="spezielle-falle">Spezielle Fälle</h3>
+<h2 id="grunde-fur-funktionen">Gründe für Funktionen</h2>
+<h3 id="ecmascript-5">ECMAScript 5</h3>
+<h3 id="newtarget">new.target</h3>
+<h2 id="block-leven-funktionen">Block Leven Funktionen</h2>
+<h3 id="wann-verwenden">Wann verwenden</h3>
+<h3 id="non-strict-mode">Non Strict Mode</h3>
+<h2 id="arrow-funktions">Arrow Funktions</h2>
+<h3 id="syntax">Syntax</h3>
+<h3 id="erstelle-iife">Erstelle IIFE</h3>
+<h3 id="no-binding">No this Binding</h3>
+<h3 id="arrays">Arrays</h3>
+<h3 id="no-arguments-binding">No arguments binding</h3>
+<h3 id="identify-arrow-functions">Identify Arrow Functions</h3>
+<h2 id="tail-call-optimierung">Tail Call Optimierung</h2>
+<h3 id="ecmascript-6">ECMAScript 6</h3>
+<h3 id="wie-verwenden">Wie verwenden</h3>
+<pre><code>
+&lt;!--index_964.html --&gt;</code></pre>
 <blockquote>
 <p><strong>Achtung:</strong></p>
 </blockquote>
