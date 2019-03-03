@@ -2,6 +2,10 @@
 
 todo https://de.wikipedia.org/wiki/JavaScript
 
+todo Beispiele Meldungen Firfox 
+
+todo Vergleich mit ECMAScript 5 - dabei lernt man auch etwas ...
+
 Das Arbeiten mit Geodaten und digitalen Landkarten hat durch das 
 [**g**lobale **P**ositionsbestimmung**s**system GPS](https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&oldid=183579881)[^1] 
 immer mehr an Relevanz gewonnen. 

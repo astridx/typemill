@@ -1127,31 +1127,84 @@ Todo Meldungen immer mit Firefox</p>
 <pre><code>function standardwert(variable1, timeout){
 timeout = timeout || 1000;
 ...
-}
-&lt;!--index_963.html --&gt;</code></pre>
-<pre><code>function standardwert(variable1, timeout){
-timeout = (typeof timeout !== "undefined") ? timeout : 1000;    
-console.log(timeout);
-}
-window.addEventListener("load", function () {
-standardwert();
-});
+}</code></pre>
+<pre><code>
 &lt;!--index_963.html --&gt;</code></pre>
 <h3 id="ecmascript-6">ECMAScript 6</h3>
-<p>ECMAScript 6 vereinfacht die die Zuweisung eines Standardwertes. Zustätzlich 
+<p>ECMAScript 6 vereinfacht die die Zuweisung eines Standardwertes. Zusätzlich 
 ist diese Art der Zuweisung übersichtlicher.</p>
-<pre><code>function standardwert(variable1, timeout = 1000){
-console.log(timeout);
-}
-window.addEventListener("load", function () {
-standardwert();
-});
+<pre><code>
 &lt;!--index_962.html --&gt;</code></pre>
+<p>Imn nächsten Beispiel wird Standardparameter gesetzt.</p>
+<pre><code>
+&lt;!--index_961.html --&gt;</code></pre>
 <h3 id="auswirkungen-auf-arguments-objekt">Auswirkungen auf Arguments Objekt</h3>
+<pre><code>
+&lt;!--index_960.html --&gt;</code></pre>
+<blockquote>
+<p>Mit ECMAScript 5 wurde der strict mode eingeführt, welcher inzwischen 
+in allen gängigen Web-Browsern - inklusive dem  IE10 - implementiert wurde. 
+Es ist einfach, im Web-Browser zum <em>Strict mode</em> zu 
+wechseln - es genügt, die Zeile <code>"use strict";</code> am Anfang des 
+Quellcodes hinzufügen. 
+Der strikte Modus ist eine 
+Möglichkeit, sich für eine eingeschränkte Variante von JavaScript 
+zu entscheiden. Hierdurch wird der <em>Sloppy Mode (schlampige Modus)</em> 
+deaktiviert. <em>Sloppy Mode</em> ist der inoffizielle Name des 
+Standardmodus von ECMAScript 5.
+<a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Strict_mode">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Strict_mode</a></p>
+</blockquote>
+<pre><code>
+&lt;!--index_960a.html --&gt;</code></pre>
+<p>Wenn ein Standardparameter gesetzt wird, wir automatisch in den strict mode 
+geschaltet.</p>
+<pre><code>
+&lt;!--index_959.html --&gt;</code></pre>
 <h3 id="expressions">Expressions</h3>
+<p>Sie können mithilfe einer Funktion einen Standardwert 
+setzen. Dies ist meiner Meinung nach eine der spannendsten neuen 
+Möglichkeiten.</p>
+<pre><code>
+&lt;!--index_958.html --&gt;</code></pre>
+<p>So ist es möglich, einen Wert zu unterschiedliche Zeiten unterschiedlich 
+zu setzten.</p>
+<pre><code>
+&lt;!--index_958a.html --&gt;</code></pre>
+<p>Dies ist die Überleitung zu einer anderen sinnvollen Fähigkeit. Sie können 
+einen eine Variable standardmäßig mit dem aktuellen Wert einer anderen Variable 
+belegen.</p>
+<pre><code>
+&lt;!--index_958b.html --&gt;</code></pre>
+<p>Weitergedacht</p>
+<pre><code>
+&lt;!--index_958c.html --&gt;</code></pre>
+<p>Das geht nicht </p>
+<pre><code>
+&lt;!--index_958d.html --&gt;</code></pre>
 <h3 id="tdz">TDZ</h3>
+<p>Die TDZ war im ersten Kapitel im Zusammenhang mit <code>let</code> und <code>const</code> schon einmal 
+Thema.</p>
+<p>958c aus Sicht des JavaScript Compilers</p>
+<pre><code>
+&lt;!--index_957.html --&gt;</code></pre>
+<p>958d aus Sicht des JavaScript Compilers</p>
+<pre><code>
+&lt;!--index_956.html --&gt;</code></pre>
 <h2 id="unnamed-functions">Unnamed functions</h2>
+<p>In den bisherigen Beispielen sind nur Funktionsparameter vorgekommen, die 
+mit einem Namen in der Funktionssignatur einge</p>
+<blockquote>
+<p>Typisch für eine Funktion ist die sogenannte Signatur oder Schnittstelle. 
+Darunter versteht man die genaue Art und Weise, mit der die Funktion 
+aufgerufen wird. 
+<code>Todo funktion einfügen</code>
+Die Signatur der Funktion ist die oberste Zeile. Früher sagte man auch 
+<em>Funktionskopf</em>. Viele Informatiker bezeichnen die oberste Zeile auch 
+als <em>Interface</em> oder auf Deutsch <em>Schnittstelle</em>.</p>
+</blockquote>
 <h3 id="ecmascript-5">ECMAScript 5</h3>
+<pre><code>
+&lt;!--index_955.html --&gt;</code></pre>
 <h3 id="rest-parameter">Rest Parameter</h3>
 <h2 id="konstruktor">Konstruktor</h2>
 <h2 id="spread-operator">Spread Operator</h2>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function summiere(variable1 = variable2, variable2){
+    return variable1 + variable2;
+}
+console.log(summiere(1, 1)); // Ausgabe: 2
+console.log(summiere(1)); // Ausgabe: NaN
+console.log(summiere(undefined, 1)); // Ausgabe: ReferenceError: can't 
+        //access lexical declaration `variable2' before initialization
+/*
+summiere(1, 1) aus der Sicht des JavaScript Compilers
+let variable1 = 1
+let variable2 = 1
+summiere(1) aus der Sicht des JavaScript Compilers
+let variable1 = 1
+summiere(undefined, 1) aus der Sicht des JavaScript Compilers
+let variable1 = variable2
+let variable2 = 1    
+ */
+</script>    
+</body>
+</html>

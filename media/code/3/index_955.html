@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function optional(object){
+let ergebnis = Object.create(null);
+for (let i = 1, len = arguments.length; i < len; i++) {
+    ergebnis[arguments[i]] = object[arguments[i]];
+}
+return ergebnis;
+}
+let auto = {
+    baujahr: "1980",
+    marke: "Mini",
+    farbe: "gelb"
+}
+let autoDaten = optional(auto, "marke", "farbe");
+console.log(autoDaten.marke); // Ausgabe: Mini
+console.log(autoDaten.farbe); // Ausgabe: gelb
+</script>    
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function getWert(wert){
+    return wert + 5;
+}
+function summiere(variable1, variable2 = getWert(variable1)){
+    return variable1 + variable2;
+}
+console.log(summiere(5, 1)); // Ausgabe: 6
+console.log(summiere(5)); // Ausgabe: 15
+</script>    
+</body>
+</html>
