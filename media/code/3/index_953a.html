@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-function optional(object, ...autoeigenschaften){
+function optional(object, ...autoeigenschaften, letzterparameter){
 let ergebnis = Object.create(null);
 for (let i = 0, len = autoeigenschaften.length; i < len; i++) {
     ergebnis[autoeigenschaften[i]] = object[autoeigenschaften[i]];
@@ -19,8 +19,8 @@ let auto = {
     farbe: "gelb"
 }
 let autoDaten = optional(auto, "marke", "farbe");
-console.log(autoDaten.marke); // Ausgabe: Mini
-console.log(autoDaten.farbe); // Ausgabe: gelb
+console.log(autoDaten.marke); // Ausgabe: SyntaxError: parameter after rest parameter
+console.log(autoDaten.farbe); // Ausgabe: 
 </script>    
 </body>
 </html>

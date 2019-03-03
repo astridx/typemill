@@ -16,7 +16,12 @@ return ergebnis;
 let auto = {
     baujahr: "1980",
     marke: "Mini",
-    farbe: "gelb"
+    get farbe(){
+        return "gelb";
+    },
+    set farbe(...farbe){  // SyntaxError: setter functions must have one argument
+        this.farbe = farbe;
+    }
 }
 let autoDaten = optional(auto, "marke", "farbe");
 console.log(autoDaten.marke); // Ausgabe: Mini

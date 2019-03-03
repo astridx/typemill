@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function pruefeRestParameter(...parameter){
+console.log(parameter.length); // Ausgabe: 2
+console.log(arguments.length); // Ausgabe: 2
+console.log(parameter[0], arguments[0]); // Ausgabe: 1 1
+console.log(parameter[1], arguments[1]); // Ausgabe: 2 2
+}
+pruefeRestParameter(1, 2);
+</script>    
+</body>
+</html>

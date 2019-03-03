@@ -163,6 +163,9 @@ Optionale Parameter in ECMAScript 5
 ### Rest Parameter
 
 Was ist Rest Parameter? 
+Mit der Rest Parameter Syntax kann man beliebig viele 
+Parameter als Array empfangen.
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/rest_parameter
 
 ```
 
@@ -188,7 +191,32 @@ In einer Setter Methode ist ein Rest Parameter nicht möglich.
 
 #### Auswirkungen auf das arguments-Objekt
 
+> Das arguments-Objekt ist ein Array-ähnliches Objekt, das auf 
+die übergebenen Parameter einer Funktion verweist. 
+Das arguments-Objekt ist eine lokal verfügbare Variable in allen 
+(Nicht-Pfeil-) Funktionen. Man kann auf die Parameter einer Funktion 
+referenzieren, wenn man in einer Funktion das arguments-Objekt benutzt. 
+Dieses Objekt enthält einen Eintrag für jeden übergebenen Parameter 
+der Funktion. Der erste Eintrag beginnt beim Index 0. 
+Wenn einer Funktion drei Parameter übergeben werden, kann wie folgt auf 
+diese zugegriffen werden;
+```
+arguments[0]
+arguments[1]
+arguments[2]
+```
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/arguments
+
+Das arguments-Objekt spiegelt das Rest Objekt wider.
+
+```
+
+<!--index_952.html -->
+```
+
 ## Konstruktor
+
+
 
 ##Spread Operator
 

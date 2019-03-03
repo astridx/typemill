@@ -1,6 +1,8 @@
 <!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link href="../Styles/MyEBookStylesheet.css" rel="stylesheet" type="text/css" /></head><body>
 <h1 id="willkommen">Willkommen</h1>
 <p>todo <a href="https://de.wikipedia.org/wiki/JavaScript">https://de.wikipedia.org/wiki/JavaScript</a></p>
+<p>todo Beispiele Meldungen Firfox </p>
+<p>todo Vergleich mit ECMAScript 5 - dabei lernt man auch etwas ...</p>
 <p>Das Arbeiten mit Geodaten und digitalen Landkarten hat durch das 
 <a href="https://de.wikipedia.org/w/index.php?title=Global_Positioning_System&amp;oldid=183579881"><strong>g</strong>lobale <strong>P</strong>ositionsbestimmung<strong>s</strong>system GPS</a><sup id="fnref1:1"><a href="#fn%3A1" class="footnote-ref">1</a></sup> 
 immer mehr an Relevanz gewonnen. 
@@ -1192,7 +1194,7 @@ Thema.</p>
 &lt;!--index_956.html --&gt;</code></pre>
 <h2 id="unnamed-functions">Unnamed functions</h2>
 <p>In den bisherigen Beispielen sind nur Funktionsparameter vorgekommen, die 
-mit einem Namen in der Funktionssignatur einge</p>
+mit einem Namen in der Funktions-Signatur eingefügt wurden.</p>
 <blockquote>
 <p>Typisch für eine Funktion ist die sogenannte Signatur oder Schnittstelle. 
 Darunter versteht man die genaue Art und Weise, mit der die Funktion 
@@ -1202,10 +1204,45 @@ Die Signatur der Funktion ist die oberste Zeile. Früher sagte man auch
 <em>Funktionskopf</em>. Viele Informatiker bezeichnen die oberste Zeile auch 
 als <em>Interface</em> oder auf Deutsch <em>Schnittstelle</em>.</p>
 </blockquote>
+<p>Schon in ECMAScript 5 war es möglich mit optionalen Parametern zu arbeiten. 
+ECMAScript 6 macht das Arbeiten mit optionalen Parametern einfacher.</p>
 <h3 id="ecmascript-5">ECMAScript 5</h3>
+<p>Optionale Parameter in ECMAScript 5</p>
 <pre><code>
 &lt;!--index_955.html --&gt;</code></pre>
 <h3 id="rest-parameter">Rest Parameter</h3>
+<p>Was ist Rest Parameter? 
+Mit der Rest Parameter Syntax kann man beliebig viele 
+Parameter als Array empfangen.
+<a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/rest_parameter">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/rest_parameter</a></p>
+<pre><code>
+&lt;!--index_954.html --&gt;</code></pre>
+<h4 id="beschrankungen">Beschränkungen</h4>
+<p>Es darf nur einen geben und er muss an letzter Stelle stehen.</p>
+<pre><code>
+&lt;!--index_953a.html --&gt;</code></pre>
+<p>In einer Setter Methode ist ein Rest Parameter nicht möglich.</p>
+<pre><code>
+&lt;!--index_953b.html --&gt;</code></pre>
+<h4 id="auswirkungen-auf-das-arguments-objekt">Auswirkungen auf das arguments-Objekt</h4>
+<blockquote>
+<p>Das arguments-Objekt ist ein Array-ähnliches Objekt, das auf 
+die übergebenen Parameter einer Funktion verweist. 
+Das arguments-Objekt ist eine lokal verfügbare Variable in allen 
+(Nicht-Pfeil-) Funktionen. Man kann auf die Parameter einer Funktion 
+referenzieren, wenn man in einer Funktion das arguments-Objekt benutzt. 
+Dieses Objekt enthält einen Eintrag für jeden übergebenen Parameter 
+der Funktion. Der erste Eintrag beginnt beim Index 0. 
+Wenn einer Funktion drei Parameter übergeben werden, kann wie folgt auf 
+diese zugegriffen werden;</p>
+<pre><code>arguments[0]
+arguments[1]
+arguments[2]</code></pre>
+<p><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/arguments">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/arguments</a></p>
+</blockquote>
+<p>Das arguments-Objekt spiegelt das Rest Objekt wider.</p>
+<pre><code>
+&lt;!--index_952.html --&gt;</code></pre>
 <h2 id="konstruktor">Konstruktor</h2>
 <h2 id="spread-operator">Spread Operator</h2>
 <h2 id="name-eigenschaft">Name Eigenschaft</h2>
