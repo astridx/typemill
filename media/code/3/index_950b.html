@@ -6,8 +6,11 @@
 </head>
 <body>
 <script>
-var summiere = new Function("variable1", "variable2", "return variable1 + variable2");
-console.log(summiere(1, 1)); // Ausgabe: 2
+function tuEtwas (x, y, z) { 
+return x + y + z;
+}
+var args = [0, 1];
+console.log(tuEtwas(...args, 2));  // Ausgabe: 3
 </script>    
 </body>
 </html>

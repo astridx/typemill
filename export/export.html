@@ -1211,10 +1211,18 @@ ECMAScript 6 macht das Arbeiten mit optionalen Parametern einfacher.</p>
 <pre><code>
 &lt;!--index_955.html --&gt;</code></pre>
 <h3 id="rest-parameter">Rest Parameter</h3>
-<p>Was ist Rest Parameter? 
-Mit der Rest Parameter Syntax kann man beliebig viele 
+<p>Was ist Rest Parameter? </p>
+<blockquote>
+<p>Der Operator ... besitzt zwei grundsätzlich verschiedene Bedeutungen. 
+Abhängig davon, in welchem Kontext er notiert wird, dient er entweder als 
+Rest-Operator oder als Spread-Operator. 
+Der erstgenannte Rest-Operator kann zur Erstellung von Restparametern 
+genutzt werden.
+<a href="https://wiki.selfhtml.org/wiki/JavaScript/Operatoren/Rest-_oder_Spread-Operator">https://wiki.selfhtml.org/wiki/JavaScript/Operatoren/Rest-_oder_Spread-Operator</a>
+Mithilfe eines Restparameters kann man beliebig viele 
 Parameter als Array empfangen.
 <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/rest_parameter">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/rest_parameter</a></p>
+</blockquote>
 <pre><code>
 &lt;!--index_954.html --&gt;</code></pre>
 <h4 id="beschrankungen">Beschränkungen</h4>
@@ -1235,23 +1243,93 @@ Dieses Objekt enthält einen Eintrag für jeden übergebenen Parameter
 der Funktion. Der erste Eintrag beginnt beim Index 0. 
 Wenn einer Funktion drei Parameter übergeben werden, kann wie folgt auf 
 diese zugegriffen werden;</p>
+</blockquote>
 <pre><code>arguments[0]
 arguments[1]
 arguments[2]</code></pre>
 <p><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/arguments">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/arguments</a></p>
-</blockquote>
 <p>Das arguments-Objekt spiegelt das Rest Objekt wider.</p>
 <pre><code>
 &lt;!--index_952.html --&gt;</code></pre>
 <h2 id="konstruktor">Konstruktor</h2>
+<p>Der <code>Function</code>-Konstruktor erstellt ein neues Funktions-Objekt. 
+Dieser Konstruktor wird in der Praxis selten verwendet. 
+<a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Function">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Function</a></p>
+<p>Der folgende Code erstellt ein Funktions-Objekt, mit zwei Parametern. 
+Die Parameter <code>variable1</code> und <code>variable2</code> sind formale Parameternamen, 
+welche im Funktionskörper genutzt werden, <code>return variable1 + variable2</code>.</p>
+<pre><code>
+&lt;!--index_951.html --&gt;</code></pre>
+<blockquote>
+<p>Es gibt oft Verwirrung zwischen den Begriffen Parameter und Argumente. 
+Dabei ist es ganz einfach: Die Werte, die man beim Aufruf an eine 
+Funktion übergibt, sind die Argumente. Die Variablen, in denen 
+die Argumente dann innerhalb der Funktion zur Verfügung stehen, sind 
+die Parameter. <a href="https://wiki.selfhtml.org/index.php?title=JavaScript/Funktion&amp;oldid=59542">https://wiki.selfhtml.org/index.php?title=JavaScript/Funktion&amp;oldid=59542</a></p>
+</blockquote>
+<p>Mit ECMAScript 6 ist es möglich, im <code>Function</code>-Konstruktor Standardwerte für 
+einen Paramameter zu setzten.</p>
+<pre><code>ECMAScript 6 ünterstützt Rest Parameter
+
+&lt;!--index_951a.html --&gt;</code></pre>
+<pre><code>
+&lt;!--index_951b.html --&gt;</code></pre>
 <h2 id="spread-operator">Spread Operator</h2>
-<h2 id="name-eigenschaft">Name Eigenschaft</h2>
+<blockquote>
+<p>Der Operator ... besitzt zwei grundsätzlich verschiedene Bedeutungen. 
+Abhängig davon, in welchem Kontext er notiert wird, dient er entweder als 
+Rest-Operator oder als Spread-Operator. Mit dem Spread-Operator 
+ist es möglich, die Elemente eines iterierbaren Objektes in ein Array 
+oder eine Liste mit Argumenten einzufügen. 
+<a href="https://wiki.selfhtml.org/wiki/JavaScript/Operatoren/Rest-_oder_Spread-Operator">https://wiki.selfhtml.org/wiki/JavaScript/Operatoren/Rest-_oder_Spread-Operator</a></p>
+</blockquote>
+<p>Ich bin ein großer Fan des Spread-Operators. Im Folgenden finden Sie 
+eines meiner bevorzugten 
+Verwendungen des Spread-Operators in JavaScript! Weitere Beispiel 
+können Sie bei <a href="https://davidwalsh.name/spread-operator">https://davidwalsh.name/spread-operator</a> nachlesen.</p>
+<p>Bis ECMAScript 5 haben wir die Function.prototype.apply aufgerufen, 
+indem wir ein Array von Argumenten übergeben, um eine Funktion mit einem 
+gegebenen Satz von Parametern in einem Array aufzurufen.</p>
+<pre><code>
+&lt;!--index_950.html --&gt;</code></pre>
+<p>Mithilfe des Spread-Operators können wir die Verwendung der Funktion 
+apply() vermeiden und die eigentliche Funktion mit 
+dem Array aufrufen. Wir fügen nur vor das Array den Spread-Operator ein - also die 
+drei Punkte.</p>
+<pre><code>
+&lt;!--index_950a.html --&gt;</code></pre>
+<p>Der Spread-Operator kann mit anderen Parametern gemischt werden.</p>
+<pre><code>
+&lt;!--index_950b.html --&gt;</code></pre>
+<h2 id="spezialfall-die-eigenschaft-name">Spezialfall: Die Eigenschaft Name</h2>
+<p>Es ist einfach Funktionen in JavaScript allen Funktionen einen guten Namen 
+zu geben. ECMAScript 6 geht noch einen Schritt weiter. Seit ECMAScript 6 
+ist sichergestellt, dass alle Funktionen einen Namen haben. </p>
 <h3 id="passende-namen-wahlen">Passende Namen wählen</h3>
+<pre><code>
+&lt;!--index_949.html --&gt;</code></pre>
 <h3 id="spezielle-falle">Spezielle Fälle</h3>
+<p>getter, funktion in Variable, ...
+<a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Function/name">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Function/name</a></p>
+<pre><code>
+&lt;!--index_949a.html --&gt;  passt nicht zur Erklärgun</code></pre>
+<p>bind und anonym</p>
+<pre><code>
+&lt;!--index_949b.html --&gt;  passt nicht zur Erklärgun</code></pre>
+<blockquote>
+<p>Jede Funktion besitzt eine bind() Methode. Mit dieser können wir unserer 
+Funktion einen neuen Kontext zuweisen. 
+Der erste Parameter fungiert als neuer Kontext "this". 
+Zusätzlich können weitere Parameter übergeben werden diese werden an die 
+Funktion weitergereicht. Sehr wichtig: Die bind() methode ruft die 
+Funktion nicht auf, sondern erzeugt eine neue Funktion.
+<a href="https://alexandernaumov.de/artikel/javascript-apply-call-bind-unterschied">https://alexandernaumov.de/artikel/javascript-apply-call-bind-unterschied</a></p>
+<pre><code>&lt;!--index_949b.html --&gt;  exkurs bind</code></pre>
+</blockquote>
 <h2 id="grunde-fur-funktionen">Gründe für Funktionen</h2>
 <h3 id="ecmascript-5">ECMAScript 5</h3>
 <h3 id="newtarget">new.target</h3>
-<h2 id="block-leven-funktionen">Block Leven Funktionen</h2>
+<h2 id="block-level-funktionen">Block Level Funktionen</h2>
 <h3 id="wann-verwenden">Wann verwenden</h3>
 <h3 id="non-strict-mode">Non Strict Mode</h3>
 <h2 id="arrow-funktions">Arrow Funktions</h2>

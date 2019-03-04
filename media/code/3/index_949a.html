@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+var tuEtwasAnderes = function tuEtwas() {
+return true;    
+}
+let auto = {
+    get farbe(){
+        return "gelb";
+    },
+    sageBaujahr: function(){
+        console.log(this.baujahr)
+    }
+}
+//console.log(tuEtwas.name); // Ausgabe: ReferenceError: tuEtwas is not defined
+console.log(tuEtwasAnderes.name); // Ausgabe: tuEtwas
+console.log(auto.sageBaujahr.name); // Ausgabe: sageBaujahr
+var descriptor = Object.getOwnPropertyDescriptor(auto, "farbe");
+console.log(descriptor.get.name); // Ausgabe: get farbe
+</script>    
+</body>
+</html>

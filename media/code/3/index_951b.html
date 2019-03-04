@@ -6,8 +6,9 @@
 </head>
 <body>
 <script>
-var summiere = new Function("variable1", "variable2", "return variable1 + variable2");
-console.log(summiere(1, 1)); // Ausgabe: 2
+var summiere = new Function("...parameter", "return parameter");
+console.log(summiere(1, 1)); // Array [ 1, 1 ]
+console.log(summiere(1)); // Array [ 1 ]
 </script>    
 </body>
 </html>

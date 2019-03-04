@@ -163,7 +163,14 @@ Optionale Parameter in ECMAScript 5
 ### Rest Parameter
 
 Was ist Rest Parameter? 
-Mit der Rest Parameter Syntax kann man beliebig viele 
+
+> Der Operator ... besitzt zwei grundsätzlich verschiedene Bedeutungen. 
+Abhängig davon, in welchem Kontext er notiert wird, dient er entweder als 
+Rest-Operator oder als Spread-Operator. 
+Der erstgenannte Rest-Operator kann zur Erstellung von Restparametern 
+genutzt werden.
+https://wiki.selfhtml.org/wiki/JavaScript/Operatoren/Rest-_oder_Spread-Operator
+Mithilfe eines Restparameters kann man beliebig viele 
 Parameter als Array empfangen.
 https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/rest_parameter
 
@@ -200,6 +207,7 @@ Dieses Objekt enthält einen Eintrag für jeden übergebenen Parameter
 der Funktion. Der erste Eintrag beginnt beim Index 0. 
 Wenn einer Funktion drei Parameter übergeben werden, kann wie folgt auf 
 diese zugegriffen werden;
+
 ```
 arguments[0]
 arguments[1]
@@ -216,19 +224,128 @@ Das arguments-Objekt spiegelt das Rest Objekt wider.
 
 ## Konstruktor
 
+Der `Function`-Konstruktor erstellt ein neues Funktions-Objekt. 
+Dieser Konstruktor wird in der Praxis selten verwendet. 
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Function
 
+Der folgende Code erstellt ein Funktions-Objekt, mit zwei Parametern. 
+Die Parameter `variable1` und `variable2` sind formale Parameternamen, 
+welche im Funktionskörper genutzt werden, `return variable1 + variable2`.
+
+```
+
+<!--index_951.html -->
+```
+
+> Es gibt oft Verwirrung zwischen den Begriffen Parameter und Argumente. 
+Dabei ist es ganz einfach: Die Werte, die man beim Aufruf an eine 
+Funktion übergibt, sind die Argumente. Die Variablen, in denen 
+die Argumente dann innerhalb der Funktion zur Verfügung stehen, sind 
+die Parameter. https://wiki.selfhtml.org/index.php?title=JavaScript/Funktion&oldid=59542
+
+Mit ECMAScript 6 ist es möglich, im `Function`-Konstruktor Standardwerte für 
+einen Paramameter zu setzten.
+
+```
+ECMAScript 6 ünterstützt Rest Parameter
+
+<!--index_951a.html -->
+```
+
+
+```
+
+<!--index_951b.html -->
+```
 
 ##Spread Operator
 
-## Name Eigenschaft
+> Der Operator ... besitzt zwei grundsätzlich verschiedene Bedeutungen. 
+Abhängig davon, in welchem Kontext er notiert wird, dient er entweder als 
+Rest-Operator oder als Spread-Operator. Mit dem Spread-Operator 
+ist es möglich, die Elemente eines iterierbaren Objektes in ein Array 
+oder eine Liste mit Argumenten einzufügen. 
+https://wiki.selfhtml.org/wiki/JavaScript/Operatoren/Rest-_oder_Spread-Operator
+
+Ich bin ein großer Fan des Spread-Operators. Im Folgenden finden Sie 
+eines meiner bevorzugten 
+Verwendungen des Spread-Operators in JavaScript! Weitere Beispiel 
+können Sie bei https://davidwalsh.name/spread-operator nachlesen.
+
+Bis ECMAScript 5 haben wir die Function.prototype.apply aufgerufen, 
+indem wir ein Array von Argumenten übergeben, um eine Funktion mit einem 
+gegebenen Satz von Parametern in einem Array aufzurufen.
+
+```
+
+<!--index_950.html -->
+```
+
+Mithilfe des Spread-Operators können wir die Verwendung der Funktion 
+apply() vermeiden und die eigentliche Funktion mit 
+dem Array aufrufen. Wir fügen nur vor das Array den Spread-Operator ein - also die 
+drei Punkte.
+
+```
+
+<!--index_950a.html -->
+```
+
+Der Spread-Operator kann mit anderen Parametern gemischt werden.
+```
+
+<!--index_950b.html -->
+```
+
+## Spezialfall: Die Eigenschaft Name
+
+Es ist einfach Funktionen in JavaScript allen Funktionen einen guten Namen 
+zu geben. ECMAScript 6 geht noch einen Schritt weiter. Seit ECMAScript 6 
+ist sichergestellt, dass alle Funktionen einen Namen haben. 
+ 
 ### Passende Namen wählen
+
+```
+
+<!--index_949.html -->
+```
+
 ### Spezielle Fälle
+
+getter, funktion in Variable, ...
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Function/name
+
+```
+
+<!--index_949a.html -->  passt nicht zur Erklärgun
+```
+
+bind und anonym
+
+```
+
+<!--index_949b.html -->  passt nicht zur Erklärgun
+```
+
+
+
+
+> Jede Funktion besitzt eine bind() Methode. Mit dieser können wir unserer 
+Funktion einen neuen Kontext zuweisen. 
+Der erste Parameter fungiert als neuer Kontext "this". 
+Zusätzlich können weitere Parameter übergeben werden diese werden an die 
+Funktion weitergereicht. Sehr wichtig: Die bind() methode ruft die 
+Funktion nicht auf, sondern erzeugt eine neue Funktion.
+https://alexandernaumov.de/artikel/javascript-apply-call-bind-unterschied
+```
+<!--index_949b.html -->  exkurs bind
+```
 
 ## Gründe für Funktionen
 ### ECMAScript 5
 ### new.target
 
-## Block Leven Funktionen
+## Block Level Funktionen
 ### Wann verwenden
 ### Non Strict Mode
 

@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+var context = { vorname: "Tom" };
+function bindTest(param1, param2) {
+return param1 +' '+ this.vorname + param2;
+}
+var neueFunktion = bindTest.bind(context, "Hallo", "!");
+console.log( neueFunktion() ); // Hallo Tom!
+console.log( bindTest.bind(context, "Hallo", "!").name ); // Hallo Tom!
+</script>    
+</body>
+</html>
