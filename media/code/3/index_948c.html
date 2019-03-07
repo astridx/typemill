@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function Person(name) {
+if (this instanceof Person) {
+this.name = name
+} else {
+throw new Error("Nutze new")
+}
+return this;
+}
+let aPerson = new Person("Astrid"); 
+// let aPerson = Person("Astrid"); // throws an error
+let notAPerson = Person.apply(aPerson, ["Elmar"]);
+let notAPerson2 = Person.call(aPerson, "Peter");
+console.log(aPerson); // Ausgabe: Object { name: "Peter" }
+console.log(notAPerson); // Ausgabe: Object { name: "Peter" }
+console.log(notAPerson2); // Ausgabe: Object { name: "Peter" }
+</script>    
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function Person(name) {
+console.log(new.target);    
+if (typeof new.target !== "undefined") {
+this.name = name
+} else {
+throw new Error("Nutze new")
+}
+}
+let aPerson = new Person("Astrid"); 
+let notAPerson2 = Person.call(aPerson, "Peter"); // Error: Nutze new
+</script>    
+</body>
+</html>

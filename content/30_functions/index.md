@@ -337,17 +337,92 @@ Zusätzlich können weitere Parameter übergeben werden diese werden an die
 Funktion weitergereicht. Sehr wichtig: Die bind() methode ruft die 
 Funktion nicht auf, sondern erzeugt eine neue Funktion.
 https://alexandernaumov.de/artikel/javascript-apply-call-bind-unterschied
+
 ```
 <!--index_949b.html -->  exkurs bind
 ```
 
-## Gründe für Funktionen
-### ECMAScript 5
-### new.target
+> Die Eigenschaft Name gibt also nicht immer den Namen der Variablen zurück. Warum 
+ist dies so? Die Eigenschaft soll in erste Linie beim Debuggen helfen. 
+
+## Funktionen und Konstrukor
+
+> Das Problem mit "this". Wer zuerst eine andere Programmiersprache gelernt 
+hat als Javascript dem sollte die Eigenart von "this" aufgefallen sein. 
+Das "this" in Javascript ist nicht zu verwechseln mit "this" in Java oder PHP. 
+Im PHP ist "$this" stets eine Referenz auf das Objekt zu welchem es gehört. 
+In JavaScript dagegen ist es eine Referenz auf den Kontext im dem die 
+Funktion aufgerufen wird. Im Klartext: "this" im Javascript hängt immer 
+davon ab "wo" und "wie" die Funktion aufgerufen wird. 
+(https://alexandernaumov.de/artikel/javascript-apply-call-bind-unterschied)
+
+
+Funktionen können in JavaScript mit new und ohne new aufgerufen werden.
+
+```
+<!--index_948.html -->  exkurs bind
+```
+
+
+### ECMAScript 5 - Testen of new genutzt wurde
+
+```
+<!--index_948a.html -->  exkurs bind
+```
+
+Aber call und apply ist möglich
+
+```
+<!--index_948b.html -->  exkurs bind
+```
+
+> Exkurs. Return nutzen wenn Variabele auch belegt sein soll.
+```
+<!--index_948c.html -->  exkurs bind
+```
+
+
+### ECMAScript 6 - Testen of new genutzt wurde - new.target
+
+```
+<!--index_947.html -->  exkurs bind
+```
+
+new.target === Person ist unnötig, oder?
+
+```
+unnötig, oder?
+<!--index_947a.html -->  exkurs bind
+```
 
 ## Block Level Funktionen
-### Wann verwenden
+
+ECMAScript 5 Brwoser behandelt funktionen innerhalb von funktionen anders. 
+Deshalb hat strict mode es nicht erlaubt. mit ECMAScript 6 ist es möglich.
+
+```
+
+<!--index_946.html -->  exkurs bind
+```
+
+### Wann Block Level Funktionen verwenden
+
+Block Level Funktionen werden nach oben geschoben. Wenn Sie let nutzen nicht.
+
+```
+
+<!--index_945.html -->  exkurs bind
+```
+
+
 ### Non Strict Mode
+
+Die Funktion ist im globalen Kontext sichtbar.
+
+```
+
+<!--index_944.html -->  exkurs bind
+```
 
 ## Arrow Funktions
 ### Syntax

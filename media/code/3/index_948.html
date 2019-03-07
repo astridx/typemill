@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function Person(name) { 
+this.name = name
+}
+let aPerson = new Person("Astrid"); 
+let notAPerson = Person("Elmar"); 
+console.log(aPerson); // Ausgabe: Object { name: "Astrid" }
+console.log(notAPerson); // Ausgabe: undefined
+</script>    
+</body>
+</html>

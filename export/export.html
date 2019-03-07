@@ -1324,14 +1324,51 @@ Zusätzlich können weitere Parameter übergeben werden diese werden an die
 Funktion weitergereicht. Sehr wichtig: Die bind() methode ruft die 
 Funktion nicht auf, sondern erzeugt eine neue Funktion.
 <a href="https://alexandernaumov.de/artikel/javascript-apply-call-bind-unterschied">https://alexandernaumov.de/artikel/javascript-apply-call-bind-unterschied</a></p>
-<pre><code>&lt;!--index_949b.html --&gt;  exkurs bind</code></pre>
 </blockquote>
-<h2 id="grunde-fur-funktionen">Gründe für Funktionen</h2>
-<h3 id="ecmascript-5">ECMAScript 5</h3>
-<h3 id="newtarget">new.target</h3>
+<pre><code>&lt;!--index_949b.html --&gt;  exkurs bind</code></pre>
+<blockquote>
+<p>Die Eigenschaft Name gibt also nicht immer den Namen der Variablen zurück. Warum 
+ist dies so? Die Eigenschaft soll in erste Linie beim Debuggen helfen. </p>
+</blockquote>
+<h2 id="funktionen-und-konstrukor">Funktionen und Konstrukor</h2>
+<blockquote>
+<p>Das Problem mit "this". Wer zuerst eine andere Programmiersprache gelernt 
+hat als Javascript dem sollte die Eigenart von "this" aufgefallen sein. 
+Das "this" in Javascript ist nicht zu verwechseln mit "this" in Java oder PHP. 
+Im PHP ist "$this" stets eine Referenz auf das Objekt zu welchem es gehört. 
+In JavaScript dagegen ist es eine Referenz auf den Kontext im dem die 
+Funktion aufgerufen wird. Im Klartext: "this" im Javascript hängt immer 
+davon ab "wo" und "wie" die Funktion aufgerufen wird. 
+(<a href="https://alexandernaumov.de/artikel/javascript-apply-call-bind-unterschied">https://alexandernaumov.de/artikel/javascript-apply-call-bind-unterschied</a>)</p>
+</blockquote>
+<p>Funktionen können in JavaScript mit new und ohne new aufgerufen werden.</p>
+<pre><code>&lt;!--index_948.html --&gt;  exkurs bind</code></pre>
+<h3 id="ecmascript-5-testen-new-genutzt-wurde">ECMAScript 5 - Testen of new genutzt wurde</h3>
+<pre><code>&lt;!--index_948a.html --&gt;  exkurs bind</code></pre>
+<p>Aber call und apply ist möglich</p>
+<pre><code>&lt;!--index_948b.html --&gt;  exkurs bind</code></pre>
+<blockquote>
+<p>Exkurs. Return nutzen wenn Variabele auch belegt sein soll.</p>
+<pre><code>&lt;!--index_948c.html --&gt;  exkurs bind</code></pre>
+</blockquote>
+<h3 id="ecmascript-6-testen-new-genutzt-wurde-newtarget">ECMAScript 6 - Testen of new genutzt wurde - new.target</h3>
+<pre><code>&lt;!--index_947.html --&gt;  exkurs bind</code></pre>
+<p>new.target === Person ist unnötig, oder?</p>
+<pre><code>unnötig, oder?
+&lt;!--index_947a.html --&gt;  exkurs bind</code></pre>
 <h2 id="block-level-funktionen">Block Level Funktionen</h2>
-<h3 id="wann-verwenden">Wann verwenden</h3>
+<p>ECMAScript 5 Brwoser behandelt funktionen innerhalb von funktionen anders. 
+Deshalb hat strict mode es nicht erlaubt. mit ECMAScript 6 ist es möglich.</p>
+<pre><code>
+&lt;!--index_946.html --&gt;  exkurs bind</code></pre>
+<h3 id="wann-block-level-funktionen-verwenden">Wann Block Level Funktionen verwenden</h3>
+<p>Block Level Funktionen werden nach oben geschoben. Wenn Sie let nutzen nicht.</p>
+<pre><code>
+&lt;!--index_945.html --&gt;  exkurs bind</code></pre>
 <h3 id="non-strict-mode">Non Strict Mode</h3>
+<p>Die Funktion ist im globalen Kontext sichtbar.</p>
+<pre><code>
+&lt;!--index_944.html --&gt;  exkurs bind</code></pre>
 <h2 id="arrow-funktions">Arrow Funktions</h2>
 <h3 id="syntax">Syntax</h3>
 <h3 id="erstelle-iife">Erstelle IIFE</h3>

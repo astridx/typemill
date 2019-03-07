@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function Person(name) {
+console.log(new.target);    
+if (new.target === Person) {
+this.name = name
+} else {
+throw new Error("Nutze new")
+}
+}
+function Person2(name) {
+console.log(new.target);    
+Person.call(this, name)
+}
+let aPerson = new Person("Astrid"); 
+let aPerson2 = new Person2("Elmar"); // Error: Nutze new
+</script>    
+</body>
+</html>
