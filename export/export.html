@@ -1369,8 +1369,55 @@ Deshalb hat strict mode es nicht erlaubt. mit ECMAScript 6 ist es möglich.</p>
 <p>Die Funktion ist im globalen Kontext sichtbar.</p>
 <pre><code>
 &lt;!--index_944.html --&gt;  exkurs bind</code></pre>
-<h2 id="arrow-funktions">Arrow Funktions</h2>
+<h2 id="pfeilfunktionen-arrow-funktions">Pfeilfunktionen - Arrow Funktions</h2>
+<p>Der Ausdruck einer Pfeilfunktion hat eine kürzere Syntax als ein Funktionsausdruck. </p>
+<p><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen</a></p>
+<ul>
+<li>kein eigenes this, arguments, super, oder new.target (super kommt später).</li>
+<li>Pfeilfunktionen können nicht als Konstruktoren verwendet werden. Sie führen zu einem Fehler, wenn auf ihnen ein new angewendet wird.</li>
+<li>Pfeilfunktionen haben keine prototype Eigenschaft.</li>
+<li>Da this in Pfeilfunktionen nicht gebunden ist, können call() oder apply() Methoden nur Argumente übergeben; this wird ignoriert.</li>
+<li>Pfeilfunktionen haben kein eigenes arguments Objekt. Somit ist arguments einfach eine Referenz auf den Namen innerhalb des umschließenden Geltungsbereichs (scope).</li>
+<li>Es sind keine doppelten Parameterenamn möglich.</li>
+</ul>
 <h3 id="syntax">Syntax</h3>
+<p>Die Syntax von Pfeilfunktion ist nicht fix. Jenachdem ob Sie Parameter übergeben 
+möchten und wenn ja, wie viele können die nachfolgenden Varianten vorkommen.</p>
+<p>Die Übergabe eines Parameters.</p>
+<pre><code>let meinePfeilfunktion1 = value =&gt; value;
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function(value) {
+    return value;
+};
+console.log(meinePfeilfunktion1);
+console.log(meinePfeilfunktion2);
+console.log(meinePfeilfunktion1(13)); // Ausgabe: 13
+console.log(meinePfeilfunktion2(13)); // Ausgabe: 13
+&lt;!--index_943.html </code></pre>
+<blockquote>
+<p>Hier sehen Sie auch 
+<img src="./media/kap3_1.png" alt="alt text" /> todo bild kleiner machen</p>
+</blockquote>
+<p>Wenn Sie mehr als einen Parameter an die Funktion übergeben möchten.</p>
+<pre><code>let meinePfeilfunktion1 = (eins, zwei) =&gt; eins + zwei;
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function(eins, zwei) {
+    return eins + zwei;
+};
+console.log(meinePfeilfunktion1);
+console.log(meinePfeilfunktion2);
+console.log(meinePfeilfunktion1(1, 2)); // Ausgabe: 3
+console.log(meinePfeilfunktion2(1, 2)); // Ausgabe: 3
+&lt;!--index_943a.html </code></pre>
+<pre><code>
+&lt;!--index_943b.html </code></pre>
+<pre><code>
+&lt;!--index_943c.html </code></pre>
+<pre><code>
+&lt;!--index_943d.html </code></pre>
+<p>Geschweifte Klammern markieren den Funktionsrumpf.</p>
+<pre><code>
+&lt;!--index_943e.html </code></pre>
 <h3 id="erstelle-iife">Erstelle IIFE</h3>
 <h3 id="no-binding">No this Binding</h3>
 <h3 id="arrays">Arrays</h3>

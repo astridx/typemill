@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let meinePfeilfunktion1 = value => value;
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function(value) {
+    return value;
+};
+console.log(meinePfeilfunktion1);
+console.log(meinePfeilfunktion2);
+console.log(meinePfeilfunktion1(13)); // Ausgabe: 13
+console.log(meinePfeilfunktion2(13)); // Ausgabe: 13
+</script>    
+</body>
+</html>

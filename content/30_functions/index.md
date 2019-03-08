@@ -424,9 +424,115 @@ Die Funktion ist im globalen Kontext sichtbar.
 <!--index_944.html -->  exkurs bind
 ```
 
-## Arrow Funktions
+## Pfeilfunktionen - Arrow Funktions
+
+Der Ausdruck einer Pfeilfunktion hat eine kürzere Syntax als ein Funktionsausdruck. 
+
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen
+
+- kein eigenes this, arguments, super, oder new.target (super kommt später).
+- Pfeilfunktionen können nicht als Konstruktoren verwendet werden. Sie führen zu einem Fehler, wenn auf ihnen ein new angewendet wird.
+- Pfeilfunktionen haben keine prototype Eigenschaft.
+- Da this in Pfeilfunktionen nicht gebunden ist, können call() oder apply() Methoden nur Argumente übergeben; this wird ignoriert.
+- Pfeilfunktionen haben kein eigenes arguments Objekt. Somit ist arguments einfach eine Referenz auf den Namen innerhalb des umschließenden Geltungsbereichs (scope).
+- Es sind keine doppelten Parameterenamn möglich.
+
 ### Syntax
+
+Die Syntax von Pfeilfunktion ist nicht fix. Jenachdem ob Sie Parameter übergeben 
+möchten und wenn ja, wie viele können die nachfolgenden Varianten vorkommen.
+
+Die Übergabe eines Parameters.
+
+```
+let meinePfeilfunktion1 = value => value;
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function(value) {
+    return value;
+};
+console.log(meinePfeilfunktion1);
+console.log(meinePfeilfunktion2);
+console.log(meinePfeilfunktion1(13)); // Ausgabe: 13
+console.log(meinePfeilfunktion2(13)); // Ausgabe: 13
+<!--index_943.html 
+```
+
+> Hier sehen Sie auch 
+![alt text](./media/kap3_1.png) todo bild kleiner machen
+
+Wenn Sie mehr als einen Parameter an die Funktion übergeben möchten.
+
+```
+let meinePfeilfunktion1 = (eins, zwei) => eins + zwei;
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function(eins, zwei) {
+    return eins + zwei;
+};
+console.log(meinePfeilfunktion1);
+console.log(meinePfeilfunktion2);
+console.log(meinePfeilfunktion1(1, 2)); // Ausgabe: 3
+console.log(meinePfeilfunktion2(1, 2)); // Ausgabe: 3
+<!--index_943a.html 
+```
+
+Sie möchten gar keinen Parameter übergeben? 
+
+```
+let meinePfeilfunktion1 = () => "Ausgabe1";
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function() {
+    return "Ausgabe2";
+};
+console.log(meinePfeilfunktion1);
+console.log(meinePfeilfunktion2);
+console.log(meinePfeilfunktion1()); // Ausgabe: Ausgabe1
+console.log(meinePfeilfunktion2()); // Ausgabe: Ausgabe2
+<!--index_943b.html 
+```
+
+Ihnen ist ein traditioneller Funktionsrumpf lieber?
+
+```
+let meinePfeilfunktion1 = (eins, zwei) => {
+    return eins + zwei;
+}
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function(eins, zwei) {
+    return eins + zwei;
+};
+console.log(meinePfeilfunktion1);
+console.log(meinePfeilfunktion2);
+console.log(meinePfeilfunktion1(1, 2)); // Ausgabe: 3
+console.log(meinePfeilfunktion2(1, 2)); // Ausgabe: 3
+<!--index_943c.html 
+```
+
+Ein extremes Beispiel, das nichts tut.
+
+```
+let meinePfeilfunktion1 = () => {};
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function() {};
+<!--index_943d.html 
+```
+
+Geschweifte Klammern markieren den Funktionsrumpf.
+
+```
+let meinePfeilfunktion1 = value => ({ value: value, name: "Name"})
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function(value) {
+return { value: value, name: "Name"};
+};
+<!--index_943e.html 
+```
+
+So, nun haben wir die Syntax abgehakt.
+
 ### Erstelle IIFE
+
+
+
 ### No this Binding
 ### Arrays
 ### No arguments binding
