@@ -1409,15 +1409,43 @@ console.log(meinePfeilfunktion2);
 console.log(meinePfeilfunktion1(1, 2)); // Ausgabe: 3
 console.log(meinePfeilfunktion2(1, 2)); // Ausgabe: 3
 &lt;!--index_943a.html </code></pre>
-<pre><code>
+<p>Sie möchten gar keinen Parameter übergeben? </p>
+<pre><code>let meinePfeilfunktion1 = () =&gt; "Ausgabe1";
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function() {
+    return "Ausgabe2";
+};
+console.log(meinePfeilfunktion1);
+console.log(meinePfeilfunktion2);
+console.log(meinePfeilfunktion1()); // Ausgabe: Ausgabe1
+console.log(meinePfeilfunktion2()); // Ausgabe: Ausgabe2
 &lt;!--index_943b.html </code></pre>
-<pre><code>
+<p>Ihnen ist ein traditioneller Funktionsrumpf lieber?</p>
+<pre><code>let meinePfeilfunktion1 = (eins, zwei) =&gt; {
+    return eins + zwei;
+}
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function(eins, zwei) {
+    return eins + zwei;
+};
+console.log(meinePfeilfunktion1);
+console.log(meinePfeilfunktion2);
+console.log(meinePfeilfunktion1(1, 2)); // Ausgabe: 3
+console.log(meinePfeilfunktion2(1, 2)); // Ausgabe: 3
 &lt;!--index_943c.html </code></pre>
-<pre><code>
+<p>Ein extremes Beispiel, das nichts tut.</p>
+<pre><code>let meinePfeilfunktion1 = () =&gt; {};
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function() {};
 &lt;!--index_943d.html </code></pre>
 <p>Geschweifte Klammern markieren den Funktionsrumpf.</p>
-<pre><code>
+<pre><code>let meinePfeilfunktion1 = value =&gt; ({ value: value, name: "Name"})
+// ist gleichwertig mit
+let meinePfeilfunktion2 = function(value) {
+return { value: value, name: "Name"};
+};
 &lt;!--index_943e.html </code></pre>
+<p>So, nun haben wir die Syntax abgehakt.</p>
 <h3 id="erstelle-iife">Erstelle IIFE</h3>
 <h3 id="no-binding">No this Binding</h3>
 <h3 id="arrays">Arrays</h3>

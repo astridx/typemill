@@ -6,14 +6,8 @@
 </head>
 <body>
 <script>
-let person = function(name){
-return {
-getName: function() {
-return name;
-}
-}
-}("Astrid");
-console.log(person.getName()); // Ausgabe: Astrid
+let MeinTyp = () => {};
+let meinObjekt = new MeinTyp(); // Ausgabe: TypeError: MeinTyp is not a constructor
 </script>    
 </body>
 </html>

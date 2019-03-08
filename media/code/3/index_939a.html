@@ -6,14 +6,9 @@
 </head>
 <body>
 <script>
-let person = function(name){
-return {
-getName: function() {
-return name;
-}
-}
-}("Astrid");
-console.log(person.getName()); // Ausgabe: Astrid
+let values = [20, 10, 30];
+let ergebnis = values.sort((a, b) => a - b);
+console.log(ergebnis); // Ausgabe: Array(3) [ 10, 20, 30 ]
 </script>    
 </body>
 </html>

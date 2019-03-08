@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let Seitenbearbeiter = {
+id: "1000",
+init: function() {
+document.addEventListener("click", function(event) {
+this.doSomething(event.type);
+}, false);
+},
+doSomething: function(type) {
+console.log("Bearbeite " + type  + " für " + this.id);
+}
+};
+Seitenbearbeiter.init(); // Ausgabe falls du auf die Seite klickst: 
+                         // TypeError: this.doSomething is not a function
+Seitenbearbeiter.doSomething("Test"); // Ausgabe: Bearbeite Test für 1000
+</script>    
+</body>
+</html>

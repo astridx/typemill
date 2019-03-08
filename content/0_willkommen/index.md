@@ -1,5 +1,7 @@
 # Willkommen
 
+todo https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md
+
 todo https://de.wikipedia.org/wiki/JavaScript
 
 todo Beispiele Meldungen Firfox 

@@ -460,10 +460,14 @@ funktionen.forEach(function(funktion){
 ```
 fünfmal ausgeführt wird, wird der Wert `5` fünfmal ausgegeben.  
 
-Eine Lösung für dieses Problem ist [IIFE](https://wiki.selfhtml.org/index.php?title=IIFE&oldid=59916). *IIFE* steht für *Immediately-invoked Function Expression*, 
-also ein sofort ausgeführter Funktionsausdruck. Das hört sich sehr kompliziert an. Meiner Meinung nach 
-ist es auch kompliziert. Ich habe *IIFE* hier nur der Vollständigkeithalber aufgenommen. 
-Im nächsten Kapitel finden Sie eine einfachere Lösung mit ECMAScript 6.  
+Eine Lösung für dieses Problem ist 
+[IIFE](https://wiki.selfhtml.org/index.php?title=IIFE&oldid=59916). 
+*IIFE* steht für *Immediately-invoked Function Expression*, 
+also ein sofort ausgeführter Funktionsausdruck. Das hört sich sehr kompliziert 
+an. Meiner Meinung nach 
+ist es auch kompliziert. Ich habe *IIFE* hier der Vollständigkeit halber 
+aufgenommen. 
+Im nächsten Kapitel finden Sie eine einfachere Lösung - seit ECMAScript 6.  
 
 ```
 function getValue() {

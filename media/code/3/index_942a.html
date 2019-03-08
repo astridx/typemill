@@ -6,13 +6,13 @@
 </head>
 <body>
 <script>
-let person = function(name){
+let person = ((name) => {
 return {
 getName: function() {
 return name;
 }
-}
-}("Astrid");
+};
+})("Astrid");
 console.log(person.getName()); // Ausgabe: Astrid
 </script>    
 </body>

@@ -421,7 +421,7 @@ Die Funktion ist im globalen Kontext sichtbar.
 
 ```
 
-<!--index_944.html -->  exkurs bind
+<!--index_944.html -->
 ```
 
 ## Pfeilfunktionen - Arrow Funktions
@@ -454,7 +454,7 @@ console.log(meinePfeilfunktion1);
 console.log(meinePfeilfunktion2);
 console.log(meinePfeilfunktion1(13)); // Ausgabe: 13
 console.log(meinePfeilfunktion2(13)); // Ausgabe: 13
-<!--index_943.html 
+<!--index_943.html --> 
 ```
 
 > Hier sehen Sie auch 
@@ -472,7 +472,7 @@ console.log(meinePfeilfunktion1);
 console.log(meinePfeilfunktion2);
 console.log(meinePfeilfunktion1(1, 2)); // Ausgabe: 3
 console.log(meinePfeilfunktion2(1, 2)); // Ausgabe: 3
-<!--index_943a.html 
+<!--index_943a.html --> 
 ```
 
 Sie möchten gar keinen Parameter übergeben? 
@@ -487,7 +487,7 @@ console.log(meinePfeilfunktion1);
 console.log(meinePfeilfunktion2);
 console.log(meinePfeilfunktion1()); // Ausgabe: Ausgabe1
 console.log(meinePfeilfunktion2()); // Ausgabe: Ausgabe2
-<!--index_943b.html 
+<!--index_943b.html --> 
 ```
 
 Ihnen ist ein traditioneller Funktionsrumpf lieber?
@@ -504,7 +504,7 @@ console.log(meinePfeilfunktion1);
 console.log(meinePfeilfunktion2);
 console.log(meinePfeilfunktion1(1, 2)); // Ausgabe: 3
 console.log(meinePfeilfunktion2(1, 2)); // Ausgabe: 3
-<!--index_943c.html 
+<!--index_943c.html --> 
 ```
 
 Ein extremes Beispiel, das nichts tut.
@@ -513,7 +513,7 @@ Ein extremes Beispiel, das nichts tut.
 let meinePfeilfunktion1 = () => {};
 // ist gleichwertig mit
 let meinePfeilfunktion2 = function() {};
-<!--index_943d.html 
+<!--index_943d.html --> 
 ```
 
 Geschweifte Klammern markieren den Funktionsrumpf.
@@ -524,17 +524,141 @@ let meinePfeilfunktion1 = value => ({ value: value, name: "Name"})
 let meinePfeilfunktion2 = function(value) {
 return { value: value, name: "Name"};
 };
-<!--index_943e.html 
+<!--index_943e.html --> 
 ```
 
 So, nun haben wir die Syntax abgehakt.
 
 ### Erstelle IIFE
 
+In Kapitel 1 hatte ich schon erwähnt, dass IIFE häufig in JavaScript verwendet 
+werden. Zur Wiederholung: IIFEs ermöglichen es eine anonyme Funktion zu 
+definieren und diese sofort auszuführen ohne eine Referenz zu speichern. 
+IIFEs sind praktisch, wenn Sie Variablen in einem Gültigkeitsbereich 
+erstellen möchten, der von dem Rest des Programms unabhängig ist. Zum 
+Beispiel so wie im nachfolgenden Programmcodebeispiel. In diesem Beispiel wird 
+ein Objekt mithilfe der Methode `getName()` erstellt. Die Methode `getName()` 
+nutzt den Parameter `name` als Rückgabewert.
 
+```
+let person = function(name){
+return {
+getName: function() {
+return name;
+}
+}
+}("Astrid");
+console.log(person.getName()); // Ausgabe: Astrid
+<!--index_942.html --> 
+```
+
+Das gleiche Ergebnis lässt sich auch mit einer Pfeilfunktion umsetzen.
+
+```
+let person = ((name) => {
+return {
+getName: function() {
+return name;
+}
+};
+})("Astrid");
+console.log(person.getName()); // Ausgabe: Astrid
+<!--index_942a.html --> 
+```
 
 ### No this Binding
-### Arrays
+
+Meiner Meinung nach ist die Verwendung von `this` eine der größen 
+Fehlerquellen in JavaScript. Viele Entwickler tun sich schwer zu erkennen 
+was gerade genau `this` ist. Außerdem kann `this` innerhalb ein und derselben 
+Funktion auf etwas anderes verweisen - jenachdem in welchem Kontext die 
+Funktion gerade aufgerufen wird. Das nächste Prgrammcodebeispiel 
+veranschaulicht diese Problematik.
+
+```
+let Seitenbearbeiter = {
+id: "1000",
+init: function() {
+document.addEventListener("click", function(event) {
+this.doSomething(event.type);
+}, false);
+},
+doSomething: function(type) {
+console.log("Bearbeite " + type  + " für " + this.id);
+}
+};
+Seitenbearbeiter.init(); // Ausgabe falls du auf die Seite klickst: 
+                         // TypeError: this.doSomething is not a function
+Seitenbearbeiter.doSomething("Test"); // Ausgabe: Bearbeite Test für 1000
+<!--index_941.html --> 
+```
+
+Das nächste Programmcodebeispiel zeigt ein mögliche Lösung für das Problem 
+des vorherigen Beispiels. Der Code arbeitet nun korrekt. Er ist allerdings 
+nicht sehr intuitiv. `bind(this)` erstellt eine neue Funktion die `this` 
+bindet.
+
+```
+let Seitenbearbeiter = {
+id: "1000",
+init: function() {
+document.addEventListener("click", (function(event) {
+this.doSomething(event.type);
+}).bind(this), false);
+},
+doSomething: function(type) {
+console.log("Bearbeite " + type  + " für " + this.id);
+}
+};
+Seitenbearbeiter.init(); // Ausgabe: Bearbeite click für 1000
+Seitenbearbeiter.doSomething("Test"); // Ausgabe: Bearbeite Test für 1000
+<!--index_941a.html --> 
+```
+
+Pfeilfunktionen binden `this` nicht.
+
+```
+let Seitenbearbeiter = {
+id: "1000",
+init: function() {
+document.addEventListener("click", 
+event => this.doSomething(event.type), false);
+},
+doSomething: function(type) {
+console.log("Bearbeite " + type  + " für " + this.id);
+}
+};
+Seitenbearbeiter.init(); // Ausgabe: Bearbeite click für 1000
+Seitenbearbeiter.doSomething("Test"); // Ausgabe: Bearbeite Test für 1000
+<!--index_941b.html --> 
+```
+
+Pfeilfunktionen können nicht mit new genutzt werden.
+
+```
+let MeinTyp = () => {};
+let meinObjekt = new MeinTyp(); // Ausgabe: TypeError: MeinTyp is not a constructor
+<!--index_940.html --> 
+```
+
+### Pfeilfunktionen und Arrays
+
+```
+let values = [20, 10, 30];
+let ergebnis = values.sort(function(a, b) {
+return a - b;
+});
+console.log(ergebnis); // Ausgabe: Array(3) [ 10, 20, 30 ]
+<!--index_939.html --> 
+```
+
+```
+let values = [20, 10, 30];
+let ergebnis = values.sort((a, b) => a - b);
+console.log(ergebnis); // Ausgabe: Array(3) [ 10, 20, 30 ]
+<!--index_939a.html --> 
+```
+
 ### No arguments binding
 ### Identify Arrow Functions
 
@@ -570,3 +694,5 @@ So, nun haben wir die Syntax abgehakt.
 xxx
 
 [^1]: https://de.wikipedia.org/w/index.php?title=Interpreter&oldid=182588640 (https://bit.ly/2GT9nQS)
+
+todo https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md

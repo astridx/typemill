@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let Seitenbearbeiter = {
+id: "1000",
+init: function() {
+document.addEventListener("click", 
+event => this.doSomething(event.type), false);
+},
+doSomething: function(type) {
+console.log("Bearbeite " + type  + " für " + this.id);
+}
+};
+Seitenbearbeiter.init(); // Ausgabe: Bearbeite click für 1000
+Seitenbearbeiter.doSomething("Test"); // Ausgabe: Bearbeite Test für 1000
+</script>    
+</body>
+</html>
