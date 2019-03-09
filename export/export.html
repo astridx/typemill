@@ -1,5 +1,6 @@
 <!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link href="../Styles/MyEBookStylesheet.css" rel="stylesheet" type="text/css" /></head><body>
 <h1 id="willkommen">Willkommen</h1>
+<p>todo <a href="https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md">https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md</a></p>
 <p>todo <a href="https://de.wikipedia.org/wiki/JavaScript">https://de.wikipedia.org/wiki/JavaScript</a></p>
 <p>todo Beispiele Meldungen Firfox </p>
 <p>todo Vergleich mit ECMAScript 5 - dabei lernt man auch etwas ...</p>
@@ -518,10 +519,14 @@ Wenn dann <code>console.log(i)</code> aufgrund von </p>
     funktion(); 
 });</code></pre>
 <p>fünfmal ausgeführt wird, wird der Wert <code>5</code> fünfmal ausgegeben.  </p>
-<p>Eine Lösung für dieses Problem ist <a href="https://wiki.selfhtml.org/index.php?title=IIFE&amp;oldid=59916">IIFE</a>. <em>IIFE</em> steht für <em>Immediately-invoked Function Expression</em>, 
-also ein sofort ausgeführter Funktionsausdruck. Das hört sich sehr kompliziert an. Meiner Meinung nach 
-ist es auch kompliziert. Ich habe <em>IIFE</em> hier nur der Vollständigkeithalber aufgenommen. 
-Im nächsten Kapitel finden Sie eine einfachere Lösung mit ECMAScript 6.  </p>
+<p>Eine Lösung für dieses Problem ist 
+<a href="https://wiki.selfhtml.org/index.php?title=IIFE&amp;oldid=59916">IIFE</a>. 
+<em>IIFE</em> steht für <em>Immediately-invoked Function Expression</em>, 
+also ein sofort ausgeführter Funktionsausdruck. Das hört sich sehr kompliziert 
+an. Meiner Meinung nach 
+ist es auch kompliziert. Ich habe <em>IIFE</em> hier der Vollständigkeit halber 
+aufgenommen. 
+Im nächsten Kapitel finden Sie eine einfachere Lösung - seit ECMAScript 6.  </p>
 <pre><code>function getValue() {
     var funktionen = [];
     for (var i = 0; i &lt; 5; i++) {
@@ -1368,7 +1373,7 @@ Deshalb hat strict mode es nicht erlaubt. mit ECMAScript 6 ist es möglich.</p>
 <h3 id="non-strict-mode">Non Strict Mode</h3>
 <p>Die Funktion ist im globalen Kontext sichtbar.</p>
 <pre><code>
-&lt;!--index_944.html --&gt;  exkurs bind</code></pre>
+&lt;!--index_944.html --&gt;</code></pre>
 <h2 id="pfeilfunktionen-arrow-funktions">Pfeilfunktionen - Arrow Funktions</h2>
 <p>Der Ausdruck einer Pfeilfunktion hat eine kürzere Syntax als ein Funktionsausdruck. </p>
 <p><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen</a></p>
@@ -1393,7 +1398,7 @@ console.log(meinePfeilfunktion1);
 console.log(meinePfeilfunktion2);
 console.log(meinePfeilfunktion1(13)); // Ausgabe: 13
 console.log(meinePfeilfunktion2(13)); // Ausgabe: 13
-&lt;!--index_943.html </code></pre>
+&lt;!--index_943.html --&gt; </code></pre>
 <blockquote>
 <p>Hier sehen Sie auch 
 <img src="./media/kap3_1.png" alt="alt text" /> todo bild kleiner machen</p>
@@ -1408,7 +1413,7 @@ console.log(meinePfeilfunktion1);
 console.log(meinePfeilfunktion2);
 console.log(meinePfeilfunktion1(1, 2)); // Ausgabe: 3
 console.log(meinePfeilfunktion2(1, 2)); // Ausgabe: 3
-&lt;!--index_943a.html </code></pre>
+&lt;!--index_943a.html --&gt; </code></pre>
 <p>Sie möchten gar keinen Parameter übergeben? </p>
 <pre><code>let meinePfeilfunktion1 = () =&gt; "Ausgabe1";
 // ist gleichwertig mit
@@ -1419,7 +1424,7 @@ console.log(meinePfeilfunktion1);
 console.log(meinePfeilfunktion2);
 console.log(meinePfeilfunktion1()); // Ausgabe: Ausgabe1
 console.log(meinePfeilfunktion2()); // Ausgabe: Ausgabe2
-&lt;!--index_943b.html </code></pre>
+&lt;!--index_943b.html --&gt; </code></pre>
 <p>Ihnen ist ein traditioneller Funktionsrumpf lieber?</p>
 <pre><code>let meinePfeilfunktion1 = (eins, zwei) =&gt; {
     return eins + zwei;
@@ -1432,27 +1437,183 @@ console.log(meinePfeilfunktion1);
 console.log(meinePfeilfunktion2);
 console.log(meinePfeilfunktion1(1, 2)); // Ausgabe: 3
 console.log(meinePfeilfunktion2(1, 2)); // Ausgabe: 3
-&lt;!--index_943c.html </code></pre>
+&lt;!--index_943c.html --&gt; </code></pre>
 <p>Ein extremes Beispiel, das nichts tut.</p>
 <pre><code>let meinePfeilfunktion1 = () =&gt; {};
 // ist gleichwertig mit
 let meinePfeilfunktion2 = function() {};
-&lt;!--index_943d.html </code></pre>
+&lt;!--index_943d.html --&gt; </code></pre>
 <p>Geschweifte Klammern markieren den Funktionsrumpf.</p>
 <pre><code>let meinePfeilfunktion1 = value =&gt; ({ value: value, name: "Name"})
 // ist gleichwertig mit
 let meinePfeilfunktion2 = function(value) {
 return { value: value, name: "Name"};
 };
-&lt;!--index_943e.html </code></pre>
+&lt;!--index_943e.html --&gt; </code></pre>
 <p>So, nun haben wir die Syntax abgehakt.</p>
 <h3 id="erstelle-iife">Erstelle IIFE</h3>
+<p>In Kapitel 1 hatte ich schon erwähnt, dass IIFE häufig in JavaScript verwendet 
+werden. Zur Wiederholung: IIFEs ermöglichen es eine anonyme Funktion zu 
+definieren und diese sofort auszuführen ohne eine Referenz zu speichern. 
+IIFEs sind praktisch, wenn Sie Variablen in einem Gültigkeitsbereich 
+erstellen möchten, der von dem Rest des Programms unabhängig ist. Zum 
+Beispiel so wie im nachfolgenden Programmcodebeispiel. In diesem Beispiel wird 
+ein Objekt mithilfe der Methode <code>getName()</code> erstellt. Die Methode <code>getName()</code> 
+nutzt den Parameter <code>name</code> als Rückgabewert.</p>
+<pre><code>let person = function(name){
+return {
+getName: function() {
+return name;
+}
+}
+}("Astrid");
+console.log(person.getName()); // Ausgabe: Astrid
+&lt;!--index_942.html --&gt; </code></pre>
+<p>Das gleiche Ergebnis lässt sich auch mit einer Pfeilfunktion umsetzen.</p>
+<pre><code>let person = ((name) =&gt; {
+return {
+getName: function() {
+return name;
+}
+};
+})("Astrid");
+console.log(person.getName()); // Ausgabe: Astrid
+&lt;!--index_942a.html --&gt; </code></pre>
 <h3 id="no-binding">No this Binding</h3>
-<h3 id="arrays">Arrays</h3>
+<p>Meiner Meinung nach ist die Verwendung von <code>this</code> eine der größen 
+Fehlerquellen in JavaScript. Viele Entwickler tun sich schwer zu erkennen 
+was gerade genau <code>this</code> ist. Außerdem kann <code>this</code> innerhalb ein und derselben 
+Funktion auf etwas anderes verweisen - jenachdem in welchem Kontext die 
+Funktion gerade aufgerufen wird. Das nächste Prgrammcodebeispiel 
+veranschaulicht diese Problematik.</p>
+<pre><code>let Seitenbearbeiter = {
+id: "1000",
+init: function() {
+document.addEventListener("click", function(event) {
+this.doSomething(event.type);
+}, false);
+},
+doSomething: function(type) {
+console.log("Bearbeite " + type  + " für " + this.id);
+}
+};
+Seitenbearbeiter.init(); // Ausgabe falls du auf die Seite klickst: 
+                         // TypeError: this.doSomething is not a function
+Seitenbearbeiter.doSomething("Test"); // Ausgabe: Bearbeite Test für 1000
+&lt;!--index_941.html --&gt; </code></pre>
+<p>Das nächste Programmcodebeispiel zeigt ein mögliche Lösung für das Problem 
+des vorherigen Beispiels. Der Code arbeitet nun korrekt. Er ist allerdings 
+nicht sehr intuitiv. <code>bind(this)</code> erstellt eine neue Funktion die <code>this</code> 
+bindet.</p>
+<pre><code>let Seitenbearbeiter = {
+id: "1000",
+init: function() {
+document.addEventListener("click", (function(event) {
+this.doSomething(event.type);
+}).bind(this), false);
+},
+doSomething: function(type) {
+console.log("Bearbeite " + type  + " für " + this.id);
+}
+};
+Seitenbearbeiter.init(); // Ausgabe: Bearbeite click für 1000
+Seitenbearbeiter.doSomething("Test"); // Ausgabe: Bearbeite Test für 1000
+&lt;!--index_941a.html --&gt; </code></pre>
+<p>Pfeilfunktionen binden <code>this</code> nicht.</p>
+<pre><code>let Seitenbearbeiter = {
+id: "1000",
+init: function() {
+document.addEventListener("click", 
+event =&gt; this.doSomething(event.type), false);
+},
+doSomething: function(type) {
+console.log("Bearbeite " + type  + " für " + this.id);
+}
+};
+Seitenbearbeiter.init(); // Ausgabe: Bearbeite click für 1000
+Seitenbearbeiter.doSomething("Test"); // Ausgabe: Bearbeite Test für 1000
+&lt;!--index_941b.html --&gt; </code></pre>
+<p>Pfeilfunktionen können nicht mit new genutzt werden.</p>
+<pre><code>let MeinTyp = () =&gt; {};
+let meinObjekt = new MeinTyp(); // Ausgabe: TypeError: MeinTyp is not a constructor
+&lt;!--index_940.html --&gt; </code></pre>
+<h3 id="pfeilfunktionen-und-arrays">Pfeilfunktionen und Arrays</h3>
+<pre><code>let values = [20, 10, 30];
+let ergebnis = values.sort(function(a, b) {
+return a - b;
+});
+console.log(ergebnis); // Ausgabe: Array(3) [ 10, 20, 30 ]
+&lt;!--index_939.html --&gt; </code></pre>
+<pre><code>let values = [20, 10, 30];
+let ergebnis = values.sort((a, b) =&gt; a - b);
+console.log(ergebnis); // Ausgabe: Array(3) [ 10, 20, 30 ]
+&lt;!--index_939a.html --&gt; </code></pre>
 <h3 id="no-arguments-binding">No arguments binding</h3>
+<p>Eine Pfeilfunktion hat kein eigenen <code>arguments</code>-Objekt. Zur Erinnerung: 
+Das <code>arguments</code>-Objekt ist ein Array-ähnliches Objekt, 
+das auf die übergebenen Parameter einer Funktion verweist.<br />
+Eine Pfeilfunktion kann trotzdem über ein <code>arguments</code>-Objekt verfügen. Nämlich 
+dann, wenn die Pfeilfunktion von einer anderen Funktion aufgerufen wird. In 
+diesem Fall verfügt die Pfeilfunktion über das <code>arguments</code>-Objekt der 
+übergebenden Funktion.</p>
+<pre><code>function getErstesArgument() {
+return () =&gt; arguments[0];
+}
+let pfeilfunktion = getErstesArgument("eins");
+console.log(pfeilfunktion()); // Ausgabe: eins
+&lt;!--index_938.html --&gt; </code></pre>
+<p>Wäre die Pfeilfunktion des vorhergehenden Beispiels als normale Funktion 
+implementiert, sähe das Ergebnis anders aus. Überzeugen Sie sich sich selbst 
+davon und sehen Sie sich das nächsten Programmcodebeispiel an. </p>
+<pre><code>function getErstesArgument() {
+return function () { return arguments[0];};
+}
+let pfeilfunktion = getErstesArgument("eins");
+console.log(pfeilfunktion()); // Ausgabe: undefined
+&lt;!--index_938a.html --&gt; </code></pre>
 <h3 id="identify-arrow-functions">Identify Arrow Functions</h3>
-<h2 id="tail-call-optimierung">Tail Call Optimierung</h2>
-<h3 id="ecmascript-6">ECMAScript 6</h3>
+<p>Eine Pfeilfunktion ist trotz aller Besonderheiten eine Funktion und wird 
+in JavaScript auch so identifiziert. Überzeugen Sie sich selbst beim Nachvollziehen 
+der beiden nachfolgenden Programmcodebeispiele.</p>
+<pre><code>let pfeilfunktion = (a, b) =&gt; a - b;
+console.log(typeof pfeilfunktion); // Ausgabe: function
+console.log(pfeilfunktion instanceof Function); // Ausgabe: true
+&lt;!--index_937.html --&gt; </code></pre>
+<p>Auch die Funktionen call, apply und bind können mit einer Pfeilfunktion 
+verwendet werden - abgesehen davon, dass <code>this</code> den Kontext nicht verändert.</p>
+<pre><code>let pfeilfunktion = (a, b) =&gt; a - b;
+console.log(pfeilfunktion.call(null, 5, 4)); // Ausgabe: 1
+console.log(pfeilfunktion.apply(null, [5, 4])); // Ausgabe: 1
+
+console.log(pfeilfunktion.bind(null, 5, 4)()); // Ausgabe: 1
+// gleiwertig zu
+let pfeilfunktion2 = pfeilfunktion.bind(null, 5, 4);
+console.log(pfeilfunktion2()); // Ausgabe: 1
+&lt;!--index_937a.html --&gt; </code></pre>
+<h2 id="optimierung-der-endrekursion">Optimierung der Endrekursion</h2>
+<p>Eine rekursive Funktion ist endrekursiv (englisch tail recursive), 
+wenn der rekursive Funktionsaufruf die letzte Aktion zur Berechnung von 
+der Funktion ist. </p>
+<blockquote>
+<p>Weitere Informationen zu endrekursiven Funktionen finden Sie unter anderem bei 
+<a href="https://de.wikipedia.org/w/index.php?title=Endrekursion&amp;oldid=173836523">Wikipedia</a></p>
+</blockquote>
+<p>Endrekursive Funktionen werden bis ECMAScript 5 wie ganz normale Funktionen 
+behandelt. Ein neues Stack Frame wird erstellt und zum 
+<a href="https://de.wikipedia.org/w/index.php?title=Aufrufstapel&amp;oldid=182386193">Aufrufstapel (englisch call stack)</a> 
+hinzugefügt. Jedes neue Stack Frame füllt also den Arbeitsspeicher während die 
+vorhergehenden Stack Frames weiterhin vorhanden sind. Je nach Komplexität des 
+Aufufs kann dies zu Speicherproblemen führen - der Arbeitsspeicher kann 
+volllaufen.</p>
+<h3 id="endrekursion-ecmascript-6">Endrekursion in ECMAScript 6</h3>
+<blockquote>
+<p>Die Fakultät ist in der Mathematik eine Funktion, die einer natürlichen 
+Zahl das Produkt aller natürlichen Zahlen (ohne Null) kleiner und gleich 
+dieser Zahl zuordnet. <a href="https://de.wikipedia.org/wiki/Fakult%C3%A4t_(Mathematik">https://de.wikipedia.org/wiki/Fakult%C3%A4t_(Mathematik</a>) 
+<img src="./media/kap3_2.png" alt="Fakultät" /></p>
+</blockquote>
+<pre><code>
+&lt;!--index_936.html --&gt; </code></pre>
 <h3 id="wie-verwenden">Wie verwenden</h3>
 <pre><code>
 &lt;!--index_964.html --&gt;</code></pre>
@@ -1461,6 +1622,7 @@ return { value: value, name: "Name"};
 </blockquote>
 <h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
 <p>xxx</p>
+<p>todo <a href="https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md">https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md</a></p>
 <div class="footnotes">
 <hr />
 <ol>

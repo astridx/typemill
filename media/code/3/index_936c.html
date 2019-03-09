@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+"use strict";
+function umrahmung(a) {
+let nummer = 1;    
+function fakultaet(n) {
+if (n <= 1){
+return 1;    
+} else { 
+return n * fakultaet(n-1);     
+}
+}
+return fakultaet(a)
+}
+console.log(umrahmung(5)); // Ausgabe: 120
+</script>    
+</body>
+</html>

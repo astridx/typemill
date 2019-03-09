@@ -660,11 +660,167 @@ console.log(ergebnis); // Ausgabe: Array(3) [ 10, 20, 30 ]
 ```
 
 ### No arguments binding
+
+Eine Pfeilfunktion hat kein eigenen `arguments`-Objekt. Zur Erinnerung: 
+Das `arguments`-Objekt ist ein Array-ähnliches Objekt, 
+das auf die übergebenen Parameter einer Funktion verweist.  
+Eine Pfeilfunktion kann trotzdem über ein `arguments`-Objekt verfügen. Nämlich 
+dann, wenn die Pfeilfunktion von einer anderen Funktion aufgerufen wird. In 
+diesem Fall verfügt die Pfeilfunktion über das `arguments`-Objekt der 
+übergebenden Funktion.
+
+```
+function getErstesArgument() {
+return () => arguments[0];
+}
+let pfeilfunktion = getErstesArgument("eins");
+console.log(pfeilfunktion()); // Ausgabe: eins
+<!--index_938.html --> 
+```
+
+Wäre die Pfeilfunktion des vorhergehenden Beispiels als normale Funktion 
+implementiert, sähe das Ergebnis anders aus. Überzeugen Sie sich sich selbst 
+davon und sehen Sie sich das nächsten Programmcodebeispiel an. 
+
+```
+function getErstesArgument() {
+return function () { return arguments[0];};
+}
+let pfeilfunktion = getErstesArgument("eins");
+console.log(pfeilfunktion()); // Ausgabe: undefined
+<!--index_938a.html --> 
+```
+
 ### Identify Arrow Functions
 
-## Tail Call Optimierung
-### ECMAScript 6
-### Wie verwenden
+Eine Pfeilfunktion ist trotz aller Besonderheiten eine Funktion und wird 
+in JavaScript auch so identifiziert. Überzeugen Sie sich selbst beim Nachvollziehen 
+der beiden nachfolgenden Programmcodebeispiele.
+
+```
+let pfeilfunktion = (a, b) => a - b;
+console.log(typeof pfeilfunktion); // Ausgabe: function
+console.log(pfeilfunktion instanceof Function); // Ausgabe: true
+<!--index_937.html --> 
+```
+
+Auch die Funktionen call, apply und bind können mit einer Pfeilfunktion 
+verwendet werden - abgesehen davon, dass `this` den Kontext nicht verändert.
+
+```
+let pfeilfunktion = (a, b) => a - b;
+console.log(pfeilfunktion.call(null, 5, 4)); // Ausgabe: 1
+console.log(pfeilfunktion.apply(null, [5, 4])); // Ausgabe: 1
+
+console.log(pfeilfunktion.bind(null, 5, 4)()); // Ausgabe: 1
+// gleiwertig zu
+let pfeilfunktion2 = pfeilfunktion.bind(null, 5, 4);
+console.log(pfeilfunktion2()); // Ausgabe: 1
+<!--index_937a.html --> 
+```
+
+
+## Optimierung der Endrekursion
+
+Eine rekursive Funktion ist endrekursiv (englisch tail recursive), 
+wenn der rekursive Funktionsaufruf die letzte Aktion zur Berechnung von 
+der Funktion ist. 
+
+> Weitere Informationen zu endrekursiven Funktionen finden Sie unter anderem bei 
+[Wikipedia](https://de.wikipedia.org/w/index.php?title=Endrekursion&oldid=173836523)
+
+Endrekursive Funktionen werden bis ECMAScript 5 wie ganz normale Funktionen 
+behandelt. Ein neues Stack Frame wird erstellt und zum 
+[Aufrufstapel (englisch call stack)](https://de.wikipedia.org/w/index.php?title=Aufrufstapel&oldid=182386193) 
+hinzugefügt. Jedes neue Stack Frame füllt also den Arbeitsspeicher während die 
+vorhergehenden Stack Frames weiterhin vorhanden sind. Je nach Komplexität des 
+Aufufs kann dies zu Speicherproblemen führen - der Arbeitsspeicher kann 
+volllaufen.
+
+### Endrekursion in ECMAScript 6 
+
+Endrekursion ist optimiert, wenn folgende Kriterien zutreffen:
+- strict mode
+- Die Funktion ist kein Closure (todo was ist das)
+- Nach dem Return gibt keine weitere Rechenaufgabe
+- Das Ergebnis wird am Ende der Funktion zurückgegeben
+
+Ein Beispiel sagt oft mehr als 1000 Worte. Ein Beispiel für die Verwendung 
+einer rekursiven Programmierung ist die Berechnung der Fakultät einer Zahl.
+
+> Die Fakultät ist in der Mathematik eine Funktion, die einer natürlichen 
+Zahl das Produkt aller natürlichen Zahlen (ohne Null) kleiner und gleich 
+dieser Zahl zuordnet. https://de.wikipedia.org/wiki/Fakult%C3%A4t_(Mathematik) 
+![Fakultät](./media/kap3_2.png)
+
+Das folgende Beispiel erfüllt alle Kriterien und kann optimiert ausgeführt werden. 
+
+```
+"use strict";
+function fakultaet(n, m = 1) {
+if (n <= 1){
+return 1 * m;    
+} else {
+let ergebnis = n * m;    
+return fakultaet(n-1, ergebnis);     
+}
+}
+console.log(fakultaet(5)); // Ausgabe: 120
+<!--index_936.html --> 
+```
+
+Noch Rechnung nach Return notwendig
+
+```
+"use strict";
+function fakultaet(n) {
+if (n <= 1){
+return 1;    
+} else {
+return n * fakultaet(n-1);     
+}
+}
+console.log(fakultaet(5)); // Ausgabe: 120
+<!--index_936a.html --> 
+```
+
+Kein Return
+
+```
+"use strict";
+let ergebnis = 1;    
+function fakultaet(n) {
+if (n <= 1){
+ergebnis = ergebnis;    
+} else {
+ergebnis = ergebnis * n;  
+fakultaet(n-1);     
+}
+}
+fakultaet(5);
+console.log(ergebnis); // Ausgabe: 120
+<!--index_936b.html --> 
+```
+
+Closure
+
+```
+"use strict";
+function umrahmung(a) {
+let nummer = 1;    
+function fakultaet(n) {
+if (n <= 1){
+return 1;    
+} else { 
+return n * fakultaet(n-1);     
+}
+}
+return fakultaet(a)
+}
+console.log(umrahmung(5)); // Ausgabe: 120
+<!--index_936c.html --> 
+```
+
 
 
 

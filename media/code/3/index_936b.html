@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+"use strict";
+let ergebnis = 1;    
+function fakultaet(n) {
+if (n <= 1){
+ergebnis = ergebnis;    
+} else {
+ergebnis = ergebnis * n;  
+fakultaet(n-1);     
+}
+}
+fakultaet(5);
+console.log(ergebnis); // Ausgabe: 120
+</script>    
+</body>
+</html>

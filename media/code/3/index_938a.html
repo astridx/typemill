@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function getErstesArgument() {
+return function () { return arguments[0];};
+}
+let pfeilfunktion = getErstesArgument("eins");
+console.log(pfeilfunktion()); // Ausgabe: undefined
+</script>    
+</body>
+</html>
