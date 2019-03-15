@@ -7,13 +7,14 @@
 <body>
 <script>
 function erstellePerson(name, alter) {
+let age = alter;	
 return {
-name: name,
-alter: alter
+age,
+name
 };
 }
 let person = erstellePerson("Astrid", 50);
-console.log(person); // Ausgabe: Object { name: "Astrid", alter: 50 }
+console.log(person); // Ausgabe: Object { age: 50, name: "Astrid" }
 </script>    
 </body>
 </html>

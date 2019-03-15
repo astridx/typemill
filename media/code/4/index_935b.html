@@ -8,12 +8,12 @@
 <script>
 function erstellePerson(name, alter) {
 return {
-name: name,
-alter: alter
+alter,
+name
 };
 }
 let person = erstellePerson("Astrid", 50);
-console.log(person); // Ausgabe: Object { name: "Astrid", alter: 50 }
+console.log(person); // Ausgabe: Object { alter: 50, name: "Astrid" }
 </script>    
 </body>
 </html>

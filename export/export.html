@@ -1606,15 +1606,224 @@ vorhergehenden Stack Frames weiterhin vorhanden sind. Je nach Komplexität des
 Aufufs kann dies zu Speicherproblemen führen - der Arbeitsspeicher kann 
 volllaufen.</p>
 <h3 id="endrekursion-ecmascript-6">Endrekursion in ECMAScript 6</h3>
+<p>Endrekursion ist optimiert, wenn folgende Kriterien zutreffen:</p>
+<ul>
+<li>strict mode</li>
+<li>Die Funktion ist kein Closure (todo was ist das)</li>
+<li>Nach dem Return gibt keine weitere Rechenaufgabe</li>
+<li>Das Ergebnis wird am Ende der Funktion zurückgegeben</li>
+</ul>
+<p>Ein Beispiel sagt oft mehr als 1000 Worte. Ein Beispiel für die Verwendung 
+einer rekursiven Programmierung ist die Berechnung der Fakultät einer Zahl.</p>
 <blockquote>
 <p>Die Fakultät ist in der Mathematik eine Funktion, die einer natürlichen 
 Zahl das Produkt aller natürlichen Zahlen (ohne Null) kleiner und gleich 
 dieser Zahl zuordnet. <a href="https://de.wikipedia.org/wiki/Fakult%C3%A4t_(Mathematik">https://de.wikipedia.org/wiki/Fakult%C3%A4t_(Mathematik</a>) 
 <img src="./media/kap3_2.png" alt="Fakultät" /></p>
 </blockquote>
-<pre><code>
+<p>Das folgende Beispiel erfüllt alle Kriterien und kann optimiert ausgeführt werden. </p>
+<pre><code>"use strict";
+function fakultaet(n, m = 1) {
+if (n &lt;= 1){
+return 1 * m;    
+} else {
+let ergebnis = n * m;    
+return fakultaet(n-1, ergebnis);     
+}
+}
+console.log(fakultaet(5)); // Ausgabe: 120
 &lt;!--index_936.html --&gt; </code></pre>
-<h3 id="wie-verwenden">Wie verwenden</h3>
+<p>Noch Rechnung nach Return notwendig</p>
+<pre><code>"use strict";
+function fakultaet(n) {
+if (n &lt;= 1){
+return 1;    
+} else {
+return n * fakultaet(n-1);     
+}
+}
+console.log(fakultaet(5)); // Ausgabe: 120
+&lt;!--index_936a.html --&gt; </code></pre>
+<p>Kein Return</p>
+<pre><code>"use strict";
+let ergebnis = 1;    
+function fakultaet(n) {
+if (n &lt;= 1){
+ergebnis = ergebnis;    
+} else {
+ergebnis = ergebnis * n;  
+fakultaet(n-1);     
+}
+}
+fakultaet(5);
+console.log(ergebnis); // Ausgabe: 120
+&lt;!--index_936b.html --&gt; </code></pre>
+<p>Closure</p>
+<pre><code>"use strict";
+function umrahmung(a) {
+let nummer = 1;    
+function fakultaet(n) {
+if (n &lt;= 1){
+return 1;    
+} else { 
+return n * fakultaet(n-1);     
+}
+}
+return fakultaet(a)
+}
+console.log(umrahmung(5)); // Ausgabe: 120
+&lt;!--index_936c.html --&gt; </code></pre>
+<pre><code>
+&lt;!--index_964.html --&gt;</code></pre>
+<blockquote>
+<p><strong>Achtung:</strong></p>
+</blockquote>
+<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
+<p>xxx</p>
+<p>todo <a href="https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md">https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md</a></p>
+<div class="footnotes">
+<hr />
+<ol>
+</ol>
+</div><h1 id="ecmascript-6-objekte">ECMAScript 6 - Objekte</h1>
+<p><a href="#" id="Objekte"></a></p>
+<h2 id="diesem-kapitel-werden-wir">In diesem Kapitel werden wir …</h2>
+<p>ECMAScript 6 verbessert die Arbeit mit Objekten.</p>
+<h2 id="welche-objekte-gib-es-javascript">Welche Objekte gib es in JavaScript</h2>
+<h2 id="syntax">Syntax</h2>
+<p>Die populärste Variante ein Objekt in JavaScript zu erzeugen, ist der 
+<code>Objekt-Literal</code>. 
+Die Syntax des <code>Objekt-Literals</code> beginnt mit einer öffnenden 
+geschweiften Klammer <code>{</code> und endet mit einer 
+schließenden geschweiften Klammer <code>}</code>. Dazwischen werden die 
+Eigenschaften mit Name und Wert aufgelistet. 
+Zwischen dem Name der Eigenschaft und ihrem Wert steht ein 
+Doppelpunkt, zwischen den Eigenschaften selbst ein Komma. 
+JSON baut auf dieser Syntax auf. Das Erfolgsrezept dieser Syntax ist 
+die Einfachheit, mit der ein Objekt erstellt wird. 
+ECMAScript 6 verbessert das Arbeiten mit <code>Objekt-Literalen</code> noch weiter.</p>
+<h3 id="abgekurzte-syntax-fur-eigenschaften">Abgekürzte Syntax für Eigenschaften</h3>
+<p>Schon in ECMAScript 5 reichten einige wenige Zeilen um ein Objekt zu erstellen. 
+Im nächsten Beispiel können Sie sich davon überzeugen.</p>
+<pre><code>function erstellePerson(name, alter) {
+return {
+name: name,
+alter: alter
+};
+}
+let person = erstellePerson("Astrid", 50);
+console.log(person); // Ausgabe: Object { name: "Astrid", alter: 50 }
+&lt;!--index_935.html --&gt;</code></pre>
+<p>Mit ECMAScript 6 wird der notwendige Programmcode noch weiter reduziert. Das 
+nachfolgende Beispiel ist das ECMAScript 6 Äquivalent zum vorhergenden 
+Beispiel. Sehen Sie selbst, die Namen der Eigenschaften können Sie 
+im Objekt-Literal` einsparen solange Sie die Variablen die passenden Namen 
+haben.</p>
+<p>Im nächsten Beispiel haben die Variablen die gleichen Namen und 
+die gleiche Reihenfolge wie im vorhergehenden.</p>
+<pre><code>function erstellePerson(name, alter) {
+return {
+name,
+alter
+};
+}
+let person = erstellePerson("Astrid", 50);
+console.log(person); // Ausgabe: Object { name: "Astrid", alter: 50 }
+&lt;!--index_935a.html --&gt;</code></pre>
+<p>Nachfolgend können Sie sehen was passiert, wenn Sie die Variablen in 
+einer anderen Reihenfolge eingeben.</p>
+<pre><code>function erstellePerson(name, alter) {
+return {
+alter,
+name
+};
+}
+let person = erstellePerson("Astrid", 50);
+console.log(person); // Ausgabe: Object { alter: 50, name: "Astrid" }
+&lt;!--index_935b.html --&gt;</code></pre>
+<p>Wenn sie andere Variablennamen verwenden, wird ihr Ergebnis ein Objekt 
+mit anderen Eigenschaften sein.</p>
+<pre><code>function erstellePerson(name, alter) {
+let age = alter;    
+return {
+age,
+name
+};
+}
+let person = erstellePerson("Astrid", 50);
+console.log(person); // Ausgabe: Object { age: 50, name: "Astrid" }
+&lt;!--index_935c.html --&gt;</code></pre>
+<h3 id="abgekurzte-syntax-fur-methoden">Abgekürzte Syntax für Methoden</h3>
+<p>Auch Methoden können Sie in abgekürzter Form in einem <code>Object-Literal</code> 
+verwenden.</p>
+<pre><code>&lt;!--index_934.html --&gt;</code></pre>
+<pre><code>&lt;!--index_934a.html --&gt;</code></pre>
+<h3 id="namen-von-eigenschaften-im-objekt-literal">Namen von Eigenschaften im Objekt-Literal</h3>
+<p>Die Namen von Eigenschaften konnten nicht berechnet werden.</p>
+<pre><code>&lt;!--index_933.html --&gt;</code></pre>
+<pre><code>&lt;!--index_933a.html --&gt;</code></pre>
+<pre><code>&lt;!--index_933b.html --&gt;</code></pre>
+<p>Im Objekt-Literal können mit ECMAScript 6 eckige Klammern verwendet werden.</p>
+<pre><code>&lt;!--index_933c.html --&gt;</code></pre>
+<h2 id="neue-methoden">Neue Methoden</h2>
+<h3 id="">is()</h3>
+<p>Object.is() bestimmt, ob zwei Werte gleich sind. Dabei gelten zwei Werte genau dann als gleich, wenn eine der folgenden Bedingungen zutrifft:</p>
+<ul>
+<li>beide sind undefined</li>
+<li>beide sind null</li>
+<li>beide sind true oder beide sind false</li>
+<li>beide sind Strings mit selber Länge und den selben Zeichen</li>
+<li>beide sind das selbe Objekt</li>
+<li>beide sind Zahlen und eine der folgenden Bedingungen trifft zu:<ul>
+<li>beide sind +0</li>
+<li>beide sind -0</li>
+<li>beide sind NaN</li>
+<li>beide sind nicht Null, beide sind nicht NaN und beide haben den selben Zahlenwert</li>
+</ul>
+</li>
+</ul>
+<p>Dies ist nicht das selbe wie der ==-Operator. Dieser verwendet verschiedene, situationsabhängige Typ-Umwandlungen auf beiden Seiten bevor auf Gleichheit getestet wird (was z.B. dazu führt, dass der Ausdruck "" == false zu true ausgewertet wird). Object.is hingegen wandelt keinen der beiden Werte um.</p>
+<p>Es ist ebenfalls nicht das selbe wie der strikte ===-Operator. Dieser – ebenso wie der ==-Operator – behandelt zum Beispiel +0 und -0 als identisch während NaN und NaN als nicht identisch behandelt werden.</p>
+<h3 id="assign">assign()</h3>
+<h2 id="duplicate-objekt-literals">Duplicate Objekt literals</h2>
+<h2 id="own-properie-enumeration">Own Properie enumeration</h2>
+<h2 id="verbesserungen-fur-prototypen">Verbesserungen für Prototypen</h2>
+<h3 id="anderungen">Änderungen</h3>
+<h3 id="leicherterer-zugriff">Leicherterer Zugriff</h3>
+<h2 id="eine-formale-methodendefinition">Eine formale Methodendefinition</h2>
+<h3 id="ecmascript-5">ECMAScript 5</h3>
+<blockquote>
+<p><strong>Achtung:</strong></p>
+</blockquote>
+<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
+<p>xxx</p>
+<p>todo <a href="https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md">https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md</a></p>
+<div class="footnotes">
+<hr />
+<ol>
+</ol>
+</div><h1 id="ecmascript-6-strukturierung">ECMAScript 6 - Strukturierung</h1>
+<p><a href="#" id="Strukturierung"></a></p>
+<h2 id="diesem-kapitel-werden-wir">In diesem Kapitel werden wir …</h2>
+<p>Zunächst zeige ich Ihnen, wie Sie 
+Todo Meldungen immer mit Firefox</p>
+<h2 id="warum-strukturieren">Warum Strukturieren</h2>
+<h2 id="objekt-strukturierung">Objekt Strukturierung</h2>
+<h3 id="zuweisung">Zuweisung</h3>
+<h3 id="standardwerte">Standardwerte</h3>
+<h3 id="lokale-variablen">Lokale Variablen</h3>
+<h3 id="verschachtelungen">Verschachtelungen</h3>
+<h2 id="array-strukturierung">Array Strukturierung</h2>
+<h3 id="zuweisung">Zuweisung</h3>
+<h3 id="standardwerte">Standardwerte</h3>
+<h3 id="lokale-variablen">Lokale Variablen</h3>
+<h3 id="rest-items">Rest Items</h3>
+<h2 id="gemischte-strukturierung">Gemischte Strukturierung</h2>
+<h2 id="parameter-strukturierung">Parameter Strukturierung</h2>
+<h3 id="notwendige-parameter">Notwendige Parameter</h3>
+<h3 id="standardwerte">Standardwerte</h3>
+<pre><code>
+&lt;!--index_963.html --&gt;</code></pre>
 <pre><code>
 &lt;!--index_964.html --&gt;</code></pre>
 <blockquote>

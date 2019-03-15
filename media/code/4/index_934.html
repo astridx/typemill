@@ -9,11 +9,14 @@
 function erstellePerson(name, alter) {
 return {
 name: name,
-alter: alter
+alter: alter,
+protokolliereName: function(){
+console.log(this.name);	
+}
 };
 }
 let person = erstellePerson("Astrid", 50);
-console.log(person); // Ausgabe: Object { name: "Astrid", alter: 50 }
+person.protokolliereName(); // Ausgabe: Astrid
 </script>    
 </body>
 </html>
