@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let mensch = { getGruss(){ return "Hallo";}};
+let frau = { 
+getGruss(){ 
+return Object.getPrototypeOf(this).getGruss.call(this) + " Traummann";
+}
+};
+Object.setPrototypeOf(frau, mensch);
+let nocheinefrau = Object.create(frau);
+console.log(mensch.getGruss()); // Ausgabe: Hallo
+console.log(frau.getGruss()); // Ausgabe: Hallo Traummann
+console.log(nocheinefrau.getGruss()); // Error: too much recursion
+</script>    
+</body>
+</html>

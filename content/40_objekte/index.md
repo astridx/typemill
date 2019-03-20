@@ -347,20 +347,73 @@ Die Sortierung erfolgt nach folgendenden Regeln:
 
 ## Verbesserungen für Prototypen
 
-### Änderungen
+### Einen Prototyp ändern
+
+Mit ECMAScript 6 kann man Prototyp ändern 
+`Object.setPrototypeOf();`
 
 ```
-<!--index_930.html -->
+let mensch = { getGruss(){ return "Hallo";}};
+let hund = { getGruss(){ return "Wauwau";}};
+let frau = Object.create(mensch);
+console.log(frau.getGruss()); // Ausgabe: Hallo
+console.log(Object.getPrototypeOf(frau) === mensch); // Ausgabe: true
+Object.setPrototypeOf(frau, hund);
+console.log(frau.getGruss()); // Ausgabe: Hallo
+console.log(Object.getPrototypeOf(frau) === hund); // Ausgabe: true
+console.log(Object.getPrototypeOf(frau) === mensch); // Ausgabe: false
+<!--index_929.html -->
 ```
 
-### Leicherterer Zugriff
+### Leicherterer Zugriff mit super
+
+Dieses Beispiel nutzt Vererbung. 
+```
+<!--index_928.html -->
+```
+
+Die Einführung von `super` vereinfacht dieses Beispiel
+
+```
+<!--index_928a.html -->
+```
+
+Aber: Syntax error bei verkürzter Sytnax:
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Methoden_Definitionen
+
+
+```
+<!--index_928b.html -->
+```
+
+`super` ist bei Mehrfachvererbung wirlich hilfreich. Alles funktioniert dann nicht mehr.
+
+```
+<!--index_928c.html -->
+```
+
+Mit super klappt das aber dann.
+
+```
+<!--index_928d.html -->
+```
+
 ## Eine formale Methodendefinition
-### ECMAScript 5
 
 
+```
+<!--index_927.html -->
+```
 
+`super.getGruss()` ist äquivalent zu `mensch.getGruss.call(this)`
 
+Diese Funktion ist keine Methode.
 
+```
+function getGruss(){ 
+return "Hi";
+}
+```
 
 
 > **Achtung:**

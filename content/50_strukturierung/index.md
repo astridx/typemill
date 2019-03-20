@@ -7,6 +7,63 @@ Zunächst zeige ich Ihnen, wie Sie
 Todo Meldungen immer mit Firefox
 
 ## Warum Strukturieren
+
+Mit ECMAScript 5 musste oft viel doppelter Text geschrieben werden.
+
+```
+let farben = { 
+rot: "#FF0000",
+gruen: "#00FF00",
+blau: "#0000FF"
+};
+let rot = farben.rot;
+let gruen = farben.gruen;
+let blau = farben.blau;
+
+console.log(rot);
+console.log(gruen);
+console.log(blau);
+<!--index_926.html -->
+```
+
+Anstelle von 
+
+```
+let rot = farben.rot;
+let gruen = farben.gruen;
+let blau = farben.blau;
+```
+
+reicht mit ECMAScript 6 die Zeile
+
+```
+let {rot, gruen, blau} = farben;
+```
+
+```
+let farben = { 
+rot: "#FF0000",
+gruen: "#00FF00",
+blau: "#0000FF"
+};
+let {rot, gruen, blau} = farben;
+
+console.log(rot);
+console.log(gruen);
+console.log(blau);
+<!--index_926a.html -->
+```
+
+
+> Initialisieren nicht vergessen!
+```
+...
+let {rot, gruen, blau}; 
+// Ausgabe: SyntaxError: missing = in destructuring declaration
+<!--index_926b.html -->
+```
+
+
 ## Objekt Strukturierung
 ### Zuweisung
 ### Standardwerte

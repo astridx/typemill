@@ -8,13 +8,13 @@
 <script>
 let mensch = { getGruss(){ return "Hallo";}};
 let hund = { getGruss(){ return "Wauwau";}};
-let person = Object.create(mensch);
-console.log(person.getGruss()); // Ausgabe: Hallo
-console.log(Object.getPrototypeOf(person) === mensch); // Ausgabe: true
-Object.setPrototypeOf(person, hund);
-console.log(person.getGruss()); // Ausgabe: Hallo
-console.log(Object.getPrototypeOf(person) === hund); // Ausgabe: true
-console.log(Object.getPrototypeOf(person) === mensch); // Ausgabe: false
+let frau = Object.create(mensch);
+console.log(frau.getGruss()); // Ausgabe: Hallo
+console.log(Object.getPrototypeOf(frau) === mensch); // Ausgabe: true
+Object.setPrototypeOf(frau, hund);
+console.log(frau.getGruss()); // Ausgabe: Hallo
+console.log(Object.getPrototypeOf(frau) === hund); // Ausgabe: true
+console.log(Object.getPrototypeOf(frau) === mensch); // Ausgabe: false
 </script>    
 </body>
 </html>

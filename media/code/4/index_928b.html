@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let mensch = { getGruss(){ return "Hallo";}};
+let hund = { getGruss(){ return "Wauwau";}};
+let frau = { 
+getGruss: function() { 
+return super.getGruss() + " Traummann";
+} 
+}; // SyntaxError: use of super property accesses 
+   // only valid within methods or eval code within methods
+letmann = { 
+getGruss(){ 
+return super.getGruss() + " Traufrau";
+}
+};
+</script>    
+</body>
+</html>

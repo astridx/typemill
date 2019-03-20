@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let mensch = { getGruss(){ return "Hallo";}};
+let frau = { 
+getGruss(){ 
+return super.getGruss() + " Traummann";
+}
+};
+
+function getGruss(){ 
+return "Hi";
+}
+
+Object.setPrototypeOf(frau, mensch);
+
+console.log(frau.getGruss()); // Ausgabe: Hallo Traummann
+console.log(getGruss()); // Ausgabe: Hi
+</script>    
+</body>
+</html>

@@ -1760,14 +1760,52 @@ verwenden.</p>
 <pre><code>&lt;!--index_934a.html --&gt;</code></pre>
 <h3 id="namen-von-eigenschaften-im-objekt-literal">Namen von Eigenschaften im Objekt-Literal</h3>
 <p>Die Namen von Eigenschaften konnten nicht berechnet werden.</p>
-<pre><code>&lt;!--index_933.html --&gt;</code></pre>
-<pre><code>&lt;!--index_933a.html --&gt;</code></pre>
-<pre><code>&lt;!--index_933b.html --&gt;</code></pre>
+<pre><code>let person = {};
+let nachname = "nach name";
+person["vor name"] = "astrid";
+person[nachname] = "guenther";
+person["geburts name"] = "mueller";
+
+console.log(person["vor name"]); // Ausgabe: astrid
+console.log(person[nachname]); // Ausgabe: guenther
+console.log(person["geburts name"]); // Ausgabe: mueller
+&lt;!--index_933.html --&gt;</code></pre>
+<pre><code>let nachname = "nach name";
+let person = {
+    "vor name": "astrid",
+    nachname: "guenther",
+    "geburts name": "mueller",
+};
+
+console.log(person["vor name"]); // Ausgabe: astrid
+console.log(person[nachname]); // Ausgabe: undefind
+console.log(person["geburts name"]); // Ausgabe: mueller
+&lt;!--index_933a.html --&gt;</code></pre>
+<pre><code>let nachname = "nach name";
+let person = {
+    "vor name": "astrid",
+    "geburts name": "mueller",
+};
+person[nachname] = "guenther";
+console.log(person["vor name"]); // Ausgabe: astrid
+console.log(person[nachname]); // Ausgabe: guenther
+console.log(person["geburts name"]); // Ausgabe: mueller
+&lt;!--index_933b.html --&gt;</code></pre>
 <p>Im Objekt-Literal können mit ECMAScript 6 eckige Klammern verwendet werden.</p>
-<pre><code>&lt;!--index_933c.html --&gt;</code></pre>
+<pre><code>let nachname = "nach name";
+let person = {
+    "vor name": "astrid",
+    [nachname]: "guenther",
+    "geburts name": "mueller",
+};
+console.log(person["vor name"]); // Ausgabe: astrid
+console.log(person[nachname]); // Ausgabe: guenther
+console.log(person["geburts name"]); // Ausgabe: mueller
+&lt;!--index_933c.html --&gt;</code></pre>
 <h2 id="neue-methoden">Neue Methoden</h2>
 <h3 id="">is()</h3>
-<p>Object.is() bestimmt, ob zwei Werte gleich sind. Dabei gelten zwei Werte genau dann als gleich, wenn eine der folgenden Bedingungen zutrifft:</p>
+<p>Object.is() bestimmt, ob zwei Werte gleich sind. Dabei gelten zwei 
+Werte genau dann als gleich, wenn eine der folgenden Bedingungen zutrifft:</p>
 <ul>
 <li>beide sind undefined</li>
 <li>beide sind null</li>
@@ -1778,20 +1816,175 @@ verwenden.</p>
 <li>beide sind +0</li>
 <li>beide sind -0</li>
 <li>beide sind NaN</li>
-<li>beide sind nicht Null, beide sind nicht NaN und beide haben den selben Zahlenwert</li>
+<li>beide sind nicht null, beide sind nicht NaN und beide haben den selben Zahlenwert</li>
 </ul>
 </li>
 </ul>
 <p>Dies ist nicht das selbe wie der ==-Operator. Dieser verwendet verschiedene, situationsabhängige Typ-Umwandlungen auf beiden Seiten bevor auf Gleichheit getestet wird (was z.B. dazu führt, dass der Ausdruck "" == false zu true ausgewertet wird). Object.is hingegen wandelt keinen der beiden Werte um.</p>
-<p>Es ist ebenfalls nicht das selbe wie der strikte ===-Operator. Dieser – ebenso wie der ==-Operator – behandelt zum Beispiel +0 und -0 als identisch während NaN und NaN als nicht identisch behandelt werden.</p>
+<p>Es ist ebenfalls nicht dasselbe wie der strikte <code>===</code>-Operator. 
+Dieser – ebenso wie der <code>==</code>-Operator – behandelt zum Beispiel <code>+0</code> und <code>-0</code> als 
+identisch während <code>NaN</code> und <code>NaN</code> als nicht identisch behandelt werden.
+<a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/is">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/is</a></p>
+<p>Jeder der Operatoren hat seine Vorteile und seine Nachteile. 
+Hier gibt es kein Richtig oder Falsch. Entscheiden Sie selbst 
+welcher Vergleichsoperator der 
+Richtige für Ihren aktuellen Anendungsfall ist.</p>
+<pre><code>console.log(0 == 0); // Ausgabe: true
+console.log(0 == "0"); // Ausgabe: true
+console.log(0 === 0); // Ausgabe: true
+console.log(0 === "0"); // Ausgabe: false
+console.log(Object.is(0, 0)); // Ausgabe: true
+console.log(Object.is(0, "0")); // Ausgabe: false
+
+console.log(+0 == -0); // Ausgabe: true
+console.log(+0 === -0); // Ausgabe: true
+console.log(Object.is(+0, -0)); // Ausgabe: false
+
+console.log(NaN == NaN); // Ausgabe: false
+console.log(NaN === NaN); // Ausgabe: false
+console.log(Object.is(NaN, NaN)); // Ausgabe: true
+&lt;!--index_932.html --&gt;</code></pre>
 <h3 id="assign">assign()</h3>
+<p>Die Methode Object.assign() kopiert die Werte aller aufzählbaren, eigenen Eigenschaften von einem oder mehreren Quellobjekten in ein Zielobjekt. 
+Es wird das Zielobjekt zurückgegeben. <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/assign</a></p>
+<p>Aber beginnen wir ganz vorne - hier bei Mixins. 
+Ein Mixin ist eine Klasse oder eine Schnittstelle in der einige oder 
+alle ihrer Methoden und/oder Eigenschaften nicht implementiert werden, 
+was erfordert, dass eine andere Klasse oder Schnittstelle die fehlenden 
+Implementierungen bereitstellt. 
+Die neue Klasse bzw. die neue Schnittstelle enthält dann sowohl 
+die Eigenschaften und Methoden aus dem Mixin als auch diejenigen, 
+die sie selbst definiert. Alle Methoden und Eigenschaften werden exakt 
+gleich verwendet, unabhängig davon, ob sie im Mixin implementiert 
+sind oder im Interface oder in der Klasse, die das Mixin implementiert. 
+Der Vorteil von Mixins besteht darin, dass sie zur Vereinfachung 
+des Designs von APIs verwendet werden können, 
+bei denen mehrere Schnittstellen dieselben Methoden 
+und Eigenschaften enthalten müssen. <a href="https://developer.mozilla.org/de/docs/Glossary/Mixin">https://developer.mozilla.org/de/docs/Glossary/Mixin</a></p>
+<p>Vielleicht ist Ihnen schon einmal ein Mixin wie das Folgende aufgefallen?</p>
+<pre><code>function mixin(receiver, supplier) {
+    Object.keys(supplier).forEach(function(key) {
+        receiver[key] = supplier[key];
+    });
+
+    return receiver;
+}
+function EreignisZiel(){
+}
+EreignisZiel.prototype ={
+constructor: EreignisZiel,
+sage: function(wort){
+console.log(wort);
+},
+};
+let meinObjekt = {};
+mixin(meinObjekt, EreignisZiel.prototype);
+meinObjekt.sage("Hallo"); // Ausgabe: Hallo
+&lt;!--index_931.html --&gt;</code></pre>
+<p>Im nächsten Beispiel sehen Sie, dass die Methode assign() die Aufgabe der 
+selbstgeschriebenen Methode mixin übernimmt. Sie müssen ein Mixin nicht 
+mehr selbst programmieren. ECMAScript 6 bietet Ihnen dies von Hause aus.</p>
+<pre><code>function EreignisZiel(){
+}
+EreignisZiel.prototype ={
+constructor: EreignisZiel,
+sage: function(wort){
+console.log(wort);
+},
+};
+let meinObjekt = {};
+Object.assign(meinObjekt, EreignisZiel.prototype);
+meinObjekt.sage("Hallo"); // Ausgabe: Hallo
+&lt;!--index_931a.html --&gt;</code></pre>
+<p>Achtung überschreiben.</p>
+<pre><code>let meinObjekt = {};
+Object.assign(meinObjekt, 
+{id: "1"},
+{id: "2"}
+);
+console.log(meinObjekt.id); // Ausgabe: 2
+&lt;!--index_931b.html --&gt;</code></pre>
+<p>Nur der Wert wird zugewiesen, nicht die Methode.</p>
+<pre><code>let meinObjekt = {};
+Object.assign(meinObjekt, 
+{get id() {return "1"}},
+{get id() {return "2"}}
+);
+console.log(meinObjekt.id); // Ausgabe: 2
+console.log(meinObjekt.get); // Ausgabe: undefined
+&lt;!--index_931c.html --&gt;</code></pre>
 <h2 id="duplicate-objekt-literals">Duplicate Objekt literals</h2>
+<p>Mit ECMAScript 6 darf man in einem Objekt-Literal eine Eigenschaft mit dem 
+gleichen Namen mehrmals einfügen. Zum Beispiel so wie im folgenden 
+Programmcode.</p>
+<pre><code>"use strict";
+let meinObjekt = {
+    id: "1",
+    id: "2"
+};
+console.log(meinObjekt.id); // Ausgabe: 2
+&lt;!--index_931c.html --&gt;</code></pre>
+<p>In ECMAScript 5 wurde ein Syntax-Fehler gemeldet, wenn ein gleicher Name 
+mehrmals in einem Objekt-Literal vorkam.</p>
 <h2 id="own-properie-enumeration">Own Properie enumeration</h2>
+<p>ECMAScript 6 legt die Reihenfolge, in der Eigenschaften von Objekten aufgelistet 
+werden fest. Diese Funktion erscheint auf den ersten Blick unwichtig. Sie sollten 
+diese Funktion aber im Hinterkopf behalten. Es gibt Software, die eine bestimmte 
+Reihenfolge in der Auflistung von Eigenschaften voraussetzt. ECMAScript 6 bietet 
+eine Reihenfolge, auf die sich andere Programme verlassen können. 
+Sehen Sie sich hierzu das nachfolgende Beispiel an.</p>
+<pre><code>let meinObjekt = {
+    a: 1,
+    z: 1,
+    w: 1,
+    10: 1,
+    9: 1,
+    1: 1,
+    5: 1,
+    b: 1,
+};
+console.log(Object.getOwnPropertyNames(meinObjekt)); 
+// Ausgabe: Array(8) [ "1", "5", "9", "10", "a", "z", "w", "b" ]
+&lt;!--index_930.html --&gt;</code></pre>
+<p>Die Sortierung erfolgt nach folgendenden Regeln:</p>
+<ol>
+<li>Alle Zahlen in aufsteigender Reihenfolge.</li>
+<li>Alle Strings in der Reihenfolge in der diese zum Objekt hinzugefügt wurden.</li>
+<li>Alle Symbole in der Reihenfolge in der diese zum Objekt hinzugefügt wurden.</li>
+</ol>
 <h2 id="verbesserungen-fur-prototypen">Verbesserungen für Prototypen</h2>
-<h3 id="anderungen">Änderungen</h3>
-<h3 id="leicherterer-zugriff">Leicherterer Zugriff</h3>
+<h3 id="einen-prototyp-andern">Einen Prototyp ändern</h3>
+<p>Mit ECMAScript 6 kann man Prototyp ändern 
+<code>Object.setPrototypeOf();</code></p>
+<pre><code>let mensch = { getGruss(){ return "Hallo";}};
+let hund = { getGruss(){ return "Wauwau";}};
+let frau = Object.create(mensch);
+console.log(frau.getGruss()); // Ausgabe: Hallo
+console.log(Object.getPrototypeOf(frau) === mensch); // Ausgabe: true
+Object.setPrototypeOf(frau, hund);
+console.log(frau.getGruss()); // Ausgabe: Hallo
+console.log(Object.getPrototypeOf(frau) === hund); // Ausgabe: true
+console.log(Object.getPrototypeOf(frau) === mensch); // Ausgabe: false
+&lt;!--index_929.html --&gt;</code></pre>
+<h3 id="leicherterer-zugriff-mit-super">Leicherterer Zugriff mit super</h3>
+<p>Dieses Beispiel nutzt Vererbung. </p>
+<pre><code>&lt;!--index_928.html --&gt;</code></pre>
+<p>Die Einführung von <code>super</code> vereinfacht dieses Beispiel</p>
+<pre><code>&lt;!--index_928a.html --&gt;</code></pre>
+<p>Aber: Syntax error bei verkürzter Sytnax:
+<a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Methoden_Definitionen">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Methoden_Definitionen</a></p>
+<pre><code>&lt;!--index_928b.html --&gt;</code></pre>
+<p><code>super</code> ist bei Mehrfachvererbung wirlich hilfreich. Alles funktioniert dann nicht mehr.</p>
+<pre><code>&lt;!--index_928c.html --&gt;</code></pre>
+<p>Mit super klappt das aber dann.</p>
+<pre><code>&lt;!--index_928d.html --&gt;</code></pre>
 <h2 id="eine-formale-methodendefinition">Eine formale Methodendefinition</h2>
-<h3 id="ecmascript-5">ECMAScript 5</h3>
+<pre><code>&lt;!--index_927.html --&gt;</code></pre>
+<p><code>super.getGruss()</code> ist äquivalent zu <code>mensch.getGruss.call(this)</code></p>
+<p>Diese Funktion ist keine Methode.</p>
+<pre><code>function getGruss(){ 
+return "Hi";
+}</code></pre>
 <blockquote>
 <p><strong>Achtung:</strong></p>
 </blockquote>
@@ -1808,6 +2001,44 @@ verwenden.</p>
 <p>Zunächst zeige ich Ihnen, wie Sie 
 Todo Meldungen immer mit Firefox</p>
 <h2 id="warum-strukturieren">Warum Strukturieren</h2>
+<p>Mit ECMAScript 5 musste oft viel doppelter Text geschrieben werden.</p>
+<pre><code>let farben = { 
+rot: "#FF0000",
+gruen: "#00FF00",
+blau: "#0000FF"
+};
+let rot = farben.rot;
+let gruen = farben.gruen;
+let blau = farben.blau;
+
+console.log(rot);
+console.log(gruen);
+console.log(blau);
+&lt;!--index_926.html --&gt;</code></pre>
+<p>Anstelle von </p>
+<pre><code>let rot = farben.rot;
+let gruen = farben.gruen;
+let blau = farben.blau;</code></pre>
+<p>reicht mit ECMAScript 6 die Zeile</p>
+<pre><code>let {rot, gruen, blau} = farben;</code></pre>
+<pre><code>let farben = { 
+rot: "#FF0000",
+gruen: "#00FF00",
+blau: "#0000FF"
+};
+let {rot, gruen, blau} = farben;
+
+console.log(rot);
+console.log(gruen);
+console.log(blau);
+&lt;!--index_926a.html --&gt;</code></pre>
+<blockquote>
+<p>Initialisieren nicht vergessen!</p>
+<pre><code>...
+let {rot, gruen, blau}; 
+// Ausgabe: SyntaxError: missing = in destructuring declaration
+&lt;!--index_926b.html --&gt;</code></pre>
+</blockquote>
 <h2 id="objekt-strukturierung">Objekt Strukturierung</h2>
 <h3 id="zuweisung">Zuweisung</h3>
 <h3 id="standardwerte">Standardwerte</h3>
