@@ -1,12 +1,19 @@
-# ECMAScript 6 - Strukturierung
-[](#){#Strukturierung}
+# ECMAScript 6 - Destrukturierende Zuweisung
+[](#){#DestrukturierendeZuweisung}
 
 
 ## In diesem Kapitel werden wir …
 Zunächst zeige ich Ihnen, wie Sie 
 Todo Meldungen immer mit Firefox
 
-## Warum Strukturieren
+## Warum Destrukturieren
+
+
+
+Die destrukturierende Zuweisung ermöglicht es, Daten aus Arrays oder Objekten 
+zu extrahieren, und zwar mit Hilfe einer Syntax, die der Konstruktion von 
+Array- und Objekt-Literalen nachempfunden ist.
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Destrukturierende_Zuweisung
 
 Mit ECMAScript 5 musste oft viel doppelter Text geschrieben werden.
 
@@ -25,6 +32,8 @@ console.log(gruen);
 console.log(blau);
 <!--index_926.html -->
 ```
+
+## Objekt Strukturierung
 
 Anstelle von 
 
@@ -56,6 +65,7 @@ console.log(blau);
 
 
 > Initialisieren nicht vergessen!
+
 ```
 ...
 let {rot, gruen, blau}; 
@@ -63,12 +73,81 @@ let {rot, gruen, blau};
 <!--index_926b.html -->
 ```
 
-
-## Objekt Strukturierung
 ### Zuweisung
+
+Nicht nur bei der Initialisierung eines Objektes gibt es Verbesserungen. Auch 
+die Zuweisung eines Wertes zu einer Eigenschaft ist mit 
+ECMAScript 6 unkomplizierter. 
+
+```
+<!--index_925.html -->
+```
+
+Das geht auch in einer Funktion.
+
+```
+<!--index_925b.html -->
+```
+
+> Achtung: Es gibt einen Fehler, wenn die Zuweisung einmal `null` ist.
+
 ### Standardwerte
+
+Manchmal kommt es vor, dass ein Wert nicht bestimmt ist. Deshalb ist es gut, 
+dass bei auch bei destrukturierender Zuweisung mit Standardwerten arbeiten kann. 
+
+Ohne einen Standardwert anzugeben würde eine Variable nicht definiert werden.
+
+```
+
+<!--index_924.html -->
+```
+
+Mit Standardwerten kann man dieses Problem umgehen - wie das geht zeigt das 
+nächste Beispiel.
+
+```
+let farben = { 
+rot: "#FF0000",
+gruen: "#00FF00",
+};
+
+let {rot = "#FF1111", gruen = "#1111FF", blau = "#0000FF"} = farben;
+
+console.log(rot); // Ausgabe: #FF0000
+console.log(gruen); // Ausgabe: #00FF00
+console.log(blau); // Ausgabe: undefined
+<!--index_924a.html -->
+```
+
+
 ### Lokale Variablen
+
+Bisher waren beim destrukturieren die korrespondierenden 
+Variablennamen immer gleich. Das kann aber auch einmal anders sein. Die 
+Namen können abweichen. Deshalb ist es gut, dass es hierfür eine Lösung in der 
+Syntax gibt.
+
+
+```
+
+<!--index_923.html -->
+```
+
+Und lokalen Variblen önnen Sie auch in Verbindung mit Standardvariablen 
+einsetzen. Sehen Sie sich dazu das nachfolgende Beispiel an.
+
+
+```
+
+<!--index_923a.html -->
+
 ### Verschachtelungen
+
+```
+
+<!--index_922.html -->
+
 ## Array Strukturierung
 ### Zuweisung
 ### Standardwerte
