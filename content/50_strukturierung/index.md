@@ -134,7 +134,7 @@ Syntax gibt.
 <!--index_923.html -->
 ```
 
-Und lokalen Variblen önnen Sie auch in Verbindung mit Standardvariablen 
+Und lokalen Variblen können Sie auch in Verbindung mit Standardvariablen 
 einsetzen. Sehen Sie sich dazu das nachfolgende Beispiel an.
 
 
@@ -144,33 +144,195 @@ einsetzen. Sehen Sie sich dazu das nachfolgende Beispiel an.
 
 ### Verschachtelungen
 
-```
 
+```
+let farben = { 
+farbcode: {
+rot: {
+hellrot: "#FFEEEEE",
+dunkelrot: "#FF0000",
+}
+},
+};
+let {farbcode: {rot}}  = farben;
+console.log(rot.hellrot); // Ausgabe: #FFEEEE
+console.log(rot.dunkelrot); // Ausgabe: #FF0000
 <!--index_922.html -->
 
+Auch das Vergeben eines neuen Variablennamens ist mögliche.
+
+```
+let farben = { 
+farbcode: {
+rot: {
+hellrot: "#FFEEEEE",
+dunkelrot: "#FF0000",
+}
+},
+};
+let {farbcode: {rot: farbcodesrot}}  = farben;
+console.log(farbcodesrot.hellrot); // Ausgabe: #FFEEEE
+console.log(farbcodesrot.dunkelrot); // Ausgabe: #FF0000
+<!--index_922a.html -->
+
 ## Array Strukturierung
+
+
+
+```
+let farben = ["rot", "gruen", "blau"];
+let [farbe1, farbe2]  = farben;
+console.log(farbe1); // Ausgabe: rot
+console.log(farbe2); // Ausgabe: gruen
+<!--index_922.html -->
+
+Sie können einzelne Array Elemente innerhalb des Arrays auswählen.
+
+```
+let farben = ["rot", "gruen", "blau"];
+let [, , farbe3]  = farben;
+console.log(farbe3); // Ausgabe: blau
+<!--index_921a.html -->
+
+Schon vorhandene Variablen können verwendet werden.
+
+```
+let farben = ["rot", "gruen", "blau"];
+let [, , farbe3]  = farben;
+console.log(farbe3); // Ausgabe: rot
+<!--index_921b.html -->
+
+
 ### Zuweisung
+
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Destrukturierende_Zuweisung#Variablen_tauschen
+Die destrukturiende Zuweisung kann auch zum Tauschen von Variablenwerten 
+verwendet werden.
+
+Bisher
+
+```
+let erster = "Astrid";
+let zweiter = "Elmar";
+let helfer;
+console.log(erster); // Ausgabe: Astrid
+console.log(zweiter); // Ausgabe: Elmar
+helfer = erster;
+erster = zweiter;
+zweiter = helfer;
+console.log(erster); // Ausgabe: Elmar
+<!--index_920.html -->
+```
+Neu
+
+```
+let erster = "Astrid";
+let zweiter = "Elmar";
+console.log(erster); // Ausgabe: Astrid
+console.log(zweiter); // Ausgabe: Elmar
+[erster, zweiter] = [zweiter, erster];
+console.log(erster); // Ausgabe: Elmar
+console.log(zweiter); // Ausgabe: Astrid
+<!--index_920a.html -->
+```
+
 ### Standardwerte
-### Lokale Variablen
+
+Der Vollständigkeit halber Standardwerte von Arrays bei der 
+destrukturienden Zuweisung.
+
+```
+let reihenfolge1 = ["Astrid"];
+let [ erster1, zweiter1 = "Elmar"] = reihenfolge1;
+console.log(erster1); // Ausgabe: Astrid
+console.log(zweiter1); // Ausgabe: Elmar
+
+let reihenfolge2 = ["Astrid", "Nina"];
+let [ erster2, zweiter2 = "Elmar"] = reihenfolge2;
+console.log(erster2); // Ausgabe: Astrid
+console.log(zweiter2); // Ausgabe: Nina
+
+let reihenfolge = "Astrid";
+let [ erster, zweiter = "Elmar"] = reihenfolge;
+console.log(erster); // Ausgabe: A
+console.log(zweiter); // Ausgabe: s
+<!--index_919.html -->
+```
+
+### Geschachtelte Variablen
+
+Verschachteln ist beliebig tief mögliche. Klammern sind wichtig!
+
+```
+let reihenfolge = ["Astrid", ["Uschi", "Sam"], "Elmar"];
+let [ erster, [zweiter], dritter] = reihenfolge;
+console.log(erster); // Ausgabe: Astrid
+console.log(zweiter); // Ausgabe: Uschi
+console.log(dritter); // Ausgabe: Elmar
+
+let reihenfolge1 = ["Astrid", ["Uschi", "Sam"], "Elmar"];
+let [ erster1, zweiter1, dritter1] = reihenfolge1;
+console.log(erster1); // Ausgabe: Astrid
+console.log(zweiter1); // Ausgabe: Array [ "Uschi", "Sam" ]
+console.log(dritter1); // Ausgabe: Elmar
+<!--index_918.html -->
+```
+
 ### Rest Items
+
+Rest Items waren in Kapitel 3 schon einmal ein Thema.
+Egal wo man den Rest Parameter einsetzt - er nimmt den Rest auf.
+
+```
+let reihenfolge = ["Astrid", "Uschi", "Sam", "Elmar"];
+let [ erster, ...rest ] = reihenfolge;
+console.log(erster); // Ausgabe: Astrid
+console.log(rest.length); // Ausgabe: 3
+console.log(rest[0]); // Ausgabe: Uschi
+console.log(rest[1]); // Ausgabe: Sam
+console.log(rest[2]); // Ausgabe: Elmar
+console.log(rest[3]); // Ausgabe: undefined
+
+let reihenfolge1 = ["Astrid", "Uschi", "Sam", "Elmar"];
+let [ ...rest1 ] = reihenfolge1;
+console.log(rest1.length); // Ausgabe: 4
+console.log(rest1[0]); // Ausgabe: Astrid
+console.log(rest1[1]); // Ausgabe: Uschi
+console.log(rest1[2]); // Ausgabe: Sam
+console.log(rest1[3]); // Ausgabe: Elmar
+<!--index_917.html -->
+```
+
+Zum Clonen kann er auch verwendet werden. Bisher wurde dies oft mit 
+concate gemacht.
+
+```
+let reihenfolge = ["Astrid", "Uschi"];
+let kopierteReihenfolge = reihenfolge.concat();
+console.log(reihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+console.log(kopierteReihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+<!--index_916.html -->
+```
+
+```
+let reihenfolge = ["Astrid", "Uschi"];
+let [ ...kopierteReihenfolge] = reihenfolge;
+console.log(reihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+console.log(kopierteReihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+<!--index_916.html -->
+```
+
+
 ## Gemischte Strukturierung
+
+```
+<!--index_915.html -->
+```
+
 ## Parameter Strukturierung
 ### Notwendige Parameter
 ### Standardwerte
 
-
-
-```
-
-<!--index_963.html -->
-```
-
-
-
-```
-
-<!--index_964.html -->
-```
 
 
 

@@ -1995,12 +1995,16 @@ return "Hi";
 <hr />
 <ol>
 </ol>
-</div><h1 id="ecmascript-6-strukturierung">ECMAScript 6 - Strukturierung</h1>
-<p><a href="#" id="Strukturierung"></a></p>
+</div><h1 id="ecmascript-6-destrukturierende-zuweisung">ECMAScript 6 - Destrukturierende Zuweisung</h1>
+<p><a href="#" id="DestrukturierendeZuweisung"></a></p>
 <h2 id="diesem-kapitel-werden-wir">In diesem Kapitel werden wir …</h2>
 <p>Zunächst zeige ich Ihnen, wie Sie 
 Todo Meldungen immer mit Firefox</p>
-<h2 id="warum-strukturieren">Warum Strukturieren</h2>
+<h2 id="warum-destrukturieren">Warum Destrukturieren</h2>
+<p>Die destrukturierende Zuweisung ermöglicht es, Daten aus Arrays oder Objekten 
+zu extrahieren, und zwar mit Hilfe einer Syntax, die der Konstruktion von 
+Array- und Objekt-Literalen nachempfunden ist.
+<a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Destrukturierende_Zuweisung">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Destrukturierende_Zuweisung</a></p>
 <p>Mit ECMAScript 5 musste oft viel doppelter Text geschrieben werden.</p>
 <pre><code>let farben = { 
 rot: "#FF0000",
@@ -2015,6 +2019,7 @@ console.log(rot);
 console.log(gruen);
 console.log(blau);
 &lt;!--index_926.html --&gt;</code></pre>
+<h2 id="objekt-strukturierung">Objekt Strukturierung</h2>
 <p>Anstelle von </p>
 <pre><code>let rot = farben.rot;
 let gruen = farben.gruen;
@@ -2034,18 +2039,126 @@ console.log(blau);
 &lt;!--index_926a.html --&gt;</code></pre>
 <blockquote>
 <p>Initialisieren nicht vergessen!</p>
+</blockquote>
 <pre><code>...
 let {rot, gruen, blau}; 
 // Ausgabe: SyntaxError: missing = in destructuring declaration
 &lt;!--index_926b.html --&gt;</code></pre>
+<h3 id="zuweisung">Zuweisung</h3>
+<p>Nicht nur bei der Initialisierung eines Objektes gibt es Verbesserungen. Auch 
+die Zuweisung eines Wertes zu einer Eigenschaft ist mit 
+ECMAScript 6 unkomplizierter. </p>
+<pre><code>&lt;!--index_925.html --&gt;</code></pre>
+<p>Das geht auch in einer Funktion.</p>
+<pre><code>&lt;!--index_925b.html --&gt;</code></pre>
+<blockquote>
+<p>Achtung: Es gibt einen Fehler, wenn die Zuweisung einmal <code>null</code> ist.</p>
 </blockquote>
-<h2 id="objekt-strukturierung">Objekt Strukturierung</h2>
-<h3 id="zuweisung">Zuweisung</h3>
 <h3 id="standardwerte">Standardwerte</h3>
+<p>Manchmal kommt es vor, dass ein Wert nicht bestimmt ist. Deshalb ist es gut, 
+dass bei auch bei destrukturierender Zuweisung mit Standardwerten arbeiten kann. </p>
+<p>Ohne einen Standardwert anzugeben würde eine Variable nicht definiert werden.</p>
+<pre><code>
+&lt;!--index_924.html --&gt;</code></pre>
+<p>Mit Standardwerten kann man dieses Problem umgehen - wie das geht zeigt das 
+nächste Beispiel.</p>
+<pre><code>let farben = { 
+rot: "#FF0000",
+gruen: "#00FF00",
+};
+
+let {rot = "#FF1111", gruen = "#1111FF", blau = "#0000FF"} = farben;
+
+console.log(rot); // Ausgabe: #FF0000
+console.log(gruen); // Ausgabe: #00FF00
+console.log(blau); // Ausgabe: undefined
+&lt;!--index_924a.html --&gt;</code></pre>
 <h3 id="lokale-variablen">Lokale Variablen</h3>
-<h3 id="verschachtelungen">Verschachtelungen</h3>
-<h2 id="array-strukturierung">Array Strukturierung</h2>
+<p>Bisher waren beim destrukturieren die korrespondierenden 
+Variablennamen immer gleich. Das kann aber auch einmal anders sein. Die 
+Namen können abweichen. Deshalb ist es gut, dass es hierfür eine Lösung in der 
+Syntax gibt.</p>
+<pre><code>
+&lt;!--index_923.html --&gt;</code></pre>
+<p>Und lokalen Variblen können Sie auch in Verbindung mit Standardvariablen 
+einsetzen. Sehen Sie sich dazu das nachfolgende Beispiel an.</p>
+<pre><code>
+&lt;!--index_923a.html --&gt;
+
+### Verschachtelungen
+
+</code></pre>
+<p>let farben = { 
+farbcode: {
+rot: {
+hellrot: "#FFEEEEE",
+dunkelrot: "#FF0000",
+}
+},
+};
+let {farbcode: {rot}}  = farben;
+console.log(rot.hellrot); // Ausgabe: #FFEEEE
+console.log(rot.dunkelrot); // Ausgabe: #FF0000
+&lt;!--index_922.html --&gt;</p>
+<p>Auch das Vergeben eines neuen Variablennamens ist mögliche.</p>
+<pre><code>let farben = { 
+farbcode: {
+rot: {
+hellrot: "#FFEEEEE",
+dunkelrot: "#FF0000",
+}
+},
+};
+let {farbcode: {rot: farbcodesrot}}  = farben;
+console.log(farbcodesrot.hellrot); // Ausgabe: #FFEEEE
+console.log(farbcodesrot.dunkelrot); // Ausgabe: #FF0000
+&lt;!--index_922a.html --&gt;
+
+## Array Strukturierung
+
+
+</code></pre>
+<p>let farben = ["rot", "gruen", "blau"];
+let [farbe1, farbe2]  = farben;
+console.log(farbe1); // Ausgabe: rot
+console.log(farbe2); // Ausgabe: gruen
+&lt;!--index_922.html --&gt;</p>
+<p>Sie können einzelne Array Elemente innerhalb des Arrays auswählen.</p>
+<pre><code>let farben = ["rot", "gruen", "blau"];
+let [, , farbe3]  = farben;
+console.log(farbe3); // Ausgabe: blau
+&lt;!--index_921a.html --&gt;
+
+Schon vorhandene Variablen können verwendet werden.
+</code></pre>
+<p>let farben = ["rot", "gruen", "blau"];
+let [, , farbe3]  = farben;
+console.log(farbe3); // Ausgabe: rot
+&lt;!--index_921b.html --&gt;</p>
 <h3 id="zuweisung">Zuweisung</h3>
+<p><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Destrukturierende_Zuweisung#Variablen_tauschen">https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Operators/Destrukturierende_Zuweisung#Variablen_tauschen</a>
+Die destrukturiende Zuweisung kann auch zum Tauschen von Variablenwerten 
+verwendet werden.</p>
+<p>Bisher</p>
+<pre><code>let erster = "Astrid";
+let zweiter = "Elmar";
+let helfer;
+console.log(erster); // Ausgabe: Astrid
+console.log(zweiter); // Ausgabe: Elmar
+helfer = erster;
+erster = zweiter;
+zweiter = helfer;
+console.log(erster); // Ausgabe: Elmar
+&lt;!--index_920.html --&gt;</code></pre>
+<p>Neu</p>
+<pre><code>let erster = "Astrid";
+let zweiter = "Elmar";
+console.log(erster); // Ausgabe: Astrid
+console.log(zweiter); // Ausgabe: Elmar
+[erster, zweiter] = [zweiter, erster];
+console.log(erster); // Ausgabe: Elmar
+console.log(zweiter); // Ausgabe: Astrid
+&lt;!--index_920a.html --&gt;</code></pre>
 <h3 id="standardwerte">Standardwerte</h3>
 <h3 id="lokale-variablen">Lokale Variablen</h3>
 <h3 id="rest-items">Rest Items</h3>
@@ -2053,10 +2166,6 @@ let {rot, gruen, blau};
 <h2 id="parameter-strukturierung">Parameter Strukturierung</h2>
 <h3 id="notwendige-parameter">Notwendige Parameter</h3>
 <h3 id="standardwerte">Standardwerte</h3>
-<pre><code>
-&lt;!--index_963.html --&gt;</code></pre>
-<pre><code>
-&lt;!--index_964.html --&gt;</code></pre>
 <blockquote>
 <p><strong>Achtung:</strong></p>
 </blockquote>

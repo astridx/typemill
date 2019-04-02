@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let reihenfolge = ["Astrid", ["Uschi", "Sam"], "Elmar"];
+let [ erster, [zweiter], dritter] = reihenfolge;
+console.log(erster); // Ausgabe: Astrid
+console.log(zweiter); // Ausgabe: Uschi
+console.log(dritter); // Ausgabe: Elmar
+
+let reihenfolge1 = ["Astrid", ["Uschi", "Sam"], "Elmar"];
+let [ erster1, zweiter1, dritter1] = reihenfolge1;
+console.log(erster1); // Ausgabe: Astrid
+console.log(zweiter1); // Ausgabe: Array [ "Uschi", "Sam" ]
+console.log(dritter1); // Ausgabe: Elmar
+</script>    
+</body>
+</html>
