@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function zeichneKreis({size, cords, radius}) {
+  console.log(size); //Ausgabe: undefined
+  console.log(cords); //Ausgabe: Object { x: 18, y: 30 }
+  console.log(radius); //Ausgabe: 20
+}
+zeichneKreis({ cords: { x: 18, y: 30 }, radius: 20 });
+</script>    
+</body>
+</html>

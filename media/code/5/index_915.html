@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "Spielfeld",
+        "amenity": "Fußballstation",
+        "popupContent": "SV Musterstadt"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-104.99404, 39.75621]
+    }
+};
+	
+let {
+	properties: { name },
+	geometry: { coordinates: [lat, lng] } 
+} = geojsonFeature;
+	
+	
+console.log(name); // Ausgabe: Spielfeld
+console.log(lat); // Ausgabe: -104.99404
+console.log(lng); // Ausgabe: 39.75621
+</script>    
+</body>
+</html>

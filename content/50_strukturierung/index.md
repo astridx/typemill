@@ -314,27 +314,175 @@ console.log(kopierteReihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
 <!--index_916.html -->
 ```
 
+Mit einem Restparameter erreicht man das Gleiche.
+
 ```
 let reihenfolge = ["Astrid", "Uschi"];
 let [ ...kopierteReihenfolge] = reihenfolge;
 console.log(reihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
 console.log(kopierteReihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
-<!--index_916.html -->
+<!--index_916a.html -->
+```
+
+Das die Variable tatsächlich kopiert wird zeigt das nächste Beispiel.
+
+```
+let reihenfolge = ["Astrid", "Uschi"];
+let [ ...kopierteReihenfolge] = reihenfolge;
+let kopierteReihenfolge2 = reihenfolge;
+console.log(reihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+console.log(kopierteReihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+console.log(kopierteReihenfolge2); // Ausgabe: Array [ "Astrid", "Uschi" ]
+reihenfolge.push("reihenfolge");
+kopierteReihenfolge.push("kopierteReihenfolge");
+kopierteReihenfolge2.push("kopierteReihenfolge2");
+console.log(reihenfolge); // [ "Astrid", "Uschi", "reihenfolge", "kopierteReihenfolge2" ]
+console.log(kopierteReihenfolge); // [ "Astrid", "Uschi", "kopierteReihenfolge" ]
+console.log(kopierteReihenfolge2); // [ "Astrid", "Uschi", "reihenfolge", "kopierteReihenfolge2" ]
+<!--index_916b.html -->
 ```
 
 
 ## Gemischte Strukturierung
 
+Im vorherhigen Kapitel haben wir die Destrukturierung 
+von Arrays besprochen. Davor war die Destrukturierung von Objekten das Thema. 
+In diesem Kapitel mischen wir nun beides: Ich zeige Ihnen, 
+dass Sie die Destrukturierung von Objekte 
+und Arrays auch zusammen anwenden können. Vielleicht fragen Sie sich nun, warum 
+Sie dies tun sollten. Ganz einfach. Sie können auf diese Art genau die Informationen 
+zusammenstellen, die Sie benötigen. Nicht mehr und nicht weniger.
+
+Sehen Sie im nächsten Beispiel wie Sie Daten im Format GeoJson destrukturieren 
+können.
+
+
 ```
+let geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "Spielfeld",
+        "amenity": "Fußballstation",
+        "popupContent": "SV Musterstadt"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-104.99404, 39.75621]
+    }
+};
+	
+let {
+	properties: { name },
+	geometry: { coordinates: [lat, lng] } 
+} = geojsonFeature;
+	
+	
+console.log(name); // Ausgabe: Spielfeld
+console.log(lat); // Ausgabe: -104.99404
+console.log(lng); // Ausgabe: 39.75621
 <!--index_915.html -->
 ```
 
 ## Parameter Strukturierung
+
+Ein weiteres Anwendungsbeispiel für die Destrukturierungssyntax ist die 
+Übergabe von Argumenten in einer Funktion.
+
+```
+function zeichneKreis(options) {
+  options = options  || {};
+  let size = options.size;
+  let cords = options.cords;
+  let radius = options.radius;
+  console.log(size); //Ausgabe: undefined
+  console.log(cords); //Ausgabe: Object { x: 18, y: 30 }
+  console.log(radius); //Ausgabe: 20
+}
+zeichneKreis({ cords: { x: 18, y: 30 }, radius: 20 });
+<!--index_914.html -->
+```
+
+Wenn Sie die Destrukturierungssyntax nutzen können Sie die Variable `options` 
+einsparen.
+
+
+```
+function zeichneKreis({size, cords, radius}) {
+  console.log(size); //Ausgabe: undefined
+  console.log(cords); //Ausgabe: Object { x: 18, y: 30 }
+  console.log(radius); //Ausgabe: 20
+}
+zeichneKreis({ cords: { x: 18, y: 30 }, radius: 20 });
+<!--index_914a.html -->
+```
+
 ### Notwendige Parameter
+
+```
+function zeichneKreis({size, cords, radius}) {
+}
+zeichneKreis(); //Ausgabe: TypeError: (destructured parameter) is undefined
+<!--index_914b.html -->
+```
+
+Sie könnten sich nun Fraen, warum in Beispiel 914b ein Fehler gemeldet wird. 
+Wenn Sie eine einzelne Option nicht füllen, tritt hingegen kein Fehler auf. In 
+diesem Fall wird lediglich der nicht gesetzte Wert als `undefiniert` ausgegeben. 
+Für die Beantwortung dieser Frage ist es hilfreich, einmal hinter die Kulissen 
+zu schauen. Was in Beispiel 914b im Hintergrund passiert, können Sie sich in 
+Beispiel 914c ansehen.
+
+```
+function zeichneKreis(werte) {
+  let {size, cords, radius} = werte;
+}
+zeichneKreis(); //Ausgabe: TypeError: werte is undefined
+<!--index_914c.html -->
+```
+
+Folgendes ist wiederum möglich.
+
+```
+function zeichneKreis(werte) {
+  let {size, cords, radius} = werte;
+  console.log(size); //Ausgabe: 18
+  console.log(cords); //Ausgabe: undefinded
+  console.log(radius); //Ausgabe: undefinded
+}
+let kreis = {size: 18};
+zeichneKreis(kreis);
+<!--index_914d.html -->
+```
+
+Wenn es Ihnen wichtig ist, verwenden Sie am besten einen Standardwert. Wie 
+Sie dies umsetzen können zeigt Ihnen das nächste Kapitel.
+
+
 ### Standardwerte
 
 
+```
+function zeichneKreis({size, cords, radius} = {}) {
+  console.log(size); //Ausgabe: undefined
+  console.log(cords); //Ausgabe: undefined
+  console.log(radius); //Ausgabe: undefined
+}
+zeichneKreis();
+<!--index_914e.html -->
+```
 
+
+Das nächste Beispiel geht noch einen Schritt weiter. 
+
+```
+function zeichneKreis({size = 17, cords = { x: 18, y: 30 }, radius = 20} = {}) {
+  console.log(size); //Ausgabe: 17
+  console.log(cords); //Ausgabe: { x: 18, y: 30 }
+  console.log(radius); //Ausgabe: 20
+}
+zeichneKreis();
+<!--index_914f.html -->
+```
 
 
 > **Achtung:**

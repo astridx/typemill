@@ -2160,12 +2160,293 @@ console.log(erster); // Ausgabe: Elmar
 console.log(zweiter); // Ausgabe: Astrid
 &lt;!--index_920a.html --&gt;</code></pre>
 <h3 id="standardwerte">Standardwerte</h3>
-<h3 id="lokale-variablen">Lokale Variablen</h3>
+<p>Der Vollständigkeit halber Standardwerte von Arrays bei der 
+destrukturienden Zuweisung.</p>
+<pre><code>let reihenfolge1 = ["Astrid"];
+let [ erster1, zweiter1 = "Elmar"] = reihenfolge1;
+console.log(erster1); // Ausgabe: Astrid
+console.log(zweiter1); // Ausgabe: Elmar
+
+let reihenfolge2 = ["Astrid", "Nina"];
+let [ erster2, zweiter2 = "Elmar"] = reihenfolge2;
+console.log(erster2); // Ausgabe: Astrid
+console.log(zweiter2); // Ausgabe: Nina
+
+let reihenfolge = "Astrid";
+let [ erster, zweiter = "Elmar"] = reihenfolge;
+console.log(erster); // Ausgabe: A
+console.log(zweiter); // Ausgabe: s
+&lt;!--index_919.html --&gt;</code></pre>
+<h3 id="geschachtelte-variablen">Geschachtelte Variablen</h3>
+<p>Verschachteln ist beliebig tief mögliche. Klammern sind wichtig!</p>
+<pre><code>let reihenfolge = ["Astrid", ["Uschi", "Sam"], "Elmar"];
+let [ erster, [zweiter], dritter] = reihenfolge;
+console.log(erster); // Ausgabe: Astrid
+console.log(zweiter); // Ausgabe: Uschi
+console.log(dritter); // Ausgabe: Elmar
+
+let reihenfolge1 = ["Astrid", ["Uschi", "Sam"], "Elmar"];
+let [ erster1, zweiter1, dritter1] = reihenfolge1;
+console.log(erster1); // Ausgabe: Astrid
+console.log(zweiter1); // Ausgabe: Array [ "Uschi", "Sam" ]
+console.log(dritter1); // Ausgabe: Elmar
+&lt;!--index_918.html --&gt;</code></pre>
 <h3 id="rest-items">Rest Items</h3>
+<p>Rest Items waren in Kapitel 3 schon einmal ein Thema.
+Egal wo man den Rest Parameter einsetzt - er nimmt den Rest auf.</p>
+<pre><code>let reihenfolge = ["Astrid", "Uschi", "Sam", "Elmar"];
+let [ erster, ...rest ] = reihenfolge;
+console.log(erster); // Ausgabe: Astrid
+console.log(rest.length); // Ausgabe: 3
+console.log(rest[0]); // Ausgabe: Uschi
+console.log(rest[1]); // Ausgabe: Sam
+console.log(rest[2]); // Ausgabe: Elmar
+console.log(rest[3]); // Ausgabe: undefined
+
+let reihenfolge1 = ["Astrid", "Uschi", "Sam", "Elmar"];
+let [ ...rest1 ] = reihenfolge1;
+console.log(rest1.length); // Ausgabe: 4
+console.log(rest1[0]); // Ausgabe: Astrid
+console.log(rest1[1]); // Ausgabe: Uschi
+console.log(rest1[2]); // Ausgabe: Sam
+console.log(rest1[3]); // Ausgabe: Elmar
+&lt;!--index_917.html --&gt;</code></pre>
+<p>Zum Clonen kann er auch verwendet werden. Bisher wurde dies oft mit 
+concate gemacht.</p>
+<pre><code>let reihenfolge = ["Astrid", "Uschi"];
+let kopierteReihenfolge = reihenfolge.concat();
+console.log(reihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+console.log(kopierteReihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+&lt;!--index_916.html --&gt;</code></pre>
+<p>Mit einem Restparameter erreicht man das Gleiche.</p>
+<pre><code>let reihenfolge = ["Astrid", "Uschi"];
+let [ ...kopierteReihenfolge] = reihenfolge;
+console.log(reihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+console.log(kopierteReihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+&lt;!--index_916a.html --&gt;</code></pre>
+<p>Das die Variable tatsächlich kopiert wird zeigt das nächste Beispiel.</p>
+<pre><code>let reihenfolge = ["Astrid", "Uschi"];
+let [ ...kopierteReihenfolge] = reihenfolge;
+let kopierteReihenfolge2 = reihenfolge;
+console.log(reihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+console.log(kopierteReihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+console.log(kopierteReihenfolge2); // Ausgabe: Array [ "Astrid", "Uschi" ]
+reihenfolge.push("reihenfolge");
+kopierteReihenfolge.push("kopierteReihenfolge");
+kopierteReihenfolge2.push("kopierteReihenfolge2");
+console.log(reihenfolge); // [ "Astrid", "Uschi", "reihenfolge", "kopierteReihenfolge2" ]
+console.log(kopierteReihenfolge); // [ "Astrid", "Uschi", "kopierteReihenfolge" ]
+console.log(kopierteReihenfolge2); // [ "Astrid", "Uschi", "reihenfolge", "kopierteReihenfolge2" ]
+&lt;!--index_916b.html --&gt;</code></pre>
 <h2 id="gemischte-strukturierung">Gemischte Strukturierung</h2>
+<p>Im vorherhigen Kapitel haben wir die Destrukturierung 
+von Arrays besprochen. Davor war die Destrukturierung von Objekten das Thema. 
+In diesem Kapitel mischen wir nun beides: Ich zeige Ihnen, 
+dass Sie die Destrukturierung von Objekte 
+und Arrays auch zusammen anwenden können. Vielleicht fragen Sie sich nun, warum 
+Sie dies tun sollten. Ganz einfach. Sie können auf diese Art genau die Informationen 
+zusammenstellen, die Sie benötigen. Nicht mehr und nicht weniger.</p>
+<p>Sehen Sie im nächsten Beispiel wie Sie Daten im Format GeoJson destrukturieren 
+können.</p>
+<pre><code>let geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "Spielfeld",
+        "amenity": "Fußballstation",
+        "popupContent": "SV Musterstadt"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-104.99404, 39.75621]
+    }
+};
+
+let {
+    properties: { name },
+    geometry: { coordinates: [lat, lng] } 
+} = geojsonFeature;
+
+
+console.log(name); // Ausgabe: Spielfeld
+console.log(lat); // Ausgabe: -104.99404
+console.log(lng); // Ausgabe: 39.75621
+&lt;!--index_915.html --&gt;</code></pre>
 <h2 id="parameter-strukturierung">Parameter Strukturierung</h2>
+<p>Ein weiteres Anwendungsbeispiel für die Destrukturierungssyntax ist die 
+Übergabe von Argumenten in einer Funktion.</p>
+<pre><code>function zeichneKreis(options) {
+  options = options  || {};
+  let size = options.size;
+  let cords = options.cords;
+  let radius = options.radius;
+  console.log(size); //Ausgabe: undefined
+  console.log(cords); //Ausgabe: Object { x: 18, y: 30 }
+  console.log(radius); //Ausgabe: 20
+}
+zeichneKreis({ cords: { x: 18, y: 30 }, radius: 20 });
+&lt;!--index_914.html --&gt;</code></pre>
+<p>Wenn Sie die Destrukturierungssyntax nutzen können Sie die Variable <code>options</code> 
+einsparen.</p>
+<pre><code>function zeichneKreis({size, cords, radius}) {
+  console.log(size); //Ausgabe: undefined
+  console.log(cords); //Ausgabe: Object { x: 18, y: 30 }
+  console.log(radius); //Ausgabe: 20
+}
+zeichneKreis({ cords: { x: 18, y: 30 }, radius: 20 });
+&lt;!--index_914a.html --&gt;</code></pre>
 <h3 id="notwendige-parameter">Notwendige Parameter</h3>
+<pre><code>function zeichneKreis({size, cords, radius}) {
+}
+zeichneKreis(); //Ausgabe: TypeError: (destructured parameter) is undefined
+&lt;!--index_914b.html --&gt;</code></pre>
+<p>Sie könnten sich nun Fraen, warum in Beispiel 914b ein Fehler gemeldet wird. 
+Wenn Sie eine einzelne Option nicht füllen, tritt hingegen kein Fehler auf. In 
+diesem Fall wird lediglich der nicht gesetzte Wert als <code>undefiniert</code> ausgegeben. 
+Für die Beantwortung dieser Frage ist es hilfreich, einmal hinter die Kulissen 
+zu schauen. Was in Beispiel 914b im Hintergrund passiert, können Sie sich in 
+Beispiel 914c ansehen.</p>
+<pre><code>function zeichneKreis(werte) {
+  let {size, cords, radius} = werte;
+}
+zeichneKreis(); //Ausgabe: TypeError: werte is undefined
+&lt;!--index_914c.html --&gt;</code></pre>
+<p>Folgendes ist wiederum möglich.</p>
+<pre><code>function zeichneKreis(werte) {
+  let {size, cords, radius} = werte;
+  console.log(size); //Ausgabe: 18
+  console.log(cords); //Ausgabe: undefinded
+  console.log(radius); //Ausgabe: undefinded
+}
+let kreis = {size: 18};
+zeichneKreis(kreis);
+&lt;!--index_914d.html --&gt;</code></pre>
+<p>Wenn es Ihnen wichtig ist, verwenden Sie am besten einen Standardwert. Wie 
+Sie dies umsetzen können zeigt Ihnen das nächste Kapitel.</p>
 <h3 id="standardwerte">Standardwerte</h3>
+<pre><code>function zeichneKreis({size, cords, radius} = {}) {
+  console.log(size); //Ausgabe: undefined
+  console.log(cords); //Ausgabe: undefined
+  console.log(radius); //Ausgabe: undefined
+}
+zeichneKreis();
+&lt;!--index_914e.html --&gt;</code></pre>
+<p>Das nächste Beispiel geht noch einen Schritt weiter. </p>
+<pre><code>function zeichneKreis({size = 17, cords = { x: 18, y: 30 }, radius = 20} = {}) {
+  console.log(size); //Ausgabe: 17
+  console.log(cords); //Ausgabe: { x: 18, y: 30 }
+  console.log(radius); //Ausgabe: 20
+}
+zeichneKreis();
+&lt;!--index_914f.html --&gt;</code></pre>
+<blockquote>
+<p><strong>Achtung:</strong></p>
+</blockquote>
+<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
+<p>xxx</p>
+<p>todo <a href="https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md">https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md</a></p>
+<div class="footnotes">
+<hr />
+<ol>
+</ol>
+</div><h1 id="ecmascript-6-symbole">ECMAScript 6 - Symbole</h1>
+<p><a href="#" id="Symbole"></a></p>
+<h2 id="diesem-kapitel-werden-wir">In diesem Kapitel werden wir …</h2>
+<p>Zunächst zeige ich Ihnen, wie Sie 
+Todo Meldungen immer mit Firefox</p>
+<h2 id="symbole-erstellen">Symbole erstellen</h2>
+<blockquote>
+<p>Ein primitives (skalares) Datenelement (einfacher Wert, einfacher Datentyp) ist ein Datenelement, das kein Objekt ist und keine Methoden besitzt.
+In JavaScript gibt es 6 skalare Datentypen:
+String
+Number
+Boolean
+null
+undefined
+Symbol (neu in ECMAScript 6)
+Meistens repräsentiert ein skalares Datenelement die einfachste Datenstruktur einer Programmiersprache.
+<a href="https://developer.mozilla.org/de/docs/Glossary/einfache_datenelemente">https://developer.mozilla.org/de/docs/Glossary/einfache_datenelemente</a></p>
+</blockquote>
+<p>Alle skalaren Datentypen sind unveränderbar (sie können nicht noch weiter vereinfacht werden).</p>
+<pre><code>let vorname = Symbol();
+let person = {};
+person[vorname] = "Astrid";
+console.log(person[vorname]); //Ausgabe: Astrid
+&lt;!--index_913.html --&gt;</code></pre>
+<h2 id="symbole-erstellen">Symbole erstellen</h2>
+<h2 id="symbole-anwenden">Symbole anwenden</h2>
+<h2 id="symbole-teilen">Symbole teilen</h2>
+<h2 id="symbolezwand">Symbolezwand</h2>
+<h2 id="eigenschaften-von-symbolen">Eigenschaften von Symbolen</h2>
+<h2 id="internen-operationen-mit-bekannten-symbolen">Internen Operationen mit bekannten Symbolen</h2>
+<p><a href="http://2ality.com/2015/09/well-known-symbols-es6.html">http://2ality.com/2015/09/well-known-symbols-es6.html</a></p>
+<pre><code>&lt;!--index_912.html --&gt;</code></pre>
+<blockquote>
+<p><strong>Achtung:</strong></p>
+</blockquote>
+<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
+<p>xxx</p>
+<p>todo <a href="https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md">https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md</a></p>
+<div class="footnotes">
+<hr />
+<ol>
+</ol>
+</div><h1 id="ecmascript-6-symbole">ECMAScript 6 - Symbole</h1>
+<p><a href="#" id="Symbole"></a></p>
+<h2 id="diesem-kapitel-werden-wir">In diesem Kapitel werden wir …</h2>
+<p>Zunächst zeige ich Ihnen, wie Sie 
+Todo Meldungen immer mit Firefox</p>
+<h2 id="sets-und-maps">Sets und Maps</h2>
+<h2 id="workaround">Workaround</h2>
+<h2 id="sets">Sets</h2>
+<h3 id="creating">Creating</h3>
+<h3 id="remove-item">Remove Item</h3>
+<h3 id="foreache">foreache()</h3>
+<h3 id="conerting-set-array">conerting Set in Array</h3>
+<h3 id="weak-sets">Weak Sets</h3>
+<h2 id="maps">Maps</h2>
+<h3 id="map-methoden">Map Methoden</h3>
+<h3 id="initialisierung">Initialisierung</h3>
+<h3 id="foreach">forEach()</h3>
+<h3 id="weak-maps">Weak Maps</h3>
+<pre><code>&lt;!--index_926.html --&gt;</code></pre>
+<blockquote>
+<p><strong>Achtung:</strong></p>
+</blockquote>
+<h2 id="diesem-kapitel-haben-wir">In diesem Kapitel haben wir ...</h2>
+<p>xxx</p>
+<p>todo <a href="https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md">https://github.com/woota/FE-training-examples/blob/master/es6/4.%20Arrow-Functions.md</a></p>
+<div class="footnotes">
+<hr />
+<ol>
+</ol>
+</div><h1 id="ecmascript-6-symbole">ECMAScript 6 - Symbole</h1>
+<p><a href="#" id="Symbole"></a></p>
+<h2 id="diesem-kapitel-werden-wir">In diesem Kapitel werden wir …</h2>
+<p>Zunächst zeige ich Ihnen, wie Sie 
+Todo Meldungen immer mit Firefox</p>
+<h2 id="loop-problem">Loop Problem</h2>
+<h2 id="was-ist-iteration">Was ist Iteration</h2>
+<h2 id="was-ist-ein-generator">Was ist ein Generator</h2>
+<h3 id="funktionen">Funktionen</h3>
+<h3 id="objekte">Objekte</h3>
+<h2 id="iterables-loop">Iterables for-of Loop</h2>
+<h3 id="standard-iterator">Standard Iterator</h3>
+<h3 id="erstell-iterable">Erstell Iterable</h3>
+<h2 id="built-iterator">Built in Iterator</h2>
+<h3 id="collection">Collection</h3>
+<h3 id="string">String</h3>
+<h3 id="nodelist">Nodelist</h3>
+<h2 id="spead">Spead</h2>
+<h2 id="erweitert">Erweitert</h2>
+<h3 id="argumente-ubergeben">Argumente übergeben</h3>
+<h3 id="fehler-werfen">Fehler werfen</h3>
+<h3 id="statements">Statements</h3>
+<h3 id="delegation">Delegation</h3>
+<h2 id="asynchron">Asynchron</h2>
+<h3 id="ein-einfacher-task-runner">Ein einfacher Task Runner</h3>
+<h3 id="task-runner-mit-daten">Task Runner mit Daten</h3>
+<h3 id="asynchron-task-runner">Asynchron Task Runner</h3>
+<pre><code>&lt;!--index_926.html --&gt;</code></pre>
 <blockquote>
 <p><strong>Achtung:</strong></p>
 </blockquote>

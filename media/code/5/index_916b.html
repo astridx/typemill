@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let reihenfolge = ["Astrid", "Uschi"];
+let [ ...kopierteReihenfolge] = reihenfolge;
+let kopierteReihenfolge2 = reihenfolge;
+console.log(reihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+console.log(kopierteReihenfolge); // Ausgabe: Array [ "Astrid", "Uschi" ]
+console.log(kopierteReihenfolge2); // Ausgabe: Array [ "Astrid", "Uschi" ]
+reihenfolge.push("reihenfolge");
+kopierteReihenfolge.push("kopierteReihenfolge");
+kopierteReihenfolge2.push("kopierteReihenfolge2");
+console.log(reihenfolge); // [ "Astrid", "Uschi", "reihenfolge", "kopierteReihenfolge2" ]
+console.log(kopierteReihenfolge); // [ "Astrid", "Uschi", "kopierteReihenfolge" ]
+console.log(kopierteReihenfolge2); // [ "Astrid", "Uschi", "reihenfolge", "kopierteReihenfolge2" ]
+</script>    
+</body>
+</html>
