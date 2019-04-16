@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let obj = {
+[Symbol.toPrimitive](hint) {
+switch (hint) {
+case 'number':
+return 2;
+case 'string':
+return 'Zeichenkette';
+case 'default':
+return 'Standard';
+default:
+throw new Error();
+}
+}
+};
+console.log(2 * obj); // 4
+console.log(3 + obj); // '3Standard'
+console.log(obj == 'Standard'); // true
+console.log(obj === 'Standard'); // false
+console.log(String(obj)); // 'Zeichenkette'
+</script>    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+function MeinObjekt(){
+	// 
+}
+Object.defineProperty(MeinObjekt, Symbol.hasInstance, {
+	value: function(f){
+		return (f instanceof Number) && (f >= 1 && f <= 10)
+	}
+});
+let objekt1 = new Number(2);
+let objekt2 = new Number(11);
+console.log(objekt1 instanceof MeinObjekt); //Ausgabe: true
+console.log(objekt2 instanceof MeinObjekt); //Ausgabe: false
+console.log(objekt1 instanceof Number); //Ausgabe: true
+console.log(objekt2 instanceof Number); //Ausgabe: true
+</script>    
+</body>
+</html>

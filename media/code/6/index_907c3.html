@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let ist10lang = {
+[Symbol.match]: function(wert) {
+	return wert.length === 10 ? [wert] : null;
+},
+[Symbol.replace]: function(wert, tausch = 'tausch') {
+	return wert.length === 10 ? tausch : wert;
+},
+[Symbol.search]: function(wert) {
+	return wert.length === 10 ? 0 : -1;
+},
+[Symbol.split]: function(wert) {
+	return wert.length === 10 ? wert : wert.substring(0, 10);
+}
+};
+let testtext1 = "Mehr als 10 Zeichen";
+let testtext2 = "10 Zeichen";
+let match1 = testtext1.match(ist10lang);
+let match2 = testtext2.match(ist10lang);
+console.log(match1); //Ausgabe: null
+console.log(match2); //Ausgabe: Array [ "10 Zeichen" ]
+
+let replace1 = testtext1.replace(ist10lang);
+let replace2 = testtext2.replace(ist10lang); 
+console.log(replace1); //Ausgabe: Mehr als 10 Zeichen
+console.log(replace2); //Ausgabe: tausch
+
+let search1 = testtext1.search(ist10lang);
+let search2 = testtext2.search(ist10lang);
+console.log(search1); //Ausgabe: -1
+console.log(search2); //Ausgabe: 0
+
+let split1 = testtext1.split(ist10lang);
+let split2 = testtext2.split(ist10lang);
+console.log(split1); //Ausgabe: Mehr als 1
+console.log(split2); //Ausgabe: 10 Zeichen
+</script>    
+</body>
+</html>

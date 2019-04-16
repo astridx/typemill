@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+const iterable1 = new Object();
+//iterable1[Symbol.iterator] = [ 1, 2, 3 ];
+
+iterable1[Symbol.iterator] = function* () {
+  yield 1;
+  yield 2;
+  yield 3;
+};
+
+console.log([...iterable1]); //Ausgabe: Array(3) [ 1, 2, 3 ]
+console.log(iterable1); 
+// Ausgabe: Object { Symbol(Symbol.iterator): Symbol.iterator()
+</script>    
+</body>
+</html>

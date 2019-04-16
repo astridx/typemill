@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let eindeutigeID = Symbol.for('id');
+let eindeutigeID2 = Symbol.for('id');
+let eindeutigeID3 = Symbol('id');
+console.log(Symbol.keyFor(eindeutigeID)); //Ausgabe: id
+console.log(Symbol.keyFor(eindeutigeID2)); //Ausgabe: id
+console.log(Symbol.keyFor(eindeutigeID3)); //Ausgabe: undefined
+</script>    
+</body>
+</html>

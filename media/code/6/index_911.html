@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let vorname = Symbol('Vorname');
+let person = {
+[vorname]: "Astrid"
+};
+Object.defineProperty(person, vorname, {writable: false});
+let nachname = Symbol('Nachname');
+Object.defineProperties(person, {
+[nachname]: {
+writable: false,
+value: "Günther"
+}
+});
+console.log(person[vorname]); //Ausgabe: Astrid
+console.log(person[nachname]); //Ausgabe: Günther
+person[vorname] = "Nina";
+console.log(person[vorname]); //Ausgabe: Astrid
+console.log(Object.getOwnPropertyDescriptor(person, vorname));
+// Ausgabe: 
+// Object 
+// { 
+// value: "Astrid", 
+// writable: false, 
+// enumerable: true, 
+// configurable: true 
+// }
+</script>    
+</body>
+</html>

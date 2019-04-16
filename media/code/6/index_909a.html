@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let symbol1 = Symbol.for('symbol1');
+let beschreibung = String(symbol1);
+console.log(beschreibung + ' angehangener Text'); 
+  //Ausgabe: Symbol(symbol1) angehangener Text
+console.log(symbol1 + ' angehangener Text'); 
+  //Ausgabe: TypeError: can't convert symbol to string
+</script>    
+</body>
+</html>

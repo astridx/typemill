@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let eindeutigeID = Symbol('id');
+let nachname = Symbol('name');
+let person = {
+[eindeutigeID]: "123",
+[nachname]: "Müller",
+'vorname': "Paul"
+};
+let symbolEigenschaften = Object.getOwnPropertySymbols(person);
+console.log(symbolEigenschaften.length); // Ausgabe: 2
+console.log(symbolEigenschaften[0]); // Ausgabe: Symbol(id)
+console.log(symbolEigenschaften[1]); // Ausgabe: Symbol(name)
+console.log(symbolEigenschaften[2]); // Ausgabe: undefined
+console.log(person[symbolEigenschaften[0]]); // Ausgabe: 123
+console.log(person[symbolEigenschaften[1]]); // Ausgabe: Müller
+console.log(person['vorname']); // Ausgabe: Paul
+console.log(person); 
+ // Ausgabe: Object { vorname: "Paul", Symbol(id): "123", Symbol(name): "Müller" }
+</script>    
+</body>
+</html>

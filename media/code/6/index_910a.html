@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let eindeutigeID = Symbol.for('id');
+let person = {};
+person[eindeutigeID] = "123";
+let eindeutigeID2 = Symbol.for('id');
+console.log(person[eindeutigeID]); //Ausgabe: 123
+console.log(eindeutigeID); //Ausgabe: Symbol(id)
+console.log(person[eindeutigeID2]); //Ausgabe: 123
+console.log(eindeutigeID2); //Ausgabe: Symbol(id)
+console.log(eindeutigeID2 === eindeutigeID); // Ausgabe: true
+console.log(eindeutigeID2 == eindeutigeID); // Ausgabe: true
+</script>    
+</body>
+</html>

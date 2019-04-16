@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>ECMAScript 6 mit Beispielen lernen</title>
+</head>
+<body>
+<script>
+let symbol1 = Symbol.for('symbol1');
+let beschreibung = String(symbol1);
+console.log(beschreibung / 1); 
+  //Ausgabe: NaN
+console.log(symbol1 / 1); 
+  //Ausgabe: TypeError: can't convert symbol to number
+</script>    
+</body>
+</html>
